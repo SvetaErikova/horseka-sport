@@ -1,0 +1,195 @@
+extends ../layouts/hero
+
+block variables
+  - var title = "Главная"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+
+  section.block.block_banner.block_banner-hero.block_banner-group
+    .block--wrapper
+      .banner
+        .block--content
+          //img(src="/assets/img/bg.jpg")
+          video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/e11/e115486fb468da56217dcb4dfba748ac.mp4" autoplay loop muted playsinline)
+        +block--head_h1('Добро пожаловать', "Создаём мир, в который хочется вернутьcя", 'Ведущий мировой курорт премиум-класса на южном берегу Крыма')
+        .block--actions
+          a(href="/").button.button-filled.button-accent.button-dark
+            span Действие
+          a(href="/").button.button-filled.button-primary
+            span Переход
+      .banner
+        .block--content
+          img(src="/assets/img/bg.jpg")
+        +block--head("Subtitle","Title for this page","Sit diam aliquam semper faucibus molestie habitasse pulvinar.")
+        .block--actions
+          a(href="/").button.button-filled.button-accent.button-dark
+            span Кнопка 1
+  section.block.block_list.content_hourse
+    .block--wrapper
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+  //include ../components/booking/booking
+  //include ../components/content/content_advantages/content_advantages
+  //include ../components/_templates/block/block_list/block_list_events
+  //include ../components/content/content_road/content_road
+  //
+  //section.block.block_list.block_list-slider.content_offers
+  //  .block--wrapper
+  //    .block--head
+  //      .block--head_title
+  //        h2.f-h2 Спецпредложение слайдер
+  //    .block--sections
+  //      a.is_active(href="" data-section_id="") Все
+  //      a(href="" data-section_id="") Номера
+  //      a(href="" data-section_id="") Рестораны и бары
+  //      a(href="" data-section_id="") Spa и бассейны
+  //    .block--elements
+  //      +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+  //      +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+  //      +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+  //section.block.block_html_code.content_scheme
+  //  .content_scheme--clouds.content_scheme--clouds-top
+  //  <div class="mobile_swiper_animation">
+  //    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42">
+  //    <rect class="tooltip-horizontal-scroll-icon_card" x="-240" width="200" height="200"></rect>
+  //    <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200"></rect>
+  //    <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" ></rect>
+  //    <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" ></rect>
+  //    <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" ></path>
+  //    </svg>
+  //  </div>
+  //  .content_scheme--scheme
+  //    include ../components/scheme/scheme
+  //  .scheme_legend_anchor
+  //    .scheme_legend
+  //      .scheme_legend--dropdown
+  //        .scheme_legend--filters
+  //          .scheme_legend--filter.is_active(data-type="all")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Все
+  //          .scheme_legend--filter(data-type="main_buildings")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Основные
+  //          .scheme_legend--filter(data-type="parks")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Парки
+  //          .scheme_legend--filter(data-type="restaurants")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Рестораны и бары
+  //          .scheme_legend--filter(data-type="health")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Оздоровление
+  //          .scheme_legend--filter(data-type="beauty")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Красота
+  //          .scheme_legend--filter(data-type="entertainment")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Развлечения
+  //          .scheme_legend--filter(data-type="sports")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" />
+  //            </svg>
+  //            | Спорт и активный отдых
+  //          .scheme_legend--filter(data-type="shops")
+  //            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  //            <rect x="1.19922" y="1.2002" width="21.6" height="21.6" rx="10.8" />
+  //            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6678 7.48509C18.0849 7.88958 18.113 8.57521 17.7307 9.01647L11.2917 16.4487C11.1029 16.6666 10.8382 16.7935 10.5588 16.7999C10.2795 16.8064 10.0098 16.6918 9.81223 16.4827L6.30004 12.7666C5.89999 12.3433 5.89999 11.6571 6.30004 11.2338C6.70009 10.8105 7.34869 10.8105 7.74874 11.2338L10.5044 14.1495L16.2205 7.55167C16.6028 7.11041 17.2508 7.0806 17.6678 7.48509Z" fill="#141A25"/>
+  //            </svg>
+  //            | Магазины
+  //      .scheme_legend--title#scheme_legend
+  //        span Легенда
+  //        span.icon-ic-lg-menu
+  //  .content_scheme--clouds.content_scheme--clouds-bottom
+  //.popup.popup-scheme(data-popup="popup_for_scheme" data-lenis-prevent)
+  //  .popup--content
+  //    .popup--close
+  //      button.button.button-link.button-primary(data-closepopup)
+  //        span.icon-ic-lg-close
+  //    .is_cascade
+  //section.block.block_list.block_list-slider.content_reviews
+  //  .block--wrapper
+  //    .block--head
+  //      .block--head_title
+  //        h2.f-h2 Отзывы
+  //      .block--head_caption
+  //        p Отзыв предполагает видео или кратинку
+  //    .block--elements
+  //      .card(data-openpopup="popup_cascade")
+  //        .review_author
+  //          .review_author--image
+  //            img(src="/assets/img/review.png")
+  //          .review_author--name efra_morrison
+  //        .card--image
+  //          video(poster="/assets/img/review_1.png" src="/assets/video/@lepragram.mp4" loop muted playsinline)
+  //          .card--action
+  //            span.icon
+  //        .card--content
+  //          .card--text Как можно понять по нашим лицам на этих фото-Мы в полном восторге от пребывания в @mriya_resort @mriya.winepark
+  //      +card--review
+  //      +card--review
+  //      +card--review
+  //      +card--review

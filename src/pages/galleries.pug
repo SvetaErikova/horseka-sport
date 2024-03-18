@@ -1,0 +1,69 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Главная"
+  - var pageClass = 'page-parent'
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/e11/e115486fb468da56217dcb4dfba748ac.mp4" autoplay loop muted playsinline)
+        +block--head_h1("","Галереи")
+  section.block.block_list.content_galleries
+    .block--wrapper
+      .block--sections
+        a.active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Индивидуальная экскурсия с чайной церемонией
+            .card--text
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Индивидуальная экскурсия с чайной церемонией
+            .card--text
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Индивидуальная экскурсия с чайной церемонией
+            .card--text
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Индивидуальная экскурсия с чайной церемонией
+            .card--text
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Индивидуальная экскурсия с чайной церемонией
+            .card--text
+            .card--label
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще

@@ -1,0 +1,118 @@
+.block_image_text
+  .block--wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    place-content: start
+    gap: 0 24px
+    grid-template-rows: 1fr auto 1fr
+    &:has(.block--image)
+      grid-template-rows: 1fr auto 1fr
+      @media(max-width: 768px)
+        grid-template-rows: auto
+    @media(max-width: 768px)
+      grid-template-columns: 1fr
+      grid-template-rows: auto
+      padding: var(--g-container) 0
+  .block--head
+    grid-column: 1
+  .block--content,
+  .block--actions
+    grid-column: 2
+    @media(max-width: 768px)
+      grid-column: 1
+  .block--image ~ .block--head,
+  .block--image ~ .block--content,
+  .block--image ~ .block--actions
+    grid-column: 1
+    width: 100%
+    padding-left: var(--g-149)
+    padding-right: var(--g-149)
+  .block--image ~ .block--head
+    justify-content: flex-end
+  .block--image
+    grid-column: 2
+    grid-row: 1 / span 3
+    min-height: 100%
+    max-width: 100%
+    @media(max-width: 768px)
+      grid-column: 1
+      grid-row: 1 / span 1
+    img, video
+      object-fit: cover
+      height: 100%
+      width: 100%
+  .block--head
+    align-items: flex-start
+    padding-top: var(--g-80)
+  .block--actions
+    align-items: flex-start
+    padding-bottom: var(--g-80)
+  .block--content
+    margin-top: 0
+  &.block_image_text-reversed
+    .block--wrapper
+      .block--image
+        grid-column: 1
+      .block--head,
+      .block--content,
+      .block--actions
+        grid-column: 2
+        @media(max-width: 768px)
+          grid-column: 1
+  &.block_image_text-ratio
+    .block--image
+      img, video
+        aspect-ratio: 1 / 1
+        height: auto
+  &.block_image_text-ratio-portrait
+    .block--image
+      img, video
+        aspect-ratio: 3 / 4
+        height: auto
+  &.block_image_text-ratio-landscape
+    .block--image
+      img, video
+        aspect-ratio: 3 / 2
+        height: auto
+
+  &.block_image_text-wide
+    @media(max-width: 768px)
+      .block--wrapper
+        padding: var(--g-container) 0
+    .block--image
+      img, video
+        margin-right: calc( var(--g-container) / -1)
+        width: calc(100% + var(--g-container))
+        @media(max-width: 768px)
+          width: 100%
+          margin: 0
+    &.block_image_text-reversed
+      .block--image
+        img, video
+          margin-right: 0
+          margin-left: calc( var(--g-container) / -1)
+          @media(max-width: 768px)
+            width: 100%
+            margin: 0
+  &.block_image_text-bg
+    .block--head,
+    .block--content,
+    .block--actions
+      background-color: var(--c-surface-subdued)
+
+  &.block_image_text-wrapper_bg
+    .block--wrapper
+      background-color: var(--c-surface-subdued)
+    &.block_image_text-wide
+      .block--wrapper
+        padding-top: 0
+        padding-bottom: 0
+  &.block_image_text-no_media
+    .block--wrapper
+      grid-template-rows: auto
+      @media(max-width: 768px)
+        padding: var(--g-container)
+    .block--head
+      padding-top: 0
+    .block--actions
+      padding-bottom: 0

@@ -1,0 +1,126 @@
+.footer
+  padding: clamp(64px, calc(64px + (80 - 64) * ((100vw - 1024px) / (1920 - 1024))), 80px) var(--g-container)
+  background-color: var( --c-bck-dark-blue)
+  color: var(--c-text-primary)
+  display: flex
+  flex-direction: column
+  gap: var(--g-32)
+.footer--row
+  display: grid
+  grid-template-columns: 1fr
+  gap: 24px
+  padding-bottom: var(--g-container)
+  @media(min-width: 992px)
+    grid-template-columns: 4fr 8fr
+
+  &-bottom
+    padding: var(--g-section-inner) 0
+    border-top: 1px solid #F0F0F0
+
+.footer--col
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .contacts
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 20px
+    @media(max-width: 520px)
+      grid-template-columns: 1fr
+
+
+.footer--col-links
+  display: grid
+  gap: 20px
+  grid-template-columns: 1fr
+  order: -1
+  @media(min-width: 768px)
+    order: unset
+    grid-template-columns: 3fr 1fr
+
+.footer--links
+  display: flex
+  gap: 20px 40px
+  flex-wrap: wrap
+  a
+    white-space: nowrap
+    &:hover
+      color: var(--c-text-accent-hovered)
+
+.developer
+  grid-column: 1
+  white-space: nowrap
+  display: inline-flex
+  a
+    margin-left: 8px
+    &:hover
+      color: var(--c-text-accent-hovered)
+  @media(min-width: 768px)
+    grid-column: 2
+
+.copyright
+  color: var(--c-text-disabled)
+
+.contacts--list
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+.contact
+  display: flex
+  flex-wrap: wrap
+  gap: 8px 20px
+.contact--title
+  color: var(--c-text-disabled, #AAADB1)
+  font-size: 14px
+  font-weight: 300
+  line-height: 1.42
+  letter-spacing: 0.28px
+  text-transform: uppercase
+  width: 100%
+.contact--value
+  display: flex
+  gap: 16px
+  flex-wrap: wrap
+  width: fit-content
+  padding: 6px
+  background-color: #093282
+  border-radius: var(--border-corner-button)
+  [class^="icon-"], [class*=" icon-"]
+    font-size: 32px
+  a
+    &:hover
+      color: var(--c-text-accent-hovered)
+
+.footer
+  .content_subscription
+    @media(min-width: 992px)
+      &:last-child
+        margin: auto 0 0
+    fieldset
+      flex-direction: row
+      flex-wrap: wrap
+      gap: 0
+      border-bottom: 1px solid #e8e8e8
+      p
+        width: 100%
+    .form--input span,
+    .form--title,
+    .form--policy
+      display: none
+    .form--input
+      flex-basis: calc(100% - 56px)
+      width: calc(100% - 56px)
+      max-width: calc(100% - 56px)
+      margin: 20px 0 0
+      border: none
+      input
+        max-width: 100%
+    .form--button
+      margin: 20px 0 0
+      .button
+        background: transparent
+        border: transparent
+        color: var(--c-text-default)
+

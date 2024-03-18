@@ -1,0 +1,65 @@
+.block_list
+  .block--head
+    align-items: center
+    text-align: center
+  .block--elements
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 24px
+    place-items: stretch
+    @media(max-width: 992px)
+      grid-template-columns: repeat(3, 1fr)
+      gap: 8px
+    @media(max-width: 640px)
+      grid-template-columns: repeat(2, 1fr)
+    .block--pagination
+      grid-column: span 4
+      @media(max-width: 992px)
+        grid-column: span 3
+      @media(max-width: 640px)
+        grid-column: span 2
+    @media(max-width: 768px)
+      display: flex
+      flex-direction: column
+      .card
+        width: 100%
+      .block--pagination
+        grid-column: span 1
+
+  &.block_list-slider
+    position: relative
+    overflow: hidden
+    .block--elements
+      display: block
+      position: relative
+
+.block_list-slider
+  .slider_controls
+    display: none
+    @media(min-width: 520px)
+      position: absolute
+      width: 100%
+      left: 0
+      right: 0
+      transform: translateY(-50%)
+      top: 50%
+      display: flex
+      justify-content: space-between
+      pointer-events: none
+      z-index: 2
+    .swiper-button-prev,
+    .swiper-button-next
+      border: 1px solid var(--border-subdued, #ECEDEE)
+      background-color: var(--c-surface-default)
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 0 6px  rgba(0, 0, 0, 0.02)
+      &:hover,
+      &:focus
+        border-color: rgba(20, 26, 37, 1)
+      &.swiper-button-disabled
+        opacity: 0
+    .swiper-button-next
+      transform: translateX(50%)
+
+    .swiper-button-prev
+      transform: translateX(-50%)
+

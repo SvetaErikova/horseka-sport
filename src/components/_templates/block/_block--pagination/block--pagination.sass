@@ -1,0 +1,19 @@
+.block--pagination
+  display: flex
+  justify-content: center
+  position: relative
+  margin-top: var(--g-section-inner)
+  &:after
+    content: ""
+    width: 100%
+    height: 1px
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    background-color: var(--c-border-subdued)
+  .button
+    background-color: #fff
+  @media(max-width: 768px)
+    grid-column: span 1
+

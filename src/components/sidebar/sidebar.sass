@@ -1,0 +1,54 @@
+.sidebar
+  height: 100%
+  padding-top: var(--g-80)
+  min-height: 100%
+  align-self: stretch
+  flex-shrink: 0
+  flex-grow: 0
+  @media(max-width: 992px)
+    position: sticky
+    top: 0
+    background-color: var(--c-surface-default)
+    max-width: 100vw
+    margin: 0 calc(var(--g-container) * -1)
+  .sidebar--sticky
+    position: sticky
+    top: var(--headerHeight, 137px)
+    @media(max-width: 992px)
+      max-width: 100vw
+      overflow-x: auto
+      padding: 0 0 12px
+      position: static
+
+.sidebar_navigation
+  padding: 0 var(--g-content) 0 var(--g-24)
+  display: flex
+  gap: 24px
+  @media(min-width: 992px)
+    gap: 16px
+    flex-direction: column
+  a
+    color: var(--c-text-disabled)
+    position: relative
+    @media(max-width: 992px)
+      white-space: nowrap
+    &:before
+      content: ""
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateX(-24px) translateY(-50%) rotate(45deg)
+      width: 8px
+      height: 8px
+      display: block
+      background-color: currentColor
+      opacity: 0
+      @media(max-width: 992px)
+        transform: translateX(-16px) translateY(-50%) rotate(45deg)
+    &:hover
+      color: var(--c-text-default)
+    &.is_active
+      color: var(--c-text-default)
+      &:before
+        opacity: 1
+

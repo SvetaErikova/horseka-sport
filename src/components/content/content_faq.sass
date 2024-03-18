@@ -1,0 +1,26 @@
+
+.content_faq
+  .block--wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 20px
+    @media(max-width: 768px)
+      grid-template-columns: 1fr
+      grid-gap: 8px
+    .block--head
+      grid-column: 1
+    .block--elements,
+    .block--actions
+      grid-column: 2
+      @media(max-width: 768px)
+        grid-column: 1
+    .block--actions
+      padding: 0
+      grid-row: 2
+    .block--actions:empty
+      display: none
+    .block--elements
+      margin-top: 0
+      width: 100%
+      grid-template-columns: 1fr
+      gap: 0

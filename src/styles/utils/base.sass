@@ -1,0 +1,71 @@
+img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center
+
+a[href], button, .button
+  cursor: pointer
+  text-decoration-skip-ink: none
+  transition: 0.18s ease-out
+
+.disabled, [disabled]
+  opacity: 0.2
+  cursor: default
+  pointer-events: none
+
+.hidden
+  display: none
+
+
+.ux_col
+  padding: 180px
+  display: flex
+  flex-direction: column
+  gap: 24px
+
+
+.ui_grid_head
+  margin: 24px auto
+.ui_grid_buttons
+  max-width: 1440px
+  margin: 24px auto
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  place-items: center
+  gap: 24px
+  padding: 24px
+  &_title
+    grid-column: span 3
+    margin: 48px 24px 24px
+  .theme-dark
+    padding: 24px
+    background-color: black
+
+//*
+  outline: indianred 1px solid
+  outline-offset: -1px
+
+//body
+  position: relative
+  --column: calc((100% - 11 * 24px) / 12)
+  &:after
+    pointer-events: none
+    content: ""
+    width: calc(100% - var(--g-container) * 2)
+    height: 100vh
+    position: fixed
+    display: block
+    top: 0
+    left: var(--g-container)
+    right: var(--g-container)
+    z-index: 100
+    opacity: 0.1
+    background-image: repeating-linear-gradient(90deg, indianred, indianred var(--column), transparent var(--column), transparent calc(var(--column) + 24px))
+
+html
+  scroll-behavior: smooth
+body
+  max-width: 1920px
+  margin: 0 auto
+

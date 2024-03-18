@@ -1,0 +1,231 @@
+/* Common styles for button */
+.button
+  position: relative
+  display: flex
+  align-items: center
+  width: fit-content
+  gap: 4px
+  flex-shrink: 0
+
+  font-size: var(--fs-18)
+  line-height: 1.55
+  font-weight: 400
+  letter-spacing: -0.02em
+
+  border: 1px solid transparent
+
+  cursor: pointer
+  z-index: 1
+  overflow: hidden
+  transition: var(--transition)
+
+  span
+    color: inherit
+    line-height: inherit
+    text-align: center
+    z-index: 2
+    font-weight: 400
+    white-space: nowrap
+    letter-spacing: -2%
+  span:not([class]),
+  span:not([class])
+    padding: 0 4px
+  span[class^="icon-"],
+  span[class*=" icon-"],
+  svg[class^="icon"]
+    color: inherit
+    width: 1.33em
+    height: 1.33em
+    line-height: 1
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+
+/* Button appearance */
+
+.button.button-filled
+  background: var(--filled-bgc-base)
+  border-color: var(--filled-bc-base)
+  color: var(--filled-c-base)
+  border-radius: var(--border-corner-button)
+  justify-content: center
+  padding: 10px 22px
+
+  &:hover,
+  &:focus,
+  &:active
+    //background: var(--filled-bgc-hover)
+    border-color: var(--filled-bc-hover)
+    color: var(--filled-c-hover)
+    &:after
+      background: var(--filled-bgc-hover)
+    .icon-spec-btn
+      color: var( --filled-c-icon-hover)
+      &:before
+        background-color: var(--filled-bgc-icon-hover)
+
+
+.button.button-outlined
+  background-color: transparent
+  border-color: var(--outlined-bc-base)
+  color: var(--outlined-c-base)
+  border-radius: var(--border-corner-button)
+  align-items: center
+  justify-content: center
+  padding: 10px 22px
+  &:hover,
+  &:focus,
+  &:active
+    border-color: var(--outlined-bc-hover)
+    color: var(--outlined-c-hover)
+    //background-color: var(--outlined-bgc-hover)
+    &:after
+      background-color: var(--outlined-bgc-hover)
+    .icon-spec-btn
+      color: var( --outlined-c-icon-hover)
+      &:after
+        background-color: var(--outlined-bgc-icon-hover)
+
+.button.button-link
+  justify-content: flex-start
+  background: transparent
+  border-color: transparent
+  color: var(--link-c-base)
+  &:visited
+    opacity: 0.8
+  &:hover,
+  &:focus,
+  &:active
+    color: var(--link-c-hover)
+
+
+
+
+
+/* Button  colors  */
+
+.button.button-accent
+  --filled-bgc-base: #FC563B
+  --filled-bc-base: #FC563B
+  --filled-c-base: #fff
+  --filled-bgc-hover: #F63719
+  --filled-bc-hover: #F63719
+  --filled-c-hover: #fff
+
+  --outlined-bc-base: #FC563B
+  --outlined-c-base: #000
+  --outlined-bgc-hover: #FC563B
+  --outlined-c-hover: #fff
+
+  --link-c-base: #093282
+  --link-c-hover: rgba(9, 50, 130, 0.6)
+
+.button.button-primary
+  --filled-bgc-base: #F2F5FA
+  --filled-bc-base: #F2F5FA
+  --filled-c-base: #093282
+  --filled-bgc-hover: #093282
+  --filled-bc-hover: #093282
+  --filled-c-hover: #fff
+
+  --outlined-bc-base: #111820
+  --outlined-c-base: #111820
+  --outlined-bgc-hover: #093282
+  --outlined-c-hover: #fff
+
+  --link-c-base: #093282
+  --link-c-hover: #111820
+
+.button.button-secondary
+  --filled-bgc-base: #F2F5FA
+  --filled-bc-base: #F2F5FA
+  --filled-c-base: #111820
+  --filled-bgc-hover: #E0E7F3
+  --filled-bc-hover: #E0E7F3
+  --filled-c-hover: rgba(20, 26, 37, 1)
+
+  --outlined-bc-base: rgba(17, 24, 32, 0.4)
+  --outlined-c-base: #111820
+  --outlined-bc-hover: #E0E7F3
+  --outlined-bgc-hover: #E0E7F3
+  --outlined-c-hover: #111820
+
+  --link-c-base: #111820
+  --link-c-hover:  rgba(17, 24, 32, 0.6)
+
+.button.button-special
+  --filled-bgc-base: #FC563B
+  --filled-bc-base: #FC563B
+  --filled-c-base: #fff
+  --filled-bgc-hover: #FC563B
+  --filled-bc-hover: #FC563B
+  --filled-c-hover: #fff
+  --filled-c-icon-hover: #FC563B
+  --filled-bgc-icon-hover: #fff
+
+  --outlined-bc-base: #111820
+  --outlined-c-base: #111820
+  --outlined-bgc-hover: transparent
+  --outlined-c-hover: #111820
+  --outlined-c-icon-hover: #fff
+  --outlined-bgc-icon-hover: #093282
+
+.button.button-special
+  padding: 16px 24px
+  gap: 12px
+  .icon-spec-btn
+    margin-left: 24px
+    position: relative
+    &:before
+      position: relative
+      transition: var(--transition)
+      left: -12px
+      z-index: 2
+    &:after
+      content: ''
+      border-radius: 50px
+      width: 0
+      height: auto
+      aspect-ratio: 1/1
+      position: absolute
+      translate: -50% -50%
+      top: 50%
+      left: 50%
+      transition: var(--transition)
+      background-color: #fff
+  &:hover,
+  &:focus,
+  &:active
+    .icon-spec-btn
+      &:before
+       //color: #FC563B
+       left: 0
+      &:after
+       width: 200%
+
+
+
+.button.button-filled:not(.button-special),
+.button.button-outlined:not(.button-special)
+  &:after
+    content: ''
+    position: absolute
+    width: 100%
+    height: auto
+    aspect-ratio: 1/1
+    pointer-events: none
+    z-index: 1
+    border-radius: 50px
+    //background-color: red
+    translate: -50% -50%
+    left: 50%
+    top: 100%
+    transition: 0.3s linear
+    width: 0
+  &:hover,
+  &:focus,
+  &:active
+    &:after
+      width: 150%

@@ -1,0 +1,94 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Разводящая - номера"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/accomodation_bg.jpg")
+        +block--head("","Размещение")
+  section.block.block_detail.content_accommodation
+    .accommodation_content.is_cascade
+      h2.f-h2 Фотогаллерея
+      .is_cascade--slider
+        .gallery.js-gallerySwiper
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+      .accommodation_content--advantages
+        .accommodation_content--advantages_item(data-openpopup="popup_cascade")
+          span.icon
+            <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3314 2.2H4.20001V21.8H19.8V7.66863L14.3314 2.2ZM13.8 3.93137L18.0686 8.2H13.8V3.93137ZM5.80001 20.2V3.8H12.2V9.8H18.2V20.2H5.80001Z" fill="black"/>
+            </svg>
+          span Правила проживания
+          span.icon.icon-ic-lg-view
+        .accommodation_content--advantages_item(data-openpopup="popup_cascade")
+          span.icon
+            <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3314 2.2H4.20001V21.8H19.8V7.66863L14.3314 2.2ZM13.8 3.93137L18.0686 8.2H13.8V3.93137ZM5.80001 20.2V3.8H12.2V9.8H18.2V20.2H5.80001Z" fill="black"/>
+            </svg>
+          span Правила проживания
+          span.icon.icon-ic-lg-view
+        .accommodation_content--advantages_item(data-openpopup="popup_cascade")
+          span.icon
+            <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3314 2.2H4.20001V21.8H19.8V7.66863L14.3314 2.2ZM13.8 3.93137L18.0686 8.2H13.8V3.93137ZM5.80001 20.2V3.8H12.2V9.8H18.2V20.2H5.80001Z" fill="black"/>
+            </svg>
+          span Правила проживания
+          span.icon.icon-ic-lg-view
+      p Дизайн виллы вдохновлен мечтами о южном солнце, в основе его концепции — оммаж древнему искусству виноделия. Природные материалы отделки и натуральные оттенки в интерьере от шоколадного до золотисто-песочного разбавлены сочными винными акцентами марсала, бургунди и виндзор вайн. Глубокая и насыщенная палитра, необычные сочетания фактур, предметов мебели, тканей и декора создают настроение невычурной роскоши.
+      p Система «Умный дом» и круглосуточная служба батлеров позаботятся о том, чтобы об отдыхе остались только приятные воспоминания.
+      section.block.block_list
+        .block--wrapper
+          .block--head
+            .block--head_title
+              h2.f-h2 Включено в проживание
+          .block--elements
+            +card--popup
+      .is_cascade--accordion
+        +accordion-list("Культура, впечатления и развлечения для взрослых и детей","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+      section.block.block_list
+        .block--wrapper
+          .block--head
+            .block--head_title
+              h2.f-h2 Программы оздоровления входящие в стоимость проживания
+          .block--elements
+            +card--link
+            +card--popup
+            +card--popup
+            +card--popup
+    .accommodation_sidebar
+      .accommodation_sidebar--sticky
+        .accommodation_sidebar--about
+          h2.f-h2 О Вилле
+          .accommodation_sidebar--about_info
+            span Цена
+            span от 320 000 р/сутки
+          .accommodation_sidebar--about_info
+            span Площадь
+            span 300 м2
+          .accommodation_sidebar--about_info
+            span Вместимость
+            span До 8 человек (до 4‑х детей младше 3‑х лет включительно)
+          .accommodation_sidebar--about_info
+            span Тип питания
+            span Завтраки или полный пансион
+          .accommodation_sidebar--about_info
+            span Вид из окна
+            span Море и горы
+        .accommodation_sidebar--booking
+          include ../components/booking/booking
+
+
+

@@ -1,0 +1,62 @@
+
+.is_dropdown
+  position: relative
+  overflow: visible
+  cursor: pointer
+  &.hidden
+    display: none
+  .icon-SelectDown
+    transform: scaleY(1)
+    transform-origin: center
+    transition: 0.18s ease-in-out
+    color: var(--accent)
+  @media(min-width: 1024px)
+    &:hover,
+    &:focus
+      .icon-SelectDown
+        transform: scaleY(-1)
+      .is_dropdown--wrapper
+        opacity: 1
+        pointer-events: all
+        transform: translateY(0)
+  &.is_open
+    .icon-SelectDown
+      transform: scaleY(-1)
+    .is_dropdown--wrapper
+      opacity: 1
+      pointer-events: all
+      transform: translateY(0)
+      z-index: 1
+      @media(max-width: 992px)
+        position: fixed
+        bottom: 52px
+        width: 100vw
+        right: 0
+        left: 0
+        top: unset
+
+.is_dropdown--wrapper
+  opacity: 0
+  pointer-events: none
+  transition: opacity 0.13s linear, transform 0.18s linear
+  position: absolute
+  right: 0
+  top: 100%
+  width: fit-content
+  min-width: 100%
+  padding-top: 24px
+  @media(min-width: 992px)
+    transform: translateY(-48px)
+
+.is_dropdown--content
+  background-color: var(--c-surface-default)
+  color: var(--c-text-default)
+  padding: 20px
+  border: 1px solid var(--others-divider, #E0E1E3)
+  --hover-color: var(--c-text-disabled)
+  //@media(max-width: 992px)
+  //  display: none
+  @media(min-width: 992px)
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.10)
+  .nav--item span
+    padding: 4px 0

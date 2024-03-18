@@ -1,0 +1,50 @@
+.nav
+  display: flex
+  align-items: center
+  gap: var(--g-elements)
+
+.footer--col
+  .nav
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: var(--g-content) 24px
+    align-items: flex-start
+    @media(min-width: 768px)
+      grid-template-columns: repeat(4, 1fr)
+  .nav--item
+    &:hover
+      color: var(--c-text-disabled)
+
+.nav--list
+  list-style: none
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+.nav--list_title
+  color: var(--c-text-disabled, #AAADB1)
+  font-size: 14px
+  font-weight: 300
+  line-height: 1.42
+  letter-spacing: 0.28px
+  text-transform: uppercase
+  margin-bottom: 4px
+
+.nav--item
+  letter-spacing: -0.36px
+  font-size: var(--fs-18)
+  display: flex
+  align-items: center
+  gap: 8px
+  font-weight: 400
+  transition: var(--transition)
+  &.is_dropdown
+    width: 42px
+    order: 1
+
+a,
+button
+  &.nav--item
+    &:hover
+      span
+        color: var(--hover-color)

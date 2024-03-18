@@ -1,0 +1,269 @@
+extends ../../layouts/main
+
+block variables
+  - var title = "Списки"
+  - var pageClass = ''
+  - var activePage = ''
+
+block content
+  section.block.block_list
+    .block--wrapper
+      +block--head("subtitle","Базовые карточки грид","Все остальные карточки и карточки которым не прописан тип контента")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--link
+        +card--popup
+        +card--simple
+        +card--link
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+
+  section.block.block_list.block_list-slider
+    .block--wrapper
+      +block--head("subtitle","Базовые карточки слайдер","Все остальные карточки и карточки которым не прописан тип контента")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--link
+        +card--popup
+        +card--simple
+        +card--link
+        +card--popup
+
+  section.block.block_list.ac-bock_list-columns-2.content_gallery
+    .block--wrapper
+      +block--head("subtitle","Карточки ссылка на разделы","content_gallery content_news content_blog")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--link-sections
+        +card--link-sections
+        +card--link-sections
+        +card--link-sections
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+
+  section.block.block_list.block_list-slider.content_gallery
+    .block--wrapper
+      +block--head("subtitle","Карточки ссылка на разделы","content_gallery content_news content_blog")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--link-sections
+        +card--link-sections
+        +card--link-sections
+        +card--link-sections
+        +card--link-sections
+
+  <!-- Карточки спецпредложений -->
+  section.block.block_list.content_offers
+    .block--wrapper
+      +block--head("Специально для вас","Спецпредложение грид","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo harum hic quam suscipit vel? Dignissimos, explicabo harum hic quam suscipit vel? Dignissimos, explicabo harum hic quam suscipit vel? Dignissimos, explicabo harum hic quam suscipit vel?")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+        .card
+          .card--content
+            .card--title
+              h3 Бронирование вилл с выгодой 40%
+            .card--label До завершения  01 : 12 : 30
+            .card--text
+              p Включена оздоровительная программа от Института Активного Долголетия
+            .card--actions
+              a.card--action(href="")
+                span.icon-ic-lg-link
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+
+  section.block.block_list.block_list-slider.content_offers
+    .block--wrapper
+      +block--head("subtitle","Спецпредложение слайдер","caption")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+
+  <!--  -->
+  section.block.block_list.content_events
+    .block--wrapper
+      +block--head("Специально для вас","События грид","caption")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        a.card(href="")
+          .card--date
+            strong 21
+            span июн
+          .card--image
+            <!-- Класс проставляется автоматически -->
+            img(src="/assets/img/offer.jpg" alt="")
+            img(src="/assets/img/event.jpg" alt="")
+            img(src="/assets/img/offer.jpg" alt="")
+          .card--content
+            .card--title
+              h3 День рождения парка “Дримвуд”
+              .card--action
+                span.icon
+            .card--text
+              .card--text_item
+                span Время
+                span 11 июня 18:00
+        +card--events
+        a.card(href="")
+          .card--date
+            strong 21
+            span июн
+          .card--image
+            <!-- Класс проставляется автоматически -->
+            img(src="/assets/img/offer.jpg" alt="")
+            img(src="/assets/img/event.jpg" alt="")
+            img(src="/assets/img/offer.jpg" alt="")
+          .card--content
+            .card--title
+              h3 День рождения парка “Дримвуд” - сказочные 5 лет!
+              .card--action
+                span.icon
+            .card--text
+              .card--text_item
+                span Время
+                span 11 июня 18:00
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+
+  section.block.block_list.block_list-slider.content_events
+    .block--wrapper
+      +block--head("subtitle","События слайдер","caption")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        a.card(href="")
+          .card--date
+            strong 21
+            span июн
+          .card--image
+            <!-- Класс проставляется автоматически -->
+            img(src="/assets/img/offer.jpg" alt="")
+            img(src="/assets/img/event.jpg" alt="")
+            img(src="/assets/img/offer.jpg" alt="")
+          .card--content
+            .card--title
+              h3 День рождения парка “Дримвуд” - сказочные 5 лет!
+              .card--action
+                span.icon
+            .card--text
+              .card--text_item
+                span Время
+                span 11 июня 18:00
+        +card--events
+        +card--events
+        +card--events
+
+  section.block.block_list.content_accommodation
+    .block--wrapper
+      +block--head("костыль","Карточки номеров грид","")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--link
+        +card--link
+        +card--link
+        +card--link
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+
+  section.block.block_list.block_list-slider.content_accommodation
+    .block--wrapper
+      +block--head("костыль","Карточки номеров слайдер","")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        +card--link
+        +card--link
+        +card--link
+        +card--link
+        +card--link
+
+
+  section.block.block_list.content_reviews
+    .block--wrapper
+      +block--head("блок","Карточки отзывов грид","видео или картинка")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        .card
+          .review_author
+            .review_author--image
+              img(src="/assets/img/review.png")
+            .review_author--name efra_morrison
+          .card--image
+            video(poster="/assets/img/review_1.png" src="/assets/video/@lepragram.mp4" loop muted playsinline)
+          .card--content
+            .card--text Как можно понять по нашим лицам на этих фото-Мы в полном восторге от пребывания в @mriya_resort @mriya.winepark
+        +card--review
+        +card--review
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+
+  section.block.block_list.block_list-slider.content_reviews
+    .block--wrapper
+      +block--head("отзывы","Карточки отзывов слайдер","видео или картинка")
+      .block--sections
+        a.is_active(href="" data-section_id="") Все
+        a(href="" data-section_id="") Номера
+        a(href="" data-section_id="") Рестораны и бары
+        a(href="" data-section_id="") Spa и бассейны
+      .block--elements
+        .card(data-openpopup="popup_cascade")
+          .review_author
+            .review_author--image
+              img(src="/assets/img/review.png")
+            .review_author--name efra_morrison
+          .card--image
+            video(poster="/assets/img/review_1.png" src="/assets/video/@lepragram.mp4" loop muted playsinline)
+            .card--action
+              span.icon
+          .card--content
+            .card--text Как можно понять по нашим лицам на этих фото-Мы в полном восторге от пребывания в @mriya_resort @mriya.winepark
+        +card--review
+        +card--review
+        +card--review
+        +card--review

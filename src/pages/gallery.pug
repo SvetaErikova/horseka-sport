@@ -1,0 +1,44 @@
+extends ../layouts/breadcrumbs
+
+block variables
+  - var title = "Галерея детальная"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head_h1("subtitle","Галерея","head caption")
+      .block--content
+        .gallery
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head("subtitle","Галерея","head caption")
+      .block--content
+        .gallery.js-gallerySwiper
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")

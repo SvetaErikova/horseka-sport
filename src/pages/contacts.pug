@@ -1,0 +1,129 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Разводящая - номера"
+  - var pageClass = 'page-parent page-contacts'
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.block_banner-hero.ac-banner-short
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/accomodation_bg.jpg")
+        +block--head("","Контакты")
+  .block_html_code.block_page.block_page-sidebar
+    .sidebar
+      .sidebar--sticky
+        .sidebar_navigation
+          a(href="#resort") Курорт
+          a(href="#departments") Отделы
+          a(href="#for_guests") Гостям
+          a(href="#route") Как добраться
+          a(href="#contact_us") Обратная связь
+          a(href="#map") Карта
+    .is_cascade
+      h2
+        a(name="resort")
+        | Курорт
+      .contact
+        .contact--title Адрес
+        .contact--value Республика Крым, Ялта, село Оползневое, улица Генерала Острякова 9
+      .contact
+        .contact--title Почтовый индекс
+        .contact--value 298688, Россия
+      .contact
+        .contact--title Телефоны для связи
+        .contact--value
+          a(href="") 8 499 110-79-64
+        .contact--value
+          a(href="") 8 499 490-01-87
+      .contact
+        .contact--title Вопросы и предложения
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Руководство комплекса
+        .contact--value
+          a(href="") ceo@mriyaresort.com
+      h2
+        a(name="departments")
+        | Отделы
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      h2
+        a(name="for_guests")
+        |Гостям
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      .contact
+        .contact--title Отдел продаж
+        .contact--value
+          a(href="") 8 999 999-99-99
+        .contact--value
+          a(href="") info@mriyaresort.com
+      h2
+        a(name="route")
+        |Как добраться
+      .is_cascade--accordion
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+      h2
+        a(name="contact_us")
+        |Обратная связь
+      include ../components/form/form
+
+
+  section.block.block_html_code.content_map
+    a(name="map")
+    //<script src="https://mapgl.2gis.com/api/js/v1"></script>
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <script type="text/javascript" src="https://maps.api.2gis.ru/2.0/js/?pkg=full&amp;version=v3.7.3"></script>
+    #map
+

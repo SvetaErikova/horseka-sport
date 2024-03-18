@@ -1,0 +1,114 @@
+.booking
+  display: flex
+  justify-content: center
+  border-radius: var(--border-corner-button)
+  position: relative
+  color: var(--c-text-primary)
+  width: 50vw
+  @media(max-width: 992px)
+    flex-direction: column
+    align-items: stretch
+    width: 100%
+    margin: 0 auto
+  &--wrapper
+    background: rgba(15, 17, 21, 0.35)
+    backdrop-filter: blur(20px)
+    display: flex
+    justify-content: center
+    @media(max-width: 992px)
+      //background: var(--c-surface-dark-secondary)
+  input
+    border: none
+    outline: none
+    background-color: transparent
+    color: var(--c-text-primary)
+    width: 142px
+    text-align: center
+    font-size: 22px
+    @media(max-width: 992px)
+      width: 100px
+      font-size: 16px
+  input[type="number"]
+    -webkit-appearance: textarea
+    -moz-appearance: textfield
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+  &--calendar
+    display: flex
+    align-items: center
+    gap: 8px
+    position: relative
+    flex-shrink: 0
+    flex-grow: 0
+    border-right: 1px solid  rgba(255,255,255,0.15)
+    @media(max-width: 992px)
+      justify-content: center
+    &-item
+      min-height: 100%
+      cursor: pointer
+      display: flex
+      flex-direction: column
+      text-align: center
+      align-items: center
+      justify-content: flex-start
+      border-radius: var(--border-corner-button)
+      font-weight: 400
+      padding: var(--fs-24) 8px
+      span
+        font-size: var(--fs-16)
+        opacity: 0.6
+        @media(max-width: 992px)
+          font-size: 14px
+    &-separator
+      width: 32px
+      height: 1px
+      background-color: rgba(255,255,255,0.3)
+      margin: 0 -8px
+      @media(max-width: 992px)
+        width: 24px
+  .booking--button
+    padding: var(--fs-24)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    gap: 4px
+    cursor: pointer
+    span
+      opacity: 0.6
+      font-size: var(--fs-16)
+      white-space: nowrap
+      @media(max-width: 992px)
+        font-size: 14px
+    .icon-ic24-search
+      font-size: 24px
+      opacity: 1
+      @media(max-width: 992px)
+        font-size: 16px
+
+
+
+.block_banner-hero ~ .booking
+  z-index: 12
+  transform: translateY(-100%)
+  position: absolute
+  @media(min-width: 1024px)
+    top: 100vh
+    left: 50%
+    margin: 0 auto
+    & > *
+      z-index: 1
+  @media(max-width: 1023px)
+    top: 60vh
+
+.block_banner-hero.ac-banner-short ~ .booking
+  @media(min-width: 1024px)
+    top: 70vh
+
+.accommodation_sidebar--sticky
+  .booking
+    max-width: 730px
+    margin: 0 auto
+

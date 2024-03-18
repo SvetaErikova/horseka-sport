@@ -1,0 +1,237 @@
+//.content_accommodation
+
+.content_page_accommodation
+  .block--elements
+    flex-shrink: 0
+    flex-grow: 0
+    overflow: hidden
+    display: flex
+  .card-detail
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    flex-shrink: 0
+    flex-grow: 0
+    overflow: hidden
+    max-width: 100%
+    transition: 0.3s 0.1s linear
+
+    z-index: 1
+    &:not(.swiper-slide-active)
+      z-index: -1
+    @media(min-width: 768px)
+      padding-right: var(--g-container)
+    .card--action:hover
+      background-color: var(--c-text-accent-hovered)
+      span
+        transform: rotate(45deg)
+
+  .card--image
+    max-width: 868px
+    width: calc(66% + 24px)
+    aspect-ratio: 868 / 580
+    height: auto
+    position: relative
+    @media(max-width: 768px)
+      width: calc(86% + 24px)
+    .slider_controls
+      top: unset
+      bottom: 0
+      width: auto
+      left: 100%
+      z-index: 2
+      transform: unset
+      gap: 4px
+      .swiper--prev
+        &:after
+          content: "\e91d"
+      .swiper--next
+        &:after
+          content: "\e91e"
+      .swiper--prev,
+      .swiper--next
+        flex-shrink: 0
+        flex-grow: 0
+        background-color: var(--c-surface-default)
+        &:hover
+          border-color: rgba(20, 26, 37, 1)
+
+  .card--image_slide
+    transform-origin: left top
+    flex-shrink: 0
+    flex-grow: 0
+    padding-right: 8px
+    @media(min-width: 768px)
+      padding-right: 24px
+  .card--content
+    width: 66%
+    position: relative
+    z-index: 2
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 24px
+    @media(max-width: 768px)
+      grid-template-columns: 1fr
+      width: 100%
+      padding: 20px var(--g-container)
+  .card--title
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    position: absolute
+    bottom: 100%
+    left: 0
+    width: 100%
+    @media(max-width: 768px)
+      position: relative
+      bottom: unset
+    h3
+      background-color: var(--c-surface-default)
+      width: 50%
+      padding: var(--g-20) var(--g-24) var(--g-20) 0
+      font-family: 'SangBleuKingdom'
+      font-weight: 300
+      letter-spacing: -0.02em
+      line-height: 1.25
+      text-transform: uppercase
+      font-size: clamp(18px, calc(18px + (32 - 18) * ((100vw - 1024px) / (1920 - 1024))), 32px)
+      @media(max-width: 768px)
+        width: 100%
+    .card--action
+      font-size: clamp(18px, calc(18px + (32 - 18) * ((100vw - 1024px) / (1920 - 1024))), 32px)
+      position: absolute
+      left: 50%
+      bottom: unset
+      right: unset
+      aspect-ratio: 1 / 1
+      height: 100%
+      width: auto
+      background-color: var(--c-text-accent-default)
+      transition: var(--transition)
+      @media(max-width: 768px)
+        left: unset
+        position: relative
+        right: 0
+      span
+        transition: var(--transition)
+  .card--text
+    text-overflow: unset
+    overflow: visible
+    display: block
+    -webkit-line-clamp: unset
+    color: var(--c-text-subdued)
+    font-size: var(--fs-18)
+    line-height: 1.55
+    @media(min-width: 768px)
+      margin-top: var(--g-card-inner)
+  .card--advantages
+    ul
+      display: flex
+      flex-direction: column
+      padding-right: var(--g-card-inner)
+    li
+      padding: var(--g-elements)
+      display: flex
+      gap: var(--g-elements)
+      align-items: center
+      &:not(:last-child)
+        border-bottom: 1px solid var(--c-border-others)
+      span:first-child
+        width: 28px
+        height: 28px
+        font-size: 28px
+
+
+.block_detail.content_accommodation
+  display: flex
+  flex-direction: column
+  @media(min-width: 992px)
+    display: grid
+    grid-template-columns: 50% 50%
+
+.accommodation_content
+  padding: var(--g-section) var(--g-149) var(--g-section) var(--g-container)
+  display: block
+
+
+.accommodation_content--advantages
+  display: flex
+  flex-direction: column
+  &_item
+    padding: var(--g-20) 0
+    display: grid
+    grid-template-columns: 24px 1fr 24px
+    gap: 16px
+    place-items: start
+    border-bottom: 1px solid var(--c-border-others, #E0E1E3)
+    cursor: pointer
+    transition: var(--transition)
+    font-size: var(--fs-20)
+    font-weight: 400
+    .icon
+      width: 24px
+      height: 24px
+      display: flex
+      align-items: center
+      justify-content: center
+      font-size: 24px
+      svg
+        width: 24px
+        height: 24px
+    .icon-ic-lg-view
+      color: var(--c-text-disabled)
+      transition: var(--transition)
+    &:hover,
+    &:focus
+      .icon-ic-lg-view
+        color: var(--c-text-default)
+      border-color: var(--c-text-default)
+
+
+
+.accommodation_sidebar
+  height: 100%
+  @media(max-width: 992px)
+    order: -1
+  &--sticky
+    background: var(--c-surface-subdued, #FAFAFB)
+    display: flex
+    flex-direction: column
+    @media(min-width: 992px)
+      position: sticky
+      top: calc(var(--headerHeight) - 56px)
+      height: calc(100vh - var(--headerHeight) + 56px)
+
+
+.accommodation_sidebar--about
+  max-width: 100%
+  overflow-y: auto
+  margin: 0 auto
+  padding: var(--g-section) var(--g-container) 0
+  @media(min-width: 992px)
+    max-width: 730px
+  h1, h2
+    text-transform: uppercase
+    margin-top: var(--g-section-inner)
+    margin-bottom: var(--g-section-inner)
+  &_info
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 0 24px
+    padding: var(--g-20) 0
+    border-bottom: 1px solid rgba(21, 28, 42, 0.03)
+    @media(max-width: 992px)
+      grid-template-columns: 1fr
+      gap: 12px
+      &:last-child
+        padding-bottom: 0
+        border-bottom: none
+      span:first-child
+        text-transform: uppercase
+        font-size: 12px
+        letter-spacing: 0.24px
+
+.accommodation_sidebar--booking
+  margin-top: auto
+  background-color: var(--c-surface-dark-secondary)

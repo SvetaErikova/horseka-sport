@@ -1,0 +1,41 @@
+@font-face
+  font-family: 'Gilroy'
+  font-weight: 300
+  font-style: normal
+  src: url("../fonts/Gilroy/Gilroy-Light.otf") format('truetype')
+@font-face
+  font-family: 'Gilroy'
+  font-weight: 500
+  font-style: normal
+  src: url("../fonts/Gilroy/Gilroy-ExtraBold.otf") format('truetype')
+
+//@font-face
+//  font-family: 'InterVariable'
+//  font-weight: 300
+//  font-style: normal
+//  src: url("../fonts/SangBleuKingdom/SangBleuKingdom-Light-WebXL.otf") format('opentype')
+
+html
+  font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 1024px) / (1920 - 1024))), 18px)
+  line-height: 1.25
+  font-family: 'InterVariable', sans-serif
+  font-weight: 300
+  letter-spacing: -0.02em
+  color: var(--c-text-default,#141A25)
+  text-size-adjust: none
+  -webkit-text-size-adjust: none
+
+
+.f-h1
+
+  font-size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+  --size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+
+.f-h2
+  font-size: clamp(24px, calc(24px + (48 - 24) * ((100vw - 1024px) / (1920 - 1024))), 48px)
+  --size: clamp(24px, calc(24px + (48 - 24) * ((100vw - 1024px) / (1920 - 1024))), 48px)
+
+h1,h2,h3,h4,h5,h6
+  font-weight: 500
+  font-family: 'Gilroy'
+

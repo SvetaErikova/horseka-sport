@@ -1,0 +1,47 @@
+.form--input_file
+  border-bottom: 1px solid #E8E8E8
+  cursor: pointer
+  width: 100%
+  padding-bottom: 8px
+  padding-right: 32px
+  margin-top: 16px
+  p, span
+    font-size: 16px
+    font-weight: 400
+    line-height: 1.5
+    margin: 0
+    color: var(--c-text-subdued)
+    span
+      text-transform: none
+      color: var(--c-text-default)
+  .js-clearFile
+    display: none
+  &.loaded
+    border-color: var(--c-text-default)
+    position: relative
+    & ~ span
+      transform: scale(0.6)
+    .js-changeDescriptionText
+      position: relative
+      color: var(--c-text-default)
+      display: flex
+      text-overflow: ellipsis
+      overflow: hidden
+      max-width: 100%
+      &:before
+        font-family: 'icomoon' !important
+        content: "\e92b"
+        font-size: 20px
+        line-height: 24px
+        margin-right: 6px
+        vertical-align: middle
+    .js-clearFile
+      display: block
+      position: absolute
+      right: 8px
+      top: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.707 12.293C14.098 12.684 14.098 13.316 13.707 13.707C13.512 13.902 13.256 14 13 14C12.744 14 12.488 13.902 12.293 13.707L10 11.414L7.707 13.707C7.512 13.902 7.256 14 7 14C6.744 14 6.488 13.902 6.293 13.707C5.902 13.316 5.902 12.684 6.293 12.293L8.586 10L6.293 7.707C5.902 7.316 5.902 6.684 6.293 6.293C6.684 5.902 7.316 5.902 7.707 6.293L10 8.586L12.293 6.293C12.684 5.902 13.316 5.902 13.707 6.293C14.098 6.684 14.098 7.316 13.707 7.707L11.414 10L13.707 12.293ZM10 2C5.582 2 2 5.582 2 10C2 14.418 5.582 18 10 18C14.418 18 18 14.418 18 10C18 5.582 14.418 2 10 2Z' fill='%23010812' fill-opacity='0.35'/%3E%3C/svg%3E")
+      background-position: center
+      background-repeat: no-repeat
+      width: 24px
+      height: 24px

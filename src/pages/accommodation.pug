@@ -1,0 +1,95 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Разводящая - номера"
+  - var pageClass = 'page-parent page-accommodation'
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/accomodation_bg.jpg")
+        +block--head("","Размещение")
+  .block_html_code.block_page.block_page-sidebar
+    .sidebar
+      .sidebar--sticky
+        .sidebar_navigation
+          a(href="#rooms") Номера
+          a(href="#apartments") Апартаменты
+          a(href="#villas") Виллы
+          a(href="#villas_family") Винные виллы
+    div
+      a(name="rooms")
+      section.block.block_list.block_list-slider.content_page_accommodation
+        .block--wrapper
+          .block--head
+            .block--head_title
+              h2.f-h2 Номера
+          .block--elements
+            +card--accomodation("Делюкс")
+            a.card-detail(title='Коннект Делюкс' href="")
+              .card--image.swiper-no-swiping-block
+                img(src="/assets/img/room_2.jpg" alt="")
+                img(src="/assets/img/room_1.jpg" alt="")
+              .card--content
+                .card--title
+                  h3 Коннект Делюкс
+                  .card--action
+                    span.icon-ic-lg-link
+                .card--advantages
+                  ul
+                    li
+                      span.icon
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <circle cx="14" cy="11" r="6.2" stroke="#2E333D" stroke-width="1.6"/>
+                        <path d="M22 28V21H6V28" stroke="#2E333D" stroke-width="1.6"/>
+                        </svg>
+                      span до 3 гостей
+                    li
+                      span.icon-ic-map-beach
+                      span Вид на море/горы
+                    li
+                      span.icon
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M22 17.7657C22 22.3134 18.4183 26 14 26C9.58172 26 6 22.3134 6 17.7657C6 14.1805 8.22615 11.1304 11.3333 10" stroke="#2E333D" stroke-width="1.6"/>
+                        <path d="M26 25L22 17H13L11 7.5" stroke="#2E333D" stroke-width="1.6"/>
+                        <circle cx="11" cy="4" r="3.2" stroke="#2E333D" stroke-width="1.6"/>
+                        </svg>
+                      span Для людей с ограниченными возможностями
+                .card--text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, tempore!
+
+            +card--accomodation("Семейный люкс")
+            +card--accomodation("Королевский люкс")
+            +card--accomodation("Делюкс Прайм")
+            +card--accomodation("Коннект Делюкс Прайм")
+            +card--accomodation("Супериор Люкс ")
+            +card--accomodation("Пентхаус")
+      a(name="apartments")
+      section.block.block_list.block_list-slider.content_page_accommodation
+        .block--wrapper
+          .block--head
+            .block--head_title
+              h2.f-h2 Апартаменты
+          .block--elements
+            +card--accomodation("SPA-апартаменты")
+            +card--accomodation("Апартаменты «Имение Сёгуна» ")
+      a(name="villas")
+      section.block.block_list.block_list-slider.content_page_accommodation
+        .block--wrapper
+          .block--head
+            .block--head_title
+              h2.f-h2 Виллы
+          .block--elements
+            +card--accomodation("Президентские виллы")
+            +card--accomodation("Императорские виллы")
+      a(name="villas_family")
+      section.block.block_list.block_list-slider.content_page_accommodation
+        .block--wrapper
+          .block--head
+            .block--head_title
+              h2.f-h2 Винные виллы
+          .block--elements
+            +card--accomodation("Семейные винные виллы ")
+            +card--accomodation("Президентские винные виллы ")

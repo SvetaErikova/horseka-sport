@@ -1,0 +1,23 @@
+extends ../../layouts/main
+
+block variables
+  - var title = "Картинка-текст"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+  include ../../components/_templates/block/block_image_text/block_image_text
+  include ../../components/_templates/block/block_image_text/block_image_text_video
+  section.block.block_image_text.block_image_text-ratio
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/1.jpg" alt="")
+      +block--head("информация", "вопросы и ответы", "caption")
+      .block--content.is_cascade
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem illum nesciunt quasi qui sed tempora!
+        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Кaк добраться до отеля","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+        +accordion-list("Можно ли с домашними животными можно ли с домашними животными","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+      .block--actions
+        a(href="/").button.button-outlined.button-secondary
+          span Подробнее

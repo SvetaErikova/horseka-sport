@@ -1,0 +1,59 @@
+.block--head
+  display: flex
+  flex-direction: column
+  gap: var(--g-24)
+  padding-bottom: var(--g-24)
+  border-bottom: 1px solid var(--c-surface-dark)
+  @media(max-width: 1024px)
+    gap: 12px
+  &_subtitle
+    width: fit-content
+    color: var(--accent)
+    &:empty
+      display: none
+    p
+      font-size: 14px
+      font-weight: 300
+      line-height: 1.42
+      letter-spacing: 0.28px
+      text-transform: uppercase
+      @media(max-width: 1024px)
+        margin-bottom: 8px
+      &:empty
+        display: none
+  &_caption
+    max-width: 868px
+    &:empty
+      display: none
+    p
+      font-size: var(--fs-20)
+      font-weight: 300
+      line-height: 1.5
+      letter-spacing: -0.4px
+      &:empty
+        display: none
+  &_title
+    max-width: 1160px
+    h1, h2
+      line-height: 1.28
+      text-transform: uppercase
+    a
+      h1, h2
+        position: relative
+        display: inline
+        align-items: center
+        @media(min-width: 1024px)
+          display: inline-flex
+        &:after
+          content: "\e926"
+          font-family: 'icomoon' !important
+          display: inline-flex
+          align-items: center
+          font-size: var(--fs-24)
+          line-height: calc(var(--size) * 1.28)
+          height: calc(var(--size) * 1.28)
+          color: currentColor
+          margin-left: 0.5em
+      &:hover,
+      &:focus
+        color: var(--c-text-accent-default)

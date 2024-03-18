@@ -1,0 +1,50 @@
+.breadcrumbs
+  --main-color: #8C9196
+  --non-active-color: var(--c-text-dark)
+  --hover-color: #6D7175
+  padding: var(--g-24) var(--g-container)
+  display: flex
+  align-items: center
+  gap: 12px
+  width: 100%
+  margin: 0 auto
+  z-index: 45
+  list-style: none
+  @media(max-width: 768px)
+    flex-wrap: nowrap
+    width: 100vw
+    overflow-x: auto
+    padding: var(--g-24) var(--g-container)
+    margin: 0
+    justify-content: flex-start
+  a
+    transition: var(--transition)
+    position: relative
+    color: var(--main-color)
+    white-space: nowrap
+    font-size: 14px
+    &:after
+      content: ">"
+      margin-left: 12px
+    &:hover,
+    &:focus,
+    &:active
+      color: var(--hover-color)
+  li:last-child
+    a
+      pointer-events: none
+      color: var(--non-active-color)
+      &:after
+        display: none
+
+
+.header-transparent
+  & ~ .breadcrumbs
+    position: absolute
+    top: var(--headerHeight)
+    left: calc( ( 100vw - var(--container) )/ 2)
+    --main-color: rgba(250, 251, 251, 0.6)
+    --non-active-color: rgba(250, 251, 251, 1)
+    --hover-color: rgba(250, 251, 251, 1)
+    @media(max-width: 768px)
+      left: 0

@@ -1,0 +1,217 @@
+.page-article,
+.page-vacancy
+  .f-h1,
+  .f-h2
+    font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375))), 40px)
+    font-weight: 700
+
+.is_cascade
+  line-height: 1.5
+  font-size: var(--fs-20)
+  h1
+    line-height: 1.28
+    text-transform: uppercase
+    font-family: 'SangBleuKingdom'
+    font-weight: 300
+    letter-spacing: -0.02em
+    font-size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+    margin: var(--g-section-inner) 0 0
+  h2, h3
+    font-size: var(--fs-28)
+    font-weight: 700
+    margin: var(--g-section-inner) 0 0
+    letter-spacing: -0.02em
+    font-family: 'SangBleuKingdom'
+  h4
+    font-size: var(--fs-24)
+    font-weight: 700
+    margin: var(--g-section-inner) 0 0
+    letter-spacing: -0.02em
+    font-family: 'SangBleuKingdom'
+  h5, h6
+    font-size: var(--fs-20)
+    font-weight: 700
+    margin: var(--g-section-inner) 0 0
+    letter-spacing: -0.02em
+    font-family: 'SangBleuKingdom'
+  & > p
+    margin-top: var(--g-24)
+  & p > a:not(.button)
+    color: var(--c-text-accent-default)
+    margin: 0 0.5em
+    &:hover,
+    &:active
+      color: var(--c-text-accent-hovered)
+    &:visited
+      opacity: 0.8
+  strong, b
+    font-weight: 700
+  & ul, ol
+    margin: var(--g-24) 0
+    padding-left: 24px
+    li
+      &:not(:last-of-type)
+        margin-bottom: 8px
+  ul
+    list-style: none
+    & > li
+      position: relative
+      &:before
+        content: ""
+        display: block
+        width: 7px
+        height: 7px
+        position: absolute
+        top: 0.6em
+        left: calc(24px * -1 + 4px)
+        background-color: currentColor
+        transform: rotate(45deg)
+
+  figure
+    margin: var(--g-content) 0
+    img, iframe, video
+      margin-top: 0
+      margin-bottom: 0
+    img
+      aspect-ratio: initial
+      object-fit: contain
+      max-height: 720px
+      height: auto
+      width: 100%
+      margin-top: 0
+      margin-bottom: 0
+    figcaption
+      color: var(--c-text-disabled)
+      font-size: 16px
+      margin-top: 16px
+      @media(max-width: 768px)
+        padding: 0 var(--g-container)
+      &:empty
+        margin: 0
+  & > img,
+  & > video,
+  & > iframe,
+  & > object
+    margin: var(--g-32) 0
+  video, img, iframe, object
+    aspect-ratio: 870 / 472
+    width: 100%
+    height: auto
+    object-fit: cover
+    object-position: center
+    border-radius: 0
+    overflow: hidden
+    margin: var(--g-content) 0
+  .is_cascade--slider
+    overflow: hidden
+    margin: var(--g-content) 0
+    @media(max-width: 992px)
+      margin: var(--g-content) calc(var(--g-container) * -1)
+      width: 100vw
+    .js-gallerySwiper
+      .gallery--item
+        aspect-ratio: 870 / 472
+        @media(max-width: 560px)
+          aspect-ratio: 360 / 298
+    .swiper-button-next
+      right: var(--g-24)
+    .swiper-button-prev
+      left: unset
+      right: var(--g-24)
+      transform: translateX(calc((8px + 100%) * -1))
+    figure
+      margin: 0
+  blockquote
+    position: relative
+    margin: var(--g-content)
+    @media(min-width: 768px)
+      margin: var(--g-content) 0
+    p
+      font-size: var(--fs-24)
+      line-height: 1.5
+      font-weight: 400
+      &:before
+        content: "“"
+        position: absolute
+        left: -16px
+        top: 0
+    span
+      font-size: 16px
+      color: var(--c-text-subdued)
+      margin-top: 8px
+  .button_wrapper, .block--actions
+    display: flex
+    gap: 8px
+    margin: var(--g-32) 0
+  .is_cascade--accordion
+    margin: var(--g-content) 0
+  & p + .button,
+  & ul + .button
+    margin-top: var(--g-32)
+  .is_cascade--table
+    margin: var(--g-content) 0
+    @media(max-width: 768px)
+      max-width: 100vw
+      overflow-x: auto
+      margin: var(--g-content) calc(var(--g-container) * -1)
+      padding: 0 var(--g-container)
+      scroll-margin-block-end: var(--g-container)
+  table
+    border-collapse: collapse
+    width: 100%
+    border-radius: var(--border-corner)
+    thead, th
+      font-weight: 600
+      background-color: var(--c-surface-subdued)
+      text-align: left
+    td, th
+      border: 1px solid rgba(35, 35, 35, 0.08)
+      padding: 8px 16px
+
+  .block_list
+    margin: var(--g-container-vertical) 0
+    .block--sections
+      justify-content: flex-start
+      margin-top: 24px
+    .block--wrapper
+      padding: 0
+    .block--elements
+      grid-template-columns: 1fr 1fr
+      @media(max-width: 992px)
+        grid-template-columns: 1fr
+      @media(min-width: 992px)
+        .card:only-child
+          grid-column: span 2
+          .card--image
+            aspect-ratio: unset
+      .card--image
+        aspect-ratio: 1 / 1
+        img
+          width: 100%
+          height: 100%
+          margin-top: 0
+          margin-bottom: 0
+      .block--pagination
+        @media(min-width: 992px)
+          grid-column: span 2
+
+    .block--head
+      text-align: left
+      align-items: flex-start
+      .block--head_title
+        h1, h2, h3, h4
+          text-transform: none
+          font-size: var(--fs-32)
+          font-weight: 400
+          margin-top: 0
+          letter-spacing: -0.02em
+    &.block_list-slider
+      @media(max-width: 992px)
+        overflow: visible
+      .swiper-button-prev
+        transform: translateX(50%)
+      .swiper-button-next
+        transform: translateX(-50%)
+
+    .block--content, .block--elements
+      margin-top: var(--g-24)

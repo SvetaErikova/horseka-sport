@@ -1,0 +1,234 @@
+input, textarea, select
+  border: none
+  outline: none
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+
+/* Firefox */
+input[type=number]
+  -moz-appearance: textfield
+
+
+.form
+  max-width: 868px
+  fieldset
+    border-color: transparent
+    padding: 0
+    display: grid
+    grid-template-columns: 1fr
+  &--title
+    font-size: var(--fs-32)
+    font-weight: 300
+    text-transform: uppercase
+    font-family: 'SangBleuKingdom'
+    margin-bottom: 12px
+    letter-spacing: -0.02em
+  &--text
+    color: var(--c-text-subdued)
+    font-size: var(--fs-20)
+  &--input
+    display: flex
+    flex-direction: column
+    margin-top: clamp(32px, calc(32px + (42 - 32) * ((100vw - 1024px) / (1920 - 1024))), 42px)
+    & > span
+      order: -1
+      font-size: 20px
+      color: var(--c-text-default)
+      font-weight: 300
+      text-transform: uppercase
+      font-family: 'SangBleuKingdom'
+      letter-spacing: -0.02em
+      transition: var(--transition)
+      transform-origin: left top
+      margin-bottom: 8px
+      & + label
+        margin-top: 16px
+    & > input, textarea, select
+      outline: none
+      padding: 0 0 8px
+      line-height: 30px
+      font-size: var(--fs-20)
+      font-weight: 300
+      border-bottom: 1px solid #E8E8E8
+      background-color: transparent
+      transition: var(--transition)
+      transform-origin: left top
+      & ~ span
+        transform: scaleY(1)
+      &::placeholder,
+      &:placeholder-shown
+        color: var(--c-text-disabled)
+        font-size: 16px
+      &:not(:placeholder-shown)
+        color: var(--c-text-default)
+        & ~ span
+          transform: scale(0.6)
+      &:focus
+        border-color: var(--c-text-default)
+        & ~ span
+          transform: scale(0.6)
+      &:invalid:not(:placeholder-shown)
+        border-color: var(--c-critical)
+      &:valid:not(:placeholder-shown)
+        border-color: var(--c-text-default)
+    &.error
+      .form--input_error
+        opacity: 1
+        max-height: 48px
+        height: auto
+      input, textarea, select
+        border-color: #E2A0A0
+    &_error
+      color: var(--c-critical)
+      opacity: 0
+      font-size: 14px
+      line-height: 20px
+      max-height: 0
+      height: 0
+      overflow: hidden
+      transition: opacity 0.03s 0.15s ease-out, max-height .18s linear
+      margin-top: 8px
+    & > label
+      display: flex
+      align-items: flex-start
+      & + label
+        margin-top: 16px
+  input[type="radio"],
+  input[type="checkbox"]
+    display: none
+    order: -1
+    & ~ span
+      order: 1
+      font-size: 16px
+      margin-left: 12px
+      line-height: 20px
+    & ~ svg
+      flex-shrink: 0
+      flex-grow: 0
+      cursor: pointer
+  input[type="checkbox"]
+    & ~ .checkbox
+      rect
+        fill: #fff
+        stroke: #C4C6C9
+        transition: var(--transition)
+      &:hover,
+      &:focus
+        rect
+          fill: #FAFAFB
+          stroke: #C4C6C9
+    & ~ .slider
+      .slider--border
+        fill: #fff
+        stroke: #C4C6C9
+        transition: var(--transition)
+      .slider--dot
+        transform: translateX(-14px)
+        transition: var(--transition)
+      &:hover,
+      &:focus
+        .slider--border
+          fill: #FAFAFB
+    &:checked
+      & ~ .checkbox,
+        rect
+          fill: var(--c-text-subdued)
+          stroke: var(--c-text-subdued)
+      & ~ .slider
+        .slider--border
+          fill: #fff
+          stroke: var(--c-text-subdued)
+        .slider--dot
+          transform: translateX(0px)
+
+  input[type="radio"]
+    & ~ .radio
+      .radio--border
+        stroke: #C4C6C9
+        fill: #FFFFFF
+        transition: var(--transition)
+      .radio--dot
+        fill: #FFFFFF
+        transition: var(--transition)
+      &:focus,
+      &:hover
+        .radio--border
+          fill: #FAFAFB
+        .radio--dot
+          fill: #FAFAFB
+    &:checked
+      & ~ .radio
+        .radio--border
+          fill: #FFFFFF
+          stroke: #2E333D
+        .radio--dot
+          fill: #2E333D
+
+  input[type="date"]
+    appearance: none
+
+  select
+    -moz-appearance: none
+    -webkit-appearance: none
+    appearance: none
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 15L8 10L16 10L12 15Z' fill='%23141A25'/%3E%3C/svg%3E")
+    background-position: right 4px center
+    background-repeat: no-repeat
+    background-size: 24px
+    background-color: #fff
+    border-radius: 0
+    display: block
+    padding-right: 48px
+    option
+      background: #fff
+      border-radius: 0
+      padding: 4px 6px
+
+  &--policy
+    font-size: 16px
+    font-weight: 400
+    color: var(--c-text-secondary)
+    a:not(.button)
+      font-size: 16px
+      font-weight: 400
+
+  &--button
+    margin-top: clamp(32px, calc(32px + (42 - 32) * ((100vw - 1024px) / (1920 - 1024))), 42px)
+    margin-bottom: 16px
+    .button
+      width: 100%
+
+.form.is_sending
+  button[type="submit"]
+    background: var(--c-surface-subdued)
+    pointer-events: none
+
+.content_subscription
+  margin-top: auto
+  //max-width: 272px
+  .form
+    display: flex
+    gap: 8px
+    flex-direction: column
+    margin-top: 24px
+    p
+      color: var(--c-text-disabled)
+    &--input
+      margin-top: var(--g-24)
+      gap: 8px
+      flex-direction: row
+      border-bottom: 1px solid #E8E8E8
+      position: relative
+      input
+        flex-grow: 1
+        border-bottom: none
+        &:placeholder-shown,
+        &::placeholder
+          text-transform: uppercase
+      .form--input_error
+        position: absolute
+        top: 100%

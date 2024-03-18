@@ -1,0 +1,82 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Разводящая - blog"
+  - var pageClass = 'page-parent'
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/accomodation_bg.jpg")
+        +block--head("","Блог")
+  section.block.block_list.content_blog
+    .block--wrapper
+      .block--elements
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Вино
+            .card--label
+              span от 5 000 р
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Парки
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Красота
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Экскурсии и активный отдых
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Гостям
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Аренда транспорта
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Пляж и море
+            .card--label
+        a.card(href="/")
+          .card--image
+            img(src="/assets/img/offer.jpg" alt="")
+            .card--action
+              span.icon
+          .card--content
+            .card--title Спорт и активный отдых
+            .card--label

@@ -1,0 +1,57 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Разводящая - афиша, события"
+  - var pageClass = 'page-parent'
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/accomodation_bg.jpg")
+        +block--head("","События")
+  section.block.block_list.content_events
+    .block--wrapper
+      .block--elements
+        a.card(href="")
+          .card--date
+            strong 21
+            span июн
+          .card--image
+            <!-- Класс проставляется автоматически -->
+            img(src="/assets/img/offer.jpg" alt="")
+            img(src="/assets/img/event.jpg" alt="")
+            img(src="/assets/img/offer.jpg" alt="")
+          .card--content
+            .card--title
+              h3 День рождения парка “Дримвуд”
+              .card--action
+                span.icon
+            .card--text
+              .card--text_item
+                span Время
+                span 11 июня 18:00
+        +card--events
+        a.card(href="")
+          .card--date
+            strong 21
+            span июн
+          .card--image
+            <!-- Класс проставляется автоматически -->
+            img(src="/assets/img/offer.jpg" alt="")
+            img(src="/assets/img/event.jpg" alt="")
+            img(src="/assets/img/offer.jpg" alt="")
+          .card--content
+            .card--title
+              h3 День рождения парка “Дримвуд” - сказочные 5 лет!
+              .card--action
+                span.icon
+            .card--text
+              .card--text_item
+                span Время
+                span 11 июня 18:00
+        .block--pagination
+          a.button.button-outlined.button-secondary(href="/") Показать еще
+

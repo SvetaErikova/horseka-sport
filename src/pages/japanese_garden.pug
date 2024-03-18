@@ -1,0 +1,113 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Японский сад"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+  section.block.block_banner.banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/accomodation_bg.jpg")
+        +block--head_h1("Добро пожаловать","Японский сад «Шесть чувств»", "Грандиозный проект погружения в культуру страны Восходящего Солнца, созданный по замыслу знаменитого японского архитектора Широ Накане")
+        .block--actions
+          button.button.button-filled.button-accent.button-dark()
+            span Купить билет
+          button.button.button-filled.button-primary()
+            span Видео-обзор
+
+  section.block.block_image_text.block_image_text-reversed
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/jg_1.png" alt="")
+      .block--head
+        .block--head_subtitle
+          p Широ Накане
+        .block--head_title
+          h2.f-h2 Широ Накане
+      .block--content.is_cascade
+        p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
+        p Совершенствуясь с юности в искусстве проектирования японских садов, господин Накане использует традиционные приемы, руководствуется интуицией и личным чувственным представлением о красоте мира. Проекты Широ наполнены древней философией и современными смыслами.
+        p Органично и тонко он вписывает аутентичный японский ландшафт в окружающее пространство, воплощая в своих творениях целостность и чистоту природы, гармонию и умиротворение.
+      .block--actions
+  section.block.block_image_text
+    .block--wrapper
+      .block--image
+        video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/e11/e115486fb468da56217dcb4dfba748ac.mp4" autoplay loop muted playsinline)
+      .block--head
+        .block--head_title
+          h2.f-h2 Почувствуй Японию
+      .block--content.is_cascade
+        p Территория сада разделена на три террасы и занимает шесть гектаров. Здесь раскинулись водопады, ручьи, пруды с «парящими» камнями, а необычный пейзаж сформировали растения, привезенные из заповедников Японии и Европы — их здесь свыше 3000 видов.
+        p Деревья, кустарники, цветы, травы и мхи создают фантастическую картину, и это не просто удивительная коллекция флоры, а настоящая энциклопедия японской философии. Так сосны, выращенные в форме бонсай, символизируют долголетие, камни олицетворяют мужскую силу, а вода — женское начало.
+      .block--actions
+  section.block.block_banner
+    .block--wrapper
+      .banner
+        .block--content
+          img(src="/assets/img/banner_image.jpg")
+        +block--head("Апартаменты","Имение сёгуна","")
+        .block--actions
+          a(href="/").button.button-filled.button-accent
+            span Забронировать
+          a(href="/").button.button-filled.button-secondary
+            span Подробнее
+  section.block.block_image_text.block_image_text-reversed.block_image_text-wide
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/jg_2.jpg" alt="")
+      .block--head
+        .block--head_title
+          h2.f-h2 Каждый элемент не случаен
+      .block--content.is_cascade
+        p Для создания традиционных строений и сложного ландшафта из Японии морем доставили дерево и 1700 тонн камней вулканической породы. Ворота сада, Чайный домик, храм медитации Дзен-До, и имение Сёгуна построены из японского кипариса, согласно канонам аутентичной архитектуры, без единого гвоздя. Мостики, тропинки, термальные купели — каждый элемент не случаен и таит глубокую религиозную мудрость.
+        p Органично и тонко он вписывает аутентичный японский ландшафт в окружающее пространство, воплощая в своих творениях целостность и чистоту природы, гармонию и умиротворение.
+      .block--actions
+
+  section.block.block_image_text.block_image_text-wide
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/jg_3.jpg" alt="")
+      .block--head
+        .block--head_title
+          h2.f-h2 Термальный комплекс
+      .block--content.is_cascade
+        p Классические онсэны, или открытые термальные купели — изюминка Японского сада.
+        p Купание в онсэне — один из любимых видов отдыха у жителей Японии. Вода комфортной температуры, обогащенная полезными минералами и микроэлементами, расслабляет и успокаивает, а фантастические пейзажи сада и бескрайнего моря дарят чувство истинного единения с природой.
+      .block--actions
+  section.block.block_list.block_list-slider.content_offers
+    .block--wrapper
+      .block--head
+        .block--head_title
+          h2.f-h2 Специальныe предложения
+      .block--elements
+        +card--offer('День Рождения в Японском саду c выгодой до 50%', 'Спецпредложение действует в день рождения, а также за три дня до и три дня после него', '/assets/img/jg_4.jpg')
+        +card--offer('Сезонное предложение на купели «Инь-Янь»', 'Посетите японские онсены в новом формате: для вас доступны две купели с разной температурой воды', '/assets/img/offer.jpg')
+        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+
+  section.block.block_list.block_list-slider
+    .block--wrapper
+      .block--head
+        .block--head_title
+          h2.f-h2 Услуги японского сада
+      .block--elements
+        +card--popup
+        +card--popup
+        +card--popup
+        +card--simple
+        +card--link
+        +card--popup
+  section.block.block_list.block_list-slider
+    .block--wrapper
+      .block--head
+        .block--head_title
+          h2.f-h2 Чайные мастера
+      .block--elements
+        +card--popup
+        +card--popup
+        +card--simple
+        +card--link
+        +card--link
+        +card--popup

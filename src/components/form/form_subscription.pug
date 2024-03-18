@@ -1,0 +1,10 @@
+form.form
+  input(type="hidden" value="" name="fields[form]")
+  input(type="hidden" value="")
+  fieldset
+    label.form__input
+      input(type="mail" placeholder="Эл. почта" name="fields[email]" autocomplete="email" required)
+      .form__input-error Ошибка заполнения
+    .form__button
+      button.button.button-filled.button-accent(type="submit")
+        span Подписаться

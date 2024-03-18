@@ -1,0 +1,228 @@
+.block_banner
+  overflow: hidden
+  position: relative
+  @media(min-width: 520px) and (orientation: landscape)
+    max-height: 1080px
+    min-height: 620px
+  .block--wrapper
+    height: 100%
+    position: relative
+    z-index: 2
+    padding: 0
+  .block--head,
+  .block--actions
+    z-index: 2
+    position: relative
+  .block--content
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+    img, video
+      width: 100%
+      height: 100%
+      object-position: center
+      object-fit: cover
+  .block--head
+    color: var(--c-text-primary)
+    max-width: 868px
+    & > *
+      z-index: 3
+      position: relative
+  .banner
+    display: grid
+    padding: var(--g-container)
+    flex-shrink: 0
+    flex-grow: 0
+
+
+.block_banner.banner-group:not(.block_banner-hero)
+  .block--wrapper
+    overflow: hidden
+  .slider_controls
+    position: absolute
+    top: 50%
+    left: 0
+    width: 100%
+    padding: var(--g-container)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 2
+  .swiper--next
+    color: var(--c-text-primary)
+  .swiper--prev
+    color: var(--c-text-primary)
+
+.block_banner:not(.block_banner-hero)
+  .banner
+    margin: auto
+    padding: 84px var(--g-container)
+    place-content: center
+    place-items: center
+    @media(min-width: 560px)
+      height: calc(100vh - var(--headerHeight, 137px))
+  .block--head
+    text-align: center
+    align-items: center
+
+.block_banner:not(.block_banner-hero):not(.banner-no_media)
+  .block--head
+    position: relative
+    padding: var(--g-container) var(--g-container) 0
+    &:before
+      content: ""
+      position: absolute
+      top: -30%
+      left: -10%
+      width: 120%
+      height: 200%
+      display: block
+      background: rgba(20, 26, 37, 0.55)
+      filter: blur(100px)
+      background-blend-mode: multiply
+      pointer-events: none
+
+.block_banner
+  .banner
+    height: auto
+    overflow: hidden
+    position: relative
+    place-content: end start
+    place-items: end start
+
+
+.block_banner.block_banner-hero
+  margin: 0
+  position: relative
+  background-color: var(--c-surface-dark)
+  @media(min-width: 768px)
+    height: 100vh
+    &:after
+      content: ""
+      position: absolute
+      top: var(--headerHeight, 137px)
+      left: 50%
+      height: calc(100% - var(--headerHeight, 137px))
+      width: 1px
+      display: block
+      background-color: rgba(255, 255, 255, 0.15)
+      z-index: 4
+      pointer-events: none
+  .block--wrapper
+    padding: 0
+    max-width: 100%
+  .banner
+    position: relative
+    height: 100%
+    min-width: 100%
+    place-items: start
+    place-content: start
+    padding: 40px var(--g-container)
+    @media(min-width: 768px)
+      place-items: center start
+      place-content: center start
+      padding-top: var(--headerHeight, 137px)
+      padding-right: 50%
+    @media(max-width: 768px)
+      display: flex
+      flex-direction: column
+      padding: 0 var(--g-container) 40px
+    &:before
+      content: ""
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.00) 6.67%, rgba(0, 0, 0, 0.01) 13.33%, rgba(0, 0, 0, 0.03) 20.00%, rgba(0, 0, 0, 0.06) 26.67%, rgba(0, 0, 0, 0.10) 33.33%, rgba(0, 0, 0, 0.14) 40.00%, rgba(0, 0, 0, 0.19) 46.67%, rgba(0, 0, 0, 0.23) 53.33%, rgba(0, 0, 0, 0.28) 60.00%, rgba(0, 0, 0, 0.32) 66.67%, rgba(0, 0, 0, 0.36) 73.33%, rgba(0, 0, 0, 0.39) 80.00%, rgba(0, 0, 0, 0.41) 86.67%, rgba(0, 0, 0, 0.42) 93.33%, rgba(0, 0, 0, 0.42) 100%)
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      width: 100%
+      pointer-events: none
+      z-index: 2
+  .block--content
+    &:before
+      content: ""
+      position: absolute
+      display: block
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.50) 30.07%, rgba(0, 0, 0, 0.13) 48.97%,  rgba(0, 0, 0, 0.00) 65.86%)
+      z-index: 2
+      background-blend-mode: multiply
+      pointer-events: none
+      @media(max-width: 768px)
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.13) 20.07%,   rgba(0, 0, 0, 0.00) 38.86%)
+    @media(max-width: 768px)
+      position: relative
+      height: 60vh
+      width: calc(100% + var(--g-container) * 2)
+      margin-left: calc(-1 * var(--g-container))
+  .block--head
+    align-items: flex-start
+    justify-content: flex-start
+    color: var(--c-text-primary)
+    padding-right: 40px
+    @media(max-width: 768px)
+      padding-right: 0
+      padding-top: 40px
+
+  .slider_controls
+    position: absolute
+    padding: 38px 40px 38px var(--g-container)
+    bottom: 0
+    width: 50%
+    justify-content: flex-start
+    z-index: 4
+    display: flex
+    align-items: center
+    gap: 16px
+    @media(max-width: 768px)
+      width: 100%
+      padding: 0 var(--g-container) 40px
+      position: static
+  .swiper--prev,
+  .swiper--next
+    padding: 12px
+    &:after
+      font-size: clamp(20px, calc(20px + (32 - 20) * ((100vw - 1024px) / (1920 - 1024))), 32px)
+      color: var(--c-text-primary)
+  .swiper--prev
+    &:after
+      content: "\e91d"
+  .swiper--next
+    &:after
+      content: "\e91e"
+
+  .swiper_pagination
+    margin-right: auto
+    color: var(--c-text-primary)
+    font-variant-numeric: lining-nums tabular-nums
+    font-feature-settings: 'case' on
+    font-size: 24px
+    font-style: normal
+    font-weight: 300
+    line-height: 1.33
+    letter-spacing: -0.48px
+    display: flex
+    align-items: center
+
+
+.block_banner.banner-no_media
+  .banner
+    height: auto
+    aspect-ratio: unset
+    padding: 0
+  .block--head
+    color: var(--c-text-default)
+
+
+.block_banner-hero.ac-banner-short
+  @media(min-width: 992px)
+    height: 70vh
+
