@@ -33,33 +33,47 @@
       display: block
       position: relative
 
-.block_list-slider
-  .slider_controls
-    display: none
-    @media(min-width: 520px)
-      position: absolute
-      width: 100%
-      left: 0
-      right: 0
-      transform: translateY(-50%)
-      top: 50%
+  &.block_list-slider-v2
+    .block--wrapper
       display: flex
-      justify-content: space-between
-      pointer-events: none
-      z-index: 2
-    .swiper-button-prev,
-    .swiper-button-next
-      border: 1px solid var(--border-subdued, #ECEDEE)
-      background-color: var(--c-surface-default)
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 0 6px  rgba(0, 0, 0, 0.02)
-      &:hover,
-      &:focus
-        border-color: rgba(20, 26, 37, 1)
-      &.swiper-button-disabled
-        opacity: 0
-    .swiper-button-next
-      transform: translateX(50%)
+      flex-direction: column
+      gap: 20px
+      @media(min-width: 998px)
+        display: grid
+        grid-template-columns: 1.5fr 3fr
+    .block--head
+      display: flex
+      flex-direction: column
+      background-color: var(--accent)
+      color: var(--c-surface-default)
+      display: flex
+      flex-direction: column
+      padding: var(--g-content)
+      text-align: left
+      align-items: flex-start
+      border-radius: var(--border-corner)
+      gap: 16px
+      h2
+        font-size: 36px
+      &_subtitle
+        color: var(--accent-2)
+    .block--elements
+      overflow: hidden
+      margin: 0
+      margin-right: calc(var(--g-container) * -1)
+      padding-right: var(--g-container)
+      .card--label
+        display: none
+      .card--content
+        height: 100%
+        gap: 12px
+      .card--image
+        min-height: 500px
+        width: auto
+        height: 100%
+      .card--actions
+        margin-top: auto
 
-    .swiper-button-prev
-      transform: translateX(-50%)
+
+
 

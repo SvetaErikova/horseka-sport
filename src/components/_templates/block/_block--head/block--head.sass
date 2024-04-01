@@ -1,12 +1,16 @@
 .block--head
   display: flex
   flex-direction: column
-  gap: var(--g-24)
-  padding-bottom: var(--g-24)
-  border-bottom: 1px solid var(--c-surface-dark)
+  flex-direction: column
+  display: grid
+  grid-template-columns: 2fr 1fr
+  grid-template-rows: auto
   @media(max-width: 1024px)
     gap: 12px
   &_subtitle
+    grid-row: 1
+    grid-column: 1
+    font-size: var(--fs-24)
     width: fit-content
     color: var(--accent)
     &:empty
@@ -22,6 +26,8 @@
       &:empty
         display: none
   &_caption
+    grid-column: 2
+    grid-row: 2
     max-width: 868px
     &:empty
       display: none
@@ -33,27 +39,30 @@
       &:empty
         display: none
   &_title
+    grid-row: span 2
+    grid-column: 1
     max-width: 1160px
+    text-align: left
     h1, h2
-      line-height: 1.28
       text-transform: uppercase
     a
-      h1, h2
-        position: relative
-        display: inline
-        align-items: center
-        @media(min-width: 1024px)
-          display: inline-flex
-        &:after
-          content: "\e926"
-          font-family: 'icomoon' !important
-          display: inline-flex
-          align-items: center
-          font-size: var(--fs-24)
-          line-height: calc(var(--size) * 1.28)
-          height: calc(var(--size) * 1.28)
-          color: currentColor
-          margin-left: 0.5em
       &:hover,
       &:focus
         color: var(--c-text-accent-default)
+  &_link
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    .button
+      text-transform: uppercase
+      color: var(--accent-2)
+      font-size: var(--fs-32)
+  .block--actions
+    justify-content: flex-end
+    align-items: flex-end
+    grid-column: 2
+    grid-row: 3
+
+.footer .block--head
+  display: flex
+  align-items: center

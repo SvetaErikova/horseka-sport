@@ -1,4 +1,33 @@
 footer.footer
+  //.block--wrapper
+  .footer--contacts
+    .block--content
+      h2.f-h2 Контакты
+      .contact
+        .contact--item
+          .contact--title Телефон
+          .contact--value
+            a(href="/") 8 (495) 419-96-90
+        .contact--item
+          .contact--title E-MAIL
+          .contact--value
+            a(href="/") info@kskivanovskoe.ru
+      .contact--item
+        .contact--title АДРЕС
+        .contact--value
+          p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+      .block--actions
+        .button.button-filled.button-accent
+          span Заказать звонок
+        .button.button-filled.button-secondary
+          span Проложить маршрут
+      .is_cascade
+        +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+        +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+    .block--map
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=48d87ef4-a099-4095-af51-20f442e126c6&lang=ru_RU" type="text/javascript"></script>
+      #map
+
   .footer--col
     a.footer--logo(href="/")
       <svg fill='#FC563B' width="184" height="76" viewBox="0 0 184 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,23 +61,27 @@ footer.footer
           p ВАШ E-MAIL
           input(type="email" placeholder="Ваша эл. почта")
           .form--input_error Ошибка заполнения
-          button.button.button-link.button-primary(type="submit")
-            span.icon-FooterSend
+          button.button.button-outlined.button-accent.button-dark(type="submit")
+            span Заказать звонок
+
   .footer--row
     .footer--col
-      .contacts
-        .contacts--list
-          .contact
-            .contact--title Социальные сети
-            .contact--value
-              a(href="")
-                .icon-ic-socials-vk
-            .contact--value
-              a(href="")
-                .icon-ic-socials-viber
-            .contact--value
-              a(href="")
-                .icon-ic-socials-youtube
+      a(href='').footer-lk
+        p Личный кабинет
+        button.button.button-outlined.button-accent.button-dark(type="submit")
+          span.icon-HeroSliderRight
+      .footer--soc
+        .soc--list
+          .soc--title Социальные сети
+          .soc--link
+            a(href="")
+              .icon-ic-socials-vk
+          .soc--link
+            a(href="")
+              .icon-ic-socials-viber
+          .soc--link
+            a(href="")
+              .icon-ic-socials-youtube
     .footer--col
       nav.nav
         ul.nav--list

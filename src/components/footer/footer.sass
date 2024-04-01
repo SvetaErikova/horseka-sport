@@ -2,96 +2,123 @@
   padding: clamp(64px, calc(64px + (80 - 64) * ((100vw - 1024px) / (1920 - 1024))), 80px) var(--g-container)
   background-color: var( --c-bck-dark-blue)
   color: var(--c-text-primary)
-  display: flex
-  flex-direction: column
-  gap: var(--g-32)
-.footer--row
-  display: grid
-  grid-template-columns: 1fr
-  gap: 24px
-  padding-bottom: var(--g-container)
-  @media(min-width: 992px)
-    grid-template-columns: 4fr 8fr
 
-  &-bottom
-    padding: var(--g-section-inner) 0
-    border-top: 1px solid #F0F0F0
+  .block--wrapper
+    display: flex
+    flex-direction: column
+    gap: var(--g-96)
 
-.footer--col
-  display: flex
-  flex-direction: column
-  align-items: center
+  .footer--contacts
+    display: flex
+    flex-direction: column
+    gap: 8px
+    @media(min-width: 769px)
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+    .block--content
+      margin-top: 0
+      padding: var(--g-32)
+      color: var(--c-surface-dark)
+      background: #fff
+      display: flex
+      flex-direction: column
+      gap: var(--g-content)
 
-  .contacts
+
+    & > div
+      overflow: hidden
+      border-radius: var(--border-corner)
+    .block--map
+      @media(max-width: 768px)
+        aspect-ratio: 1/1
+      #map
+        width: 100%
+        max-height: 100%
+
+  .footer--row
     display: grid
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: 1fr
+    gap: 24px
+    padding-bottom: var(--g-container)
+    @media(min-width: 992px)
+      grid-template-columns: 3fr 9fr
+
+    &-bottom
+      padding: var(--g-section-inner) 0
+      border-top: 1px solid #F0F0F0
+
+  .footer--col
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: var(--g-32)
+
+    .footer--soc
+
+
+
+  .footer--col-links
+    display: grid
     gap: 20px
-    @media(max-width: 520px)
-      grid-template-columns: 1fr
+    grid-template-columns: 1fr
+    order: -1
+    @media(min-width: 768px)
+      order: unset
+      grid-template-columns: 3fr 1fr
 
+  .footer--links
+    display: flex
+    gap: 20px 40px
+    flex-wrap: wrap
+    a
+      white-space: nowrap
+      &:hover
+        color: var(--c-text-accent-hovered)
 
-.footer--col-links
-  display: grid
-  gap: 20px
-  grid-template-columns: 1fr
-  order: -1
-  @media(min-width: 768px)
-    order: unset
-    grid-template-columns: 3fr 1fr
-
-.footer--links
-  display: flex
-  gap: 20px 40px
-  flex-wrap: wrap
-  a
+  .developer
+    grid-column: 1
     white-space: nowrap
-    &:hover
-      color: var(--c-text-accent-hovered)
+    display: inline-flex
+    a
+      margin-left: 8px
+      &:hover
+        color: var(--c-text-accent-hovered)
+    @media(min-width: 768px)
+      grid-column: 2
 
-.developer
-  grid-column: 1
-  white-space: nowrap
-  display: inline-flex
-  a
-    margin-left: 8px
-    &:hover
-      color: var(--c-text-accent-hovered)
-  @media(min-width: 768px)
-    grid-column: 2
+  .copyright
+    color: var(--c-text-disabled)
 
-.copyright
-  color: var(--c-text-disabled)
+  .contacts--list
+    display: flex
+    flex-direction: column
+    gap: 40px
 
-.contacts--list
-  display: flex
-  flex-direction: column
-  gap: 40px
-
-.contact
-  display: flex
-  flex-wrap: wrap
-  gap: 8px 20px
-.contact--title
-  color: var(--c-text-disabled, #AAADB1)
-  font-size: 14px
-  font-weight: 300
-  line-height: 1.42
-  letter-spacing: 0.28px
-  text-transform: uppercase
-  width: 100%
-.contact--value
-  display: flex
-  gap: 16px
-  flex-wrap: wrap
-  width: fit-content
-  padding: 6px
-  background-color: #093282
-  border-radius: var(--border-corner-button)
-  [class^="icon-"], [class*=" icon-"]
-    font-size: 32px
-  a
-    &:hover
-      color: var(--c-text-accent-hovered)
+  //.contact
+  //  display: flex
+  //  flex-wrap: wrap
+  //  gap: 8px 20px
+  //.contact--title
+  //  color: var(--c-text-disabled, #AAADB1)
+  //  font-size: 14px
+  //  font-weight: 300
+  //  line-height: 1.42
+  //  letter-spacing: 0.28px
+  //  text-transform: uppercase
+  //  width: 100%
+  //.contact--value
+  //  display: flex
+  //  gap: 16px
+  //  flex-wrap: wrap
+  //  width: fit-content
+  //  padding: 6px
+  //  background-color: #093282
+  //  border-radius: var(--border-corner-button)
+  //  [class^="icon-"], [class*=" icon-"]
+  //    font-size: 32px
+  //  a
+  //    &:hover
+  //      color: var(--c-text-accent-hovered)
 
 .footer
   .content_subscription
@@ -105,18 +132,12 @@
       border-bottom: 1px solid #e8e8e8
       p
         width: 100%
-    .form--input span,
-    .form--title,
-    .form--policy
-      display: none
     .form--input
-      flex-basis: calc(100% - 56px)
-      width: calc(100% - 56px)
-      max-width: calc(100% - 56px)
-      margin: 20px 0 0
       border: none
+      align-items: center
       input
         max-width: 100%
+        border-bottom: 1px solid var(--c-border-default)
     .form--button
       margin: 20px 0 0
       .button
@@ -124,3 +145,13 @@
         border: transparent
         color: var(--c-text-default)
 
+  .footer-lk
+    width: 100%
+    padding: var(--g-24)
+    background-color: var(--accent)
+    border-radius: var(--border-corner)
+    display: flex
+    flex-direction: column
+    gap: var(--g-32)
+    .button
+      margin-left: auto

@@ -4,15 +4,16 @@
   display: flex
   flex-direction: column
   border-radius: var(--border-corner)
+  background-color: var(--c-bck-default)
 
 .card--content
   display: flex
   flex-direction: column
   gap: 8px
-  padding: var(--g-20) 0 0
+  padding: var(--g-24)
 
 .card--title,
-.card--title > * ,
+.card--title > *,
 .card--text,
 .card--text p
   text-overflow: ellipsis
@@ -20,6 +21,11 @@
   display: -webkit-box
   -webkit-line-clamp: 3
   -webkit-box-orient: vertical
+
+.card--text,
+.card--text p
+  font-size: var(--fs-18)
+  letter-spacing: 0.02em
 
 .card--title
   font-size: var(--fs-32)
@@ -46,6 +52,8 @@
   background-repeat: no-repeat
   overflow: hidden
   border-radius: var(--border-corner)
+  //img
+  //  aspect-ratio: 1/1
 .card-detail
   .card--image
     background: unset
@@ -56,13 +64,9 @@
   font-size: var(--fs-14)
   font-weight: 400
   line-height: 1.42
-  letter-spacing: -0.28px
-  position: absolute
   z-index: 3
   top: 0
   left: 0
-  padding: var(--fs-16)
-  max-width: calc(100% /2 /2)
   span
     display: flex
     gap: 6px
@@ -71,42 +75,17 @@
     color: var(--c-text-subdued)
     padding: 10px 10px
     border-radius: 4px
-  .c-accent
-    &:before
-      content: '\e91c'
 
+  .c-accent
     color: var(--accent-2)
   .c-accent-2
     color: var(--accent)
 
 
-.card--action
-  display: flex
-  align-items: center
-  justify-content: center
-  color: var(--c-text-primary)
-  position: absolute
-  right: var(--g-24)
-  bottom: var(--g-24)
-  z-index: 3
-  width: 40px
-  height: 40px
-  flex-shrink: 0
-  span
-    z-index: 2
-    position: relative
-  &:after
-    pointer-events: none
-    position: absolute
-    transition: var(--transition)
-    z-index: 1
-    top: 0
-    left: 0
+.card--actions
+  margin-top: auto
+  .button
     width: 100%
-    height: 100%
-    content: ""
-    background-color: rgba(20, 26, 37, 0.35)
-    backdrop-filter: blur(10px)
 
 .card:not([data-popup_cascade]):not([href])
   div.card--action
@@ -127,10 +106,7 @@
       z-index: 2
       content: ""
       position: absolute
-      width: 100%
-      height: 100%
-      left: 0
-      top: 0
+      inset: 0
       background-color: rgba(20, 26, 37, 0.35)
       transition: var(--transition)
       opacity: 0
@@ -149,12 +125,9 @@
 .card[href]
   position: relative
   cursor: pointer
-  .card--action
-    .icon
-      font-family: 'icomoon' !important
-      &:before
-        content: "\e926"
   .card--image
+    img
+      transition: var(--transition)
     &:before
       z-index: 2
       content: ""
@@ -163,42 +136,42 @@
       height: 100%
       left: 0
       top: 0
-      background-color: rgba(20, 26, 37, 0.35)
+      background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1965161064) 72%, rgba(220, 220, 220, 0) 100%)
       transition: var(--transition)
-      opacity: 0
+      opacity: 0.4
   &:hover,
   &:focus
+    img
+      scale: 1.1
     .card--action:before
-      background-color: rgba(20, 26, 37, 0.35)
-    .card--action
-      color: var(--c-surface-dark)
-      &:after
-        transform: rotate(45deg)
-        background-color: var(--c-surface-default)
+      background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1965161064) 72%, rgba(220, 220, 220, 0) 100%)
     .card--image:before
       opacity: 1
-
 
 .content_hourse
   .card
     background-color: #F2F5FA
     display: grid
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: 1fr
+    @media(min-width: 769px)
+      grid-template-columns: repeat(2, 1fr)
     &--image
       aspect-ratio: auto
+      @media(max-width: 768px)
+        aspect-ratio: 1/1
     &--content
-      padding: 24px
+      padding: var(--g-24)
     &--title h3
       -webkit-line-clamp: 2
       font-size: 32px
-      font-weight: 500
+      //font-weight: 500
       //color: var( --c-text-subdued)
     &--subtitle
       color: var( --c-text-subdued)
       font-size: var(--fs-16)
     &--text
       font-size: var(--fs-20)
-      padding-bottom: 12px
+      padding-bottom: var(--g-24)
       border-bottom: 1px solid rgba(17, 24, 32,0.4)
       p
         text-overflow: ellipsis
@@ -229,62 +202,34 @@
       .button
         width: 100%
     &--label
+      position: absolute
+      padding: 16px
+      max-width: 25%
+    .c-accent
+      &:before
+        content: '\e91c'
+  &.block_list:not(block_list-slider)
+    .card
+      @media(min-width: 1024px)
+        grid-template-columns: repeat(2, 1fr)
 
 
 
 
-
-.content_blog,
-.content_news,
-.content_gallery
-  @media(max-width: 768px)
-    &.block_list.ac-bock_list-columns-2 .block--elements
-      display: grid
-      .card--content,
-      .card--label
-        padding: 8px
-      .card--action
-        display: none
-      .card--title
-        font-size: 16px
-      .block--pagination
-        grid-column: span 2
+.content_news
   .card
     position: relative
-    aspect-ratio: 423 / 533
+    aspect-ratio: 613 / 656
     cursor: pointer
     width: 100%
     height: auto
     max-height: 533px
     align-self: start
-    &:hover,
-    &:focus
-      .card--action:before
-        background-color: rgba(20, 26, 37, 0.35)
-      .card--action
-        color: var(--c-surface-dark)
-        &:after
-          transform: rotate(45deg)
-          background-color: var(--c-surface-default)
-      .card--image
-        &:before
-          opacity: 1
-    .card--action
-      right: var(--fs-24)
-      bottom: var(--fs-24)
-    .card--title
-      font-family: 'SangBleuKingdom'
-      font-size: var(--fs-24)
-        -webkit-line-clamp: 3
-    .card--text
-      color: var(--c-text-primary)
-      opacity: 0.8
-      text-overflow: ellipsis
-      overflow: hidden
-      display: -webkit-box
-      -webkit-line-clamp: 3
-      -webkit-box-orient: vertical
     .card--content
+      display: grid
+      grid-template-columns: 1fr auto
+      grid-template-rows: 1fr
+      align-items: end
       position: absolute
       left: 0
       bottom: 0
@@ -293,11 +238,19 @@
       color: var(--c-text-primary)
       z-index: 3
       justify-content: flex-end
-      padding: var(--fs-24) calc(var(--g-24) * 2 + 40px) var(--fs-24) var(--fs-24)
+      & >*:not(.card--actions)
+        grid-column: 1
+
+    .card--title
+    .card--text
+      color: var(--c-text-primary)
+      opacity: 0.8
+
     .card--image
       width: 100%
       max-width: 100%
       aspect-ratio: 423 / 533
+      position: relative
       &:after
         content: ""
         width: 100%
@@ -305,221 +258,110 @@
         position: absolute
         left: 0
         top: 0
-        background: linear-gradient(to top, rgba(20, 26, 37, 0.45) 0%, rgba(20, 26, 37, 0.0) 74%)
+        background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.196516106442577) 72%, rgba(220,220,220,0) 100%)
         z-index: 2
         pointer-events: none
-      &:before
-        z-index: 2
-        content: ""
-        position: absolute
-        width: 100%
-        height: 100%
-        left: 0
-        top: 0
-        background-color: rgba(20, 26, 37, 0.35)
-        transition: var(--transition)
-        opacity: 0
-        pointer-events: none
+    .card--actions
+      grid-column: 2
 
 
 .content_offers
   .card
     display: grid
-    grid-template-columns: 44% 56%
-    max-width: calc((100% - 24px * 3) / 4 * 3 + 48px)
-    @media(max-width: 992px)
-      display: flex
-      flex-direction: column-reverse
-      max-width: 100%
+    grid-template-columns: 1fr
+    @media(min-width: 998px)
+      grid-template-columns: repeat(2, 1fr)
   .card--content
-    background-color: var(--c-text-default)
-    color: var(--c-text-primary)
-    display: grid
-    grid-template-columns: 3fr 1fr
-    grid-template-areas: 'title title' 'label actions' 'text actions'
-    grid-template-rows: 1fr
-    padding: 0
-    gap: 0
-    @media(max-width: 992px)
-      flex-grow: 1
+    @media(max-width: 768px)
+      gap: 0
   .card--title
     grid-area: title
-    padding: var(--g-card-inner)
-    color: #FCF8F3
-    font-family: 'SangBleuKingdom'
-    font-size: var(--fs-38)
-    font-weight: 300
-    line-height: 1.3
-    letter-spacing: -0.02em
-    text-transform: uppercase
-    border-bottom: 1px solid rgba(250, 251, 251, 0.10)
+    padding-bottom: var(--g-24)
+    border-bottom: 1px solid rgba(17, 24, 32, .4)
+    h3
+      -webkit-line-clamp: 2
     @media(max-width: 768px)
       line-height: 1.5
   .card--label
-    position: static
-    grid-area: label
-    padding: var(--fs-24) var(--g-card-inner)
-    border-bottom: 1px solid rgba(250, 251, 251, 0.10)
-    font-size: clamp(12px, calc(12px + (16 - 12) * ((100vw - 1024px) / (1920 - 1024))), 16px)
-    text-transform: uppercase
-    color: rgba(#FAFBFB, 0.5)
-    span.js-timer
-      background-color: transparent
-      color: var(--c-text-primary)
-      padding: 0
+    margin-bottom: 8px
   .card--text
-    grid-area: text
-    padding: var(--g-card-inner)
+    padding: 16px 0
     font-size: clamp(14px, calc(14px + (20 - 14) * ((100vw - 1024px) / (1920 - 1024))), 20px)
-    color: var(--c-text-primary)
     line-height: 1.4
+    p
+      -webkit-line-clamp: 4
   .card--actions
-    border-left: 1px solid rgba(250, 251, 251, 0.10)
-    grid-area: actions
-    display: flex
-    flex-direction: column
-  .card--action
-    display: flex
-    flex: 1 1 50%
-    align-items: center
-    justify-content: center
-    position: relative
-    width: auto
-    height: auto
-    right: 0
-    bottom: 0
-    top: 0
-    left: 0
-    font-size: var(--fs-24)
-    min-height: 80px
-    &:after
-      display: none
-    &:first-child
-      border-bottom: 1px solid rgba(250, 251, 251, 0.10)
-    &-calendar
-      transition: var(--transition)
-      background: transparent
-      color: #F5E5D9
-      .icon-HeaderCalendar
-        transition: var(--transition)
-      &:hover,
-      &:focus
-        background: linear-gradient(to right, #F5E5D9, #EBC4A8)
-        color: var(--c-text-default)
-    .icon-ic-lg-link
-      transform: rotate(0deg)
-      transition: var(--transition)
-      transform-origin: center
-      opacity: 0.35
-    &:hover,
-    &:focus
-      &:first-child
-        background-color: rgba(250, 251, 251, 0.1)
-      .icon-ic-lg-link
-        transform: rotate(45deg)
-        opacity: 1
-
-
+    margin-top: auto
   .card--image
-    aspect-ratio: initial
-    &:after,
-    &:before
-      display: none
+    aspect-ratio: 320/240
+    @media(min-width: 998px)
+      aspect-ratio: initial
+
+
 
 .content_events
-  .card[href]
-    background-color: var(--c-surface-subdued)
-    aspect-ratio: initial
+  .card
     display: grid
-    grid-template-columns: 37% 63%
-    place-content: start
-    grid-template-rows: auto  1fr
-    position: relative
-    &:hover,
-    &:focus
-      background-color: #ECEDEE
+    grid-template-columns: 1fr
+    @media(min-width: 1024px)
+      grid-template-columns: minmax(250px, 300px) 1fr
     .card--image
-      display: flex
-      overflow: hidden
-      aspect-ratio: 1 / 1
-      max-width: 360px
-      height: auto
-      align-self: flex-start
-      &:before,
-      &:after
-        display: none
-    .card--date
-      padding: var(--g-card-inner) 16px
-      background-color: var(--c-surface-dark)
-      color: var(--c-text-primary)
-      font-family: 'SangBleuKingdom'
-      font-weight: 300
-      letter-spacing: -0.02em
-      text-transform: uppercase
-      font-size: var(--fs-20)
-      white-space: break-spaces
-      display: flex
-      flex-direction: column
-      justify-content: flex-start
-      align-items: center
-      gap: 12px
-      aspect-ratio: 213 / 292
-      height: auto
-      strong
-        font-size: var(--fs-60)
-        width: 1.4em
-        text-align: center
-    .card--title
-      padding: var(--g-card-inner) var(--g-card-inner) var(--g-card-inner_s)
-      color: var(--c-text-default)
-      gap: 1.3em
-      display: flex
-      align-items: flex-start
-      flex: 1 1 50%
-      justify-content: space-between
-      h3
-        font-size: var(--fs-32)
-        line-height: 1.25
-        letter-spacing: -2%
-      .card--action
-        position: relative
-        right: 0
-        top: 0
-        transition: var(--transition)
-        transform: rotate(0)
-        transform-origin: center
-        &:after
-          background-color: transparent
-        & .icon:before
-          color: var(--c-text-default)
-          content: "\e92f"
-          font-size: 1em
-          line-height: 1.25em
+      aspect-ratio: 320 / 220
+      @media(min-width: 1024px)
+        aspect-ratio: initial
     .card--content
-      grid-column: span 2
-      position: static
-      color: var(--c-text-default)
-      padding: 0
-      gap: 0
-      align-self: flex-start
-      height: 100%
-    .card--text
-      flex: 1 1 50%
-      padding: 0 var(--g-card-inner) var(--g-card-inner_s)
-      color: var(--c-text-default)
-      &_item
-        padding: var(--g-20) 0
-        text-transform: uppercase
+      @media(min-width: 1024px)
         display: grid
-        grid-template-columns: 1fr 1fr
-        font-size: var(--fs-16)
-        letter-spacing: 0.02em
-        &:first-child
-          border-bottom: 1px solid var(--c-border-default)
-    &:focus,
-    &:hover
-      .card--action
-        transform: rotate(45deg)
+        grid-template-columns: 1fr max-content
+    .card--subtitle
+      color: var(--accent-2)
+      font-size: var(--fs-28)
+      span:last-of-type
+        opacity: 0.7
+    .card--title
+      grid-column: 1
+    .card--actions
+      grid-column: 2
+      margin-top: auto
+      @media(max-width: 1024px)
+        margin-left: auto
+    .card--text
+      grid-column: 1
+    .card--label
+      margin-bottom: auto
+      grid-column: 1
+    .label-tourney:before
+      content: '\e91c'
+    .label-money:before
+      content: '\e91c'
+    .label-horse:before
+      content: '\e91c'
+
+  .card:first-of-type
+    @media(min-width: 1024px)
+      display: block
+    .card--image
+      @media(min-width: 1024px)
+        aspect-ratio: initial
+        height: 100%
+        //position: absolute
+        //inset: 0
+    .card--content
+      @media(min-width: 1024px)
+        z-index: 2
+        position: absolute
+        top: auto
+        right: 30%
+        left: 8px
+        bottom: 8px
+        background-color: var(--c-surface-default)
+        border-radius: var(--border-corner)
+      .card--label
+        span
+          @media(min-width: 1024px)
+            background-color: var(--c-bck-default)
+
+
 
 .content_reviews
   .card--image
@@ -569,16 +411,33 @@
     font-size: var(--fs-16)
 
 
-
-@media(max-width: 768px)
-  .block_list:not(.block_list-slider).ac-bock_list-columns-2 .block--elements
-    display: grid
-    .card--content,
-    .card--label
-      padding: 8px
-    .card--action
-      display: none
-    .card--title
-      font-size: 16px
-    .block--pagination
-      grid-column: span 2
+.content_partners,
+.content_card-image
+  .card
+    aspect-ratio: 1/1
+    &--content
+      z-index: 2
+      position: absolute
+      top: auto
+      left: 16px
+      right: 16px
+      bottom: 16px
+      color: var(--c-surface-default)
+      display: grid
+      grid-template-columns: 1fr auto
+      padding: 0
+    &--title,
+    &--text
+      grid-column: 1
+    &--actions
+      grid-column: 2
+      margin-top: auto
+.content_card-image
+  .card
+    .card--image:after
+      position: absolute
+      z-index: 2
+      inset: 0
+      content: ''
+      pointer-events: none
+      background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .1965161064) 40%, rgba(220, 220, 220, 0) 100%)

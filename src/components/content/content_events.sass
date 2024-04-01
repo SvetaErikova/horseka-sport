@@ -1,9 +1,26 @@
 .content_events
   &:not(.block_list-slider)
     .block--elements
-      grid-template-columns: repeat(3, 1fr)
+      gap: var(--g-20)
+      grid-template-columns: repeat(2, 1fr)
       @media(max-width: 640px)
         grid-template-columns: 1fr
+      .card:first-of-type
+        @media(min-width: 1024px)
+          grid-column: 1
+          grid-row: span 3
+      .card:not(:first-of-type)
+        @media(min-width: 1024px)
+          grid-column: 2
+      .card:nth-child(2)
+        @media(min-width: 1024px)
+          grid-row: 1
+      .card:nth-child(3)
+        @media(min-width: 1024px)
+          grid-row: 2
+      .card:nth-child(4)
+        @media(min-width: 1024px)
+          grid-row: 3
     .block--pagination
       grid-column: span 3
       @media(max-width: 640px)

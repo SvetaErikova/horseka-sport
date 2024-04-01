@@ -28,17 +28,60 @@ header.header
 
     .header--nav
       nav.nav
-        button.nav--item.menu_button
-          span.icon-ic-lg-menu
-          span.icon-ic-lg-close
-          span.button_text Курорт
-        a.nav--item(href="" title="")
-          span Размещение
-        a.nav--item(href="" title="")
-          span Спецпредложения
-        a.nav--item(href="" title="")
-          span Афиша
-        a.nav--item(href="" title="")
+        //button.nav--item.menu_button
+        //  span.icon-ic-lg-menu
+        //  span.icon-ic-lg-close
+        //  span.button_text Курорт
+        .nav--item.button.is_dropdown.is_dropdown-events
+          span.icon-HeaderCalendar
+          span События
+          span.icon-SelectDown
+          .is_dropdown--wrapper
+            .is_dropdown--content.events
+              .events--item
+                .events--title СПОРТСМЕНАМ
+                .item--text-link
+                  .button
+                    span.icon-HeaderCalendar
+                    span Серии турниров
+                  .button.button-outlined.button-secondary
+                    span.icon-ic-lg-phone
+                .item--text-link
+                  .button
+                    span.icon-HeaderCalendar
+                    span Календарь событий
+                  .button.button-outlined.button-secondary
+                    span.icon-ic-lg-phone
+              .events--item
+                .events--title ЗРИТЕЛЯМ
+                .item--image-link
+                  img(src="/assets/img/accomodation_bg.jpg")
+                  .button
+                    span Приобрести билеты
+                  .button.button-outlined.button-secondary.button-dark
+                    span.icon-ic-lg-phone
+
+        a.nav--item.button(href="" title="")
+          span Услуги
+          span.icon-SelectDown
+        a.nav--item.button(href="" title="")
+          span Инфраструктура
+        .nav--item.is_dropdown
+          span О нас
+          span.icon-SelectDown
+          .is_dropdown--wrapper
+            .is_dropdown--content
+              a(href="" ).button.button-link.button-secondary
+                span Акции
+              a(href="" ).button.button-link.button-secondary
+                span Галерея
+              a(href="" ).button.button-link.button-secondary
+                span Новости
+              a(href="" ).button.button-link.button-secondary
+                span Отзывы
+              a(href="" ).button.button-link.button-secondary
+                span Контакты
+        a.nav--item.button(href="" title="")
           span Контакты
         .nav--item.is_dropdown.hidden
           span ...
@@ -56,19 +99,24 @@ header.header
         .is_dropdown--wrapper(aria-hidden="true")
           .is_dropdown--content
             .contact
-              .contact--title Телефон
+              .contact--item
+                .contact--title Телефон
+                .contact--value
+                  a(href="/") 8 (495) 419-96-90
+              .contact--item
+                .contact--title E-MAIL
+                .contact--value
+                  a(href="/") info@kskivanovskoe.ru
+            .contact--link(href="/")
+              span Заказать звонок
+              span.icon-SelectDown
+            .contact--item
+              .contact--title АДРЕС
               .contact--value
-                a(href="/") 8 888 888 88 88
-              .contact--value
-                a(href="/") info@mriyaresort.com
-            .contact
-              .contact--title Карьера
-              .contact--value
-                a(href="/") job@mriyaresort.com
-            .contact
-              .contact--title Сотрудничество
-              .contact--value
-                a(href="/") 8 499 490-02-85
+                p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+            .contact--link(href="/")
+              span Как доехать
+              span.icon-SelectDown
       .header--booking.is_dropdown
         button.button.button-filled.button-accent
           span.icon-HeaderCalendar

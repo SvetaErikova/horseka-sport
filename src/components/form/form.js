@@ -126,42 +126,42 @@ forms.forEach(form => {
 
 //date input
 
-let date_inputs = document.querySelectorAll('.form--input_date')
-
-date_inputs.forEach( input => {
-
-  let i_today_date = new Date()
-  // i_today_date.setDate(i_today_date.getDate() - 1);
-
-  const picker = new Litepicker({
-    element: input,
-    singleMode: true,
-    autoApply: true,
-    format: 'DD.MM.YYYY',
-    lang: "ru-RU",
-    // startDate: i_today_date,
-    minDate: input.dataset.min,
-    maxDate: input.dataset.max,
-    position: 'left auto',
-    numberOfMonths: 1,
-    numberOfColumns: 1,
-    showTooltip: false,
-    plugins: ['mobilefriendly'],
-    mobilefriendly: {
-      breakpoint: 668,
-    },
-    buttonText: {
-      "previousMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
-        '<path d="M6.43359 11.4343L14.4336 3.43433L15.565 4.5657L8.13065 12L15.565 19.4343L14.4336 20.5657L6.43359 12.5657V11.4343Z" />\n' +
-        '</svg>',
-      "nextMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
-        '<path d="M17.565 11.4343L9.56496 3.43433L8.43359 4.5657L15.8679 12L8.43359 19.4343L9.56496 20.5657L17.565 12.5657V11.4343Z" />\n' +
-        '</svg>',
-    },
-    setup: (picker) => {
-      picker.on('before:render', (ui) => {
-        input.placeholder = i_today_date.toLocaleDateString("ru-RU")
-      });
-    },
-  });
-})
+// let date_inputs = document.querySelectorAll('.form--input_date')
+//
+// date_inputs.forEach( input => {
+//
+//   let i_today_date = new Date()
+//   // i_today_date.setDate(i_today_date.getDate() - 1);
+//
+//   const picker = new Litepicker({
+//     element: input,
+//     singleMode: true,
+//     autoApply: true,
+//     format: 'DD.MM.YYYY',
+//     lang: "ru-RU",
+//     // startDate: i_today_date,
+//     minDate: input.dataset.min,
+//     maxDate: input.dataset.max,
+//     position: 'left auto',
+//     numberOfMonths: 1,
+//     numberOfColumns: 1,
+//     showTooltip: false,
+//     plugins: ['mobilefriendly'],
+//     mobilefriendly: {
+//       breakpoint: 668,
+//     },
+//     buttonText: {
+//       "previousMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
+//         '<path d="M6.43359 11.4343L14.4336 3.43433L15.565 4.5657L8.13065 12L15.565 19.4343L14.4336 20.5657L6.43359 12.5657V11.4343Z" />\n' +
+//         '</svg>',
+//       "nextMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
+//         '<path d="M17.565 11.4343L9.56496 3.43433L8.43359 4.5657L15.8679 12L8.43359 19.4343L9.56496 20.5657L17.565 12.5657V11.4343Z" />\n' +
+//         '</svg>',
+//     },
+//     setup: (picker) => {
+//       picker.on('before:render', (ui) => {
+//         input.placeholder = i_today_date.toLocaleDateString("ru-RU")
+//       });
+//     },
+//   });
+// })

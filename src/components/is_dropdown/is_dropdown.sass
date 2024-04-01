@@ -2,14 +2,13 @@
 .is_dropdown
   position: relative
   overflow: visible
-  cursor: pointer
+  //cursor: pointer
   &.hidden
     display: none
   .icon-SelectDown
     transform: scaleY(1)
     transform-origin: center
-    transition: 0.18s ease-in-out
-    color: var(--accent)
+    //transition: 0.18s ease-in-out
   @media(min-width: 1024px)
     &:hover,
     &:focus
@@ -40,7 +39,7 @@
   pointer-events: none
   transition: opacity 0.13s linear, transform 0.18s linear
   position: absolute
-  right: 0
+  left: 0
   top: 100%
   width: fit-content
   min-width: 100%
@@ -53,10 +52,47 @@
   color: var(--c-text-default)
   padding: 20px
   border: 1px solid var(--others-divider, #E0E1E3)
+  border-radius: var(--border-corner)
   --hover-color: var(--c-text-disabled)
-  //@media(max-width: 992px)
-  //  display: none
   @media(min-width: 992px)
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.10)
-  .nav--item span
-    padding: 4px 0
+
+.is_dropdown-events
+  .events
+    display: flex
+    gap: 16px
+    &--item
+      display: flex
+      flex-direction: column
+      gap: 16px
+      .item--text-link,
+      .item--image-link
+        height: 100%
+        border-radius: var(--border-corner)
+        overflow: hidden
+        padding: 20px
+        background-color: var(--c-surface-subdued)
+        display: flex
+        justify-content: space-between
+        gap: 16px
+        .button:first-of-type
+          margin-bottom: auto
+        .button:last-of-type
+          margin-top: auto
+          position: relative
+          right: -10px
+          bottom: -10px
+      .item--image-link
+        position: relative
+        color: var(--c-surface-default)
+
+        aspect-ratio: 360 / 250
+      .item--image-link img
+        filter: brightness(70%)
+        position: absolute
+        inset: 0
+
+
+    &--title
+      font-size: var(--fs-28)
+

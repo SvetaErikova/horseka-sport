@@ -1,10 +1,10 @@
 .accordion
   cursor: pointer
   position: relative
-  padding: var(--g-24) 0
+  padding: var(--g-24)
+  border-radius: var(--border-corner)
   max-width: 868px
-  & + .accordion
-    border-top: 1px solid var(--c-border-others)
+  background-color: var(--c-bck-default)
   &.is_open
     .accordion--content
       transition: max-height 0.1s linear, opacity 0.1s linear
@@ -77,4 +77,5 @@
         font-size: var(--fs-18)
       & > p:first-child
         margin: 0
-
+  & + .accordion
+    margin-top: 16px

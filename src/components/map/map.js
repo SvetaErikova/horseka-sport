@@ -2,22 +2,26 @@ let map_container = document.getElementById('map')
 
 if ( map_container ) {
 
-  const pointMriya = [44.396338, 33.939542];
-
-    DG.then(function () {
-      const map = DG.map(map_container, {
-        center: pointMriya,
-        zoom: 16,
-        pitch: 45,
-        scrollWheelZoom: false,
-        fullscreenControl: false,
-        geoclicker: true,
-      });
-      map.zoomControl.setPosition('bottomleft')
-
+  const pointHotel = [55.933554, 38.211476];
+  ymaps.ready(init);
+  function init() {
+      // const map = new ymaps(map_container, {
+      //   center: pointMriya,
+      //   zoom: 16,
+      //   pitch: 45,
+      //   scrollWheelZoom: false,
+      //   fullscreenControl: false,
+      //   geoclicker: true,
+      // });
+    let map = new ymaps.Map(map_container, {
+      center: pointHotel,
+        zoom: 10,
+      // controls: ['routeButtonControl'],
     });
 
-  //
+    };
+
+
   // const map = new mapgl.Map('map', {
   //   center: [33.940552,44.396348],
   //   zoom: 17,

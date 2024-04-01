@@ -71,53 +71,53 @@ function isOverflown(element) {
 
 /* Навигация в хедере */
 
-if ( window.matchMedia('(min-width: 993px)').matches ) {
-
-  let header_nav = document.querySelector('.header--nav .nav')
-  let dropdown_button = header_nav.querySelector('.nav--item.is_dropdown')
-  let dropdown_menu = header_nav.querySelector('.is_dropdown--wrapper .is_dropdown--content')
-
-  function hideOverflownElements() {
-    let last_link = header_nav.querySelector('a.nav--item:last-of-type')
-    header_nav.removeChild(last_link)
-    dropdown_menu.appendChild(last_link)
-    dropdown_button.classList.remove('hidden')
-  }
-
-  function showOverflownElements() {
-    let last_link = dropdown_menu.firstChild
-    if (last_link ){
-      dropdown_menu.removeChild(last_link)
-      header_nav.appendChild(last_link)
-      dropdown_button.classList.add('hidden')
-    }
-  }
-
-
-  if ( isOverflown(header_nav) ) {
-    while( isOverflown(header_nav) ){
-      hideOverflownElements()
-    }
-  }
-  // else {
-  //
-  //     // showOverflownElements()
-  //
-  // }
-
-  window.addEventListener('resize', ()=>{
-    if ( isOverflown(header_nav) ) {
-      while( isOverflown(header_nav) ){
-        hideOverflownElements()
-      }
-    }
-    // else {
-    //   while( !isOverflown(header_nav) ){
-    //     showOverflownElements()
-    //   }
-    // }
-  })
-
-}
+// if ( window.matchMedia('(min-width: 993px)').matches ) {
+//
+//   let header_nav = document.querySelector('.header--nav .nav')
+//   let dropdown_button = header_nav.querySelector('.nav--item.is_dropdown')
+//   let dropdown_menu = header_nav.querySelector('.is_dropdown--wrapper .is_dropdown--content')
+//
+//   function hideOverflownElements() {
+//     let last_link = header_nav.querySelector('a.nav--item:last-of-type')
+//     header_nav.removeChild(last_link)
+//     dropdown_menu.appendChild(last_link)
+//     dropdown_button.classList.remove('hidden')
+//   }
+//
+//   function showOverflownElements() {
+//     let last_link = dropdown_menu.firstChild
+//     if (last_link ){
+//       dropdown_menu.removeChild(last_link)
+//       header_nav.appendChild(last_link)
+//       dropdown_button.classList.add('hidden')
+//     }
+//   }
+//
+//
+//   if ( isOverflown(header_nav) ) {
+//     while( isOverflown(header_nav) ){
+//       hideOverflownElements()
+//     }
+//   }
+//   // else {
+//   //
+//   //     // showOverflownElements()
+//   //
+//   // }
+//
+//   window.addEventListener('resize', ()=>{
+//     if ( isOverflown(header_nav) ) {
+//       while( isOverflown(header_nav) ){
+//         hideOverflownElements()
+//       }
+//     }
+//     // else {
+//     //   while( !isOverflown(header_nav) ){
+//     //     showOverflownElements()
+//     //   }
+//     // }
+//   })
+//
+// }
 
 

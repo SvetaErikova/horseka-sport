@@ -1,4 +1,13 @@
 .block_image_text
+  .block--head
+    display: flex
+    flex-direction: column
+    &_title
+      //font-size: var(--fs-72)
+      padding-bottom: var(--g-24)
+      border-bottom: none
+      .f-h2
+        font-size: 48px
   .block--wrapper
     display: grid
     grid-template-columns: 1fr 1fr
@@ -14,6 +23,7 @@
       grid-template-rows: auto
       padding: var(--g-container) 0
   .block--head
+    border-radius: var(--border-corner) var(--border-corner) 0 0
     grid-column: 1
   .block--content,
   .block--actions
@@ -25,8 +35,8 @@
   .block--image ~ .block--actions
     grid-column: 1
     width: 100%
-    padding-left: var(--g-149)
-    padding-right: var(--g-149)
+    padding-left: var(--g-80)
+    padding-right: var(--g-80)
   .block--image ~ .block--head
     justify-content: flex-end
   .block--image
@@ -34,6 +44,7 @@
     grid-row: 1 / span 3
     min-height: 100%
     max-width: 100%
+    border-radius: var(--border-corner)
     @media(max-width: 768px)
       grid-column: 1
       grid-row: 1 / span 1
@@ -41,12 +52,15 @@
       object-fit: cover
       height: 100%
       width: 100%
+      border-radius: var(--border-corner)
+      overflow: hidden
   .block--head
     align-items: flex-start
     padding-top: var(--g-80)
   .block--actions
     align-items: flex-start
-    padding-bottom: var(--g-80)
+    padding-bottom: var(--g-32)
+    border-radius: 0 0 var(--border-corner) var(--border-corner)
   .block--content
     margin-top: 0
   &.block_image_text-reversed
@@ -62,6 +76,8 @@
   &.block_image_text-ratio
     .block--image
       img, video
+        position: sticky
+        top: calc(var(--headerHeight) + 2rem)
         aspect-ratio: 1 / 1
         height: auto
   &.block_image_text-ratio-portrait
@@ -116,3 +132,30 @@
       padding-top: 0
     .block--actions
       padding-bottom: 0
+  &.block_image_text-mask
+    #mask,
+    #mask-2
+      position: absolute
+      width: 0
+      height: 0
+    .block--image
+      img
+        position: sticky
+        top: calc(var(--headerHeight) + 2rem)
+        aspect-ratio: 1/1
+        height: auto
+        clip-path: url(#mask)
+  &.block_image_text-reversed.block_image_text-mask
+    .block--image
+      img
+        clip-path: url(#mask-2)
+
+  &.block_image_text-slider
+    .block--image
+      overflow: hidden
+      height: max-content
+      overflow: hidden
+    img
+      height: auto
+      flex-shrink: 0
+      flex-grow: 0

@@ -32,18 +32,79 @@ header.header.header-transparent
         //  span.icon-ic-lg-menu
         //  span.icon-ic-lg-close
         //  span.button_text Курорт
-        a.nav--item.button(href="" title="")
-          span.icon-HeaderCalendar
-          span События
-          span.icon-SelectDown
-        a.nav--item.button(href="" title="")
-          span Услуги
-          span.icon-SelectDown
+        .nav--item.button.is_dropdown.is_dropdown-events
+          a.button(href="" title="")
+            span.icon-HeaderCalendar
+            span События
+            span.icon-SelectDown
+          .is_dropdown--wrapper
+            .is_dropdown--content.events
+              .events--item
+                .events--title СПОРТСМЕНАМ
+                .item--text-link
+                  .button
+                    span.icon-HeaderCalendar
+                    span Серии турниров
+                  .button.button-outlined.button-secondary
+                    span.icon-ic-lg-phone
+                .item--text-link
+                  .button
+                    span.icon-HeaderCalendar
+                    span Календарь событий
+                  .button.button-outlined.button-secondary
+                    span.icon-ic-lg-phone
+              .events--item
+                .events--title ЗРИТЕЛЯМ
+                .item--image-link
+                  img(src="/assets/img/accomodation_bg.jpg")
+                  .button
+                    span Приобрести билеты
+                  .button.button-outlined.button-secondary.button-dark
+                    span.icon-ic-lg-phone
+
+        .nav--item.is_dropdown(href="" title="")
+          a.button(href="" title="")
+            span Услуги
+            span.icon-SelectDown
+          .is_dropdown--wrapper
+            .is_dropdown--content
+              .is_dropdown--content-col
+                .is_dropdown--content-title
+                  p ЛЮБИТЕЛЯМ
+                a(href="" ).button.button-link.button-secondary
+                  span Школа верховой езды
+                a(href="" ).button.button-link.button-secondary
+                  span Фотосессии
+                a(href="" ).button.button-link.button-secondary
+                  span Конные прогулки
+              .is_dropdown--content-col
+                .is_dropdown--content-title
+                  p ВЛАДЕЛЬЦАМ ЛОШАДЕЙ
+                a(href="" ).button.button-link.button-secondary
+                  span Содержание лошадейы
+                a(href="" ).button.button-link.button-secondary
+                  span Ветеринария
+                a(href="" ).button.button-link.button-secondary
+                  span Продажа и разведение
         a.nav--item.button(href="" title="")
           span Инфраструктура
-        a.nav--item(href="" title="")
-          span О нас
-          span.icon-SelectDown
+        .nav--item.is_dropdown
+          a.button(href="" title="")
+            span О нас
+            span.icon-SelectDown
+          .is_dropdown--wrapper
+            .is_dropdown--content
+              .is_dropdown--content-col
+                a(href="" ).button.button-link.button-secondary
+                  span Акции
+                a(href="" ).button.button-link.button-secondary
+                  span Галерея
+                a(href="" ).button.button-link.button-secondary
+                  span Новости
+                a(href="" ).button.button-link.button-secondary
+                  span Отзывы
+                a(href="" ).button.button-link.button-secondary
+                  span Контакты
         a.nav--item.button(href="" title="")
           span Контакты
         .nav--item.is_dropdown.hidden
@@ -62,19 +123,24 @@ header.header.header-transparent
         .is_dropdown--wrapper(aria-hidden="true")
           .is_dropdown--content
             .contact
-              .contact--title Телефон
+              .contact--item
+                .contact--title Телефон
+                .contact--value
+                  a(href="/") 8 (495) 419-96-90
+              .contact--item
+                .contact--title E-MAIL
+                .contact--value
+                  a(href="/") info@kskivanovskoe.ru
+            .contact--link(href="/")
+              span Заказать звонок
+              span.icon-SelectDown
+            .contact--item
+              .contact--title АДРЕС
               .contact--value
-                a(href="/") 8 888 888 88 88
-              .contact--value
-                a(href="/") info@mriyaresort.com
-            .contact
-              .contact--title Карьера
-              .contact--value
-                a(href="/") job@mriyaresort.com
-            .contact
-              .contact--title Сотрудничество
-              .contact--value
-                a(href="/") 8 499 490-02-85
+                p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+            .contact--link(href="/")
+              span Как доехать
+              span.icon-SelectDown
       .header--booking.is_dropdown
         button.button.button-filled.button-accent
           span.icon-HeaderCalendar

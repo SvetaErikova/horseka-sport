@@ -8,10 +8,6 @@ banner_slider.forEach(banner_sl => {
     slider_controls.classList.add('slider_controls');
     banner_sl.append(slider_controls);
 
-    let swiper_pagination = document.createElement('div');
-    swiper_pagination.classList.add('swiper_pagination');
-    slider_controls.append(swiper_pagination);
-
     let swiper_nav_prev = document.createElement('div');
     swiper_nav_prev.classList.add('swiper--prev');
     slider_controls.append(swiper_nav_prev);
@@ -38,18 +34,6 @@ banner_slider.forEach(banner_sl => {
         nextEl: swiper_nav_next,
         prevEl: swiper_nav_prev,
       },
-      pagination: {
-        type: 'fraction',
-        el: swiper_pagination,
-        renderFraction: function (currentClass, totalClass) {
-          return '<span class="' + currentClass + '"></span>&nbsp;' +
-            '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="2" viewBox="0 0 24 2" fill="none">\n' +
-            '<path d="M0 1H24" stroke="white" stroke-opacity="0.35"/>\n' +
-            '</svg>' +
-            '&nbsp;<span class="' + totalClass + '"></span>';
-        }
-      },
-
 
     });
 
@@ -59,6 +43,14 @@ banner_slider.forEach(banner_sl => {
     let slider_controls = document.createElement('div');
     slider_controls.classList.add('slider_controls');
     banner_sl.append(slider_controls);
+
+    let swiper_pagination_container = document.createElement('div');
+    swiper_pagination_container.classList.add('swiper-pagination-container');
+    slider_controls.append(swiper_pagination_container);
+
+    let swiper_pagination = document.createElement('div');
+    swiper_pagination.classList.add('swiper-pagination');
+    swiper_pagination_container.append(swiper_pagination);
 
     let swiper_nav_prev = document.createElement('div');
     swiper_nav_prev.classList.add('swiper--prev');
@@ -84,7 +76,10 @@ banner_slider.forEach(banner_sl => {
         nextEl: swiper_nav_next,
         prevEl: swiper_nav_prev,
       },
-      pagination: false,
+      pagination: {
+        el: swiper_pagination,
+        type: "progressbar",
+      },
       focusableElements: 'a, button',
     });
 
@@ -101,122 +96,173 @@ let  activateBlocklistSlider = (block) => {
     if (swiper_item.classList.contains("content_page_accommodation")) {
       return;
     }
-    let slides_per_view_desktop = 4, slides_per_view_pad = 3, slides_per_view_mob = 1.2;
 
-    switch (true) {
-      case swiper_item.parentElement.classList.contains('is_cascade'):
-        slides_per_view_desktop = 2;
-        slides_per_view_pad = 2;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_offers'):
-        slides_per_view_desktop = "auto";
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_events'):
-        slides_per_view_desktop = 3;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_galleries'):
-        slides_per_view_desktop = 4;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_news'):
-        slides_per_view_desktop = 4;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_blog'):
-        slides_per_view_desktop = 4;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_accommodation'):
-        slides_per_view_desktop = 4;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      case swiper_item.classList.contains('content_reviews'):
-        slides_per_view_desktop = 4;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-        break;
-      default:
-        slides_per_view_desktop = 4;
-        slides_per_view_pad = 3;
-        slides_per_view_mob = 1;
-    }
+    if ( swiper_item.classList.contains('block_list-slider-v2') ) {
 
-    let slider_controls = document.createElement('div');
-    slider_controls.classList.add('slider_controls');
+      let head = swiper_item.querySelector('.block--head')
 
-    let swiper_nav_prev = document.createElement('div');
-    swiper_nav_prev.classList.add('swiper-button-prev');
-    slider_controls.append(swiper_nav_prev);
 
-    let swiper_nav_next = document.createElement('div');
-    swiper_nav_next.classList.add('swiper-button-next');
-    slider_controls.append(swiper_nav_next);
+      let slider_controls = document.createElement('div');
+      slider_controls.classList.add('slider_controls');
 
-    const swiper = new Swiper(swiper_item.querySelector('.block--elements'), {
-      createElements: true,
-      slideClass: 'card',
-      grabCursor: true,
-      simulateTouch: true,
-      freeMode: false,
-      allowTouchMove: true,
-      uniqueNavElements: true,
-      focusableElements: 'input, select, option, textarea, button, video, label, a, button',
-      noSwipingClass: "swiper-no-swiping-block",
-      mousewheel: {
-        forceToAxis: true,
-      },
-      navigation: {
-        nextEl: swiper_nav_next,
-        prevEl: swiper_nav_prev,
-      },
-      pagination: false,
-      breakpoints: {
-        280: {
-          spaceBetween: 8,
-          slidesPerView: slides_per_view_mob,
+      let swiper_nav_prev = document.createElement('div');
+      swiper_nav_prev.classList.add('swiper-button-prev');
+      slider_controls.append(swiper_nav_prev);
+
+      let swiper_nav_next = document.createElement('div');
+      swiper_nav_next.classList.add('swiper-button-next');
+      slider_controls.append(swiper_nav_next);
+
+      let swiper_pagination = document.createElement('div');
+      swiper_pagination.classList.add('swiper-pagination');
+      slider_controls.append(swiper_pagination);
+
+      const swiper = new Swiper(swiper_item.querySelector('.block--elements'), {
+        createElements: true,
+        slideClass: 'card',
+        grabCursor: true,
+        simulateTouch: true,
+        freeMode: false,
+        allowTouchMove: true,
+        uniqueNavElements: true,
+        focusableElements: 'input, select, option, textarea, button, video, label, a, button',
+        noSwipingClass: "swiper-no-swiping-block",
+        mousewheel: {
+          forceToAxis: true,
         },
-        640: {
-          spaceBetween: 24,
-          slidesPerView: slides_per_view_pad,
+        navigation: {
+          nextEl: swiper_nav_next,
+          prevEl: swiper_nav_prev,
         },
-        1024: {
-          spaceBetween: 24,
-          slidesPerView: slides_per_view_desktop,
+        pagination: {
+          el: swiper_pagination,
         },
-      },
-      on: {
-        init: function (swiper) {
-          if (swiper.slides.length > swiper.params.slidesPerView) {
-            for (let i = swiper.params.slidesPerView; i < swiper.slides.length; i++) {
-              let image = swiper.slides[i].querySelector('.card--image img')
-              image.setAttribute('loading', 'lazy')
+        breakpoints: {
+          280: {
+            spaceBetween: 8,
+            slidesPerView: 1,
+          },
+          640: {
+            spaceBetween: 20,
+            slidesPerView: 2,
+          },
+          1140: {
+            spaceBetween: 20,
+            slidesPerView: 2.5,
+          },
+        },
+      });
+      head.append(slider_controls);
 
-              let lazy_loader = document.createElement('div')
-              lazy_loader.classList.add('swiper-lazy-preloader', 'swiper-lazy-preloader-white')
-              image.parentNode.appendChild(lazy_loader)
-            }
-          }
-        }
+      if (swiper.slides.length <= 3) {
+        slider_controls.classList.add('hidden')
+
+        // swiper.navigation.nextEl.classList.add('hidden')
+        // swiper.navigation.prevEl.classList.add('hidden')
+        swiper.disable()
       }
-    });
 
 
-    if (swiper.slides.length <= 1) {
-      swiper.navigation.nextEl.classList.add('hidden')
-      swiper.navigation.prevEl.classList.add('hidden')
-      swiper.disable()
+    }
+    else {
+      let slides_per_view_desktop = 4, slides_per_view_pad = 3, slides_per_view_mob = 1.2;
+
+      switch (true) {
+        case swiper_item.classList.contains('content_offers'):
+          slides_per_view_desktop = 2;
+          slides_per_view_pad = 2;
+          slides_per_view_mob = 1.3;
+          break;
+        case swiper_item.classList.contains('content_basic'):
+          slides_per_view_desktop = 4;
+          slides_per_view_pad = 3;
+          slides_per_view_mob = 1.2;
+          break;
+        case swiper_item.classList.contains('content_hourse'):
+          slides_per_view_desktop = 2;
+          slides_per_view_pad = 1.2;
+          slides_per_view_pad = 1.2;
+          break;
+        case swiper_item.classList.contains('content_personal'):
+          slides_per_view_desktop = 4;
+          slides_per_view_pad = 3;
+          slides_per_view_mob = 1.2;
+          break;
+        default:
+          slides_per_view_desktop = 4;
+          slides_per_view_pad = 3;
+          slides_per_view_mob = 1;
+      }
+
+      let slider_controls = document.createElement('div');
+      slider_controls.classList.add('slider_controls');
+
+      let swiper_pagination_container = document.createElement('div');
+      swiper_pagination_container.classList.add('swiper-pagination-container');
+      slider_controls.append(swiper_pagination_container);
+
+      let swiper_pagination = document.createElement('div');
+      swiper_pagination.classList.add('swiper-pagination');
+      swiper_pagination_container.append(swiper_pagination);
+
+      let swiper_nav_prev = document.createElement('div');
+      swiper_nav_prev.classList.add('swiper-button-prev');
+      slider_controls.append(swiper_nav_prev);
+
+      let swiper_nav_next = document.createElement('div');
+      swiper_nav_next.classList.add('swiper-button-next');
+      slider_controls.append(swiper_nav_next);
+
+      const swiper = new Swiper(swiper_item.querySelector('.block--elements'), {
+        createElements: true,
+        slideClass: 'card',
+        grabCursor: true,
+        simulateTouch: true,
+        freeMode: false,
+        allowTouchMove: true,
+        uniqueNavElements: true,
+        focusableElements: 'input, select, option, textarea, button, video, label, a, button',
+        noSwipingClass: "swiper-no-swiping-block",
+        mousewheel: {
+          forceToAxis: true,
+        },
+        navigation: {
+          nextEl: swiper_nav_next,
+          prevEl: swiper_nav_prev,
+        },
+        // pagination: true,
+        pagination: {
+          el: swiper_pagination,
+          type: "progressbar",
+        },
+        breakpoints: {
+          280: {
+            spaceBetween: 8,
+            slidesPerView: slides_per_view_mob,
+          },
+          640: {
+            spaceBetween: 24,
+            slidesPerView: slides_per_view_pad,
+          },
+          1140: {
+            spaceBetween: 24,
+            slidesPerView: slides_per_view_desktop,
+          },
+        },
+      });
+      swiper_item.querySelector('.block--elements').append(slider_controls);
+
+      if (swiper.slides.length <= slides_per_view_desktop) {
+        slider_controls.classList.add('hidden')
+
+        // swiper.navigation.nextEl.classList.add('hidden')
+        // swiper.navigation.prevEl.classList.add('hidden')
+        swiper.disable()
+      }
     }
 
-    swiper_item.querySelector('.block--elements').append(slider_controls);
+
+
   })
 }
 
@@ -285,10 +331,150 @@ let  activateGallerySliders = (block) => {
 
 activateGallerySliders(document)
 
+// Слайдер события
 
+let  activateEventsSliders = (block) => {
+  let events_swiper = block.querySelectorAll('.content_events .block--elements');
+
+  events_swiper.forEach(events => {
+
+    let slider_controls = document.createElement('div');
+    slider_controls.classList.add('slider_controls');
+
+    let swiper_pagination_container = document.createElement('div');
+    swiper_pagination_container.classList.add('swiper-pagination-container');
+    slider_controls.append(swiper_pagination_container);
+
+    let swiper_pagination = document.createElement('div');
+    swiper_pagination.classList.add('swiper-pagination');
+    swiper_pagination_container.append(swiper_pagination);
+
+    let swiper_nav_prev = document.createElement('div');
+    swiper_nav_prev.classList.add('swiper-button-prev');
+    slider_controls.append(swiper_nav_prev);
+
+    let swiper_nav_next = document.createElement('div');
+    swiper_nav_next.classList.add('swiper-button-next');
+    slider_controls.append(swiper_nav_next);
+
+    const swiper = new Swiper(events, {
+      createElements: true,
+      slidesPerView: 1,
+      grabCursor: true,
+      simulateTouch: true,
+      freeMode: false,
+      allowTouchMove: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      slideClass: 'card',
+      navigation: {
+        nextEl: swiper_nav_next,
+        prevEl: swiper_nav_prev,
+      },
+      // pagination: true,
+      pagination: {
+        el: swiper_pagination,
+        type: "progressbar",
+      },
+      breakpoints: {
+        320: {
+          spaceBetween: 8
+        },
+        993: {
+          spaceBetween: 24,
+        }
+      },
+      on: {
+        afterInit: function (swiper) {
+          if ( swiper.slides.length > 1 ) {
+            for (let i = 0; i < swiper.slides.length ; i++) {
+              let image = swiper.slides[i].querySelector('img')
+              image.setAttribute('loading', 'lazy')
+
+              let lazy_loader = document.createElement('div')
+              lazy_loader.classList.add('swiper-lazy-preloader', 'swiper-lazy-preloader-white')
+              image.parentNode.appendChild(lazy_loader)
+            }
+          }
+        }
+      }
+    });
+    events.append(slider_controls);
+  })
+}
+if ( window.matchMedia('(max-width: 768px)').matches ) {
+  activateEventsSliders(document)
+}
+
+let random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
+// Слайдер в image-text
+
+let activateImageTextSlider = ( sliders ) => {
+  sliders.forEach(slider => {
+
+    let images = slider.querySelectorAll('img')
+
+    if ( images.length > 1 ) {
+      slider.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        e.preventDefault()
+      })
+
+      images.forEach(img => {
+        img.classList.add('image_slide')
+      })
+
+      let slider_controls = document.createElement('div');
+      slider_controls.classList.add('slider_controls');
+
+      let swiper_nav_prev = document.createElement('div');
+      swiper_nav_prev.classList.add('swiper-button-prev');
+      slider_controls.append(swiper_nav_prev);
+
+      let swiper_nav_next = document.createElement('div');
+      swiper_nav_next.classList.add('swiper-button-next');
+      slider_controls.append(swiper_nav_next);
+
+      let swiper_pagination = document.createElement('div');
+      swiper_pagination.classList.add('swiper-pagination');
+      slider_controls.append(swiper_pagination);
+
+      const images_slider = new Swiper(slider, {
+        createElements: true,
+        slidesPerView: 1,
+        // autoplay: {
+        //   delay: random(2000, 5000)
+        // },
+        effect: "fade",
+        grabCursor: true,
+        simulateTouch: true,
+        freeMode: false,
+        allowTouchMove: true,
+        loop: true,
+        mousewheel: {
+          forceToAxis: true,
+        },
+        slideClass: 'image_slide',
+        navigation: {
+          nextEl: swiper_nav_next,
+          prevEl: swiper_nav_prev,
+        },
+        pagination: {
+          el: swiper_pagination,
+        },
+      });
+      slider.append(slider_controls);
+    }
+  })
+
+}
+
+activateImageTextSlider(document.querySelectorAll('.block_image_text-slider .block--image'))
 
 // Слайдер в карточках
-let random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
 
 let activateCardImagesSlider = ( sliders ) => {
   sliders.forEach(slider => {

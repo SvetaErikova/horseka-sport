@@ -2,7 +2,7 @@
   position: sticky
   top: 0
   left: 0
-  width: 100vw
+  width: 100%
   max-width: 100vw
   z-index: 50
   color: var(--c-text-default)
@@ -79,6 +79,20 @@
       border-radius: var(--border-corner-button)
       &:hover
         background-color: var(--hover--bck-color)
+      .is_dropdown--content
+        display: flex
+        gap: 16px var(--g-32)
+        a span
+          padding: 0
+      .is_dropdown--content-col
+        display: flex
+        flex-direction: column
+        gap: 8px
+      .is_dropdown--content-title
+        font-size: var(--fs-24)
+        text-transform: uppercase
+        margin-bottom: 16px
+
 
   .nav--item:not(.menu_button)
     @media(max-width: 992px)
@@ -94,24 +108,43 @@
   justify-content: flex-end
   gap: clamp(8px, calc(8px + (16 - 8) * ((100vw - 1024px) / (1920 - 1024))), 16px)
   padding-left: 24px
-  .header--contacts-adress
-    font-size: 12px
-    opacity: 0.7
-.header--actions,
-.header_mobile
-  .contact
-    &:not(:last-child)
-      margin-bottom: 16px
-    &--title
-      text-transform: uppercase
-      color: var(--c-text-disabled)
+  .header--contacts
+    &-adress
       font-size: 12px
-      margin-bottom: 4px
-    &--value
-      font-size: 16px
-      padding: 4px 0
-      a:hover
-        color: var(--c-text-accent-default)
+      opacity: 0.7
+
+//.header--contacts
+//  .contact
+//    display: flex
+//    gap: 16px
+//    &--item
+//      display: flex
+//      flex-direction: column
+//      gap: 16px
+//    &--title
+//      font-weight: 500
+//      font-size: var(--fs-32)
+//      text-transform: uppercase
+//    &--link
+//      font-weight: 500
+//      color: var(--accent)
+//      padding: 16px 0
+
+//.header--actions,
+//.header_mobile
+//  .contact
+//    &:not(:last-child)
+//      margin-bottom: 16px
+//    &--title
+//      text-transform: uppercase
+//      color: var(--c-text-disabled)
+//      font-size: 12px
+//      margin-bottom: 4px
+//    &--value
+//      font-size: 16px
+//      padding: 4px 0
+//      a:hover
+//        color: var(--c-text-accent-default)
 
 .header--actions_mobile
   span

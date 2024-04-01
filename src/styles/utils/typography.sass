@@ -9,11 +9,11 @@
   font-style: normal
   src: url("../fonts/Gilroy/Gilroy-ExtraBold.otf") format('truetype')
 
-//@font-face
-//  font-family: 'InterVariable'
-//  font-weight: 300
-//  font-style: normal
-//  src: url("../fonts/SangBleuKingdom/SangBleuKingdom-Light-WebXL.otf") format('opentype')
+@font-face
+  font-family: 'InterVariable'
+  //font-weight: 300
+  font-style: normal
+  src: url("../fonts/InterVariable/InterVariable.ttf") format('opentype')
 
 html
   font-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 1024px) / (1920 - 1024))), 18px)
@@ -27,15 +27,16 @@ html
 
 
 .f-h1
+  font-size: clamp(56px, calc(56px + (148 - 56) * ((100vw - 1024px) / (1920 - 1024))), 148px)
 
-  font-size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
-  --size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
 
 .f-h2
-  font-size: clamp(24px, calc(24px + (48 - 24) * ((100vw - 1024px) / (1920 - 1024))), 48px)
-  --size: clamp(24px, calc(24px + (48 - 24) * ((100vw - 1024px) / (1920 - 1024))), 48px)
+  font-size: clamp(56px, calc(56px + (148 - 56) * ((100vw - 1024px) / (1920 - 1024))), 148px)
+
+
 
 h1,h2,h3,h4,h5,h6
-  font-weight: 500
+  font-weight: 300
   font-family: 'Gilroy'
+  line-height: 1
 

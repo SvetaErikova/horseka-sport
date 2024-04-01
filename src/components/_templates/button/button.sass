@@ -29,7 +29,7 @@
     letter-spacing: -2%
   span:not([class]),
   span:not([class])
-    padding: 0 4px
+    padding: 0 12px
   span[class^="icon-"],
   span[class*=" icon-"],
   svg[class^="icon"]
@@ -51,8 +51,7 @@
   color: var(--filled-c-base)
   border-radius: var(--border-corner-button)
   justify-content: center
-  padding: 10px 22px
-
+  padding: 10px 10px
   &:hover,
   &:focus,
   &:active
@@ -74,10 +73,9 @@
   border-radius: var(--border-corner-button)
   align-items: center
   justify-content: center
-  padding: 10px 22px
-  &:hover,
-  &:focus,
-  &:active
+  padding: 10px 10px
+.button.button-outlined:is(:hover, :focus, :active),
+.card:is(:hover, :focus, :active) .button.button-outlined
     border-color: var(--outlined-bc-hover)
     color: var(--outlined-c-hover)
     //background-color: var(--outlined-bgc-hover)
@@ -106,7 +104,8 @@
 
 /* Button  colors  */
 
-.button.button-accent
+.button.button-accent,
+.card
   --filled-bgc-base: #FC563B
   --filled-bc-base: #FC563B
   --filled-c-base: #fff
@@ -121,13 +120,29 @@
 
   --link-c-base: #093282
   --link-c-hover: rgba(9, 50, 130, 0.6)
+  &.button-dark
+    //--filled-bgc-base: #FC563B
+    //--filled-bc-base: #FC563B
+    //--filled-c-base: #fff
+    //--filled-bgc-hover: #F63719
+    //--filled-bc-hover: #F63719
+    //--filled-c-hover: #fff
 
-.button.button-primary
-  --filled-bgc-base: #F2F5FA
-  --filled-bc-base: #F2F5FA
-  --filled-c-base: #093282
-  --filled-bgc-hover: #093282
-  --filled-bc-hover: #093282
+    --outlined-bc-base: #FC563B
+    --outlined-c-base: #fff
+    --outlined-bgc-hover: #FC563B
+    --outlined-bc-hover: #FC563B
+    --outlined-c-hover: #fff
+
+    //--link-c-base: rgba(255, 255, 255, 1)
+    //--link-c-hover: rgba(255, 255, 255, 0.8)
+.button.button-primary,
+.card
+  --filled-bgc-base: #093282
+  --filled-bc-base: #093282
+  --filled-c-base: #FFF
+  --filled-bgc-hover: #144FC3
+  --filled-bc-hover: #144FC3
   --filled-c-hover: #fff
 
   --outlined-bc-base: #111820
@@ -137,14 +152,20 @@
 
   --link-c-base: #093282
   --link-c-hover: #111820
-
-.button.button-secondary
+  &.button-dark
+    --outlined-bc-base: #fff
+    --outlined-c-base: #fff
+    --outlined-bgc-hover: #093282
+    --outlined-bc-hover: #093282
+    --outlined-c-hover: #fff
+.button.button-secondary,
+.card
   --filled-bgc-base: #F2F5FA
   --filled-bc-base: #F2F5FA
   --filled-c-base: #111820
   --filled-bgc-hover: #E0E7F3
   --filled-bc-hover: #E0E7F3
-  --filled-c-hover: rgba(20, 26, 37, 1)
+  --filled-c-hover: #111820
 
   --outlined-bc-base: rgba(17, 24, 32, 0.4)
   --outlined-c-base: #111820
@@ -153,9 +174,16 @@
   --outlined-c-hover: #111820
 
   --link-c-base: #111820
-  --link-c-hover:  rgba(17, 24, 32, 0.6)
+  --link-c-hover: #093282
 
-.button.button-special
+  &.button-dark
+    --outlined-bc-base: #E0E7F3
+    --outlined-c-base: #E0E7F3
+    --outlined-bc-hover: #E0E7F3
+    --outlined-bgc-hover: #E0E7F3
+    --outlined-c-hover: #111820
+.button.button-special,
+.card
   --filled-bgc-base: #FC563B
   --filled-bc-base: #FC563B
   --filled-c-base: #fff
@@ -173,10 +201,10 @@
   --outlined-bgc-icon-hover: #093282
 
 .button.button-special
-  padding: 16px 24px
+  padding: 12px 20px
   gap: 12px
   .icon-spec-btn
-    margin-left: 24px
+    margin-left: 20px
     position: relative
     &:before
       position: relative
@@ -203,7 +231,7 @@
        //color: #FC563B
        left: 0
       &:after
-       width: 200%
+       width: 150%
 
 
 
@@ -219,13 +247,15 @@
     z-index: 1
     border-radius: 50px
     //background-color: red
-    translate: -50% -50%
+    translate: -50% 0
     left: 50%
     top: 100%
     transition: 0.3s linear
     width: 0
-  &:hover,
-  &:focus,
-  &:active
+.button.button-filled:not(.button-special):is(:hover, :focus, :active),
+.button.button-outlined:not(.button-special):is(:hover, :focus, :active),
+.card:is(:hover, :focus, :active) .button.button-outlined,
+.card:is(:hover, :focus, :active) .button.button-filled
     &:after
-      width: 150%
+      width: 200%
+      translate: -50% -50%
