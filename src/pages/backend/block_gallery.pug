@@ -9,7 +9,40 @@ block content
 
   section.block.block_element.content_gallery
     .block--wrapper
-      +block--head_h1("subtitle","Галерея","head caption")
+      +block--head("subtitle","Галерея слайдер стандарт","head caption")
+      .block--content
+        .gallery.js-gallerySwiper
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head("subtitle","Галерея слайдер v2","head caption")
+      .block--content
+        .gallery.js-gallerySwiper.gallerySwiper-v2
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head("subtitle","Галерея слайдер v3","head caption")
+      .block--content
+        .gallery.js-gallerySwiper.gallerySwiper-v3
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head_h1("subtitle","Галерея сетка большая","head caption")
       .block--content
         .gallery
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
@@ -31,15 +64,3 @@ block content
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-
-  section.block.block_element.content_gallery
-    .block--wrapper
-      +block--head("subtitle","Галерея","head caption")
-      .block--content
-        .gallery.js-gallerySwiper
-          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-

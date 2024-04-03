@@ -91,13 +91,18 @@
     place-content: end start
     place-items: end start
 
-
+.block_banner.block_banner-hero.block_banner-group
+  .block--head
+    @media(min-width: 998px)
+      padding-right: 140px
+  .banner
+    @media(max-width: 768px)
+      padding-bottom: 70px
 .block_banner.block_banner-hero
   margin: 0
   position: relative
   background-color: var(--c-surface-dark)
-  @media(min-width: 768px)
-    height: 100vh
+  height: 100vh
   .block--wrapper
     padding: 0
     max-width: 100%
@@ -105,14 +110,7 @@
     position: relative
     height: 100%
     min-width: 100%
-    padding: 40px var(--g-container)
-    @media(min-width: 768px)
-      padding-top: var(--headerHeight, 137px)
-
-    @media(max-width: 768px)
-      display: flex
-      flex-direction: column
-      padding: 0 var(--g-container) 40px
+    padding: var(--headerHeight, 137px)  var(--g-32) var(--g-container)
     &:before
       content: ""
       background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.196516106442577) 33%, rgba(220,220,220,0) 47%, rgba(0,0,0,0.65) 100%)
@@ -125,57 +123,39 @@
       z-index: 2
   .block--content
     margin-top: auto
-    @media(max-width: 768px)
-      position: relative
-      height: 60vh
-      width: calc(100% + var(--g-container) * 2)
-      margin-left: calc(-1 * var(--g-container))
   .block--head
     color: var(--c-text-primary)
     border-top: 1px solid #fff
+    @media(max-width: 998px)
+      width: 100%
+    &_caption p
+      font-size: var(--fs-36)
+    &_subtitle
+      transform: translateY(-150%)
   .block--actions
     width: 100%
-
+    .button
+      @media(max-width: 768px)
+        margin-top: 0
   .slider_controls
+    align-items: center
     position: absolute
-    padding: 38px 40px 38px var(--g-container)
+    padding: 0 var(--g-container) var(--g-32)
     bottom: 0
     right: 0
-    //width: 50%
-    justify-content: flex-start
     z-index: 4
-    display: flex
-    align-items: center
-    gap: 16px
     @media(max-width: 768px)
       width: 100%
-      padding: 0 var(--g-container) 40px
-      position: static
+      padding:  var(--g-container)  var(--g-container)
   .swiper--prev,
   .swiper--next
     padding: 12px
-    &:after
-      font-size: clamp(20px, calc(20px + (32 - 20) * ((100vw - 1024px) / (1920 - 1024))), 32px)
-      color: var(--c-text-primary)
-  .swiper--prev
-    &:after
-      content: "\e91d"
-  .swiper--next
-    &:after
-      content: "\e91e"
+    border: 1px solid var(--c-surface-subdued)
 
-  .swiper_pagination
+  .swiper-pagination
     margin-right: auto
-    color: var(--c-text-primary)
-    font-variant-numeric: lining-nums tabular-nums
-    font-feature-settings: 'case' on
-    font-size: 24px
-    font-style: normal
-    font-weight: 300
-    line-height: 1.33
-    letter-spacing: -0.48px
-    display: flex
-    align-items: center
+    @media(min-width: 768px)
+      display: none
 
 
 .block_banner.banner-no_media
@@ -186,8 +166,4 @@
   .block--head
     //color: var(--c-text-default)
 
-
-.block_banner-hero.ac-banner-short
-  @media(min-width: 992px)
-    height: 70vh
 

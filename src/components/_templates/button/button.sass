@@ -58,7 +58,7 @@
     //background: var(--filled-bgc-hover)
     border-color: var(--filled-bc-hover)
     color: var(--filled-c-hover)
-    &:after
+    &:before
       background: var(--filled-bgc-hover)
     .icon-spec-btn
       color: var( --filled-c-icon-hover)
@@ -79,11 +79,11 @@
     border-color: var(--outlined-bc-hover)
     color: var(--outlined-c-hover)
     //background-color: var(--outlined-bgc-hover)
-    &:after
+    &:before
       background-color: var(--outlined-bgc-hover)
     .icon-spec-btn
       color: var( --outlined-c-icon-hover)
-      &:after
+      &:before
         background-color: var(--outlined-bgc-icon-hover)
 
 .button.button-link
@@ -182,62 +182,10 @@
     --outlined-bc-hover: #E0E7F3
     --outlined-bgc-hover: #E0E7F3
     --outlined-c-hover: #111820
-.button.button-special,
-.card
-  --filled-bgc-base: #FC563B
-  --filled-bc-base: #FC563B
-  --filled-c-base: #fff
-  --filled-bgc-hover: #FC563B
-  --filled-bc-hover: #FC563B
-  --filled-c-hover: #fff
-  --filled-c-icon-hover: #FC563B
-  --filled-bgc-icon-hover: #fff
 
-  --outlined-bc-base: #111820
-  --outlined-c-base: #111820
-  --outlined-bgc-hover: transparent
-  --outlined-c-hover: #111820
-  --outlined-c-icon-hover: #fff
-  --outlined-bgc-icon-hover: #093282
-
-.button.button-special
-  padding: 12px 20px
-  gap: 12px
-  .icon-spec-btn
-    margin-left: 20px
-    position: relative
-    &:before
-      position: relative
-      transition: var(--transition)
-      left: -12px
-      z-index: 2
-    &:after
-      content: ''
-      border-radius: 50px
-      width: 0
-      height: auto
-      aspect-ratio: 1/1
-      position: absolute
-      translate: -50% -50%
-      top: 50%
-      left: 50%
-      transition: var(--transition)
-      background-color: #fff
-  &:hover,
-  &:focus,
-  &:active
-    .icon-spec-btn
-      &:before
-       //color: #FC563B
-       left: 0
-      &:after
-       width: 150%
-
-
-
-.button.button-filled:not(.button-special),
-.button.button-outlined:not(.button-special)
-  &:after
+.button.button-filled,
+.button.button-outlined
+  &:before
     content: ''
     position: absolute
     width: 100%
@@ -252,10 +200,10 @@
     top: 100%
     transition: 0.3s linear
     width: 0
-.button.button-filled:not(.button-special):is(:hover, :focus, :active),
-.button.button-outlined:not(.button-special):is(:hover, :focus, :active),
+.button.button-filled:is(:hover, :focus, :active),
+.button.button-outlined:is(:hover, :focus, :active),
 .card:is(:hover, :focus, :active) .button.button-outlined,
 .card:is(:hover, :focus, :active) .button.button-filled
-    &:after
+    &:before
       width: 200%
       translate: -50% -50%

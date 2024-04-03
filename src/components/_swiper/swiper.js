@@ -2,19 +2,24 @@ let banner_slider = document.querySelectorAll('.block_banner-group');
 
 banner_slider.forEach(banner_sl => {
 
-  if ( banner_sl.classList.contains('banner-hero') ) {
-
+  if ( banner_sl.classList.contains('block_banner-hero') ) {
     let slider_controls = document.createElement('div');
     slider_controls.classList.add('slider_controls');
     banner_sl.append(slider_controls);
 
+    let swiper_pagination = document.createElement('div');
+    swiper_pagination.classList.add('swiper-pagination');
+    slider_controls.append(swiper_pagination);
+
     let swiper_nav_prev = document.createElement('div');
-    swiper_nav_prev.classList.add('swiper--prev');
+    swiper_nav_prev.classList.add('swiper--prev' ,'button', 'button-outlined','button-secondary','button-dark');
     slider_controls.append(swiper_nav_prev);
 
     let swiper_nav_next = document.createElement('div');
-    swiper_nav_next.classList.add('swiper--next');
+    swiper_nav_next.classList.add('swiper--next','button', 'button-outlined','button-secondary','button-dark');
     slider_controls.append(swiper_nav_next);
+
+
 
 
     const hero_slider = new Swiper(banner_sl.querySelector('.block--wrapper'), {
@@ -33,6 +38,9 @@ banner_slider.forEach(banner_sl => {
       navigation: {
         nextEl: swiper_nav_next,
         prevEl: swiper_nav_prev,
+      },
+      pagination: {
+        el: swiper_pagination,
       },
 
     });
@@ -53,11 +61,11 @@ banner_slider.forEach(banner_sl => {
     swiper_pagination_container.append(swiper_pagination);
 
     let swiper_nav_prev = document.createElement('div');
-    swiper_nav_prev.classList.add('swiper--prev');
+    swiper_nav_prev.classList.add('swiper--prev','button', 'button-outlined','button-secondary');
     slider_controls.append(swiper_nav_prev);
 
     let swiper_nav_next = document.createElement('div');
-    swiper_nav_next.classList.add('swiper--next');
+    swiper_nav_next.classList.add('swiper--next','button', 'button-outlined','button-secondary');
     slider_controls.append(swiper_nav_next);
 
     const banner_slider = new Swiper( banner_sl.querySelector('.block--wrapper'), {
@@ -106,11 +114,11 @@ let  activateBlocklistSlider = (block) => {
       slider_controls.classList.add('slider_controls');
 
       let swiper_nav_prev = document.createElement('div');
-      swiper_nav_prev.classList.add('swiper-button-prev');
+      swiper_nav_prev.classList.add('swiper-button-prev','button', 'button-outlined','button-secondary','button-dark');
       slider_controls.append(swiper_nav_prev);
 
       let swiper_nav_next = document.createElement('div');
-      swiper_nav_next.classList.add('swiper-button-next');
+      swiper_nav_next.classList.add('swiper-button-next','button', 'button-outlined','button-secondary','button-dark');
       slider_controls.append(swiper_nav_next);
 
       let swiper_pagination = document.createElement('div');
@@ -206,11 +214,11 @@ let  activateBlocklistSlider = (block) => {
       swiper_pagination_container.append(swiper_pagination);
 
       let swiper_nav_prev = document.createElement('div');
-      swiper_nav_prev.classList.add('swiper-button-prev');
+      swiper_nav_prev.classList.add('swiper-button-prev','button', 'button-outlined','button-secondary');
       slider_controls.append(swiper_nav_prev);
 
       let swiper_nav_next = document.createElement('div');
-      swiper_nav_next.classList.add('swiper-button-next');
+      swiper_nav_next.classList.add('swiper-button-next','button', 'button-outlined','button-secondary');
       slider_controls.append(swiper_nav_next);
 
       const swiper = new Swiper(swiper_item.querySelector('.block--elements'), {
@@ -276,15 +284,53 @@ let  activateGallerySliders = (block) => {
   let gallery_swiper = block.querySelectorAll('.js-gallerySwiper');
 
   gallery_swiper.forEach(gallery => {
+    let slides_per_view_desktop = 4, slides_per_view_pad = 3, slides_per_view_mob = 1.2, slides_centeredSlides = false;
+
+    switch (true) {
+      case gallery.classList.contains('gallerySwiper-v2'):
+
+        slides_per_view_desktop = 1.6;
+        slides_per_view_pad = 1;
+        slides_per_view_mob = 1.2;
+        slides_centeredSlides = 'true';
+        break;
+      case gallery.classList.contains('gallerySwiper-v3'):
+        slides_per_view_desktop = 1.2;
+        slides_per_view_pad = 1;
+        slides_per_view_mob = 1.2;
+        slides_centeredSlides = 'true';
+        break;
+      default:
+        slides_centeredSlides = 'false'
+        slides_per_view_desktop = 3;
+        slides_per_view_pad = 2;
+        slides_per_view_mob = 1.2;
+    }
+
+    let slider_controls = document.createElement('div');
+    slider_controls.classList.add('slider_controls');
+
+    let swiper_pagination_container = document.createElement('div');
+    swiper_pagination_container.classList.add('swiper-pagination-container');
+    slider_controls.append(swiper_pagination_container);
 
     let swiper_pagination = document.createElement('div');
-    swiper_pagination.classList.add('swiper_pagination');
-    gallery.append(swiper_pagination);
+    swiper_pagination.classList.add('swiper-pagination');
+    swiper_pagination_container.append(swiper_pagination);
+
+    let swiper_nav_prev = document.createElement('div');
+    swiper_nav_prev.classList.add('swiper-button-prev');
+    slider_controls.append(swiper_nav_prev);
+
+    let swiper_nav_next = document.createElement('div');
+    swiper_nav_next.classList.add('swiper-button-next');
+    slider_controls.append(swiper_nav_next);
 
 
     const swiper = new Swiper(gallery, {
       createElements: true,
-      slidesPerView: 1,
+      slidesPerView: 3,
+      loop: true,
       grabCursor: true,
       simulateTouch: true,
       freeMode: false,
@@ -293,23 +339,29 @@ let  activateGallerySliders = (block) => {
         forceToAxis: true,
       },
       slideClass: 'gallery--item',
-      navigation: true,
+      navigation: {
+        nextEl: swiper_nav_next,
+        prevEl: swiper_nav_prev,
+      },
+      // pagination: true,
       pagination: {
-        type: 'fraction',
-        el: ".swiper_pagination",
-        renderFraction: function (currentClass, totalClass) {
-          return '<span class="' + currentClass + '"></span>&nbsp;' +
-            ' / ' +
-            '&nbsp;<span class="' + totalClass + '"></span>';
-        }
+        el: swiper_pagination,
+        type: "progressbar",
       },
       breakpoints: {
-        320: {
-          spaceBetween: 8
+        280: {
+          spaceBetween: 8,
+          slidesPerView: slides_per_view_mob,
         },
-        993: {
-          spaceBetween: 24,
-        }
+        640: {
+          spaceBetween: 20,
+          slidesPerView: slides_per_view_pad,
+        },
+        1140: {
+          spaceBetween: 20,
+          centeredSlides: slides_centeredSlides,
+          slidesPerView: slides_per_view_desktop,
+        },
       },
       on: {
         afterInit: function (swiper) {
@@ -326,6 +378,7 @@ let  activateGallerySliders = (block) => {
         }
       }
     });
+    gallery.append(slider_controls);
   })
 }
 
@@ -673,3 +726,58 @@ if ( window.matchMedia('(max-width: 768px)').matches ) {
     })
   })
 }
+
+
+// Слайдер в табах
+let activateTabsSlider = ( sliders ) => {
+  sliders.forEach(slider => {
+
+    let tabs = slider.querySelectorAll('a')
+
+    if ( tabs.length > 1 ) {
+      slider.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        e.preventDefault()
+      })
+
+      tabs.forEach(tab => {
+        tab.classList.add('tabs_slide')
+      })
+
+      let slider_controls = document.createElement('div');
+      slider_controls.classList.add('slider_controls');
+
+      let swiper_nav_prev = document.createElement('div');
+      swiper_nav_prev.classList.add('swiper--prev','button', 'button-outlined','button-secondary');
+      slider_controls.append(swiper_nav_prev);
+
+      let swiper_nav_next = document.createElement('div');
+      swiper_nav_next.classList.add('swiper--next','button', 'button-outlined','button-secondary');
+      slider_controls.append(swiper_nav_next);
+
+      const tabs_slider = new Swiper(slider.querySelector('.block--sections_container'), {
+        createElements: true,
+        // slidesPerView: 1,
+        slidesPerView: 'auto',
+        grabCursor: true,
+        simulateTouch: true,
+        freeMode: false,
+        allowTouchMove: true,
+        mousewheel: {
+          forceToAxis: true,
+        },
+        slideClass: 'tabs_slide',
+        navigation: {
+          nextEl: swiper_nav_next,
+          prevEl: swiper_nav_prev,
+        },
+      });
+      slider.appendChild(slider_controls);
+    }
+  })
+
+}
+if(document.querySelector('.block--sections')){
+  activateTabsSlider(document.querySelectorAll('.block--sections'))
+}
+

@@ -1,7 +1,5 @@
 .block_list
-  .block--head
-    align-items: center
-    text-align: center
+
   .block--elements
     display: grid
     grid-template-columns: repeat(4, 1fr)
@@ -12,6 +10,8 @@
       gap: 8px
     @media(max-width: 640px)
       grid-template-columns: repeat(2, 1fr)
+    .block--sections
+      grid-area: sections
     .block--pagination
       grid-column: span 4
       @media(max-width: 992px)
@@ -74,6 +74,15 @@
       .card--actions
         margin-top: auto
 
-
-
-
+.block_list:not(.block_list-slider-v2)
+  .block--wrapper
+    display: grid
+    grid-template-columns: 1fr auto auto auto
+    grid-template-areas: 'heading filter showAll slider-controls' 'actions filter showAll slider-controls' 'sections filter showAll slider-controls' 'elements elements elements elements'
+    gap: 0
+    .block--head
+      grid-area: heading
+    .block--elements
+      grid-area: elements
+    .block--sections
+      grid-area: sections

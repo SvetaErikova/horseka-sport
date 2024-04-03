@@ -17,11 +17,14 @@
   display: flex
   justify-content: center
   align-items: center
-  width: clamp(42px, calc(42px + (56 - 42) * ((100vw - 1024px) / (1920 - 1024))), 56px)
-  height: clamp(42px, calc(42px + (56 - 42) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+  width: clamp(36px, calc(36px + (40 - 36) * ((100vw - 1024px) / (1920 - 1024))), 40px)
+  height: clamp(36px, calc(36px + (40 - 36) * ((100vw - 1024px) / (1920 - 1024))), 40px)
+  aspect-ratio: 1/1
   pointer-events: all
   transition: var(--transition)
+  border-radius: var(--border-corner-button)
   &:after
+    font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 1024px) / (1920 - 1024))), 28px)
     font-family: 'icomoon' !important
   &.swiper-button-disabled
     opacity: 0.4
@@ -34,11 +37,13 @@
 .swiper-button-prev,
 .swiper--prev
   &:after
+    z-index: 3
     content: "\e925"
 
 .swiper-button-next,
 .swiper--next
   &:after
+    z-index: 3
     content: "\e926"
 
 .swiper-pagination
@@ -50,24 +55,11 @@
 
 .block_list-slider,
 .content_events,
-.block_banner:not(.block_banner-hero)
+.block_banner:not(.block_banner-hero),
+.gallery
   .slider_controls
     margin-top: var(--g-32)
-    display: flex
-    justify-content: space-between
-    pointer-events: none
     z-index: 2
-    gap: 10px
-    .swiper-button-prev,
-    .swiper-button-next
-      border-radius: var(--border-corner-button)
-      aspect-ratio: 1/1
-      border: 1px solid var(--c-border-default, #ECEDEE)
-      &:hover,
-      &:focus
-        border-color: rgba(20, 26, 37, 1)
-      &.swiper-button-disabled
-        opacity: 0.5
     .swiper-pagination-container
       width: 100%
       margin-right: 20px
@@ -83,10 +75,25 @@
       overflow: hidden
     .swiper-pagination-progressbar .swiper-pagination-progressbar-fill
       background-color: var(--c-surface-dark)
+.slider_controls
+  display: flex
+  justify-content: space-between
+  pointer-events: none
+  gap: 10px
+.swiper-pagination
+  display: flex
+  gap: 8px
+.swiper-button-prev,
+.swiper-button-next
+  border: 1px solid var(--c-border-default, #ECEDEE)
+  &:hover,
+  &:focus
+    border-color: rgba(20, 26, 37, 1)
+  &.swiper-button-disabled
+    opacity: 0.5
 
 .block_list-slider-v2,
 .block_image_text-slider
-
   .slider_controls
     margin-top: auto
     width: 100%
@@ -95,11 +102,9 @@
     .swiper-button-next
       color: var(--c-surface-default)
       border: 1px solid var(--c-surface-default)
-      border-radius: 50px
-  .swiper-pagination
-    margin-left: auto
-    display: flex
-    gap: 8px
+    .swiper-pagination
+      margin-left: auto
+
 
 .swiper-pagination-bullet
   display: inline-block
