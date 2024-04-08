@@ -6,6 +6,11 @@ mixin block--head(subtitle, title, caption)
       h2.f-h2= title
     .block--head_caption
       p=caption
+    .block--actions
+      a(href="/").button.button-filled.button-accent.button-dark
+        span Действие
+      a(href="/").button.button-filled.button-primary
+        span Переход
 
 mixin block--head_h1(subtitle, title, caption)
   .block--head
@@ -15,6 +20,7 @@ mixin block--head_h1(subtitle, title, caption)
       h1.f-h1= title
     .block--head_caption
       p=caption
+
 
 mixin block--head_title_link(subtitle, title, caption)
   .block--head

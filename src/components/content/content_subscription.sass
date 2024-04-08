@@ -1,27 +1,52 @@
-//.content_subscription
-//  margin: var(--g-content) 0
-//  .block--wrapper
-//    grid-template-rows: auto
-//  &:last-child
-//    margin: var(--g-content) 0
-//  .block--head_title
-//    .f-h2
-//      font-size: var(--fs-20)
-//      font-weight: 500
-//  fieldset
-//    display: flex
-//    gap: 8px
-//    @media(max-width: 768px)
-//      flex-direction: column
-//      .form__input,
-//      .form__button,
-//      .form__button .button
-//        width: 100%
-//    .form__input
-//      flex-grow: 1
-//
-//.form--subscription
-//  .form__policy,
-//  .form__input span
-//    display: none
+.content_subscription
+  background-color: var(--c-bck-dark-blue)
+  color: var(--c-surface-default)
+  padding: var(--g-content) 0
+  .block--wrapper
+    display: flex
+    align-items: center
+    gap: var(--g-content)
+    max-width: 1080px
+    flex-direction: column
+  &:last-child
+    margin: var(--g-content) 0
+  .block--head
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    &_subtitle
+      color: var(--accent-2)
+
+
+  fieldset
+    display: flex
+    gap: 8px
+    @media(max-width: 768px)
+      flex-direction: column
+      .form__input,
+      .form__button,
+      .form__button .button
+        width: 100%
+    .form__input
+      flex-grow: 1
+
+.form--subscription
+  width: 100%
+  .form__policy,
+  .form__input span
+    display: none
+  fieldset
+    display: flex
+    gap: var(--g-24)
+    align-items: center
+    .form--title,
+    .form--input
+      margin: 0
+    .form--title
+      white-space: nowrap
+    .form--input
+      width: 100%
+      input
+        color: var(--c-text-primary)
 

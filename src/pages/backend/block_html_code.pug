@@ -6,7 +6,8 @@ block variables
   - var activePage = 'index'
 
 block content
-  section.block.block_list.block_html_code.content_advantages-2
+  // Преимущества
+  section.block.block_html_code.content_advantages-2
     .block--wrapper
       .block--head
         .block--head_subtitle
@@ -20,34 +21,102 @@ block content
         .card.advantages-1
           .card--image
             img(src="/assets/img/advantages/advantages-back-1.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-1.png")
           .card--content
             .card--title
-              h3.f-h4 30 гектаров<br>территории
+              h3 30 гектаров<br>территории
             .card--text
               p Просторная территория для занятий конным спортом, развлечений и отдыха
         .card.advantages-2
           .card--image
             img(src="/assets/img/advantages/advantages-back-2.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-2.png")
           .card--content
             .card--title
-              h3.f-h4 Современное<br>оснащение
+              h3 Современное<br>оснащение
             .card--text
               p 4 поля, 3 манежа, 10 конюшен и конюшни на выбор в соответствии с вашими желаниями и предпочтениями
         .card.advantages-3
           .card--image
             img(src="/assets/img/advantages/advantages-back-3.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-3.png")
           .card--content
             .card--title
-              h3.f-h4 крупнейшие<br> соревнования и турниры
+              h3 крупнейшие<br> соревнования и турниры
             .card--text
               p Участвуйте во всероссийских и международных соревнованиях, демонстрируйте свои навыки и таланты
         .card.advantages-4
           .card--image
             img(src="/assets/img/advantages/advantages-back-4.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-4.png")
           .card--content
             .card--title
-              h3.f-h4 Экспертный<br>состав тренеров
+              h3 Экспертный<br>состав тренеров
             .card--text
               p Учитесь у профессионального тренерского состава, который поможет вам достичь ваших целей и осуществить мечты
 
 
+  section.block.block_html_code.content_animation
+    .block--wrapper
+      .animation--row
+        .animation--content
+          .animation--title Новая
+        .animation--image
+          img(src="/assets/img/animation//1-1.jpg")
+      .animation--row
+        .animation--content
+          .animation--title территория
+      .animation--row
+        .animation--image
+          img(src="/assets/img/animation//2-2.jpg")
+        .animation--content
+          .animation--title спорта
+          .animation--subtitle
+            p Конно-спортивный клуб европейского уровня, где созданы самые комфортные условия для активного отдыха и занятий спортом.
+      .animation--row
+        .animation--image
+          img(src="/assets/img/animation//3-3.jpg")
+
+  //  block--stripe
+  section.block.block_html_code.block--stripe.ac-background-1
+    .block--wrapper
+      .item
+        .item--image
+          img(src="/assets/img/1.jpg" alt="")
+        .item--content
+          .item--title
+            h4 Ваш персональный консультант
+          .item--text
+            p Нужна помощь с выбором? Обратитесь к вашему персональному менеджеру и получите консультацию по выбору лошади
+        .item--actions
+          span Связаться с консультантом
+          .button.button-outlined.button-accent.button-dark
+            span.icon-HeroSliderRight
+
+  br
+  section.block.block_html_code.block--stripe
+    .block--wrapper
+      .item
+        .item--content
+          .item--title
+            h4 НЕОБХОДИМЫЕ ДОКУМЕНТЫ
+          .item--text
+            p Нужна помощь с выбором? Обратитесь к вашему персональному менеджеру и получите консультацию по выбору лошади
+        .item--actions
+          span Регламент соревнований
+          .button.button-outlined.button-accent
+            span.icon-HeroSliderRight
+        .item--actions
+          span Результаты соревнований
+          .button.button-outlined.button-accent
+            span.icon-HeroSliderRight
+
+  section.block.block_html_code.content_animation-v2
+    .block--wrapper
+      .head
+        .title-1 лошадь
+        .title-2 вашей мечты
+        //.image
+        img.img-front(src="/assets/img/animation/hourse-front.png" alt="")
+        img.img-back(src="/assets/img/animation/hourse-back.png" alt="")
+      .subtitle Лошадь вашей мечты ждет вас в нашем каталоге, где вы сможете найти идеального партнера для вашей страсти к конному спорту

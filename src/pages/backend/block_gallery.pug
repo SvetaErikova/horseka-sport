@@ -6,7 +6,7 @@ block variables
   - var activePage = 'index'
 
 block content
-
+  // галерея слайдер с ТРЕМЯ активной картинкой
   section.block.block_element.content_gallery
     .block--wrapper
       +block--head("subtitle","Галерея слайдер стандарт","head caption")
@@ -17,7 +17,7 @@ block content
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-
+  // галерея слайдер с ДВУМЯ активной картинкой
   section.block.block_element.content_gallery
     .block--wrapper
       +block--head("subtitle","Галерея слайдер v2","head caption")
@@ -28,7 +28,7 @@ block content
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
           +gallery--item("/assets/img/1.jpg", "подпись к картинке")
-
+  // галерея слайдер с ОДНОЙ активной картинкой
   section.block.block_element.content_gallery
     .block--wrapper
       +block--head("subtitle","Галерея слайдер v3","head caption")

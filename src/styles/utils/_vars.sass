@@ -11,9 +11,9 @@ html
   --c-text-subdued: #404B57
   --c-text-disabled: #AAADB1
   --c-text-primary: #FFFFFF
-  --c-text-accent-default: #94583A
-  --c-text-accent-hovered: #683E29
-  --c-text-critical: #B81818
+  --c-text-accent-default: #AAADB1
+  --c-text-accent-hovered: #AAADB1
+  --c-text-critical: #FA5184
 
   --c-bck-dark-blue: #052360
   --c-bck-green: #055152
@@ -22,22 +22,21 @@ html
   --c-border-default: #111820
   --c-border-subdued: #FFFFFF
   --c-border-hovered: #141A25
-  --c-border-primary-default: #C19E8D
-  --c-border-primary-subdued: #D3BBAE
-  --c-border-primary-hovered: #94583A
   --c-border-others: #E0E1E3
-
+  --c-border-secondary: rgba(17, 24, 32, 0.16)
   --border-corner: 16px
   --border-corner-button: 50px
   --border-corner-input: 4px
 
-  --c-critical: #B81818
+  --c-critical: #FA5184
   --c-success: #08AA66
   --c-warning: #E5B408
 
   --accent: #093282
   --accent-2: #FC563B
 
+
+  --g-8: 8px
   --g-container-vertical: clamp(32px, calc(32px + (80 - 32) * ((100vw - 375px) / (1920 - 375))), 80px)
   --g-container: clamp(8px, calc(8px + (20 - 8) * ((100vw - 375px) / (1920 - 375))), 20px)
   --g-section-inner: clamp(16px, calc(16px + (56 - 16) * ((100vw - 1024px) / (1920 - 1024))), 56px)
@@ -50,16 +49,32 @@ html
   --g-80: clamp(24px, calc(24px + (80 - 24) * ((100vw - 1024px) / (1920 - 1024))), 80px)
   --g-96: clamp(48px, calc(48px + (96 - 48) * ((100vw - 768px) / (1920 - 768))), 96px)
 
+  --g-footer: clamp(0px, calc(0px + (130 - 0) * ((100vw - 768px) / (1920 - 768))), 130px)
+
   --fs-14: clamp(12px, calc(12px + (14 - 12) * ((100vw - 1024px) / (1920 - 1024))), 14px)
   --fs-16: 16px
   --fs-18: clamp(16px, calc(16px + (18 - 16) * ((100vw - 1024px) / (1920 - 1024))), 18px)
   --fs-20: clamp(16px, calc(16px + (20 - 16) * ((100vw - 1024px) / (1920 - 1024))), 20px)
-  --fs-24: clamp(18px, calc(18px + (24 - 18) * ((100vw - 1024px) / (1920 - 1024))), 24px)
+  --fs-24: clamp(16px, calc(16px + (24 - 16) * ((100vw - 1024px) / (1920 - 1024))), 24px)
   --fs-28: clamp(20px, calc(20px + (28 - 20) * ((100vw - 1024px) / (1920 - 1024))), 28px)
   --fs-32: clamp(20px, calc(20px + (32 - 20) * ((100vw - 1024px) / (1920 - 1024))), 32px)
   --fs-36: clamp(20px, calc(20px + (36 - 20) * ((100vw - 1024px) / (1920 - 1024))), 36px)
   --fs-40: clamp(23px, calc(23px + (40 - 23) * ((100vw - 1024px) / (1920 - 1024))), 40px)
-  --fs-56: clamp(20px, calc(20px + (56 - 20) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+  --fs-52: clamp(24px, calc(24px + (52 - 24) * ((100vw - 1024px) / (1920 - 1024))), 52px)
+  --fs-56: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
   --fs-60: clamp(20px, calc(20px + (60 - 20) * ((100vw - 1024px) / (1920 - 1024))), 60px)
   --fs-72: clamp(46px, calc(46px + (72 - 46) * ((100vw - 1024px) / (1920 - 1024))), 72px)
+  --fs-96: clamp(56px, calc(56px + (96 - 56) * ((100vw - 1024px) / (1920 - 1024))), 96px)
   --transition: 0.18s ease-out
+
+
+// акцентный
+.ac-background-1
+  --bg-color: var(--accent)
+  --text-color: var(--c-surface-subdued)
+  --subtitle-color: var(--accent-2)
+// серый
+.ac-background-2
+  --bg-c-content: var(--c-surface-default)
+  --bg-color: var(--c-surface-subdued)
+  --subtitle-color: var(--accent)

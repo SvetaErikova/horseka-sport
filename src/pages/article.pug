@@ -8,7 +8,7 @@ block variables
 block content
   article.block.block_element
     .block--wrapper
-      +block--head_h1("лейбл","Главный заголовок страницы, название статьи","описание")
+      +block--head("лейбл","Главный заголовок страницы, название статьи","описание")
       .block--content
         .is_cascade
           figure
@@ -44,17 +44,17 @@ block content
           figure
             video(src="/assets/video/@lepragram.mp4" controls)
           figure
-            video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/e11/e115486fb468da56217dcb4dfba748ac.mp4" controls)
-          figure
-            video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/29d/29d28d505ec08aebc93a1aef187dcb73.mp4" controls)
-          figure
-            video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/aab/g6cvg4hi39dsbyw5g6weuk9b93164i6v.mp4" controls)
-          figure
-            video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/986/zoq12jk9c8vcma283x9rf84s9e6ctjey.mp4" controls)
+            video(poster="/assets/img/bg.jpg" src="/assets/video/@lepragram.mp4" controls)
 
           blockquote
-            p  И таких моментов в Paranormasight: The Seven Mysteries of Honjo множество. Благодаря правильной подаче, работе со звуком, точечным скримерам в этой визуальной новелле страшнее, чем во многих других хоррорах. И это очень аутентичный, истинно японский ужастик.
-            span Lucius Annaeus Sĕnĕca minor
+            .blockquote--text
+              p И таких моментов в Paranormasight: The Seven Mysteries of Honjo множество. Благодаря правильной подаче, работе со звуком, точечным скримерам в этой визуальной новелле страшнее, чем во многих других хоррорах. И это очень аутентичный, истинно японский ужастик.
+            .blockquote--author
+              .blockquote--author--image
+                img(src="/assets/img/bg.jpg")
+              .blockquote--author--text
+                p Константинопольский Константин
+                span Глава медицинского центра
           strong
           .is_cascade--accordion
             +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")

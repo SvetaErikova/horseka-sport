@@ -1,6 +1,5 @@
-footer.footer
-  //.block--wrapper
-  .footer--contacts
+section.block.block_html_code.content_contacts
+  .block--wrapper
     .block--content
       h2.f-h2 Контакты
       .contact
@@ -12,10 +11,10 @@ footer.footer
           .contact--title E-MAIL
           .contact--value
             a(href="/") info@kskivanovskoe.ru
-      .contact--item
-        .contact--title АДРЕС
-        .contact--value
-          p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+        .contact--item
+          .contact--title АДРЕС
+          .contact--value
+            p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
       .block--actions
         .button.button-filled.button-accent
           span Заказать звонок
@@ -28,8 +27,9 @@ footer.footer
       <script src="https://api-maps.yandex.ru/2.1/?apikey=48d87ef4-a099-4095-af51-20f442e126c6&lang=ru_RU" type="text/javascript"></script>
       #map
 
-  .footer--col
-    a.footer--logo(href="/")
+section.block.block_html_code.content_subscription
+  .block--wrapper
+    a.logo(href="/")
       <svg fill='#FC563B' width="184" height="76" viewBox="0 0 184 76" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M75.1904 57.1062C73.7752 57.1062 72.6656 56.8337 71.8695 56.2966V54.6533C72.7943 55.2866 73.8798 55.6073 75.11 55.6073C75.6568 55.6073 76.091 55.5271 76.3966 55.3588C76.7021 55.1904 76.8629 54.966 76.8629 54.6694C76.8629 54.4129 76.7021 54.2044 76.3725 54.0361C76.2358 53.972 75.9784 53.8918 75.6086 53.7956L74.6195 53.5551C73.6787 53.3147 72.9953 53.0101 72.5771 52.6413C72.159 52.2726 71.9419 51.7515 71.9419 51.0782C71.9419 50.3568 72.2394 49.7876 72.8345 49.3708C73.4295 48.9539 74.2577 48.7455 75.3111 48.7455C76.5333 48.7455 77.5062 48.986 78.246 49.459V51.0541C77.2811 50.5171 76.3322 50.2445 75.3754 50.2445C74.8447 50.2445 74.4426 50.3247 74.1612 50.477C73.8798 50.6293 73.735 50.8457 73.735 51.1183C73.735 51.3668 73.9039 51.5752 74.2336 51.7515C74.2738 51.7756 74.5311 51.8558 74.9975 51.992L75.9222 52.1844C77.7394 52.5852 78.648 53.4189 78.648 54.6854C78.648 55.4069 78.3264 55.992 77.6912 56.4329C77.0559 56.8738 76.2197 57.0982 75.1824 57.0982"/>
       <path d="M85.2336 48.7535C86.3593 48.7535 87.284 49.1544 88.0077 49.964C88.7314 50.7576 89.0932 51.7515 89.0932 52.9379C89.0932 54.1243 88.7314 55.0942 88.0077 55.8958C87.284 56.7055 86.3593 57.1063 85.2336 57.1063C84.0113 57.1063 83.0706 56.6734 82.3951 55.8157V60.1283H80.6422V48.97H82.3951V50.0521C83.0625 49.1944 84.0113 48.7616 85.2336 48.7616M84.7672 50.3006C84.2606 50.3006 83.7942 50.4289 83.3761 50.6934C82.958 50.958 82.6283 51.3026 82.4032 51.7195V54.1724C82.6283 54.5812 82.958 54.9179 83.3841 55.1824C83.8103 55.4469 84.2686 55.5752 84.7672 55.5752C85.4989 55.5752 86.11 55.3187 86.6005 54.8137C87.083 54.2926 87.3322 53.6754 87.3322 52.9379C87.3322 52.2004 87.091 51.5672 86.6005 51.0622C86.11 50.5491 85.5069 50.2846 84.7672 50.2846V50.3006Z"/>
@@ -54,100 +54,113 @@ footer.footer
       <path d="M30.073 8C13.4685 8 0 21.4349 0 37.996V48.3767C6.12717 48.5932 11.3538 49.9158 15.5752 51.5671V28.3126H11.4985V20.1844H24.3237V34.3086H35.1388V20.1924H48.0042V28.3206H43.8953V48.8176C48.1972 48.4409 52.9574 48.4088 58.1116 48.8657C59.4223 45.499 60.146 41.8357 60.146 37.996C60.146 21.4268 46.6855 8 30.073 8Z"/>
       <path d="M34.013 65.6994C34.415 66.3247 34.7769 66.9499 35.1065 67.5832C39.0466 66.9178 42.7213 65.499 45.9778 63.4629C41.8931 63.511 37.953 64.2485 34.013 65.6994Z"/>
       </svg>
-    .content_subscription
-      form.form
-        +block--head('', "Оформите подписку", 'Получайте свежие новости, предложения и информацию о предстоящих турнирах Horseka Sport')
-        .form--input
-          p ВАШ E-MAIL
-          input(type="email" placeholder="Ваша эл. почта")
+    .block--head
+      //.block--head_subtitle
+      //  p события и фестивали
+      .block--head_title
+        h2.f-h3 Оформите подписку
+      .block--head_caption
+        p Получайте свежие новости, предложения и информацию о предстоящих турнирах Horseka Sport
+      .block--actions
+    form.form.form--subscription
+      input(type="hidden" value="" name="fields[form]")
+      input(type="hidden" value="")
+      fieldset
+        .form--title ВАШ E-MAIL
+        label.form--input
+          input(type="mail" placeholder="example@email.com" name="fields[email]" autocomplete="email" required)
           .form--input_error Ошибка заполнения
+        .form__button
+          button.button.button-filled.button-accent(type="submit")
+            span Отправить
+
+footer.footer
+  .block--wrapper
+    .footer--row
+      .footer--col
+        a(href='').footer--lk
+          p Личный кабинет
           button.button.button-outlined.button-accent.button-dark(type="submit")
-            span Заказать звонок
-
-  .footer--row
-    .footer--col
-      a(href='').footer-lk
-        p Личный кабинет
-        button.button.button-outlined.button-accent.button-dark(type="submit")
-          span.icon-HeroSliderRight
-      .footer--soc
-        .soc--list
+            span.icon-HeroSliderRight
+        .footer--soc
           .soc--title Социальные сети
-          .soc--link
-            a(href="")
-              .icon-ic-socials-vk
-          .soc--link
-            a(href="")
-              .icon-ic-socials-viber
-          .soc--link
-            a(href="")
-              .icon-ic-socials-youtube
-    .footer--col
-      nav.nav
-        ul.nav--list
-          li
-            span.nav--list_title СОБЫТИЯ
-          li
-            a.nav--item(href="") Календарь
-          li
-            a.nav--item(href="") Серии турниров
-          li
-            a.nav--item(href="") Зрителям
-        ul.nav--list
-          li
-            span.nav--list_title УСЛУГИ КОМПЛЕКСА
-          li
-            a.nav--item(href="") Содержание
-          li
-            a.nav--item(href="") Ветеринария
-          li
-            a.nav--item(href="") Обучение верховой езде
-          li
-            a.nav--item(href="") Конные прогулки
-          li
-            a.nav--item(href="") Продажа лошадей
-          li
-            a.nav--item(href="") Разведение лошадей
-        ul.nav--list
-          li
-            span.nav--list_title ИНФРАСТРУКТУРА
-          li
-            a.nav--item(href="") Коюшни
-          li
-            a.nav--item(href="") Гранд-манеж
-          li
-            a.nav--item(href="") Поля
-          li
-            a.nav--item(href="") Ресторан
-        ul.nav--list
-          li
-            span.nav--list_title HORSEKA SPORT
-          li
-            a.nav--item(href="") О нас
-          li
-            a.nav--item(href="") Акции
-          li
-            a.nav--item(href="") Новости
-          li
-            a.nav--item(href="") Галерея
-          li
-            a.nav--item(href="") Отзывы
-          li
-            a.nav--item(href="") Контакты
-          li
-            a.nav--item(href="") Юридическая информация
+          .soc--list
+            .soc--link
+              a(href="")
+                .icon-ic-socials-vk
+            .soc--link
+              a(href="")
+                .icon-ic-socials-viber
+            .soc--link
+              a(href="")
+                .icon-ic-socials-youtube
+      .footer--col
+        nav.nav
+          ul.nav--list
+            li
+              span.nav--list_title СОБЫТИЯ
+            li
+              a.nav--item(href="") Календарь
+            li
+              a.nav--item(href="") Серии турниров
+            li
+              a.nav--item(href="") Зрителям
+          ul.nav--list
+            li
+              span.nav--list_title УСЛУГИ КОМПЛЕКСА
+            li
+              a.nav--item(href="") Содержание
+            li
+              a.nav--item(href="") Ветеринария
+            li
+              a.nav--item(href="") Обучение верховой езде
+            li
+              a.nav--item(href="") Конные прогулки
+            li
+              a.nav--item(href="") Продажа лошадей
+            li
+              a.nav--item(href="") Разведение лошадей
+          ul.nav--list
+            li
+              span.nav--list_title ИНФРАСТРУКТУРА
+            li
+              a.nav--item(href="") Коюшни
+            li
+              a.nav--item(href="") Гранд-манеж
+            li
+              a.nav--item(href="") Поля
+            li
+              a.nav--item(href="") Ресторан
+          ul.nav--list
+            li
+              span.nav--list_title HORSEKA SPORT
+            li
+              a.nav--item(href="") О нас
+            li
+              a.nav--item(href="") Акции
+            li
+              a.nav--item(href="") Новости
+            li
+              a.nav--item(href="") Галерея
+            li
+              a.nav--item(href="") Отзывы
+            li
+              a.nav--item(href="") Контакты
+            li
+              a.nav--item(href="") Юридическая информация
 
 
 
-  .footer--row.footer--row-bottom
-    .footer--col
-      .copyright
-    .footer--col.footer--col-links
-      //.footer--links
-      //  a(href="") Правовая информация
-      //  a(href="") Юридическая информация
-      //  a(href="") Карта сайта
-      .developer
-        span Разработка
-        a(href="") Webster STD
+    .footer--row.footer--row-bottom
+      .footer--col
+        .copyright
+      .footer--col.footer--col-links
+        //.footer--links
+        //  a(href="") Правовая информация
+        //  a(href="") Юридическая информация
+        //  a(href="") Карта сайта
+        .developer
+          span Разработка
+          a(href="https://webster.studio/")
+            img(height="1em" src="https://webster.studio/webster_logo.svg" alt="Webster Studio")
 

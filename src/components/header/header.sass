@@ -5,7 +5,8 @@
   width: 100%
   max-width: 100vw
   z-index: 50
-  color: var(--c-text-default)
+  color: var( --c-text-primary)
+  background: var(--accent)
   transform: translateY(0)
   transition: 0.18s linear
   --hover--bck-color: rgba(255, 255 ,255 , 0.1)
@@ -16,14 +17,15 @@
     translate: -50%
   @media(max-width: 992px)
     transition: var(--transition)
+
   .header--logo svg
-    fill: var(--accent)
+      fill: #fff
   &.is_scrolled
-    color: var( --c-text-primary)
-    //transform: translateY(-56px)
-    background: var(--accent)
-    //border-bottom: 1px solid var(--c-border-others, #E0E1E3)
-    //--hover-color: var(--c-text-disabled)
+    color: var(--c-text-default)
+    background-color: #FFFFFF
+    .header--logo svg
+      fill: var(--accent)
+
     @media(max-width: 992px)
       transform: translateY(-100%)
       & ~ .header_mobile
@@ -32,23 +34,18 @@
         transform: translateY(0)
         & ~ .header_mobile
           transform: translateY(100%)
-    .header--logo svg
-      fill: #fff
   &.header-transparent
     position: fixed
-    .header--logo svg
-      fill: #fff
-    //background: var(--c-surface-default)
 
-  &.header-transparent:not(.is_scrolled)
-    --hover-color: rgba(255,255,255,0.8)
-    background: transparent
-    border-color: transparent
-    color: var(--c-text-primary)
-    &.is_menu_opened
-      --hover-color: var(--c-text-disabled)
-      background: var(--c-surface-default)
-      color: var(--c-text-default)
+  //&.header-transparent:not(.is_scrolled)
+  //  --hover-color: rgba(255,255,255,0.8)
+  //  background: transparent
+  //  border-color: transparent
+  //  color: var(--c-text-primary)
+  //  &.is_menu_opened
+  //    --hover-color: var(--c-text-disabled)
+  //    background: var(--c-surface-default)
+  //    color: var(--c-text-default)
 
 .header--main
   padding: 18px var(--g-container)
@@ -112,6 +109,9 @@
     &-adress
       font-size: 12px
       opacity: 0.7
+    .is_dropdown--wrapper
+      right: 0
+      left: auto
 
 //.header--contacts
 //  .contact

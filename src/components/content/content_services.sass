@@ -1,0 +1,64 @@
+.content_services
+  color: var(--c-text-primary)
+  background-color: var(--accent)
+  .block--head
+    border-bottom: 1px solid var(--c-border-subdued)
+
+  .slider_controls
+    &:after
+      background: linear-gradient(90deg, rgba(255,254,254,0) 0%, var(--accent) 15%)
+    .button
+      --outlined-bc-base: #e0e7f3
+      --outlined-c-base: #e0e7f3
+      --outlined-bc-hover: #e0e7f3
+      --outlined-bgc-hover: #e0e7f3
+      --outlined-c-hover: #111820
+
+
+.content_services
+  .item
+    display: flex
+    flex-direction: column
+    gap: var(--g-8)
+    @media(min-width: 769px)
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+
+    &--image
+      aspect-ratio: initial
+      border-radius: var(--border-corner)
+      overflow: hidden
+    &--content
+      padding: var(--g-content) var(--g-section-inner)
+      display: flex
+      flex-direction: column
+      gap: 16px
+      border-radius: var(--border-corner)
+    &--content
+      color: var(--c-text-default)
+      background-color: var(--c-surface-default)
+    &--action
+      margin-top: 0
+    &--title
+      font-size: var(--fs-52)
+    &--text
+      font-size: var(--fs-24)
+    &--links
+      display: none
+      @media(min-width: 769px)
+        margin-top: var(--g-32)
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: var(--g-8)
+        .button
+          justify-content: space-between
+          width: 100%
+  .block--sections
+    button
+      color: var(--c-text-primary)
+      &:hover,
+      &:focus
+        color: var(--c-text-disabled)
+      &.is_active
+        color: var(--c-text-primary)
+

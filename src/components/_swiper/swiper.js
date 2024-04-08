@@ -172,7 +172,7 @@ let  activateBlocklistSlider = (block) => {
 
 
     }
-    else {
+    else if( swiper_item.classList.contains('block_list-slider')){
       let slides_per_view_desktop = 4, slides_per_view_pad = 3, slides_per_view_mob = 1.2;
 
       switch (true) {
@@ -194,6 +194,11 @@ let  activateBlocklistSlider = (block) => {
         case swiper_item.classList.contains('content_personal'):
           slides_per_view_desktop = 4;
           slides_per_view_pad = 3;
+          slides_per_view_mob = 1.2;
+          break;
+        case swiper_item.classList.contains('content_advantages'):
+          slides_per_view_desktop = 3;
+          slides_per_view_pad = 2.2;
           slides_per_view_mob = 1.2;
           break;
         default:
@@ -289,19 +294,19 @@ let  activateGallerySliders = (block) => {
     switch (true) {
       case gallery.classList.contains('gallerySwiper-v2'):
 
+        slides_per_view_desktop = 2;
+        slides_per_view_pad = 1;
+        slides_per_view_mob = 1.2;
+        slides_centeredSlides = false;
+        break;
+      case gallery.classList.contains('gallerySwiper-v3'):
         slides_per_view_desktop = 1.6;
         slides_per_view_pad = 1;
         slides_per_view_mob = 1.2;
         slides_centeredSlides = 'true';
         break;
-      case gallery.classList.contains('gallerySwiper-v3'):
-        slides_per_view_desktop = 1.2;
-        slides_per_view_pad = 1;
-        slides_per_view_mob = 1.2;
-        slides_centeredSlides = 'true';
-        break;
       default:
-        slides_centeredSlides = 'false'
+        slides_centeredSlides = false
         slides_per_view_desktop = 3;
         slides_per_view_pad = 2;
         slides_per_view_mob = 1.2;
@@ -363,20 +368,7 @@ let  activateGallerySliders = (block) => {
           slidesPerView: slides_per_view_desktop,
         },
       },
-      on: {
-        afterInit: function (swiper) {
-          if ( swiper.slides.length > 1 ) {
-            for (let i = 0; i < swiper.slides.length ; i++) {
-              let image = swiper.slides[i].querySelector('img')
-              image.setAttribute('loading', 'lazy')
 
-              let lazy_loader = document.createElement('div')
-              lazy_loader.classList.add('swiper-lazy-preloader', 'swiper-lazy-preloader-white')
-              image.parentNode.appendChild(lazy_loader)
-            }
-          }
-        }
-      }
     });
     gallery.append(slider_controls);
   })
@@ -470,6 +462,7 @@ let activateImageTextSlider = ( sliders ) => {
     let images = slider.querySelectorAll('img')
 
     if ( images.length > 1 ) {
+      slider.classList.add('block--image-slider')
       slider.addEventListener('click', (e)=>{
         e.stopPropagation();
         e.preventDefault()
@@ -483,11 +476,11 @@ let activateImageTextSlider = ( sliders ) => {
       slider_controls.classList.add('slider_controls');
 
       let swiper_nav_prev = document.createElement('div');
-      swiper_nav_prev.classList.add('swiper-button-prev');
+      swiper_nav_prev.classList.add('swiper-button-prev','button', 'button-outlined','button-secondary','button-dark');
       slider_controls.append(swiper_nav_prev);
 
       let swiper_nav_next = document.createElement('div');
-      swiper_nav_next.classList.add('swiper-button-next');
+      swiper_nav_next.classList.add('swiper-button-next','button', 'button-outlined','button-secondary','button-dark');
       slider_controls.append(swiper_nav_next);
 
       let swiper_pagination = document.createElement('div');
@@ -524,10 +517,9 @@ let activateImageTextSlider = ( sliders ) => {
 
 }
 
-activateImageTextSlider(document.querySelectorAll('.block_image_text-slider .block--image'))
+activateImageTextSlider(document.querySelectorAll('.block_image_text .block--image'))
 
 // Слайдер в карточках
-
 
 let activateCardImagesSlider = ( sliders ) => {
   sliders.forEach(slider => {
@@ -568,7 +560,7 @@ let activateCardImagesSlider = ( sliders ) => {
 
 }
 
-activateCardImagesSlider(document.querySelectorAll('.card .card--image'))
+activateCardImagesSlider(document.querySelectorAll('.block_list .card .card--image'))
 
 
 
@@ -732,13 +724,9 @@ if ( window.matchMedia('(max-width: 768px)').matches ) {
 let activateTabsSlider = ( sliders ) => {
   sliders.forEach(slider => {
 
-    let tabs = slider.querySelectorAll('a')
+    let tabs = slider.querySelectorAll('button')
 
     if ( tabs.length > 1 ) {
-      slider.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        e.preventDefault()
-      })
 
       tabs.forEach(tab => {
         tab.classList.add('tabs_slide')
@@ -763,6 +751,7 @@ let activateTabsSlider = ( sliders ) => {
         simulateTouch: true,
         freeMode: false,
         allowTouchMove: true,
+        watchOverflow: true,
         mousewheel: {
           forceToAxis: true,
         },
@@ -771,7 +760,17 @@ let activateTabsSlider = ( sliders ) => {
           nextEl: swiper_nav_next,
           prevEl: swiper_nav_prev,
         },
+        on: {
+          init: function (swiper) {
+            swiper.slides.forEach((sl, index) => {
+              sl.addEventListener('click', ()=>{
+                tabs_slider.slideTo(tabs_slider.clickedIndex)
+              })
+            })
+          }
+        },
       });
+
       slider.appendChild(slider_controls);
     }
   })
@@ -780,4 +779,5 @@ let activateTabsSlider = ( sliders ) => {
 if(document.querySelector('.block--sections')){
   activateTabsSlider(document.querySelectorAll('.block--sections'))
 }
+
 

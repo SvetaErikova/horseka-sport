@@ -2,6 +2,7 @@
   display: flex
   justify-content: center
   position: relative
+  gap: 8px
   margin-top: var(--g-section-inner)
   &:after
     content: ""
@@ -14,6 +15,9 @@
     background-color: var(--c-border-subdued)
   .button
     background-color: #fff
+  .block--pagination_gap
+    display: flex
+    align-items: flex-end
   @media(max-width: 768px)
     grid-column: span 1
 

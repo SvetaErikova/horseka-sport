@@ -2,22 +2,20 @@
   .block--head
     display: flex
     flex-direction: column
+    border-bottom: none
     &_title
-      //font-size: var(--fs-72)
+      font-size: var(--fs-72)
       padding-bottom: var(--g-24)
       border-bottom: none
-      .f-h2
-        font-size: 48px
+      //.f-h2
+      //  font-size: 48px
   .block--wrapper
     display: grid
     grid-template-columns: 1fr 1fr
     place-content: start
     gap: 0 24px
-    grid-template-rows: 1fr auto 1fr
-    &:has(.block--image)
-      grid-template-rows: 1fr auto 1fr
-      @media(max-width: 768px)
-        grid-template-rows: auto
+    grid-template-rows: repeat(auto-fit, auto)
+    align-items: center
     @media(max-width: 768px)
       grid-template-columns: 1fr
       grid-template-rows: auto
@@ -25,14 +23,18 @@
   .block--head
     border-radius: var(--border-corner) var(--border-corner) 0 0
     grid-column: 1
-  .block--content,
-  .block--actions
+    .block--head_title
+      word-wrap: break-word
+  .block--content
+    height: 100%
+    border-radius: 0 0 var(--border-corner) var(--border-corner)
+    margin-bottom: auto
     grid-column: 2
     @media(max-width: 768px)
       grid-column: 1
   .block--image ~ .block--head,
-  .block--image ~ .block--content,
-  .block--image ~ .block--actions
+  .block--image ~ .block--content
+    height: 100%
     grid-column: 1
     width: 100%
     padding-left: var(--g-80)
@@ -42,7 +44,7 @@
     justify-content: flex-end
   .block--image
     grid-column: 2
-    grid-row: 1 / span 3
+    grid-row: 1 / span 2
     min-height: 100%
     max-width: 100%
     border-radius: var(--border-corner)
@@ -55,13 +57,14 @@
       width: 100%
       border-radius: var(--border-corner)
       overflow: hidden
+      aspect-ratio: 1/1
+      @media(min-width: 769px)
+        position: sticky
+        top: calc(var(--headerHeight) + 2rem)
+
   .block--head
     align-items: flex-start
     padding-top: var(--g-80)
-  .block--actions
-    align-items: flex-start
-    padding-bottom: var(--g-32)
-    border-radius: 0 0 var(--border-corner) var(--border-corner)
   .block--content
     margin-top: 0
   &.block_image_text-reversed
@@ -69,67 +72,20 @@
       .block--image
         grid-column: 1
       .block--head,
-      .block--content,
-      .block--actions
+      .block--content
         grid-column: 2
         @media(max-width: 768px)
           grid-column: 1
-  &.block_image_text-ratio
-    .block--image
-      img, video
-        position: sticky
-        top: calc(var(--headerHeight) + 2rem)
-        aspect-ratio: 1 / 1
-        height: auto
-  &.block_image_text-ratio-portrait
-    .block--image
-      img, video
-        aspect-ratio: 3 / 4
-        height: auto
-  &.block_image_text-ratio-landscape
-    .block--image
-      img, video
-        aspect-ratio: 3 / 2
-        height: auto
-
-  &.block_image_text-wide
-    @media(max-width: 768px)
-      .block--wrapper
-        padding: var(--g-container) 0
-    .block--image
-      img, video
-        margin-right: calc( var(--g-container) / -1)
-        width: calc(100% + var(--g-container))
-        @media(max-width: 768px)
-          width: 100%
-          margin: 0
-    &.block_image_text-reversed
-      .block--image
-        img, video
-          margin-right: 0
-          margin-left: calc( var(--g-container) / -1)
-          @media(max-width: 768px)
-            width: 100%
-            margin: 0
   &.block_image_text-bg
     .block--head,
-    .block--content,
-    .block--actions
-      background-color: var(--c-surface-subdued)
-  &.block_image_text-bg-accent
-    .block--head,
-    .block--content,
-    .block--actions
-      background-color: var(--accent)
-      color: var(--c-surface-subdued)
+    .block--content
+      background-color: var(--bg-color)
+      color: var(--text-color)
     .block--head_subtitle
-      color: var(--accent-2)
-  &.block_image_text-wrapper_bg-accent
-    .block--wrapper
-      background-color: var(--accent)
+      color: var(--subtitle-color)
   &.block_image_text-wrapper_bg
     .block--wrapper
-      background-color: var(--c-surface-subdued)
+      background-color: var(--bg-color)
     &.block_image_text-wide
       .block--wrapper
         padding-top: 0
@@ -141,8 +97,9 @@
         padding: var(--g-container)
     .block--head
       padding-top: 0
-    .block--actions
-      padding-bottom: 0
+
+
+
   &.block_image_text-mask
     #mask,
     #mask-2
@@ -151,22 +108,21 @@
       height: 0
     .block--image
       img
-        position: sticky
-        top: calc(var(--headerHeight) + 2rem)
-        aspect-ratio: 1/1
+        border-radius: 1000px 1000px  1000px 0
         height: auto
         clip-path: url(#mask)
   &.block_image_text-reversed.block_image_text-mask
     .block--image
       img
-        clip-path: url(#mask-2)
+        border-radius:  1000px 1000px 0 1000px
 
-  &.block_image_text-slider
-    .block--image
+  &.block_image_text
+    .block--image.block--image-slider
       overflow: hidden
       height: max-content
       overflow: hidden
-    img
-      height: auto
-      flex-shrink: 0
-      flex-grow: 0
+      img
+        height: auto
+        flex-shrink: 0
+        flex-grow: 0
+

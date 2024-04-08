@@ -3,7 +3,7 @@
   height: max-content
   overflow: hidden
   display: flex
-  justify-content: center
+  justify-content: space-between
   align-items: center
   //flex-wrap: wrap
   gap: 8px var(--g-24)
@@ -13,7 +13,7 @@
     overflow-x: auto
     padding: 20px 16px
     margin: 0 -16px
-  a
+  button
     flex-grow: 0
     flex-shrink: 0
     text-transform: uppercase
@@ -35,14 +35,17 @@
   &_container
     max-width: calc(100% - 100px - var(--g-24) )
   .slider_controls
-    width: 100%
-    z-index: 2
-    position: relative
-    &:after
-      background: linear-gradient(90deg, rgba(255,254,254,0) 0%, rgba(255,255,255,1) 15%)
-      content: ''
-      position: absolute
-      left: -40%
-      right: -20%
-      top: -20%
-      bottom: -20%
+    display: none
+    @media(min-width: 769px)
+      display: flex
+      width: max-content
+      z-index: 2
+      position: relative
+      &:after
+        background: linear-gradient(90deg, rgba(255,254,254,0) 0%, rgba(255,255,255,1) 15%)
+        content: ''
+        position: absolute
+        left: -40%
+        right: -20%
+        top: -16px
+        bottom: -16px

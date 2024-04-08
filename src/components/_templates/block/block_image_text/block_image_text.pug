@@ -1,4 +1,4 @@
-section.block.block_image_text.block_image_text-slider
+section.block.block_image_text
   .block--wrapper
     .block--image
       img(src="/assets/img/1.jpg" alt="")
@@ -6,28 +6,15 @@ section.block.block_image_text.block_image_text-slider
     +block--head("block_image_text", "block_image_text", "consectetur")
     .block--content.is_cascade
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto atque autem consequuntur debitis delectus dolorum eos, esse impedit iusto magni, natus necessitatibus neque non obcaecati omnis quod sequi similique vitae voluptate!
-    .block--actions
-      a(href="/").button.button-filled.button-accent
-        span Кнопка
-      a(href="/").button.button-filled.button-primary
-        span Кнопка
 
-
+// картинка текстс маской
 section.block.block_image_text.block_image_text-mask
-  <svg class="svg">
-  <clipPath id="mask" clipPathUnits="objectBoundingBox"><path d="M0,0.5 C0,0.224,0.224,0,0.5,0 C0.776,0,1,0.224,1,0.5 C1,0.776,0.776,1,0.5,1 H0 V0.5"></path></clipPath>
-  </svg>
   .block--wrapper
     .block--image
       img(src="/assets/img/1.jpg" alt="")
     +block--head("block_image_text", "block_image_text", "consectetur")
     .block--content.is_cascade
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto atque autem consequuntur debitis delectus dolorum eos, esse impedit iusto magni, natus necessitatibus neque non obcaecati omnis quod sequi similique vitae voluptate!
-    .block--actions
-      a(href="/").button.button-filled.button-accent
-        span Кнопка
-      a(href="/").button.button-filled.button-primary
-        span Кнопка
 
 section.block.block_image_text
   .block--wrapper
@@ -36,24 +23,15 @@ section.block.block_image_text
     +block--head("block_image_text", "block_image_text", "consectetur")
     .block--content.is_cascade
       p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto atque autem consequuntur debitis delectus dolorum eos, esse impedit iusto magni, natus necessitatibus neque non obcaecati omnis quod sequi similique vitae voluptate!
-    .block--actions
-      a(href="/").button.button-filled.button-accent
-        span Кнопка
-      a(href="/").button.button-filled.button-primary
-        span Кнопка
+
 section.block.block_image_text.block_image_text-reversed.block_image_text-mask
-  <svg class="svg">
-  <clipPath id="mask-2" clipPathUnits="objectBoundingBox"><path d="M0,0.5 C0,0.224,0.224,0,0.5,0 C0.776,0,1,0.224,1,0.5 V1 H0.5 C0.224,1,0,0.776,0,0.5"></path></clipPath>
-  </svg>
   .block--wrapper
     .block--image
       img(src="/assets/img/1.jpg" alt="")
     +block--head("Шеф повар", "block_image_text-reversed", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
+
 section.block.block_image_text.block_image_text-reversed
   .block--wrapper
     .block--image
@@ -61,30 +39,8 @@ section.block.block_image_text.block_image_text-reversed
     +block--head("Шеф повар", "block_image_text-reversed", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
 
-section.block.block_image_text.block_image_text-ratio
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-ratio", "consectetur")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
-section.block.block_image_text.block_image_text-reversed.block_image_text-ratio
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-ratio .block_image_text-reversed", "consectetur")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
+
 section.block.block_image_text.block_image_text-bg
   .block--wrapper
     .block--image
@@ -92,19 +48,15 @@ section.block.block_image_text.block_image_text-bg
     +block--head("Шеф повар", "block_image_text-bg", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
-section.block.block_image_text.block_image_text-bg-accent
+
+section.block.block_image_text.block_image_text-bg.ac-background-1
   .block--wrapper
     .block--image
       img(src="/assets/img/1.jpg" alt="")
     +block--head("Шеф повар", "block_image_text-bg", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
+
 section.block.block_image_text.block_image_text-reversed.block_image_text-bg
   .block--wrapper
     .block--image
@@ -112,9 +64,6 @@ section.block.block_image_text.block_image_text-reversed.block_image_text-bg
     +block--head("Шеф повар", "block_image_text-bg", "block_image_text-reversed")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
 
 section.block.block_image_text.block_image_text-wrapper_bg
   .block--wrapper
@@ -123,19 +72,13 @@ section.block.block_image_text.block_image_text-wrapper_bg
     +block--head("Шеф повар", "block_image_text-wrapper_bg", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
-section.block.block_image_text.block_image_text-wrapper_bg-accent
+section.block.block_image_text.block_image_text-wrapper_bg.ac-background-1
   .block--wrapper
     .block--image
       img(src="/assets/img/1.jpg" alt="")
     +block--head("Шеф повар", "block_image_text-wrapper_bg", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
 
 
 section.block.block_image_text.block_image_text-reversed.block_image_text-wrapper_bg-accent.block_image_text-bg-accent
@@ -145,77 +88,7 @@ section.block.block_image_text.block_image_text-reversed.block_image_text-wrappe
     +block--head("Шеф повар", "block_image_text-wrapper_bg", "block_image_text-reversed")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-accent
-        span Подробнее
 
-section.block.block_image_text.block_image_text-ratio-portrait
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-ratio-portrait", "consectetur")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
-
-section.block.block_image_text.block_image_text-reversed.block_image_text-ratio-portrait
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-ratio-portrait", "block_image_text-reversed")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
-
-section.block.block_image_text.block_image_text-ratio-landscape
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-ratio-landscape", "consectetur")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
-
-section.block.block_image_text.block_image_text-reversed.block_image_text-ratio-landscape
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-ratio-landscape", "block_image_text-reversed")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
-
-section.block.block_image_text.block_image_text-wide
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-wide", "consectetur")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
-
-section.block.block_image_text.block_image_text-reversed.block_image_text-wide
-  .block--wrapper
-    .block--image
-      img(src="/assets/img/1.jpg" alt="")
-    +block--head("Шеф повар", "block_image_text-wide", "block_image_text-reversed")
-    .block--content.is_cascade
-      p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
 section.block.block_image_text.block_image_text-wide.block_image_text-wrapper_bg
   .block--wrapper
     .block--image
@@ -223,23 +96,14 @@ section.block.block_image_text.block_image_text-wide.block_image_text-wrapper_bg
     +block--head("Шеф повар", "block_image_text-wide", ".block_image_text-wrapper_bg")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
 section.block.block_image_text.block_image_text-no_media
   .block--wrapper
     +block--head("Шеф повар", "no media", "consectetur")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее
 
 section.block.block_image_text.block_image_text-no_media.block_image_text-wrapper_bg
   .block--wrapper
     +block--head("Шеф повар", "no media", "block_image_text-reversed")
     .block--content.is_cascade
       p Полноценный отдых в уникальной субтропической климатической зоне на побережье Черного моря с видом на заснеженные вершины Кавказских гор
-    .block--actions
-      a(href="/").button.button-outlined.button-primary
-        span Подробнее

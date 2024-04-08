@@ -1,39 +1,24 @@
-.page-article,
-.page-vacancy
-  .f-h1,
-  .f-h2
-    font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375))), 40px)
-    font-weight: 700
-
 .is_cascade
   line-height: 1.5
   font-size: var(--fs-20)
   h1
     line-height: 1.28
     text-transform: uppercase
-    font-family: 'SangBleuKingdom'
     font-weight: 300
     letter-spacing: -0.02em
     font-size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
     margin: var(--g-section-inner) 0 0
-  h2, h3
-    font-size: var(--fs-28)
-    font-weight: 700
+  h2
+    font-size: var(--fs-96)
     margin: var(--g-section-inner) 0 0
-    letter-spacing: -0.02em
-    font-family: 'SangBleuKingdom'
+  h3
+    font-size: var(--fs-72)
   h4
-    font-size: var(--fs-24)
-    font-weight: 700
+    font-size: var(--fs-52)
     margin: var(--g-section-inner) 0 0
-    letter-spacing: -0.02em
-    font-family: 'SangBleuKingdom'
   h5, h6
-    font-size: var(--fs-20)
-    font-weight: 700
+    font-size: var(--fs-40)
     margin: var(--g-section-inner) 0 0
-    letter-spacing: -0.02em
-    font-family: 'SangBleuKingdom'
   & > p
     margin-top: var(--g-24)
   & p > a:not(.button)
@@ -52,20 +37,7 @@
     li
       &:not(:last-of-type)
         margin-bottom: 8px
-  ul
-    list-style: none
-    & > li
-      position: relative
-      &:before
-        content: ""
-        display: block
-        width: 7px
-        height: 7px
-        position: absolute
-        top: 0.6em
-        left: calc(24px * -1 + 4px)
-        background-color: currentColor
-        transform: rotate(45deg)
+
 
   figure
     margin: var(--g-content) 0
@@ -113,32 +85,46 @@
         aspect-ratio: 870 / 472
         @media(max-width: 560px)
           aspect-ratio: 360 / 298
-    .swiper-button-next
-      right: var(--g-24)
-    .swiper-button-prev
-      left: unset
-      right: var(--g-24)
-      transform: translateX(calc((8px + 100%) * -1))
     figure
       margin: 0
   blockquote
+    padding: var(--g-32)
+    background-color: var(--c-surface-subdued)
+    border-radius: var(--border-corner)
     position: relative
     margin: var(--g-content)
     @media(min-width: 768px)
       margin: var(--g-content) 0
-    p
-      font-size: var(--fs-24)
+    .blockquote--text
+      position: relative
+      padding-left: var(--g-32)
+      font-size: var(--fs-36)
       line-height: 1.5
-      font-weight: 400
+      font-weight: 500
       &:before
         content: "“"
         position: absolute
         left: -16px
         top: 0
-    span
-      font-size: 16px
-      color: var(--c-text-subdued)
-      margin-top: 8px
+    .blockquote--author
+      display: flex
+      gap: 16px
+      align-items: center
+      padding-left: var(--g-32)
+      &--image
+        border-radius: var(--border-corner-button)
+        overflow: hidden
+        img
+          border-radius: var(--border-corner-button)
+          max-width: 56px
+          aspect-ratio: 1/1
+      &--text
+        p
+          font-size: var(--fs-24)
+        span
+          font-size: 16px
+          color: var(--c-text-subdued)
+          margin-top: 8px
   .button_wrapper, .block--actions
     display: flex
     gap: 8px

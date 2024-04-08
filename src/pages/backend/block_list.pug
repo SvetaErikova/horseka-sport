@@ -6,264 +6,1437 @@ block variables
   - var activePage = ''
 
 block content
+
+  // Формы
+  section.block.block_list.content_form
+    .block--wrapper
+      .block--content
+        .block--head
+          .block--head_subtitle
+            p каталог лошадей
+          .block--head_title
+            h2.f-h2 Свяжитесь  с нами
+          .block--head_caption
+            p Примите участие в незабываемом соревновании и продемонстрируйте свои навыки наездника
+        .contact
+          .contact--item
+            .contact--title Телефон
+            .contact--value
+              a(href="/") 8 (495) 419-96-90
+          .contact--item
+            .contact--title E-MAIL
+            .contact--value
+              a(href="/") info@kskivanovskoe.ru
+          .contact--item
+            .contact--title АДРЕС
+            .contact--value
+              p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+      .block--form
+        form.form
+          input(type="hidden" value="" name="fields[form]")
+          input(type="hidden" value="")
+          fieldset
+            label.form--input
+              input(type="text" placeholder="Иванов Иван Иванович" name="fields[name]" pattern="[А-Яа-яЁё]+" required autocomplete)
+              span Ваше имя
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="tel" placeholder="+7 999 999-99-99" name="fields[phone]" inputmode="numeric" autocomplete="tel" required)
+              span Телефон
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="email" placeholder="example@imperial.ru" name="fields[email]"  autocomplete="email" required)
+              span Email
+              .form--input_error Ошибка заполнения
+            label.form--input
+              textarea(placeholder="Введите комментарий" name="fields[email]" rows="2" maxlength="1000")
+              span Комментарий
+              .form--input_error Ошибка заполнения
+            .form--button
+              button.button.button-filled.button-accent(type="submit" disabled)
+                span Отправить
+            p.form--policy Нажимая кнопку, вы соглашаетесь с
+              a(href="") политикой конфиденциальности
+
+
+
+  section.block.block_list.content_form.ac-background-2
+    .block--wrapper
+      .block--content
+        .block--head
+          .block--head_subtitle
+            p каталог лошадей
+          .block--head_title
+            h2.f-h2 Свяжитесь  с нами
+          .block--head_caption
+            p Примите участие в незабываемом соревновании и продемонстрируйте свои навыки наездника
+        .contact
+          .contact--item
+            .contact--title Телефон
+            .contact--value
+              a(href="/") 8 (495) 419-96-90
+          .contact--item
+            .contact--title E-MAIL
+            .contact--value
+              a(href="/") info@kskivanovskoe.ru
+          .contact--item
+            .contact--title АДРЕС
+            .contact--value
+              p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+      .block--form
+        form.form
+          input(type="hidden" value="" name="fields[form]")
+          input(type="hidden" value="")
+          fieldset
+            label.form--input
+              input(type="text" placeholder="Иванов Иван Иванович" name="fields[name]" pattern="[А-Яа-яЁё]+" required autocomplete)
+              span Ваше имя
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="tel" placeholder="+7 999 999-99-99" name="fields[phone]" inputmode="numeric" autocomplete="tel" required)
+              span Телефон
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="email" placeholder="example@imperial.ru" name="fields[email]"  autocomplete="email" required)
+              span Email
+              .form--input_error Ошибка заполнения
+            label.form--input
+              textarea(placeholder="Введите комментарий" name="fields[email]" rows="2" maxlength="1000")
+              span Комментарий
+              .form--input_error Ошибка заполнения
+            .form--button
+              button.button.button-filled.button-accent(type="submit" disabled)
+                span Отправить
+            p.form--policy Нажимая кнопку, вы соглашаетесь с
+              a(href="") политикой конфиденциальности
+
+
+
+
+
+
+
+
+
+  //  FAQ
+  section.block.block_list.content_faq
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+        .block--head_caption
+          p В своём стремлении улучшить пользовательский опыт мы упускаем, что независимые государства являются только методом политического участия и своевременно верифицированы.
+        .block--actions
+          a(href="/").button.button-filled.button-primary
+            span Свяжитесь с нами
+
+      .block--elements
+        .is_cascade
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+
+  section.block.block_list.content_faq.ac-background-2
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+        .block--head_caption
+          p В своём стремлении улучшить пользовательский опыт мы упускаем, что независимые государства являются только методом политического участия и своевременно верифицированы.
+        .block--actions
+          a(href="/").button.button-filled.button-primary
+            span Свяжитесь с нами
+
+      .block--elements
+        .is_cascade
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+
+
+
+  // Вариации блока
+  //  С кнопкой дозагрузки
   section.block.block_list
     .block--wrapper
-      +block--head("subtitle","Базовые карточки грид","Все остальные карточки и карточки которым не прописан тип контента")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--link
-        +card--popup
-        +card--simple
-        +card--link
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
 
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        .block--pagination
+          a.button.button-filled.button-secondary(href='/')
+            span Показать больше
+            span.icon-HeroSliderRight
+
+  // с перелистыванием страниц
+  section.block.block_list
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        .block--pagination
+          a.button.button-filled.button-secondary(href='/')
+            span.icon-ic-arrow-left
+            span Пред.
+          a.button.button-filled.button-secondary.is_current(href='/')
+            span 1
+          a.button.button-filled.button-secondary(href='/')
+            span 2
+          .block--pagination_gap
+            span ...
+          a.button.button-filled.button-secondary(href='/')
+            span 5
+          a.button.button-filled.button-secondary(href='/')
+            span 6
+          a.button.button-filled.button-secondary(href='/')
+            span След.
+            span.icon-ic-arrow-right
+
+
+  // с табами
+  section.block.block_list
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--sections
+        .block--sections_container
+          button.is_active Все
+          button Обучение верховой езде
+          button Конные прогулки
+          button Содержание
+          button Обучение верховой езде
+          button Конные прогулки
+          button Содержание
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+
+  // Вариации карточек
+
+  // Карточки лошадей слайдер
+  section.block.block_list.block_list-slider.content_hourse
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки лошадей слайдер
+        .block--head_caption
+          p content_hourse
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+  // Карточки лошадей грид
+  section.block.block_list.content_hourse
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки лошадей грид
+        .block--head_caption
+          p content_hourse
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+
+
+  // Карточки базовые слайдер
   section.block.block_list.block_list-slider
     .block--wrapper
-      +block--head("subtitle","Базовые карточки слайдер","Все остальные карточки и карточки которым не прописан тип контента")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--link
-        +card--popup
-        +card--simple
-        +card--link
-        +card--popup
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
 
-  section.block.block_list.ac-bock_list-columns-2.content_gallery
-    .block--wrapper
-      +block--head("subtitle","Карточки ссылка на разделы","content_gallery content_news content_blog")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
       .block--elements
-        +card--link-sections
-        +card--link-sections
-        +card--link-sections
-        +card--link-sections
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
-
-  section.block.block_list.block_list-slider.content_gallery
-    .block--wrapper
-      +block--head("subtitle","Карточки ссылка на разделы","content_gallery content_news content_blog")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--link-sections
-        +card--link-sections
-        +card--link-sections
-        +card--link-sections
-        +card--link-sections
-
-  <!-- Карточки спецпредложений -->
-  section.block.block_list.content_offers
-    .block--wrapper
-      +block--head("Специально для вас","Спецпредложение грид","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, explicabo harum hic quam suscipit vel? Dignissimos, explicabo harum hic quam suscipit vel? Dignissimos, explicabo harum hic quam suscipit vel? Dignissimos, explicabo harum hic quam suscipit vel?")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
-        .card
-          .card--content
-            .card--title
-              h3 Бронирование вилл с выгодой 40%
-            .card--label До завершения  01 : 12 : 30
-            .card--text
-              p Включена оздоровительная программа от Института Активного Долголетия
-            .card--actions
-              a.card--action(href="")
-                span.icon-ic-lg-link
+        a.card(href="")
           .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
 
+  // Карточки базовые слайдер V2
+  section.block.block_list.block_list-slider.block_list-slider-v2
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер V2
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            //.card--label
+            //  span.c-accent Horseka Рекомендует
+            //  span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+  // Карточки базовые грид
+  section.block.block_list
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые грид
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+  // Карточки Акции слайдер
   section.block.block_list.block_list-slider.content_offers
     .block--wrapper
-      +block--head("subtitle","Спецпредложение слайдер","caption")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
-        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
-        +card--offer('Бронирование вилл с выгодой 40%', 'Включена оздоровительная программа от Института Активного Долголетия', '/assets/img/offer.jpg')
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Акции слайдер
+        .block--head_caption
+          p content_offers
 
-  <!--  -->
-  section.block.block_list.content_events
-    .block--wrapper
-      +block--head("Специально для вас","События грид","caption")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        a.card(href="")
-          .card--date
-            strong 21
-            span июн
-          .card--image
-            <!-- Класс проставляется автоматически -->
-            img(src="/assets/img/offer.jpg" alt="")
-            img(src="/assets/img/event.jpg" alt="")
-            img(src="/assets/img/offer.jpg" alt="")
-          .card--content
-            .card--title
-              h3 День рождения парка “Дримвуд”
-              .card--action
-                span.icon
-            .card--text
-              .card--text_item
-                span Время
-                span 11 июня 18:00
-        +card--events
-        a.card(href="")
-          .card--date
-            strong 21
-            span июн
-          .card--image
-            <!-- Класс проставляется автоматически -->
-            img(src="/assets/img/offer.jpg" alt="")
-            img(src="/assets/img/event.jpg" alt="")
-            img(src="/assets/img/offer.jpg" alt="")
-          .card--content
-            .card--title
-              h3 День рождения парка “Дримвуд” - сказочные 5 лет!
-              .card--action
-                span.icon
-            .card--text
-              .card--text_item
-                span Время
-                span 11 июня 18:00
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
-
-  section.block.block_list.block_list-slider.content_events
-    .block--wrapper
-      +block--head("subtitle","События слайдер","caption")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        a.card(href="")
-          .card--date
-            strong 21
-            span июн
-          .card--image
-            <!-- Класс проставляется автоматически -->
-            img(src="/assets/img/offer.jpg" alt="")
-            img(src="/assets/img/event.jpg" alt="")
-            img(src="/assets/img/offer.jpg" alt="")
-          .card--content
-            .card--title
-              h3 День рождения парка “Дримвуд” - сказочные 5 лет!
-              .card--action
-                span.icon
-            .card--text
-              .card--text_item
-                span Время
-                span 11 июня 18:00
-        +card--events
-        +card--events
-        +card--events
-
-  section.block.block_list.content_accommodation
-    .block--wrapper
-      +block--head("костыль","Карточки номеров грид","")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--link
-        +card--link
-        +card--link
-        +card--link
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
-
-  section.block.block_list.block_list-slider.content_accommodation
-    .block--wrapper
-      +block--head("костыль","Карточки номеров слайдер","")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
-      .block--elements
-        +card--link
-        +card--link
-        +card--link
-        +card--link
-        +card--link
-
-
-  section.block.block_list.content_reviews
-    .block--wrapper
-      +block--head("блок","Карточки отзывов грид","видео или картинка")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
       .block--elements
         .card
-          .review_author
-            .review_author--image
-              img(src="/assets/img/review.png")
-            .review_author--name efra_morrison
           .card--image
-            video(poster="/assets/img/review_1.png" src="/assets/video/@lepragram.mp4" loop muted playsinline)
+            img(src="/assets/img/bg.jpg")
           .card--content
-            .card--text Как можно понять по нашим лицам на этих фото-Мы в полном восторге от пребывания в @mriya_resort @mriya.winepark
-        +card--review
-        +card--review
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
-
-  section.block.block_list.block_list-slider.content_reviews
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+  // Карточки Акции грид
+  section.block.block_list.content_offers
     .block--wrapper
-      +block--head("отзывы","Карточки отзывов слайдер","видео или картинка")
-      .block--sections
-        a.is_active(href="" data-section_id="") Все
-        a(href="" data-section_id="") Номера
-        a(href="" data-section_id="") Рестораны и бары
-        a(href="" data-section_id="") Spa и бассейны
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Акции грид
+        .block--head_caption
+          p content_offers
+
       .block--elements
-        .card(data-openpopup="popup_cascade")
-          .review_author
-            .review_author--image
-              img(src="/assets/img/review.png")
-            .review_author--name efra_morrison
+        .card
           .card--image
-            video(poster="/assets/img/review_1.png" src="/assets/video/@lepragram.mp4" loop muted playsinline)
-            .card--action
-              span.icon
+            img(src="/assets/img/bg.jpg")
           .card--content
-            .card--text Как можно понять по нашим лицам на этих фото-Мы в полном восторге от пребывания в @mriya_resort @mriya.winepark
-        +card--review
-        +card--review
-        +card--review
-        +card--review
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+
+
+  // Карточки события
+  section.block.block_list.content_events
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки события
+        .block--head_caption
+          p content_events
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-HeroSliderRight
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-HeroSliderRight
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-HeroSliderRight
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-HeroSliderRight
+
+
+
+
+
+
+
+
+
+  // Карточки Новости слайдер
+  section.block.block_list.block_list-slider.content_news
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Новости грид
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+
+  // Карточки Новости грид
+  section.block.block_list.content_news
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Новости грид
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+
+
+  // Карточки Партнеры грид
+  section.block.block_list.content_partners
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Партнеры грид
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--image
+            img(src="/assets/img/pathners/fksr.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/idig.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/new-letovo.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/ozon.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/fksr.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/idig.svg")
+
+
+  // Карточки картинки грид
+  section.block.block_list.content_card-image
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки картинкк грид
+        .block--head_caption
+          p content_card-image
+
+      .block--elements
+        a.card(href='')
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        a.card(href='')
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        a.card(href='')
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+        a.card(href='')
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-HeroSliderRight
+
+
+
+  // Карточки Преимущества слайдер
+  section.block.block_list.block_list-slider.content_advantages
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Преимущества слайдер
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--content
+            .card--title
+              h3 Квалифицирован-ный персонал
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализации глубокомысленных рассуждений.
+        .card
+          .card--content
+            .card--title
+              h3 Соблюдение всех стандартов
+            .card--text
+              p Однозначно, представители современных социальных резервов неоднозначны и будут функционально разнесены на независимые
+        .card
+          .card--content
+            .card--title
+              h3 Породистые лошади
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализац
+        .card
+          .card--content
+            .card--title
+              h3 Квалифицирован-ный персонал
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализации глубокомысленных рассуждений.
+
+
+
+  // Карточки Преимущества грид
+  section.block.block_list.content_advantages
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Преимущества грид
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--content
+            .card--title
+              h3 Квалифицирован-ный персонал
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализации глубокомысленных рассуждений.
+        .card
+          .card--content
+            .card--title
+              h3 Соблюдение всех стандартов
+            .card--text
+              p Однозначно, представители современных социальных резервов неоднозначны и будут функционально разнесены на независимые
+        .card
+          .card--content
+            .card--title
+              h3 Породистые лошади
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализац
+        .card
+          .card--content
+            .card--title
+              h3 Квалифицирован-ный персонал
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализации глубокомысленных рассуждений.
+
+        .card
+          .card--content
+            .card--title
+              h3 Квалифицирован-ный персонал
+            .card--text
+              p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализации глубокомысленных рассуждений.
+
+
+
+
+
+
+
+
+
+
