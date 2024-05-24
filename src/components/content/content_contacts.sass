@@ -1,0 +1,54 @@
+.content_contacts
+  background-color: var(--bg-color, #052360)
+  color: var(--text-color)
+  .block--wrapper
+    display: flex
+    flex-direction: column
+    gap: 8px
+    @media(min-width: 769px)
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+    .block--content
+
+      border-radius: var(--border-corner)
+      margin-top: 0
+      padding: var(--g-32)
+      color: var(--c-surface-dark)
+      background: #fff
+      display: flex
+      flex-direction: column
+      gap: var(--g-content)
+    .block--map
+      height: 100%
+      border-radius: var(--border-corner)
+      @media(max-width: 768px)
+        aspect-ratio: 1/1
+    .block--map-container
+      position: sticky
+      top: 0
+      aspect-ratio: 1/1
+
+
+.contact
+  width: 100%
+  max-width: 560px
+  display: grid
+  grid-template-columns: repeat(2, auto)
+  gap: 16px
+  &--item
+    display: flex
+    flex-direction: column
+    gap: 16px
+  &--title
+    width: max-content
+    font-weight: 500
+    font-size: var(--fs-32)
+    text-transform: uppercase
+  .button
+    grid-column: span 2
+    font-weight: 500
+    //color: var(--accent)
+  &--item.adress
+    grid-column: span 2
+  &--value a
+    white-space: nowrap

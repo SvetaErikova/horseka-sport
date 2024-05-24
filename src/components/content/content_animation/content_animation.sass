@@ -1,0 +1,207 @@
+.content_animation
+  background-color: var(--accent)
+  color: var(--c-text-primary)
+  .block--wrapper
+    display: grid
+    grid-template-rows: repeat(4, auto)
+    gap: 20px
+    .animation--row
+      gap: 20px
+      display: flex
+      position: relative
+      @media(max-width: 768px)
+        justify-content: center
+        text-align: center
+      .animation--image
+        position: relative
+      .animation--title
+        text-transform: uppercase
+        line-height: 0.8
+        font-family: 'Gilroy'
+        font-size: 52px
+        @media(min-width: 769px)
+          font-size: 15.36vw
+    .animation--row-1
+      grid-row: 1
+      align-items: end
+      .animation--image
+        display: none
+        @media(min-width: 769px)
+          display: block
+          height: clamp(200px, calc(200px + (453 - 200) * ((100vw - 998px) / (1640 - 998))), 453px)
+    .animation--row-2
+      grid-row: 2
+    .animation--row-3
+      grid-row: 3
+      .animation--image
+        display: none
+        @media(min-width: 769px)
+          display: block
+          min-width: 33.13vw
+          position: relative
+          img
+            background-color: #000
+            height: 41.67vw
+            position: absolute
+      .animation--content
+        @media(max-width: 768px)
+          display: flex
+          flex-direction: column
+          gap: 20px
+        p
+          font-size: var(--fs-24)
+          @media(min-width: 769px)
+            font-size: 2.19vw
+    .animation--row-4
+      grid-row: 4
+      .animation--image
+        overflow: hidden
+        border-radius: 160px
+        @media(min-width: 769px)
+          max-height: 80vh
+          margin-left: auto
+          width: 50%
+          position: relative
+
+
+
+.content_animation-2
+  padding: var(--g-section-inner) 0
+  .block--wrapper
+    //min-height: 60vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    @media(min-width: 769px)
+      height: calc(100vh - var(--headerHeight, 96px))
+    @media(max-width: 768px)
+      position: relative
+  .head
+    position: relative
+  .title-1,
+  .title-2
+    text-align: center
+    font-size: 13.54vw
+    font-family: 'Gilroy'
+    line-height: 1
+    letter-spacing: -2.68px
+    text-transform: uppercase
+    font-weight: 700
+    position: relative
+  .title-1
+    @media(max-width: 768px)
+      margin-bottom: 100px
+  .title-2
+    z-index: 2
+    color: var(--accent-2)
+  .subtitle
+    text-align: center
+    opacity: 0.7
+    font-size: var(--fs-32)
+    z-index: 5
+    @media(min-width: 769px)
+      font-size:  1.67vw
+  .img-front
+    z-index: 3
+  .img-back
+    z-index: 1
+  img
+    translate: -50% -50%
+    left: 50%
+    position: absolute
+    top: 50%
+    height: auto
+    width: 50%
+    aspect-ratio: 618/764
+    @media(min-width: 769px)
+      width: 32.29vw
+
+
+.content_animation-3
+  overflow: hidden
+  .block--wrapper
+    min-height: 60vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    @media(min-width: 769px)
+      min-height: 80vh
+  .animation--title
+    font-size: 10.5vw
+    font-weight: 500
+    font-family: 'Gilroy'
+    line-height: 1
+    text-transform: uppercase
+    font-weight: 700
+    text-align: center
+  .animation--row:last-of-type
+    .animation--title
+      color: #FBB10D
+
+.content_animation-4
+
+  background-color: var(--accent)
+  color: var(--c-text-primary)
+  overflow: hidden
+  @media(min-width: 769px)
+    height: calc(100vh - var(--headerHeight, 96px))
+  .block--wrapper
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100%
+    gap: 16px
+    position: relative
+
+  .animation--subscription
+    display: none
+    @media(min-width: 769px)
+      display: block
+      position: absolute
+      top: 30px
+      left: 30px
+      font-size: 5.2vw
+      //font-size: clamp(60px, calc(60px + (100 - 60) * ((100vw - 998px) / (1640 - 998))), 100px)
+    text-transform: uppercase
+  .animation--row-1,
+  .animation--row-3
+    @media(min-width: 769px)
+      z-index: -1
+      position: relative
+  .animation--title
+    text-transform: uppercase
+    line-height: 0.8
+    font-family: 'Gilroy'
+    font-size: 52px
+    text-align: center
+    position: relative
+    @media(min-width: 1025px)
+      font-size: 6.771vw
+      //font-size: clamp(72px, calc(72px + (130 - 72) * ((100vw - 998px) / (1640 - 998))), 130px)
+  .animation--image
+    @media(min-width: 769px)
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      align-items: center
+      gap: 30px
+      .img
+        flex-shrink: 0
+        flex-grow: 0
+        width: 100%
+        aspect-ratio: 970/580
+        display: flex
+      .img-2
+        z-index: 3
+        img
+          position: absolute
+          top: 50%
+          left: 50%
+          translate: -50% -50%
+          z-index: 3
+    .img
+      @media(max-width: 768px)
+        flex-shrink: 0
+        flex-grow: 0
+        //max-height: 300px
+        max-height: 51.20vw

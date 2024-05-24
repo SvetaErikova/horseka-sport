@@ -1,0 +1,10 @@
+.content_table
+  &:not(.block_list-slider)
+    .block--elements
+      grid-template-columns: 1fr
+    .block--pagination
+      grid-column: span 3
+      @media(max-width: 640px)
+        grid-column: span 1
+    .is_cascade--table
+      margin-top: 0

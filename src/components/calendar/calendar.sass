@@ -1,0 +1,186 @@
+.content_events-calendar
+  .block--elements
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: var(--g-20)
+    @media(max-width: 998px)
+      grid-template-columns: repeat(3, 1fr)
+    @media(max-width: 768px)
+      grid-template-columns: repeat(2, 1fr)
+    @media(max-width: 640px)
+      grid-template-columns: 1fr
+  .block--filter
+    justify-content: flex-end
+    @media(max-width: 768px)
+      margin: var(--g-section-inner) 0
+    .filter
+      .select--option_wrapper
+        right: 0
+      //.button[type='reset']
+      .button[type='reset']
+        @media(min-width: 769px)
+          display: flex
+
+  .block--calendar
+    position: relative
+    display: flex
+    flex-direction: column-reverse
+  .block--controls
+    display: flex
+    gap: 8px
+    @media(min-width: 769px)
+      position: absolute
+      left: 0
+      top: calc((50px + .625em) *-1)
+    @media(max-width: 768px)
+      margin: 16px 0
+
+
+  .litepicker
+    width: 100%
+    .container__main
+      width: 100%
+      .container__months
+        box-shadow: none
+        width: 100%
+        gap: 8px
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 8px
+        @media(max-width: 1024px)
+          grid-template-columns: repeat(2, 1fr)
+        @media(max-width: 575px)
+          grid-template-columns: 1fr
+        .month-item
+          background-color: var(--c-surface-subdued)
+          border-radius: var(--border-corner)
+          padding: var(--g-32)
+          width: auto
+        .month-item-header
+          font-size: var(--fs-52)
+          font-family: 'Gilroy'
+          line-height: 1
+          text-transform: uppercase
+          strong
+            font-weight: 500
+          .button-previous-month,
+          .button-next-month
+            aspect-ratio: 1/1
+            padding: 18px
+            border: 1px solid rgba(17, 24, 32, .4)
+            border-radius: 50%
+            background-repeat: no-repeat
+            background-position: center
+            background-size: 18px
+            transition: var(--transition)
+            @media(min-width: 1025px)
+              padding: 24px
+              background-size: 24px
+            @media(max-width: 575px)
+              border: none
+            svg
+              display: none
+            &:hover
+              @media(min-width: 576px)
+                background-color: #e0e7f3
+                border-color: #e0e7f3
+          .button-previous-month
+            background-image: url("../img/icons/chevron-L.svg")
+          .button-next-month
+            background-image: url("../img/icons/shevron-R.svg")
+
+        .month-item-weekdays-row
+          div
+            font-size: 16px
+            text-transform: uppercase
+        .container__days
+          div
+          .day-item
+            position: relative
+            border: none
+            aspect-ratio: 1/1
+            font-size: 20px
+            display: flex
+            justify-content: center
+            align-items: center
+            box-shadow: none
+            z-index: 2
+            &:hover
+              border: none
+              &:after
+                background-color: #FFFFFF
+            &:not(.is-locked)
+              &:after
+                transition: var(--transition)
+                z-index: -1
+                content: ''
+                position: absolute
+                inset: 2px
+                border-radius: 50%
+                border: #144FC3 1px solid
+            &.is-start-date,
+            &.is-end-date
+              &:after
+                background-color: var(--accent)
+              &:hover
+                color: #fff
+  #datepicker
+    position: absolute
+    opacity: 0
+    pointer-events: none
+  .reset-button
+    display: none
+    align-items: center
+    position: relative
+    cursor: pointer
+    align-items: center
+    flex-grow: 0
+    flex-shrink: 0
+    text-transform: uppercase
+    font-size: var(--fs-40)
+    padding: 4px 23px
+    text-align: center
+    white-space: nowrap
+    color: var(--c-text-disabled)
+    border-radius: var(--border-corner-button)
+    border: 1px solid transparent
+    width: max-content
+    border-color: currentColor
+    color: var(--c-text-default)
+    margin-top: var(--g-section-inner)
+    @media(max-width: 768px)
+      order: -1
+      margin: 20px 8px
+  .reset-button.is_active
+    display: flex
+
+  .preloder
+    position: relative
+    &:after
+      content: ''
+      inset: 0
+      z-index: 3
+      position: absolute
+      background-color: rgba(244, 248, 255, 0.7)
+      background-image: url("../img/preloder.gif")
+      background-repeat: no-repeat
+      background-position: center
+
+  .not-found
+    padding: var(--g-32) 0
+    grid-column: span 4
+    text-align: center
+    @media(max-width: 998px)
+      grid-column: span 3
+    @media(max-width: 768px)
+      grid-column: span 2
+    @media(max-width: 640px)
+      grid-column: span 1
+    p
+      font-weight: 500
+      font-family: 'Gilroy'
+      line-height: 1
+      font-size: var(--fs-52)
+      margin-bottom: 16px
+    span
+      font-size: var(--fs-32)

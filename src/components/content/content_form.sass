@@ -1,0 +1,30 @@
+.block_list.content_form
+  background-color: var(--bg-color, #fff)
+  .block--wrapper
+    gap: 8px
+    grid-template-columns: repeat(2, 1fr)
+    @media(max-width: 768px)
+      flex-direction: column
+      display: flex
+    .block--head
+      display: flex
+      flex-direction: column
+      border: none
+    .block--content
+      margin: 0
+      display: flex
+      flex-direction: column
+      gap: var(--g-20)
+      height: 100%
+    .block--content,
+    .block--form
+      background-color: var(--c-surface-subdued)
+      padding: var(--g-80)
+      border-radius: var(--border-corner)
+
+.block_list.content_form.ac-background-2
+  .block--content,
+  .block--form
+    background-color: #fff
+//.block_list.content_form.ac-background-1
+
