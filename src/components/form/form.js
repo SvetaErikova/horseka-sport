@@ -21,7 +21,6 @@ function returnFileSize(number) {
 function validateInputs(form) {
   let inputs = form.querySelectorAll('input:not([type="hidden"])')
   let submit_button = form.querySelector('button[type="submit"]')
-  console.log(submit_button)
 
   inputs.forEach(i => {
     let parent = i.closest('.form--input');
@@ -218,10 +217,6 @@ let createCustomSelect = ( block ) =>{
 
     select_button.textContent = options[0].value
 
-    // select_button.addEventListener('click',()=>{
-    //   select_option_list_container.classList.toggle('is_opened')
-    // })
-
   })
   let selectBtn = block.querySelectorAll('.select--button')
   selectBtn.forEach(sel =>{
@@ -238,10 +233,7 @@ let createCustomSelect = ( block ) =>{
   window.addEventListener("keydown", function (e) {
 
       if (e.code === "Escape") {
-
-
         s.querySelector('.select--option_wrapper').classList.remove('is_opened')
-
       }
     })
     window.addEventListener("click", function (e) {
@@ -251,8 +243,6 @@ let createCustomSelect = ( block ) =>{
           }
       }
     });
-
-
   });
 }
 

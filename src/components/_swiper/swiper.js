@@ -543,49 +543,6 @@ activateImageTextSlider(document.querySelectorAll('.block_image_text .block--ima
 activateImageTextSlider(document.querySelectorAll('.content_gallery-action .block--image'))
 // Слайдер в карточках
 
-let activateCardImagesSlider = ( sliders ) => {
-  sliders.forEach(slider => {
-
-    let card_images = slider.querySelectorAll('img')
-
-    if ( card_images.length > 1 ) {
-      slider.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        e.preventDefault()
-      })
-
-      card_images.forEach(img => {
-        img.classList.add('card--image_slide')
-      })
-
-      const card_image_slider = new Swiper(slider, {
-        createElements: true,
-        slidesPerView: 1,
-        autoplay: {
-          delay: random(1000, 3000)
-        },
-        effect: "fade",
-        grabCursor: true,
-        simulateTouch: true,
-        freeMode: false,
-        allowTouchMove: true,
-        loop: true,
-        mousewheel: {
-          forceToAxis: true,
-        },
-        slideClass: 'card--image_slide',
-        navigation: true,
-        pagination: false,
-      });
-    }
-  })
-
-}
-
-activateCardImagesSlider(document.querySelectorAll('.block_list .card .card--image'))
-
-
-
 
 // Слайдер в табах
 let activateTabsSlider = ( slider ) => {

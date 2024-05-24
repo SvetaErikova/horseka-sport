@@ -73,7 +73,8 @@
 .card:is(:hover, :focus, :active) .button.button-outlined
     border-color: var(--outlined-bc-hover)
     color: var(--outlined-c-hover)
-    //background-color: var(--outlined-bgc-hover)
+    background-color: var(--outlined-bgc-hover)
+    transition: 0.35s linear background-color
     &:before
       background-color: var(--outlined-bgc-hover)
 
@@ -203,6 +204,6 @@
 .card:is(:hover, :focus, :active) .button.button-outlined,
 .card:is(:hover, :focus, :active) .button.button-filled
     &:before
-      scale: 100%
+      scale: 120%
 
 

@@ -18,8 +18,8 @@ if(calendar){
   let ALLOWEDDATES = [];
   if (  ALLOWEDDATES.length < 1 ){
     ALLOWEDDATES = [
-      // '2024-05-07', '2024-05-08', '2024-05-09',
-      // '2024-05-11', '2024-05-13', '2024-05-15',
+      '2024-05-07', '2024-05-08', '2024-05-09',
+      '2024-05-11', '2024-05-13', '2024-05-15',
     ];
   } else {
     ALLOWEDDATES = {...ALLOWEDDATES}
@@ -50,6 +50,7 @@ if(calendar){
         btnReset.querySelector('.date').innerText = date
         btnReset.classList.add('is_active')
         blockSection.classList.add('hidden')
+        console.log(input.value)
       });
     },
   })
@@ -72,10 +73,11 @@ if(calendar){
   let filterReset = blockCalendar.querySelector('.filter [type="reset"]')
   filterReset.addEventListener('click', (e)=>{
     calendar.clearSelection()
-    // ALLOWEDDATES = [
-    //   '2024-07-07', '2024-07-08', '2024-07-09',
-    //   '2024-07-11', '2024-07-13', '2024-05-15',
-    // ];
+    ALLOWEDDATES = [
+      '2024-07-07', '2024-07-08', '2024-07-09',
+      '2024-07-11', '2024-07-13', '2024-05-15',
+    ];
+    btnReset.click()
     calendar.setOptions(ALLOWEDDATES)
   })
 

@@ -38,24 +38,6 @@ menu_items.forEach( item => {
     })
   })
 
-
-  // if ( window.matchMedia('(max-width: 992px)').matches ) {
-  //   let menu_link =  item.querySelector('.nav--item')
-  //
-  //   if ( menu_link ) {
-  //     console.log(menu_link)
-  //     menu_link.addEventListener('click', (e) => {
-  //       e.preventDefault()
-  //     })
-  //   }
-  //   item.addEventListener('click', (e)=>{
-  //     if ( !item.classList.contains('is_open')  ) {
-  //       item.classList.add('is_open')
-  //     }
-  //   })
-  //
-  // }
-
 })
 
 function isOverflown(element) {
@@ -102,8 +84,8 @@ let header = document.querySelector('.header')
   // }
 
   window.addEventListener('resize', ()=>{
-    if ( isOverflown(header_nav) ) {
-      while( isOverflown(header_nav) ){
+    if ( isOverflown(header) ) {
+      while( isOverflown(header) ){
 
         hideOverflownElements()
       }
