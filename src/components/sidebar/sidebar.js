@@ -1,17 +1,17 @@
 
 /* Page navigation Company */
 
-let block_with_navigation = document.querySelector(".sidebar_navigation");
-
+let block_with_navigation = document.querySelector(".sidebar");
 if ( block_with_navigation ) {
 
   let anchor_links = block_with_navigation.querySelectorAll('a');
-
+  console.log(anchor_links)
   anchor_links.forEach(link => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
 
       let hash = event.currentTarget.hash.substring(1);
+      console.log(hash)
 
       let target = document.querySelector('a[name="'+hash+'"]');
 

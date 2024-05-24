@@ -21,6 +21,7 @@ function returnFileSize(number) {
 function validateInputs(form) {
   let inputs = form.querySelectorAll('input:not([type="hidden"])')
   let submit_button = form.querySelector('button[type="submit"]')
+  console.log(submit_button)
 
   inputs.forEach(i => {
     let parent = i.closest('.form--input');
@@ -114,6 +115,7 @@ function validateInputs(form) {
     })
 
   })
+
 }
 
 let forms = document.querySelectorAll('form')
@@ -122,46 +124,158 @@ forms.forEach(form => {
   validateInputs(form)
 })
 
-
-
 //date input
 
-// let date_inputs = document.querySelectorAll('.form--input_date')
-//
-// date_inputs.forEach( input => {
-//
-//   let i_today_date = new Date()
-//   // i_today_date.setDate(i_today_date.getDate() - 1);
-//
-//   const picker = new Litepicker({
-//     element: input,
-//     singleMode: true,
-//     autoApply: true,
-//     format: 'DD.MM.YYYY',
-//     lang: "ru-RU",
-//     // startDate: i_today_date,
-//     minDate: input.dataset.min,
-//     maxDate: input.dataset.max,
-//     position: 'left auto',
-//     numberOfMonths: 1,
-//     numberOfColumns: 1,
-//     showTooltip: false,
-//     plugins: ['mobilefriendly'],
-//     mobilefriendly: {
-//       breakpoint: 668,
-//     },
-//     buttonText: {
-//       "previousMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
-//         '<path d="M6.43359 11.4343L14.4336 3.43433L15.565 4.5657L8.13065 12L15.565 19.4343L14.4336 20.5657L6.43359 12.5657V11.4343Z" />\n' +
-//         '</svg>',
-//       "nextMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
-//         '<path d="M17.565 11.4343L9.56496 3.43433L8.43359 4.5657L15.8679 12L8.43359 19.4343L9.56496 20.5657L17.565 12.5657V11.4343Z" />\n' +
-//         '</svg>',
-//     },
-//     setup: (picker) => {
-//       picker.on('before:render', (ui) => {
-//         input.placeholder = i_today_date.toLocaleDateString("ru-RU")
-//       });
-//     },
-//   });
-// })
+let date_inputs = document.querySelectorAll('.form--input_date')
+
+date_inputs.forEach( input => {
+
+  let i_today_date = new Date()
+  // i_today_date.setDate(i_today_date.getDate() - 1);
+
+  const picker = new Litepicker({
+    element: input,
+    singleMode: true,
+    autoApply: true,
+    format: 'DD.MM.YYYY',
+    lang: "ru-RU",
+    // startDate: i_today_date,
+    minDate: input.dataset.min,
+    maxDate: input.dataset.max,
+    position: 'left auto',
+    numberOfMonths: 1,
+    numberOfColumns: 1,
+    showTooltip: false,
+    plugins: ['mobilefriendly'],
+    mobilefriendly: {
+      breakpoint: 668,
+    },
+    buttonText: {
+      "previousMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
+        '<path d="M6.43359 11.4343L14.4336 3.43433L15.565 4.5657L8.13065 12L15.565 19.4343L14.4336 20.5657L6.43359 12.5657V11.4343Z" />\n' +
+        '</svg>',
+      "nextMonth": '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">\n' +
+        '<path d="M17.565 11.4343L9.56496 3.43433L8.43359 4.5657L15.8679 12L8.43359 19.4343L9.56496 20.5657L17.565 12.5657V11.4343Z" />\n' +
+        '</svg>',
+    },
+    setup: (picker) => {
+      picker.on('before:render', (ui) => {
+        input.placeholder = i_today_date.toLocaleDateString("ru-RU")
+      });
+    },
+  });
+})
+
+let createCustomSelect = ( block ) =>{
+  let select_inputs = block.querySelectorAll('.form--input_select')
+
+  select_inputs.forEach(i => {
+
+    let select = document.createElement('div')
+    select.classList.add('select')
+    i.appendChild(select)
+
+    let select_button = document.createElement('div')
+    select_button.classList.add('select--button')
+    select.appendChild(select_button)
+
+    let select_option_list_container = document.createElement('div')
+    select_option_list_container.classList.add('select--option_wrapper')
+    select.appendChild(select_option_list_container)
+
+    let select_option_list = document.createElement('div')
+    select_option_list.classList.add('select--option_list')
+    select_option_list_container.appendChild(select_option_list)
+
+
+    let options = i.querySelectorAll('option')
+
+    options.forEach(opt => {
+      let customCheckbox = document.createElement('div')
+      customCheckbox.classList.add('select--checkbox')
+      let select_option = document.createElement('div')
+      select_option.classList.add('select--option')
+      select_option.dataset.value = opt.value
+      select_option.textContent = opt.value
+      select_option.appendChild(customCheckbox)
+      select_option_list.appendChild(select_option)
+
+    })
+
+    let select_options = i.querySelectorAll('.select--option')
+    select_options.forEach((option,index) => {
+      option.addEventListener('click',(op)=>{
+        select_button.textContent = option.dataset.value
+        select_options.forEach(o => {
+          o !== option ? o.classList.remove('is_selected') : o.classList.add('is_selected')
+        })
+        select_option_list_container.classList.remove('is_opened')
+        options.forEach(opt => {
+          op.currentTarget.dataset.value === opt.value ? opt.setAttribute('selected', '') : opt.removeAttribute('selected', '')
+        })
+      })
+    })
+
+    select_button.textContent = options[0].value
+
+    // select_button.addEventListener('click',()=>{
+    //   select_option_list_container.classList.toggle('is_opened')
+    // })
+
+  })
+  let selectBtn = block.querySelectorAll('.select--button')
+  selectBtn.forEach(sel =>{
+    sel.addEventListener('click', (e) =>{
+      selectBtn.forEach(se =>{
+        let s = se.parentElement.querySelector('.select--option_wrapper')
+        se === e.currentTarget ? s.classList.toggle('is_opened')  : s.classList.remove('is_opened')
+
+      })
+    })
+  })
+  let selects = block.querySelectorAll('.select')
+  selects.forEach(s =>{
+  window.addEventListener("keydown", function (e) {
+
+      if (e.code === "Escape") {
+
+
+        s.querySelector('.select--option_wrapper').classList.remove('is_opened')
+
+      }
+    })
+    window.addEventListener("click", function (e) {
+      if (e.target !== s ){
+          if ( e.target.closest('.form--input_select') === null ) {
+            s.querySelector('.select--option_wrapper').classList.remove('is_opened')
+          }
+      }
+    });
+
+
+  });
+}
+
+createCustomSelect(document)
+
+
+function checkSelect(){
+  let select_inputs = document.querySelectorAll('.form--input_select')
+
+    select_inputs.forEach(i => {
+    let select_options = i.querySelectorAll('.select--option')
+      let options = i.querySelectorAll('option')
+    select_options.forEach((option,index) => {
+      option.addEventListener('click',(op)=>{
+        // select_button.textContent = option.dataset.value
+        select_options.forEach(o => {
+          o !== option ? o.classList.remove('is_selected') : o.classList.add('is_selected')
+        })
+        options.forEach(opt => {
+          op.currentTarget.dataset.value === opt.value ? opt.setAttribute('selected', '') : opt.removeAttribute('selected', '')
+        })
+      })
+    })
+  })
+}
+

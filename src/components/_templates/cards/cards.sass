@@ -5,12 +5,15 @@
   flex-direction: column
   border-radius: var(--border-corner)
   background-color: var(--c-bck-default)
+  overflow: hidden
 
 .card--content
   display: flex
   flex-direction: column
   gap: var(--g-8)
   padding: var(--g-24)
+  height: 100%
+  //height: 100%
 
 .card--title,
 .card--title > *,
@@ -32,11 +35,32 @@
   line-height: 1.33
   letter-spacing: 0.01em
 
+.card--video
+  &:after
+    pointer-events: none
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52' fill='none'%3E%3Cg filter='url(%23filter0_b_7699_76827)'%3E%3Ccircle cx='26' cy='26' r='26' fill='black' fill-opacity='0.2'/%3E%3Ccircle cx='26' cy='26' r='25' stroke='white' stroke-width='2'/%3E%3C/g%3E%3Cpath d='M35.75 26L19.5 35.75L19.5 16.25L35.75 26Z' fill='white'/%3E%3Cdefs%3E%3Cfilter id='filter0_b_7699_76827' x='-24' y='-24' width='100' height='100' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeGaussianBlur in='BackgroundImageFix' stdDeviation='12'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='effect1_backgroundBlur_7699_76827'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_backgroundBlur_7699_76827' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E")
+    background-position: center
+    background-size: contain
+    top: 16px
+    left: auto
+    right: var(--g-20)
+    content: ''
+    position: absolute
+    width: 64px
+    height: 64px
+    z-index: 2
+    @media(max-width: 768px)
+      width: 52px
+      height: 52px
+  video
+    width: 100%
+    height: 100%
+    object-fit: cover
 .card--text
-  //color: var(--c-text-disabled)
   font-size: var(--fs-16)
 
-.card--image
+.card--image,
+.card--video
   display: flex
   align-items: flex-start
   position: relative
@@ -51,8 +75,8 @@
   background-repeat: no-repeat
   overflow: hidden
   border-radius: var(--border-corner)
-  //img
-  //  aspect-ratio: 1/1
+  flex: 0 0 auto
+
 .card-detail
   .card--image
     background: unset
@@ -74,31 +98,46 @@
     color: var(--c-text-subdued)
     padding: 10px 10px
     border-radius: 4px
+    &:before
+      font-family: 'icomoon' !important
+      line-height: 1
+      font-size: 1rem
 
   .c-accent
     color: var(--accent-2)
   .c-accent-2
     color: var(--accent)
-
+  .label-tourney:before
+    content: '\e90a'
+  .label-money:before
+    content: '\e915'
+  .label-horse:before
+    content: '\e912'
+  .label-date:before
+    content: '\e904'
 
 .card--actions
   margin-top: auto
   .button
+    margin-top: 16px
     width: 100%
+    padding: 9px
+    @media(min-width: 769px)
+      padding: 13px
 
-.card:not([data-popup_cascade]):not([href])
-  div.card--action
+.card:not([data-openpopup]):not([href])
+  .card--actions
     display: none
 
 
-.card[data-popup_cascade]
+.card[data-openpopup]
   position: relative
   cursor: pointer
   .card--action
     .icon
       font-family: 'icomoon' !important
       &:before
-        content: "\e93b"
+        content: "\e910"
   .card--image
     &:before
       pointer-events: none
@@ -127,6 +166,7 @@
   .card--image
     img
       transition: var(--transition)
+      transition: var(--transition)
     &:before
       z-index: 2
       content: ""
@@ -150,28 +190,28 @@
 .content_hourse
   .card
     background-color: #F2F5FA
-    display: grid
-    grid-template-columns: 1fr
+    display: flex
+    flex-direction: column
     @media(min-width: 769px)
+      display: grid
       grid-template-columns: repeat(2, 1fr)
     &--image
-      aspect-ratio: auto
-      @media(max-width: 768px)
-        aspect-ratio: 1/1
+      aspect-ratio: 1/1
+      @media(min-width: 769px)
+        aspect-ratio: auto
     &--content
       padding: var(--g-24)
-    &--title h3
+    &--title
       -webkit-line-clamp: 2
       font-size: 32px
-      //font-weight: 500
-      //color: var( --c-text-subdued)
     &--subtitle
       color: var( --c-text-subdued)
       font-size: var(--fs-16)
     &--text
       font-size: var(--fs-20)
       padding-bottom: var(--g-24)
-      border-bottom: 1px solid rgba(17, 24, 32,0.4)
+      @media(min-width: 769px)
+        border-bottom: 1px solid rgba(17, 24, 32,0.4)
       p
         text-overflow: ellipsis
         overflow: hidden
@@ -183,16 +223,18 @@
       display: flex
       flex-direction: column
       gap: 12px
+      @media(max-width: 768px)
+        display: none
       & > *
         display: flex
         align-items: baseline
-        //justify-content: space-between
         &:before
           content: ''
-          border-bottom: 1px dashed #cccccc
+          border-bottom: 1px dotted  #cccccc
           flex-grow: 1
           order: 1
           margin: 0 5px
+          min-width: 20px
         p:first-child
           color: var( --c-text-subdued)
         p + p
@@ -206,24 +248,60 @@
       max-width: 25%
     .c-accent
       &:before
-        content: '\e91c'
+        content: '\e917'
   &.block_list:not(block_list-slider)
     .card
       @media(min-width: 1024px)
         grid-template-columns: repeat(2, 1fr)
 
 
-
+.content_hourse-detail
+  .card
+    background-color: transparent
+    display: flex
+    flex-direction: row-reverse
+    gap: 8px
+    &--content
+      padding: var(--g-32) var(--g-80)
+      border-radius: var(--border-corner)
+      background-color: #f2f5fa
+      gap: 16px
+    &--label
+      position: static
+      padding: 0
+      max-width: 100%
+    &--image
+      max-width: 50%
+      aspect-ratio: 1/1
+    &--title
+      font-size: var(--fs-96)
+    &--subtitle
+      font-size: var(--fs-24)
+    &--text
+      font-size: var(--fs-32)
+    &--info
+      display: flex
+      gap: var(--g-24)
+      & > *
+        font-size: var(--fs-24)
+    &--actions
+      gap: 16px
+      display: flex
+      .button
+        width: auto
+        padding: 13px 20px
 
 .content_news
   .card
     position: relative
-    aspect-ratio: 613 / 656
+    aspect-ratio: 360 / 480
     cursor: pointer
     width: 100%
     height: auto
     max-height: 533px
     align-self: start
+    @media(min-width: 769px)
+      aspect-ratio: 613 / 656
     .card--content
       display: grid
       grid-template-columns: 1fr auto
@@ -237,18 +315,17 @@
       color: var(--c-text-primary)
       z-index: 3
       justify-content: flex-end
-      & >*:not(.card--actions)
-        grid-column: 1
-
-    .card--title
-    .card--text
+    &--title,
+    &--label
+      grid-column: span 2
+    &--text
       color: var(--c-text-primary)
       opacity: 0.8
-
     .card--image
       width: 100%
       max-width: 100%
-      aspect-ratio: 423 / 533
+      height: 100%
+      aspect-ratio: initial
       position: relative
       &:after
         content: ""
@@ -266,8 +343,11 @@
 
 .content_offers
   .card
-    display: grid
-    grid-template-columns: 1fr
+    display: flex
+    flex-direction: column
+    @media(min-width: 768px)
+      display: grid
+      grid-template-columns: 1fr
     @media(min-width: 998px)
       grid-template-columns: repeat(2, 1fr)
   .card--content
@@ -298,122 +378,84 @@
 
 
 
-.content_events
+.content_events,
+.content_events-calendar
   .card
     display: grid
     grid-template-columns: 1fr
-    @media(min-width: 1024px)
+    @media(min-width: 1140px)
       grid-template-columns: minmax(250px, 300px) 1fr
-    .card--image
+    &--image
       aspect-ratio: 320 / 220
       @media(min-width: 1024px)
-        aspect-ratio: initial
-    .card--content
-      @media(min-width: 1024px)
-        display: grid
-        grid-template-columns: 1fr max-content
-    .card--subtitle
+        aspect-ratio: 1/1
+    &--content
+      display: grid
+      grid-template-columns: 1fr max-content
+      //height: auto
+    &--subtitle
+      grid-column: span 2
       color: var(--accent-2)
       font-size: var(--fs-28)
+      display: flex
+      gap: 6px
       span:last-of-type
         opacity: 0.7
-    .card--title
-      grid-column: 1
-    .card--actions
+    &--title
+      grid-column: span 2
+    &--actions
       grid-column: 2
       margin-top: auto
       @media(max-width: 1024px)
         margin-left: auto
-    .card--text
+    &--text
       grid-column: 1
-    .card--label
+    &--label
       margin-bottom: auto
       grid-column: 1
-    .label-tourney:before
-      content: '\e91c'
-    .label-money:before
-      content: '\e91c'
-    .label-horse:before
-      content: '\e91c'
 
+body:not(.page-calendar) .content_events
   .card:first-of-type
-    @media(min-width: 1024px)
+    @media(min-width: 1140px)
       display: block
     .card--image
-      @media(min-width: 1024px)
+      @media(min-width: 1140px)
         aspect-ratio: initial
         height: 100%
-        //position: absolute
-        //inset: 0
+        position: absolute
+        inset: 0
     .card--content
-      @media(min-width: 1024px)
+      @media(min-width: 1140px)
         z-index: 2
         position: absolute
         top: auto
-        right: 30%
+        right: 27%
         left: 8px
         bottom: 8px
+        height: auto
         background-color: var(--c-surface-default)
         border-radius: var(--border-corner)
       .card--label
         span
-          @media(min-width: 1024px)
+          @media(min-width: 1140px)
             background-color: var(--c-bck-default)
+  .card:not(:nth-child(-n+2))
+    @media(min-width: 1141px)
+      margin-top: var(--g-20)
 
 
-
-.content_reviews
-  .card--image
-    aspect-ratio: 423 / 512
-    &:before
-      display: none
-    video, img
-      aspect-ratio: 423 / 512
-      width: 100%
-      height: 100%
-      object-fit: cover
-      object-position: center
-    video
-      cursor: pointer
-    &:has(video)
-      &:after
-        content: "\e934"
-        font-family: icomoon
-        z-index: 2
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%)
-        color: var(--c-text-primary)
-        font-size: var(--fs-56)
-        opacity: 1
-        transition: var(--transition)
-      &:hover
-        &:after
-          opacity: 0
-  .card--text,
-  .card--text p
-    color: var(--c-text-subdued)
-
-.review_author
-  display: flex
-  gap: var(--g-8)
-  align-items: center
-  justify-content: flex-start
-  margin-bottom: 12px
-  &--image
-    width: 40px
-    height: 40px
-    border-radius: 50%
-    overflow: hidden
-  &--name
-    font-size: var(--fs-16)
+.content_events-calendar
+  .card
+    display: flex
+    flex-direction: column
+    &--image
+      aspect-ratio: 453/368
 
 
-.content_partners,
 .content_card-image
   .card
     aspect-ratio: 1/1
+    height: max-content
     &--content
       z-index: 2
       position: absolute
@@ -425,14 +467,14 @@
       display: grid
       grid-template-columns: 1fr auto
       padding: 0
+      height: auto
     &--title,
     &--text
       grid-column: 1
     &--actions
       grid-column: 2
       margin-top: auto
-.content_card-image
-  .card
+  a.card
     .card--image:after
       position: absolute
       z-index: 2
@@ -443,9 +485,7 @@
 
 .content_advantages
   .card
-    flex: 25% 1 1
     overflow: hidden
-    //aspect-ratio: 620/440
     &--content
       gap: clamp(48px, calc(48px + (110 - 48) * ((100vw - 768px) / (1920 - 768))), 110px)
       height: 100%
@@ -457,11 +497,79 @@
       transition: var(--transition)
     &--text
       font-size: var(--fs-24)
+      -webkit-line-clamp: 20
+      p
+        -webkit-line-clamp: 20
     &:hover
       .card--title
         color: var(--c-surface-default)
       .card--content
         color: var(--c-text-primary)
         background-color: var(--accent)
+.content_advantages:not(.block_list-slider)
+  .card
+    overflow: hidden
+    @media(min-width: 768px)
+      flex: 25% 1 1
+.content_history
+  .card
+    gap: 24px
+    border-radius: 0
+    background-color: transparent
+
+    &--pin
+      display: flex
+      align-items: center
+      gap: 6px
+
+      .pin
+        width: 32px
+        height: 32px
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cpath d='M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16Z' fill='white'/%3E%3Cpath d='M27 16C27 22.0751 22.0751 27 16 27C9.92487 27 5 22.0751 5 16C5 9.92487 9.92487 5 16 5C22.0751 5 27 9.92487 27 16Z' fill='%231654CE'/%3E%3C/svg%3E")
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+        scale: 0.7
+        transition: var(--transition)
+        @media(min-width: 768px)
+          width: 48px
+          height: 48px
+      .line
+        width: 100%
+        height: 4px
+        //border-bottom: dashed 4px #fff
+        background-image: linear-gradient(to right, #fff 55%, transparent 55%)
+        background-size: 32px 4px
+        background-repeat: repeat-x
+        position: relative
+
+    &--content
+      margin-right: var(--g-56)
+      padding: 0
+    &--title
+      p
+        font-size: var(--fs-52)
+    &--text,
+    &--text p
+      font-size: var(--fs-20)
+      -webkit-line-clamp: initial
+    &--image
+      width: auto
+      margin-right: var(--g-56)
+      aspect-ratio: 560/360
+  .card:last-of-type
+    .line
+      display: none
+  .card.swiper-slide-active
+    .pin
+      scale: 1
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' fill='none'%3E%3Ccircle cx='24' cy='24' r='24' fill='white'/%3E%3Ccircle cx='24' cy='24' r='15' fill='%23FC563B'/%3E%3C/svg%3E")
+
+.content_news,
+.content_card-image,
+.content_events,
+.content_events-calendar
+  .button:before
+    transition: var(--transition)
 
 

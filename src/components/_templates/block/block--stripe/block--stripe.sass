@@ -10,13 +10,8 @@
     &--image,
     &--actions
       overflow: hidden
-
-
       flex: 20% 0 0
       border-radius: var(--border-corner)
-      @media(min-width: 769px)
-        aspect-ratio: 420/220
-        min-width: 300px
     &--content
       display: flex
       flex-direction: column
@@ -24,7 +19,7 @@
       width: 100%
       border-radius: var(--border-corner)
       background-color: var(--c-surface-subdued)
-      padding: var(--g-content)
+      padding: var(--g-48)
     &--title
       text-transform: uppercase
       font-family: 'Gilroy'
@@ -32,19 +27,40 @@
     &--text
       font-size: var(--fs-24)
     &--image
-      @media(max-width: 1024px)
-        display: none
+      display: flex
+      @media(max-width: 768px)
+        aspect-ratio: 360/200
 
     &--actions
       display: grid
-      grid-template-columns: 1fr auto
-      gap: 8px 16px
+      grid-template-areas: 'icon title' 'icon text' 'auto button'
+      gap: 8px 0
       font-size: var(--fs-32)
       font-family: 'Gilroy'
       padding: var(--g-24)
       background-color: var(--bg-color,  #f2f5fa)
       color: var(--text-color)
+      &-title
+        grid-area: title
+        display: flex
+        gap: 6px
       .button
-        grid-row: 2
-        grid-column: 2
+        margin-left: auto
+        grid-area: button
         margin-top: auto
+        padding: 15px
+        @media(max-width: 768px)
+          padding: 9px
+        &:before
+          transition: var(--transition)
+      .item--text
+        font-size: var(--fs-20)
+        grid-area: text
+      > span[class^="icon-"]
+        color: var(--accent)
+        font-size: 1em
+        margin-right: 8px
+        grid-area: icon
+    &--actions:not([href])
+      .button
+        display: none

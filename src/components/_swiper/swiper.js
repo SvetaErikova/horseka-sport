@@ -41,6 +41,7 @@ banner_slider.forEach(banner_sl => {
       },
       pagination: {
         el: swiper_pagination,
+        clickable: true
       },
 
     });
@@ -50,7 +51,7 @@ banner_slider.forEach(banner_sl => {
   else {
     let slider_controls = document.createElement('div');
     slider_controls.classList.add('slider_controls');
-    banner_sl.append(slider_controls);
+
 
     let swiper_pagination_container = document.createElement('div');
     swiper_pagination_container.classList.add('swiper-pagination-container');
@@ -77,6 +78,7 @@ banner_slider.forEach(banner_sl => {
       allowTouchMove: true,
       centeredSlides: true,
       effect: 'slide',
+      spaceBetween: 24,
       mousewheel: {
         forceToAxis: true,
       },
@@ -90,7 +92,7 @@ banner_slider.forEach(banner_sl => {
       },
       focusableElements: 'a, button',
     });
-
+    banner_sl.querySelector('.block--wrapper').append(slider_controls);
   }
 })
 
@@ -101,14 +103,9 @@ let  activateBlocklistSlider = (block) => {
 
   swiper_block.forEach(swiper_item => {
 
-    if (swiper_item.classList.contains("content_page_accommodation")) {
-      return;
-    }
-
     if ( swiper_item.classList.contains('block_list-slider-v2') ) {
 
       let head = swiper_item.querySelector('.block--head')
-
 
       let slider_controls = document.createElement('div');
       slider_controls.classList.add('slider_controls');
@@ -133,6 +130,7 @@ let  activateBlocklistSlider = (block) => {
         freeMode: false,
         allowTouchMove: true,
         uniqueNavElements: true,
+        // loop: true,
         focusableElements: 'input, select, option, textarea, button, video, label, a, button',
         noSwipingClass: "swiper-no-swiping-block",
         mousewheel: {
@@ -144,6 +142,7 @@ let  activateBlocklistSlider = (block) => {
         },
         pagination: {
           el: swiper_pagination,
+          clickable: true
         },
         breakpoints: {
           280: {
@@ -156,14 +155,14 @@ let  activateBlocklistSlider = (block) => {
           },
           1140: {
             spaceBetween: 20,
-            slidesPerView: 2.5,
+            slidesPerView: 2,
           },
         },
       });
       head.append(slider_controls);
 
-      if (swiper.slides.length <= 3) {
-        slider_controls.classList.add('hidden')
+      if (swiper.slides.length <= 1) {
+        // slider_controls.classList.add('hidden')
 
         // swiper.navigation.nextEl.classList.add('hidden')
         // swiper.navigation.prevEl.classList.add('hidden')
@@ -174,37 +173,71 @@ let  activateBlocklistSlider = (block) => {
     }
     else if( swiper_item.classList.contains('block_list-slider')){
       let slides_per_view_desktop = 4, slides_per_view_pad = 3, slides_per_view_mob = 1.2;
-
+      let slides_spaceBetween_desktop = 20, slides_spaceBetween_mob = 8;
       switch (true) {
         case swiper_item.classList.contains('content_offers'):
           slides_per_view_desktop = 2;
           slides_per_view_pad = 2;
           slides_per_view_mob = 1.3;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
           break;
         case swiper_item.classList.contains('content_basic'):
           slides_per_view_desktop = 4;
           slides_per_view_pad = 3;
-          slides_per_view_mob = 1.2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
           break;
         case swiper_item.classList.contains('content_hourse'):
           slides_per_view_desktop = 2;
           slides_per_view_pad = 1.2;
-          slides_per_view_pad = 1.2;
+          slides_per_view_pad = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
           break;
         case swiper_item.classList.contains('content_personal'):
           slides_per_view_desktop = 4;
           slides_per_view_pad = 3;
-          slides_per_view_mob = 1.2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
           break;
         case swiper_item.classList.contains('content_advantages'):
           slides_per_view_desktop = 3;
           slides_per_view_pad = 2.2;
-          slides_per_view_mob = 1.2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
+          break;
+        case swiper_item.classList.contains('content_reviews'):
+          slides_per_view_desktop = 3;
+          slides_per_view_pad = 2.2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
+          break;
+        case swiper_item.classList.contains('content_news'):
+          slides_per_view_desktop = 3;
+          slides_per_view_pad = 2.2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
+          break;
+        case swiper_item.classList.contains('content_history'):
+          slides_per_view_desktop = 3.1;
+          slides_per_view_pad = 2.2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 0;
+          slides_spaceBetween_mob = 0;
           break;
         default:
           slides_per_view_desktop = 4;
-          slides_per_view_pad = 3;
-          slides_per_view_mob = 1;
+          slides_per_view_pad = 2;
+          slides_per_view_mob = 1.1;
+          slides_spaceBetween_desktop = 20;
+          slides_spaceBetween_mob = 8;
+
       }
 
       let slider_controls = document.createElement('div');
@@ -250,26 +283,23 @@ let  activateBlocklistSlider = (block) => {
         },
         breakpoints: {
           280: {
-            spaceBetween: 8,
+            spaceBetween: slides_spaceBetween_mob,
             slidesPerView: slides_per_view_mob,
           },
           640: {
-            spaceBetween: 24,
+            spaceBetween: slides_spaceBetween_desktop,
             slidesPerView: slides_per_view_pad,
           },
           1140: {
-            spaceBetween: 24,
+            spaceBetween: slides_spaceBetween_desktop,
             slidesPerView: slides_per_view_desktop,
           },
         },
       });
       swiper_item.querySelector('.block--elements').append(slider_controls);
 
-      if (swiper.slides.length <= slides_per_view_desktop) {
+      if (swiper.slides.length <= 1) {
         slider_controls.classList.add('hidden')
-
-        // swiper.navigation.nextEl.classList.add('hidden')
-        // swiper.navigation.prevEl.classList.add('hidden')
         swiper.disable()
       }
     }
@@ -296,20 +326,21 @@ let  activateGallerySliders = (block) => {
 
         slides_per_view_desktop = 2;
         slides_per_view_pad = 1;
-        slides_per_view_mob = 1.2;
+        slides_per_view_mob = 'auto';
         slides_centeredSlides = false;
         break;
       case gallery.classList.contains('gallerySwiper-v3'):
         slides_per_view_desktop = 1.6;
         slides_per_view_pad = 1;
-        slides_per_view_mob = 1.2;
+        slides_per_view_mob = 'auto';
         slides_centeredSlides = 'true';
         break;
+
       default:
         slides_centeredSlides = false
         slides_per_view_desktop = 3;
         slides_per_view_pad = 2;
-        slides_per_view_mob = 1.2;
+        slides_per_view_mob = 'auto';
     }
 
     let slider_controls = document.createElement('div');
@@ -324,11 +355,11 @@ let  activateGallerySliders = (block) => {
     swiper_pagination_container.append(swiper_pagination);
 
     let swiper_nav_prev = document.createElement('div');
-    swiper_nav_prev.classList.add('swiper-button-prev');
+    swiper_nav_prev.classList.add('swiper-button-prev','button', 'button-outlined','button-secondary');
     slider_controls.append(swiper_nav_prev);
 
     let swiper_nav_next = document.createElement('div');
-    swiper_nav_next.classList.add('swiper-button-next');
+    swiper_nav_next.classList.add('swiper-button-next','button', 'button-outlined','button-secondary');
     slider_controls.append(swiper_nav_next);
 
 
@@ -379,9 +410,6 @@ activateGallerySliders(document)
 // Слайдер события
 
 let  activateEventsSliders = (block) => {
-  let events_swiper = block.querySelectorAll('.content_events .block--elements');
-
-  events_swiper.forEach(events => {
 
     let slider_controls = document.createElement('div');
     slider_controls.classList.add('slider_controls');
@@ -395,20 +423,21 @@ let  activateEventsSliders = (block) => {
     swiper_pagination_container.append(swiper_pagination);
 
     let swiper_nav_prev = document.createElement('div');
-    swiper_nav_prev.classList.add('swiper-button-prev');
+    swiper_nav_prev.classList.add('swiper-button-prev','button', 'button-outlined','button-secondary');
     slider_controls.append(swiper_nav_prev);
 
     let swiper_nav_next = document.createElement('div');
-    swiper_nav_next.classList.add('swiper-button-next');
+    swiper_nav_next.classList.add('swiper-button-next','button', 'button-outlined','button-secondary');
     slider_controls.append(swiper_nav_next);
 
-    const swiper = new Swiper(events, {
+    const swiper = new Swiper(block, {
       createElements: true,
       slidesPerView: 1,
       grabCursor: true,
       simulateTouch: true,
       freeMode: false,
       allowTouchMove: true,
+      autoHeight: true,
       mousewheel: {
         forceToAxis: true,
       },
@@ -426,30 +455,20 @@ let  activateEventsSliders = (block) => {
         320: {
           spaceBetween: 8
         },
-        993: {
+        768: {
+          slidesPerView: 2.1,
           spaceBetween: 24,
         }
       },
-      on: {
-        afterInit: function (swiper) {
-          if ( swiper.slides.length > 1 ) {
-            for (let i = 0; i < swiper.slides.length ; i++) {
-              let image = swiper.slides[i].querySelector('img')
-              image.setAttribute('loading', 'lazy')
-
-              let lazy_loader = document.createElement('div')
-              lazy_loader.classList.add('swiper-lazy-preloader', 'swiper-lazy-preloader-white')
-              image.parentNode.appendChild(lazy_loader)
-            }
-          }
-        }
-      }
     });
-    events.append(slider_controls);
-  })
+    block.append(slider_controls);
 }
-if ( window.matchMedia('(max-width: 768px)').matches ) {
-  activateEventsSliders(document)
+if ( window.matchMedia('(max-width: 1140px)').matches ) {
+  let events_swiper = document.querySelector('.block_list.content_events .block--elements');
+  if(events_swiper){
+    activateEventsSliders(events_swiper)
+  }
+
 }
 
 let random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
@@ -475,6 +494,10 @@ let activateImageTextSlider = ( sliders ) => {
       let slider_controls = document.createElement('div');
       slider_controls.classList.add('slider_controls');
 
+      let swiper_pagination = document.createElement('div');
+      swiper_pagination.classList.add('swiper-pagination');
+      slider_controls.append(swiper_pagination);
+
       let swiper_nav_prev = document.createElement('div');
       swiper_nav_prev.classList.add('swiper-button-prev','button', 'button-outlined','button-secondary','button-dark');
       slider_controls.append(swiper_nav_prev);
@@ -483,17 +506,15 @@ let activateImageTextSlider = ( sliders ) => {
       swiper_nav_next.classList.add('swiper-button-next','button', 'button-outlined','button-secondary','button-dark');
       slider_controls.append(swiper_nav_next);
 
-      let swiper_pagination = document.createElement('div');
-      swiper_pagination.classList.add('swiper-pagination');
-      slider_controls.append(swiper_pagination);
+
 
       const images_slider = new Swiper(slider, {
         createElements: true,
         slidesPerView: 1,
-        // autoplay: {
-        //   delay: random(2000, 5000)
-        // },
-        effect: "fade",
+        autoplay: {
+          delay: random(2000, 5000)
+        },
+        // effect: "fade",
         grabCursor: true,
         simulateTouch: true,
         freeMode: false,
@@ -509,6 +530,7 @@ let activateImageTextSlider = ( sliders ) => {
         },
         pagination: {
           el: swiper_pagination,
+          clickable: true
         },
       });
       slider.append(slider_controls);
@@ -518,7 +540,7 @@ let activateImageTextSlider = ( sliders ) => {
 }
 
 activateImageTextSlider(document.querySelectorAll('.block_image_text .block--image'))
-
+activateImageTextSlider(document.querySelectorAll('.content_gallery-action .block--image'))
 // Слайдер в карточках
 
 let activateCardImagesSlider = ( sliders ) => {
@@ -565,167 +587,9 @@ activateCardImagesSlider(document.querySelectorAll('.block_list .card .card--ima
 
 
 
-let activateAccommodationSlider = (swiper_item)=>{
-
-  let accommodation_slider = swiper_item.querySelector('.block--elements')
-
-  let accommodation_slider_pagination = document.createElement('div')
-  accommodation_slider_pagination.classList.add('content_page_accommodation--pagination')
-
-  accommodation_slider.parentNode.insertBefore(accommodation_slider_pagination, accommodation_slider);
-
-    const swiper = new Swiper( accommodation_slider, {
-      createElements: true,
-      watchSlidesProgress: true,
-      setWrapperSize: true,
-      grabCursor: true,
-      freeMode: false,
-      uniqueNavElements: true,
-      slidesPerView: 1,
-      // focusableElements: 'input, select, option, textarea, button, video, label, a, button',
-      slideClass: 'card-detail',
-      // centeredSlides: true,
-      noSwipingClass: "swiper-no-swiping-block",
-      effect: "fade",
-      speed: 400,
-      fadeEffect: {
-        crossFade: true
-      },
-      loop: false,
-      navigation: false,
-      allowTouchMove: false,
-      on: {
-        init: function (swiper) {
-          swiper.slides.forEach((sl, index) => {
-            let bullet = document.createElement('div')
-            bullet.textContent = sl.title;
-            bullet.dataset.elIndex = index;
-            bullet.classList.add('pagination_bullet')
-            accommodation_slider_pagination.appendChild(bullet);
-          })
-        }
-      },
-    });
-
-    let swiper_pagination_bullets = accommodation_slider_pagination.querySelectorAll('.pagination_bullet')
-
-    swiper_pagination_bullets.forEach(bullet => {
-      bullet.addEventListener('click', ()=>{
-        swiper_pagination_bullets.forEach(b => {
-          b === bullet ? b.classList.add('is_active') : b.classList.remove('is_active')
-        })
-
-        swiper.slideTo(bullet.dataset.elIndex)
-      })
-    })
-  swiper_pagination_bullets[0].click()
-
-    swiper.on('slideChange', ()=>{
-      for(let i = 0; i < swiper_pagination_bullets.length; i++) {
-        i === swiper.activeIndex ? swiper_pagination_bullets[i].classList.add('is_active') : swiper_pagination_bullets[i].classList.remove('is_active')
-      }
-
-    })
-
-
-  let card_image_slider = swiper_item.querySelectorAll(".card--image")
-
-  card_image_slider.forEach(slider => {
-
-    let card_images = slider.querySelectorAll('img')
-
-    if ( card_images.length > 1 ) {
-      let slider_controls = document.createElement('div');
-      slider_controls.classList.add('slider_controls');
-
-      let swiper_nav_prev = document.createElement('div');
-      swiper_nav_prev.classList.add('swiper--prev');
-      slider_controls.append(swiper_nav_prev);
-
-      let swiper_nav_next = document.createElement('div');
-      swiper_nav_next.classList.add('swiper--next');
-      slider_controls.append(swiper_nav_next);
-
-
-      slider.addEventListener('click', (e)=>{
-        e.stopPropagation();
-        e.preventDefault()
-      })
-
-      card_images.forEach(img => {
-        img.classList.add('card--image_slide')
-      })
-
-      const card_image_slider = new Swiper(slider, {
-        createElements: true,
-        slidesPerView: 1,
-        grabCursor: true,
-        simulateTouch: true,
-        freeMode: false,
-        allowTouchMove: true,
-        mousewheel: {
-          forceToAxis: true,
-        },
-        slideClass: 'card--image_slide',
-        pagination: false,
-        effect: "creative",
-        creativeEffect: {
-          prev: {
-            translate: ["-100%", 0, 0],
-          },
-          next: {
-            translate: ["100%", 0, 0],
-            scale: 0.8
-          },
-        },
-        navigation: {
-          nextEl: swiper_nav_next,
-          prevEl: swiper_nav_prev,
-        },
-
-      });
-
-      slider.appendChild(slider_controls);
-
-    }
-
-  })
-
-}
-
-
-let page_accomodation_sections = document.querySelectorAll('.content_page_accommodation');
-
-page_accomodation_sections.forEach(section => {
-  activateAccommodationSlider(section)
-})
-
-
-if ( window.matchMedia('(max-width: 768px)').matches ) {
-  let card_reviews = document.querySelectorAll('.content_reviews .card--image:has(video)')
-  card_reviews.forEach(card_with_video => {
-    let card_reviews_video = card_with_video.querySelector('video')
-    card_reviews_video.addEventListener('click', (e)=>{
-      e.stopPropagation()
-
-      if ( card_reviews_video.paused ) {
-        card_reviews_video.play()
-        card_reviews_video.removeAttribute("muted")
-      } else {
-        card_reviews_video.pause()
-        card_reviews_video.setAttribute("muted", "")
-      }
-    })
-  })
-}
-
-
 // Слайдер в табах
-let activateTabsSlider = ( sliders ) => {
-  sliders.forEach(slider => {
-
+let activateTabsSlider = ( slider ) => {
     let tabs = slider.querySelectorAll('button')
-
     if ( tabs.length > 1 ) {
 
       tabs.forEach(tab => {
@@ -773,11 +637,40 @@ let activateTabsSlider = ( sliders ) => {
 
       slider.appendChild(slider_controls);
     }
-  })
-
 }
-if(document.querySelector('.block--sections')){
-  activateTabsSlider(document.querySelectorAll('.block--sections'))
+document.querySelectorAll(' .block--sections').forEach(section =>{
+  activateTabsSlider(section)
+})
+
+// swiper content_animation-4
+let animation4 = document.querySelector('.content_animation-4')
+if (animation4) {
+
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    const content_animation_slider = new Swiper(animation4.querySelector('.animation--image'), {
+      createElements: true,
+      slidesPerView: 1.1,
+      // effect: "fade",
+      grabCursor: true,
+      simulateTouch: true,
+      freeMode: false,
+      allowTouchMove: true,
+      // loop: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      slideClass: 'img',
+      navigation: false,
+      pagination: false,
+      breakpoints: {
+        320: {
+          spaceBetween: 8
+        },
+        768: {
+          slidesPerView: 2.1,
+          spaceBetween: 24,
+        }
+      },
+    });
+  }
 }
-
-

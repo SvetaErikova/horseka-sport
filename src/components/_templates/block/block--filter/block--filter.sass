@@ -1,0 +1,50 @@
+.block--filter
+  margin-top: var(--g-section-inner)
+  display: flex
+  //grid-area: filter
+  align-items: flex-end
+  @media(max-width: 575px)
+    flex-direction: column
+  .filter
+    @media(max-width: 768px)
+      display: none
+    fieldset
+      display: flex
+      align-items: center
+      gap: 16px
+      border: none
+      .form--input
+        margin-top: 0
+        select
+          border-bottom: none
+    .filter--buttons
+      display: flex
+      flex-direction: column
+      gap: 16px
+      @media(max-width: 768px)
+        margin-top: 16px
+      @media(min-width: 769px)
+        order: -1
+      .button[type='reset']
+        @media(min-width: 769px)
+          padding: 0
+          border: none
+          &:before
+            content: none
+          &:hover,
+          &:active,
+          &:focus
+            @media(min-width: 769px)
+              color: var(--accent)
+      .button
+        @media(min-width: 769px)
+          display: none
+      button
+        width: 100%
+  [data-openpopup]
+    width: 100%
+    @media(min-width: 768px)
+      display: none
+.block--sections ~ .block--filter .select--option_wrapper
+  left: auto
+  right: 0

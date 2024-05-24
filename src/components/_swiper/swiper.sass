@@ -17,15 +17,17 @@
   display: flex
   justify-content: center
   align-items: center
-  width: clamp(36px, calc(36px + (40 - 36) * ((100vw - 1024px) / (1920 - 1024))), 40px)
-  height: clamp(36px, calc(36px + (40 - 36) * ((100vw - 1024px) / (1920 - 1024))), 40px)
   aspect-ratio: 1/1
+  width: clamp(36px, calc(36px + (54 - 36) * ((100vw - 1024px) / (1920 - 1024))), 54px)
+  height: clamp(36px, calc(36px + (54 - 36) * ((100vw - 1024px) / (1920 - 1024))), 54px)
   pointer-events: all
   transition: var(--transition)
   border-radius: var(--border-corner-button)
   &:after
     font-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 1024px) / (1920 - 1024))), 28px)
     font-family: 'icomoon' !important
+  &:before
+    transition: .15s linear !important
   &.swiper-button-disabled
     opacity: 0.4
     cursor: auto
@@ -38,13 +40,15 @@
 .swiper--prev
   &:after
     z-index: 3
-    content: "\e925"
+    content: "\e909"
+    font-size: 20px
 
 .swiper-button-next,
 .swiper--next
   &:after
     z-index: 3
-    content: "\e926"
+    content: "\e916"
+    font-size: 20px
 
 .swiper-pagination
   width: fit-content
@@ -58,7 +62,7 @@
 .block_banner:not(.block_banner-hero),
 .gallery
   .slider_controls
-    margin-top: var(--g-32)
+    margin-top: var(--g-20)
     z-index: 2
     .swiper-pagination-container
       width: 100%
@@ -76,6 +80,8 @@
     .swiper-pagination-progressbar .swiper-pagination-progressbar-fill
       background-color: var(--c-surface-dark)
       border-radius: 20px
+    .button
+      padding: 15px
 .slider_controls
   display: flex
   justify-content: space-between
@@ -92,7 +98,8 @@
     border-color: rgba(20, 26, 37, 1)
   &.swiper-button-disabled
     opacity: 0.5
-.swiper-button-lock
+.swiper-button-lock,
+.swiper-pagination-lock
   display: none
 .block_list-slider-v2,
 .block_image_text-slider
@@ -102,8 +109,8 @@
     align-items: center
     .swiper-button-prev,
     .swiper-button-next
-      color: var(--c-surface-default)
-      border: 1px solid var(--c-surface-default)
+      //color: var(--c-surface-default)
+      border: 1px solid currentColor
     .swiper-pagination
       margin-left: auto
 
@@ -117,9 +124,13 @@
   &.swiper-pagination-bullet-active
     background-color: var(--c-surface-default)
 
+.swiper-notification
+  display: none
+
 .block--image-slider
   position: relative
   &:before
+    pointer-events: none
     position: absolute
     z-index: 2
     top: 0
@@ -137,10 +148,18 @@
     align-items: center
     gap: 16px
     z-index: 2
-    bottom: 16px
-    left: 16px
-    right: 16px
+    bottom: var(--g-32)
+    left: var(--g-32)
+    right: var(--g-32)
     top: auto
     position: absolute
+    @media(max-width: 768px)
+      justify-content: center
+    .swiper-button-next,
+    .swiper-button-prev
+      @media(max-width: 768px)
+        display: none
     .swiper-pagination
-      margin-left: auto
+      @media(min-width: 769px)
+        margin-left: auto
+

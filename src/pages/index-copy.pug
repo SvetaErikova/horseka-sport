@@ -1,0 +1,616 @@
+extends ../layouts/hero
+
+block variables
+  - var title = "Главная"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+
+
+
+  section.block.block_banner.block_banner-hero.block_banner-group
+    .block--wrapper
+      .banner
+        .block--content
+          //img(src="/assets/img/bg.jpg")
+          video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/e11/e115486fb468da56217dcb4dfba748ac.mp4" autoplay loop muted playsinline)
+        .block--head
+          .block--head_subtitle
+            p события и фестивали
+          .block--head_title
+            h1.f-h1 спортивный сезон 2024
+          .block--head_caption
+            p Horseka Sport занимается активным развитием и популяризацией конного спорта в России.
+          .block--actions
+            a(href="/").button.button-filled.button-accent.button-dark
+              span Действие
+            a(href="/").button.button-filled.button-primary
+              span Переход
+      .banner
+        .block--content
+          //img(src="/assets/img/bg.jpg")
+          video(poster="/assets/img/bg.jpg" src="https://mriyaresort.com/upload/_content/e11/e115486fb468da56217dcb4dfba748ac.mp4" autoplay loop muted playsinline)
+        .block--head
+          .block--head_subtitle
+            p события и фестивали
+          .block--head_title
+            h1.f-h1 спортивный сезон 2024
+          .block--head_caption
+            p Horseka Sport занимается активным развитием и популяризацией конного спорта в России.
+          .block--actions
+            a(href="/").button.button-filled.button-accent.button-dark
+              span Действие
+            a(href="/").button.button-filled.button-primary
+              span Переход
+
+
+  // Преимущества
+  section.block.block_html_code.content_advantages-2
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p преимущества комплекса
+        .block--head_title
+          h2.f-h2 мы предлагаем
+        .block--head_caption
+          p
+
+      .block--elements
+        .card.advantages-1
+          .card--image
+            img(src="/assets/img/advantages/advantages-back-1.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-1.png")
+          .card--content
+            .card--title
+              h3 30 гектаров<br>территории
+            .card--text
+              p Просторная территория для занятий конным спортом, развлечений и отдыха
+        .card.advantages-2
+          .card--image
+            img(src="/assets/img/advantages/advantages-back-2.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-2.png")
+          .card--content
+            .card--title
+              h3 Современное<br>оснащение
+            .card--text
+              p 4 поля, 3 манежа, 10 конюшен и конюшни на выбор в соответствии с вашими желаниями и предпочтениями
+        .card.advantages-3
+          .card--image
+            img(src="/assets/img/advantages/advantages-back-3.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-3.png")
+          .card--content
+            .card--title
+              h3 крупнейшие<br> соревнования и турниры
+            .card--text
+              p Участвуйте во всероссийских и международных соревнованиях, демонстрируйте свои навыки и таланты
+        .card.advantages-4
+          .card--image
+            img(src="/assets/img/advantages/advantages-back-4.jpg")
+          img.image-front(src="/assets/img/advantages/advantages-front-4.png")
+          .card--content
+            .card--title
+              h3 Экспертный<br>состав тренеров
+            .card--text
+              p Учитесь у профессионального тренерского состава, который поможет вам достичь ваших целей и осуществить мечты
+
+  // Услуги комплекса
+  section.block.block_html_code.content_services
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+
+        .block--head_title
+          h2.f-h2 Услуги комплекса
+        .block--head_caption
+
+
+      .block--sections
+        .block--sections_container
+          button.is_active
+            span Все
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
+
+      .block--elements
+        .item
+          .item--image
+            video(src="/assets/video/@lepragram.mp4" playsinline muted autoplay loop)
+            //img(src="/assets/img/advantages/advantages-back-1.jpg")
+          .item--content
+            .item--title
+              h3 ОБУЧЕНИЕ ВЕРХОВОЙ ЕЗДЕ
+            .item--text
+              p Мы предоставляем услуги по обучению верховой езде, как на начальном, так и на профессиональном уровне. Опытные инструкторы-берейторы научат детей и взрослых правильно ухаживать за лошадьми, учитывая их индивидуальный характер, уверенно держаться в седле.
+            .item--actions
+              .item--actions
+                .button.button-filled.button-accent
+                  span Подробнее
+            .item--links
+              .button.button-outlined.button-secondary
+                span Обучение детей
+                span.icon-arrow-r
+              .button.button-outlined.button-secondary
+                span Тренировки для соревнований
+                span.icon-arrow-r
+              .button.button-outlined.button-secondary
+                span Свободные тренировки
+                span.icon-arrow-r
+              .button.button-outlined.button-secondary
+                span Обучение Взрослых
+                span.icon-arrow-r
+              .button.button-outlined.button-secondary
+                span Групповые занятия
+                span.icon-arrow-r
+              .button.button-outlined.button-secondary
+                span Сертификаты
+                span.icon-arrow-r
+
+  // Карточки события
+  section.block.block_list.content_events
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h2 ближайшие турниры
+        .block--head_caption
+          p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
+        .block--head_link
+          a.button(href='')
+            span календарь
+            span.icon-arrow-r
+
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+
+
+  // картинка текст маской
+  section.block.block_image_text.block_image_text-mask
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/1.jpg" alt="")
+      .block--head
+        .block--head_subtitle
+          p преимущества комплекса
+        .block--head_title
+          h2.f-h2 хотите стать болельщиком?
+        .block--head_caption
+          p Смотрите, как лучшие наездники соревнуются  в захватывающих турнирах по верховой езде. Купите билеты прямо сейчас и наслаждайтесь происходящим в полном объеме!
+        .block--actions
+          a(href="/").button.button-filled.button-accent.button-dark
+            span Действие
+      .block--content.is_cascade
+
+  // Карточки лошадей слайдер
+  section.block.block_list.block_list-slider.content_hourse
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Лошади на продажу
+        .block--head_link
+          a.button(href='')
+            span каталог
+            span.icon-arrow-r
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+  //  block--stripe
+  section.block.block_html_code.block--stripe.ac-background-1
+    .block--wrapper
+      .item
+        .item--image
+          img(src="/assets/img/1.jpg" alt="")
+        .item--content
+          .item--title
+            h4 Ваш персональный консультант
+          .item--text
+            p Нужна помощь с выбором? Обратитесь к вашему персональному менеджеру и получите консультацию по выбору лошади
+        .item--actions
+          span Связаться с консультантом
+          .button.button-outlined.button-accent.button-dark
+            span.icon-arrow-r
+
+
+  // Карточки базовые слайдер V2
+  section.block.block_list.block_list-slider.block_list-slider-v2
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p гордимся и ценим
+        .block--head_title
+          h2.f-h2 звезды нашего клуба
+        .block--head_caption
+          p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            //.card--label
+            //  span.c-accent Horseka Рекомендует
+            //  span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+  // Карточки Акции слайдер
+  section.block.block_list.block_list-slider.content_offers
+    .block--wrapper
+      .block--head
+        .block--head_title
+          h2.f-h2 акции
+
+      .block--elements
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Скидка 20%
+              span До 24.03.2024
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--text
+              p Побалуйте себя уникальной фотосессией с нашими прекрасными лошадьми на нашей прекрасной территории
+            .card--actions
+              .button.button-outlined.button-accent
+                span Побробнее
+  // галерея слайдер с ОДНОЙ активной картинкой
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head("subtitle","галерея","head caption")
+      .block--content
+        .gallery.js-gallerySwiper.gallerySwiper-v3
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+  // продумано для гостей
+  section.block.block_html_code.content_services.ac-background-3
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+
+        .block--head_title
+          h2.f-h2 продумано для гостей
+        .block--head_caption
+          img(src="/assets/img/logo/logo-white.svg")
+
+      .block--sections
+        .block--sections_container
+          button.is_active
+            span Номера и апартаменты
+          button
+            span Рестораны и бары
+          button
+            span Бани и SPA
+          button
+            span для детей
+
+      .block--elements
+        .item
+          .item--image
+            img(src="/assets/img/advantages/advantages-back-1.jpg")
+          .item--content
+            .item--title
+              h3 Номера  и апартаменты
+            .item--text
+              p На большой территории отеля в Московской области расположилась полноценная инфраструктура для загородной жизни, отдыха, развлечений и спорта.
+            .is_cascade
+              p Гармония природы и загородного комфорта в часе езды от Москвы по Щелковскому шоссе. Вековые сосны в лесу в сочетании с продуманной инфраструктурой отеля, где есть все для семейного отдыха. Высокий уровень сервиса в любое время года!
+            .item--actions
+              .item--actions
+                a(href='https://horseka.ru/').button.button-filled.button-accent
+                  span.icon-external
+                  span Сайт Horseka Resort

@@ -1,13 +1,10 @@
 .footer
-
   padding: clamp(64px, calc(64px + (80 - 64) * ((100vw - 1024px) / (1920 - 1024))), 80px) var(--g-container)
   background-color: var( --c-bck-dark-blue)
   color: var(--c-text-primary)
-
   .block--wrapper
     margin: 0 var(--g-footer)
-
-
+    padding: 0
   &--contacts
     display: flex
     flex-direction: column
@@ -23,8 +20,6 @@
       display: flex
       flex-direction: column
       gap: var(--g-content)
-
-
     & > div
       overflow: hidden
       border-radius: var(--border-corner)
@@ -34,19 +29,16 @@
       #map
         width: 100%
         max-height: 100%
-
   &--row
     display: grid
     grid-template-columns: 1fr
-    gap: 24px
+    gap: var(--g-80)
     padding-bottom: var(--g-container)
     @media(min-width: 992px)
       grid-template-columns: 3fr 9fr
-
     &-bottom
-      padding: var(--g-section-inner) 0
-      border-top: 1px solid #F0F0F0
-
+      padding: var(--g-32) 0
+      border-top: 1px solid rgba(255, 255, 255, .7)
   &--col
     display: flex
     flex-direction: column
@@ -66,11 +58,6 @@
       background-color: var(--accent)
       border-radius: var(--border-corner-button)
       font-size: var(--fs-32)
-
-
-
-
-
   &--col-links
     display: grid
     gap: 20px
@@ -96,8 +83,14 @@
     display: flex
     flex-direction: column
     gap: var(--g-32)
+    font-size: var(--fs-32)
     .button
       margin-left: auto
+      padding: 13px
+      @media(max-width: 768px)
+        padding: 9px
+      &:before
+        transition: var(--transition)
   .developer
     grid-column: 1
     white-space: nowrap
@@ -117,3 +110,5 @@
     color: var(--c-text-disabled)
 
 
+.content_subscription ~ footer
+  padding-top: 0

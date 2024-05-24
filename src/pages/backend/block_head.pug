@@ -1,25 +1,14 @@
 extends ../../layouts/main
 
 block variables
-  - var title = "Списки"
+  - var title = "Заголовки"
   - var pageClass = ''
   - var activePage = ''
 
 block content
-  section.block
-    .block--wrapper
-      .block--head
-        .block--head_subtitle
-          p каталог лошадей
-        .block--head_title
-          h2.f-h2 Лошади на продажу
-        .block--head_caption
-          p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
-        .block--actions
-          a(href="/").button.button-filled.button-accent.button-dark
-            span Действие
-          a(href="/").button.button-filled.button-primary
-            span Переход
+
+  //У .block--head_title можно выбирать размер f-h1, f-h2. f-h3
+  // хед обычный с кнопками
   section.block
     .block--wrapper
       .block--head
@@ -29,18 +18,46 @@ block content
           h1.f-h1 Лошади на продажу
         .block--head_caption
           p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
+        .block--actions
+          a(href="/").button.button-filled.button-accent.button-dark
+            span Действие
+          a(href="/").button.button-filled.button-primary
+            span Переход
+  // хед с кнопкой
   section.block
     .block--wrapper
       .block--head
         .block--head_subtitle
           p каталог лошадей
         .block--head_title
-          a(href="/")
-            h2.f-h2 Лошади на продажу
+          h2.f-h1 Лошади на продажу
+        .block--head_caption
+          p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
+        .block--actions
+          a(href="/").button.button-filled.button-accent.button-dark
+            span Действие
+  // хед h2-h3 без кнопок
+  section.block
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Лошади на продажу
+        .block--head_caption
+          p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
+  // хед заголовок ссылка
+  section.block
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h3 Лошади на продажу
         .block--head_caption
           p Почувствуйте азарт турниров по верховой езде! Узнайте актуальное расписание, коэффициенты и результаты ближайших событий на площадках Horseka Sport!
         .block--head_link
           a.button(href='')
             span В каталог
-            span.icon-HeroSliderRight
+            span.icon-arrow-r
 

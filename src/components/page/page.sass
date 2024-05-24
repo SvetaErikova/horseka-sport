@@ -1,93 +1,40 @@
-.page-article
-  .block_element
-    overflow-x: hidden
-  .block--head,
-  .block--content
+article
+  .block--wrapper
     max-width: 1600px
     margin: 0 auto
+  .block--content
 
-.block_page-sidebar
-  display: grid
-  gap: 24px
-  padding: 0 var(--g-container)
-  @media(min-width: 992px)
-    padding: 0 0 0 var(--g-container)
-  @media(min-width: 992px)
-    grid-template-columns: 4fr 9fr
-  .is_cascade
-    padding-right: var(--g-container)
-    h2
-      margin-top: var(--g-section)
-      margin-bottom: var(--g-card-inner)
-      line-height: 1.28
-      text-transform: uppercase
-      font-family: 'SangBleuKingdom'
-      font-size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375))), 40px)
-      font-weight: 300
-      letter-spacing: -.02em
-      --size: clamp(24px, calc(24px + (40 - 24) * ((100vw - 375px) / (1920 - 375))), 40px)
-    .contact
-      display: grid
-      grid-template-columns: 1fr 1fr
-      gap: 8px 24px
-      padding: var(--g-24) 0
-      border-bottom: 1px solid var(--c-border-others)
-      @media(min-width: 992px)
-        gap: 24px
-        grid-template-columns: 3fr 3fr 2fr
-      &--title
-        grid-column: 1
-        font-size: var(--fs-20)
-        text-transform: unset
-        color: var(--c-text-default)
-      &--value
-        grid-column: 2
-        display: flex
-        flex-direction: column
-        gap: 12px
-        font-size: var(--fs-20)
-        font-weight: 400
-        a
-          &:hover,
-          &:focus
-            color: var(--c-text-accent-default)
-.sidebar
-  min-height: 100%
-  align-self: stretch
-  flex-shrink: 0
-  flex-grow: 0
-  & + div
-    overflow: hidden
-    display: block
-    flex-shrink: 0
-    flex-grow: 0
-
-.block_page-accomodation
-  .block--head
-    text-align: left
-    align-items: flex-start
-  &.block_page-sidebar
     display: grid
-    gap: 24px
-    padding: 0 var(--g-container)
-    @media(min-width: 992px)
-      padding: 0 0 0 var(--g-container)
-      grid-template-columns: 3fr 10fr
-  @media(max-width: 992px)
-    padding: 0
-    .block--head
-      padding: 0 var(--g-container)
-  .sidebar
-    & + div
-      overflow: hidden
-      display: block
-      flex-shrink: 0
-      flex-grow: 0
-  .block--wrapper
-    display: block
-  .block--elements
-    overflow: hidden
-  .block_list
-    .block--wrapper
-      padding: var(--g-80) 0
+    grid-template-columns: 9fr auto
+    grid-template-areas: 'label side' 'cascade side'
+    @media(max-width: 998px)
+      grid-template-areas: 'side side' 'label label' 'cascade cascade'
+      gap: 16px 0
+  .is_cascade
+    grid-area: cascade
+    max-width: 1024px
+    width: 100%
+    margin: auto
+  .block--head
+    display: flex
+    flex-direction: column
+    border-bottom: none
+    &_title
+      max-width: initial
+  .block--article_label
+    grid-area: label
+    display: flex
+    gap: 16px
+    & > div
+      display: flex
+      gap: 16px
+      & > div
+        display: flex
+        align-items: center
+        gap: 6px
+    & > div:first-of-type
+      span
+        padding: 8px
+        background-color: var(--c-surface-subdued)
+        border-radius: 8px
 

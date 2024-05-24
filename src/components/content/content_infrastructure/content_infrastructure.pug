@@ -1,0 +1,94 @@
+// Инфраструктура
+section.block.block_html_code.content_infrastructure.js-tabs
+  .block--wrapper
+    .block--head
+      .block--head_subtitle
+        p
+      .block--head_title
+        h2.f-h2 Инфраструктура
+      .block--head_caption
+        p content_infrastructure
+    .block--sections
+      .block--sections_container
+        button.is_active(data-target='1')
+          span Конюшни
+        button(data-target='2')
+          span Площадки для заездов
+        button(data-target='3')
+          span Обеспечение
+        button(data-target='4')
+          span Отдых
+    .block--elements
+      .infrastructure
+        .popup.popup-infrastructure(data-popup="popup_for_infrastructure" data-lenis-prevent)
+          .popup--content
+            .popup--close(data-closepopup)
+              button.button
+                span.icon-close
+            .popup--number(data-number='1')
+            .popup--content-image
+              img(src="" alt="")
+            .popup--content-title
+            .popup--content-text
+            .button_wrapper
+              a(href='').button.button-filled.button-accent.js-popup--infrastructure_link
+                span Подробнее
+              a(href='').button.button-filled.button-secondary.js-popup--infrastructure_other
+                span.icon-location
+                span Расположение
+
+
+        .infrastructure--image
+          <svg  viewBox="0 0 1300 612" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <image data-content='1'  width='1300' height='612'  xlink:href="/assets/img/infrastructure.jpg"/>
+          <image data-content='2'  width='1300' height='612'  xlink:href="/assets/img/bg.jpg"/>
+
+          <!-- Метки -->
+
+          <g data-content='1' transform="translate(28,28)"   class="placemark is_active" data-openpopup="popup_for_infrastructure" data-id="1">
+          <circle class='pulse'  cx="300" cy="298" r="27" fill="white" stroke="white" stroke-width="2"/>
+          <circle cx="300" cy="298" r="27" fill="white" stroke="#FC563B" stroke-width="2"/>
+          <text x="300" y="298"  ">1</text>
+          </g>
+
+          <g data-content='1' transform="translate(28,28)" class="placemark" data-openpopup="popup_for_infrastructure" data-id="2">
+          <circle class='pulse' cx="430" cy="370" r="27" fill="white" stroke="white" stroke-width="2"/>
+          <circle cx="430" cy="370" r="27" fill="white" stroke="#FC563B" stroke-width="2"/>
+          <text x="430" y="370">2</text>
+          </g>
+
+          <g data-content='1' transform="translate(28,28)" class="placemark" data-openpopup="popup_for_infrastructure" data-id="3">
+          <circle class='pulse' cx="630" cy="200" r="27" fill="white" stroke="white" stroke-width="2"/>
+          <circle cx="630" cy="200" r="27" fill="white" stroke="#FC563B" stroke-width="2"/>
+          <text x="630" y="200">3</text>
+          </g>
+
+          <g data-content='1' transform="translate(28,28)" class="placemark" data-openpopup="popup_for_infrastructure" data-id="4">
+          <circle class='pulse' cx="830" cy="340" r="27" fill="white" stroke="white" stroke-width="2"/>
+          <circle cx="830" cy="340" r="27" fill="white" stroke="#FC563B" stroke-width="2"/>
+          <text x="830" y="340">4</text>
+          </g>
+
+          <g data-content='2'  class="placemark" data-openpopup="popup_for_infrastructure" data-id="5">
+          <circle transform="translate(28,28)" cx="300" cy="298" r="27" fill="white" stroke="white" stroke-width="2"/>
+          <use xlink:href="#placemark" x="300" y="298" width="58" height="58" />
+          <text text-anchor="middle" x="327" y="337"  ">1</text>
+          </g>
+
+          <g data-content='2'  class="placemark" data-openpopup="popup_for_infrastructure" data-id="6">
+          <use xlink:href="#placemark" x="350" y="370" width="58" height="58" />
+          <text x="350" y="370">2</text>
+          </g>
+
+          <g data-content='2'  class="placemark" data-openpopup="popup_for_infrastructure" data-id="7">
+          <use xlink:href="#placemark" x="500" y="200" width="58" height="58" />
+          <text  x="500" y="200">3</text>
+          </g>
+
+          <g data-content='2'  class="placemark" data-openpopup="popup_for_infrastructure" data-id="8">
+          <use xlink:href="#placemark" x="750" y="340" width="58" height="58" />
+          <text x="750" y="340">4</text>
+          </g>
+
+          </svg>
+

@@ -7,7 +7,8 @@ input::-webkit-inner-spin-button
   -webkit-appearance: none
   margin: 0
 
-
+textarea
+  resize: none
 /* Firefox */
 input[type=number]
   -moz-appearance: textfield
@@ -21,15 +22,17 @@ input[type=number]
     display: grid
     grid-template-columns: 1fr
   &--title
-    font-size: var(--fs-32)
+    font-size: var(--fs-96)
     font-weight: 300
     text-transform: uppercase
     font-family: 'Gilroy'
     margin-bottom: 12px
     letter-spacing: -0.02em
+    line-height: 1
   &--text
     color: var(--c-text-subdued)
-    font-size: var(--fs-20)
+    font-size: var(--fs-32)
+    margin-bottom: 16px
   &--title,
   &--text
     .form--input:first-of-type
@@ -111,62 +114,28 @@ input[type=number]
       flex-grow: 0
       cursor: pointer
   input[type="checkbox"]
-    & ~ .checkbox
+    & ~ svg
       rect
-        fill: #fff
-        stroke: #C4C6C9
-        transition: var(--transition)
-      &:hover,
-      &:focus
-        rect
-          fill: #FAFAFB
-          stroke: #C4C6C9
-    & ~ .slider
-      .slider--border
-        fill: #fff
-        stroke: #C4C6C9
-        transition: var(--transition)
-      .slider--dot
-        transform: translateX(-14px)
-        transition: var(--transition)
-      &:hover,
-      &:focus
-        .slider--border
-          fill: #FAFAFB
-    &:checked
-      & ~ .checkbox,
-        rect
-          fill: var(--c-text-subdued)
-          stroke: var(--c-text-subdued)
-      & ~ .slider
-        .slider--border
-          fill: #fff
-          stroke: var(--c-text-subdued)
-        .slider--dot
-          transform: translateX(0px)
-
+        stroke: #000
+    &:hover ~ svg,
+    &:focus ~ svg
+      //rect
+      //  fill: #144FC3
+    &:checked ~ svg
+      rect
+        fill: #144FC3
   input[type="radio"]
-    & ~ .radio
-      .radio--border
-        stroke: #C4C6C9
-        fill: #FFFFFF
-        transition: var(--transition)
-      .radio--dot
-        fill: #FFFFFF
-        transition: var(--transition)
-      &:focus,
-      &:hover
-        .radio--border
-          fill: #FAFAFB
-        .radio--dot
-          fill: #FAFAFB
-    &:checked
-      & ~ .radio
-        .radio--border
-          fill: #FFFFFF
-          stroke: #2E333D
-        .radio--dot
-          fill: #2E333D
+    & ~ svg
+      rect:nth-child(1)
+        stroke: #000
+    &:hover ~ svg,
+    &:focus ~ svg
+      rect:nth-child(1)
+        stroke: #144FC3
+    &:checked ~ svg
+      rect:nth-child(2)
+        stroke: #144FC3
+        fill: #144FC3
 
   input[type="date"]
     appearance: none
@@ -179,7 +148,7 @@ input[type=number]
     background-position: right 4px center
     background-repeat: no-repeat
     background-size: 24px
-    background-color: #fff
+    background-color: transparent
     border-radius: 0
     display: block
     padding-right: 48px
@@ -199,13 +168,27 @@ input[type=number]
   &--button
     margin-top: clamp(32px, calc(32px + (42 - 32) * ((100vw - 1024px) / (1920 - 1024))), 42px)
     margin-bottom: 16px
-    .button
-      width: 100%
+    display: flex
+    align-items: center
+    gap: 16px
+    @media(max-width: 768px)
+      flex-direction: column
+      .button
+        width: 100%
 
 .form.is_sending
   button[type="submit"]
     background: var(--c-surface-subdued)
     pointer-events: none
+
+.confirmation
+  max-width: 320px
+  .access
+    display: none
+    color: var(--accent)
+  .error
+    display: none
+    color: var(--c-critical)
 
 .content_subscription
   margin-top: auto
@@ -218,8 +201,8 @@ input[type=number]
     p
       color: var(--c-text-disabled)
     &--input
-      margin-top: var(--g-24)
-      gap: 8px
+      margin-top: 0
+      gap: 16px
       flex-direction: row
       border-bottom: 1px solid #E8E8E8
       position: relative
@@ -229,6 +212,130 @@ input[type=number]
         &:placeholder-shown,
         &::placeholder
           text-transform: uppercase
+          border-color: rgba(255, 255, 255, .7)
+      & > span
+        font-size: var(--fs-28)
       .form--input_error
         position: absolute
         top: 100%
+
+
+
+.form--input_select
+  select
+    -moz-appearance: none
+    -webkit-appearance: none
+    appearance: none
+    display: none
+    option
+      display: none
+  &_title
+    margin-bottom: 16px
+    display: none
+    font-weight: 500
+    font-family: 'Gilroy'
+    line-height: 1
+.select
+  position: relative
+  &:hover
+    .select--button
+      border-color: #11182066
+  &:has(.is_selected)
+    .select--button
+      border-color: #11182066
+      color: var(--c-text-default)
+  &--button
+    border: 1px solid rgba(0,0,0,0.06)
+    border-radius: 12px
+    padding: 12px 16px
+    position: relative
+    font-size: 16px
+    cursor: pointer
+    transition: var(--transition)
+    color: var(--c-text-default)
+    display: flex
+    align-items: center
+    &:hover,
+    &:focus
+      border-color: var(--c-accent)
+    &:after
+      font-family: 'icomoon' !important
+      content: "\e907"
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 24px
+      height: 100%
+      right: 10px
+      top: 0
+  &--option_wrapper
+    opacity: 0
+    pointer-events: none
+    padding-top: 12px
+    position: absolute
+    width: auto
+    min-width: 100%
+    height: fit-content
+    max-height: 320px
+    z-index: 3
+    &.is_opened
+      opacity: 1
+      pointer-events: all
+      .select--option_list
+        transform: translateY(0)
+      .select--option:nth-child(1)
+        display: none
+
+  &--option_list
+    background-color: #fff
+    transition: var(--transition)
+    transform: translateY(-8px)
+    display: flex
+    flex-direction: column
+    gap: 8px
+    padding: 8px 12px
+    border: 1px solid rgba(0,0,0,0.06)
+    border-radius: 16px
+    //box-shadow: 0 4px 32px 0 #00000029, 0 0 4px 0 #0000000A
+
+  &--option
+    padding: 12px
+    transition: var(--transition)
+    cursor: pointer
+    border-radius: 8px
+    font-size: 20px
+    display: flex
+    gap: 6px
+    align-items: center
+    white-space: nowrap
+
+
+    .select--checkbox
+      position: relative
+      order: -1
+      width: 24px
+      height: 24px
+      aspect-ratio: 1/1
+      border-radius: 4px
+      border: 1px solid #111820
+      &:before
+        font-family: 'icomoon' !important
+        content: '\e906'
+        position: absolute
+        left: 50%
+        top: 50%
+        translate: -50% -50%
+        color: #FFFFFF
+        padding: 2px
+    &:hover,
+    &:focus,
+    &:active
+      .select--checkbox
+        border-color: #144FC3
+
+    &.is_selected
+      .select--checkbox
+        background-color: #144FC3
+        border-color: #144FC3
+
+

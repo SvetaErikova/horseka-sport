@@ -22,9 +22,11 @@
     position: relative
     color: var(--main-color)
     white-space: nowrap
-    font-size: 14px
+    font-size: 13px
+    @media(min-width: 769px)
+      font-size: 16px
     &:after
-      content: ">"
+      content: "/"
       margin-left: 12px
     &:hover,
     &:focus,

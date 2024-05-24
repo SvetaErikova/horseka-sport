@@ -1,9 +1,18 @@
 .content_services
   color: var(--c-text-primary)
-  background-color: var(--accent)
+  background-color: var(--bg-color, #093282)
   .block--head
     border-bottom: 1px solid var(--c-border-subdued)
-
+    .block--head_caption
+      text-align: right
+      @media(max-width: 768px)
+        text-align: center
+        order: -1
+      img
+        max-width: 256px
+        @media(max-width: 768px)
+          max-width: 160px
+          margin-bottom: 16px
   .slider_controls
     &:after
       background: linear-gradient(90deg, rgba(255,254,254,0) 0%, var(--accent) 15%)
@@ -25,9 +34,13 @@
       grid-template-columns: repeat(2, 1fr)
 
     &--image
-      aspect-ratio: initial
+      aspect-ratio: 950 / 640
+      //aspect-ratio: initial
       border-radius: var(--border-corner)
       overflow: hidden
+      img,video
+        width: 100%
+        object-fit: cover
     &--content
       padding: var(--g-content) var(--g-section-inner)
       display: flex
@@ -40,6 +53,7 @@
     &--action
       margin-top: 0
     &--title
+      text-transform: uppercase
       font-size: var(--fs-52)
     &--text
       font-size: var(--fs-24)

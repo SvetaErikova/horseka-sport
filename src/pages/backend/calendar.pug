@@ -1,0 +1,187 @@
+extends ../../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Календарь"
+  - var pageClass = 'page-calendar'
+  - var activePage = 'index'
+
+block content
+  section.block.block_html_code.content_events-calendar
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h1 календарь событий 2024
+        .block--head_caption
+          p
+      .block--filter
+        form.filter#filter
+          fieldset
+            //button.button(type="reset")
+            //  span Сбросить
+            //  span.icon-close
+            label.form--input
+              .form--input_select
+                .form--input_select_title
+                  span.f-h4 Тип события
+                select(name='fields[select]')
+                  option(value="Тип события" selected disabled) Тип события
+                  option(value='Региональные') Региональные
+                  option(value='Всероссийские') Всероссийские
+                  option(value='Международные') Международные
+                  option(value='Клубные') Клубные
+            label.form--input
+              .form--input_select
+                .form--input_select_title
+                  span.f-h4 Статус
+                select(name='fields[select]')
+                  option(value="Статус" selected disabled) Статус
+                  option(value='Региональные') Региональные
+                  option(value='Всероссийские') Всероссийские
+                  option(value='Международные') Международные
+            label.form--input
+              .form--input_select
+                .form--input_select_title
+                  span.f-h4 Дисциплина
+                select(name='fields[select]')
+                  option(value="Дисциплина" selected disabled) Дисциплина
+                  option(value='Конкур') Конкур
+                  option(value='Конкур') Конкур
+                  option(value='Конкур') Конкур
+
+            .filter--buttons
+              button.button.button-filled.button-primary(data-closepopup)
+                span Применить
+              button.button.button-outlined.button-primary(type="reset")
+                span Сбросить
+                span.icon-close
+        button.button.button-outlined.button-secondary(data-openpopup="popup_for_filters")
+          span Фильтры
+          span.icon-filter
+      .block--calendar
+        //.block--controls
+        //  button.button.button-outlined.button-secondary.calendar-prev
+        //    span.icon-chevron-L
+        //  button.button.button-outlined.button-secondary.calendar-next
+        //    span.icon-shevron-R
+        input#datepicker(type='date')
+        button.reset-button(type='button')
+          span.date
+          span.icon-close
+
+
+
+      .block--sections
+        .block--sections_container
+          button.is_active(data-date='')
+            span Все
+          button(data-date='2024-01-01')
+            span январь 2024
+          button(data-date='2024-02-01')
+            span февраль 2024
+          button(data-date='2024-03-01')
+            span март 2024
+          button(data-date='2024-04-01')
+            span апрель 2024
+          button(data-date='2024-05-01')
+            span май 2024
+          button(data-date='2024-06-01')
+            span июнь 2024
+          button(data-date='2024-07-01')
+            span июль 2024
+          button(data-date='2024-08-01')
+            span август 2024
+          button(data-date='2024-09-01')
+            span сентябрь 2024
+          button(data-date='2024-10-01')
+            span октябрь 2024
+          button(data-date='2024-11-01')
+            span ноябрь 2024
+          button(data-date='2024-12-01')
+            span декабрь 2024
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--subtitle
+              span 12-14 августа
+              span и еще 7 этапов
+            .card--title
+              h3 Любительский кубок вице-президента ФКСР О. Рейман по конкуру и прочим дисциплинам
+            //.card--text
+            //  p
+            .card--label
+              span.label-tourney Международная серия турниров
+              span.label-money 200 000 ₽
+              span.label-horse Вольтажировка
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        .not-found
+          p По вашему запросу ничего не найдено.
+          span Попробуйте изменить параметры поиска
+
+
+
+
+
+
+
+
+

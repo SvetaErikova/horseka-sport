@@ -6,10 +6,11 @@
     gap: 20px
     background-color: var(--bg-color, transparent)
     @media(max-width: 768px)
-      grid-template-columns: 1fr
+      display: flex
+      flex-direction: column
       grid-gap: 8px
     .block--head
-
+      border-bottom: none
       display: flex
       flex-direction: column
       grid-column: 1

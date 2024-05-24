@@ -1,6 +1,7 @@
 .block_banner
   overflow: hidden
   position: relative
+
   @media(min-width: 520px) and (orientation: landscape)
     max-height: 1080px
     min-height: 620px
@@ -8,7 +9,6 @@
     height: 100%
     position: relative
     z-index: 2
-    padding: 0
   .block--head,
   .block--actions
     z-index: 2
@@ -37,60 +37,57 @@
     & > *
       z-index: 3
       position: relative
-    &--title
-      max-width: 1140px
+    &_title
+      display: -webkit-box
+      overflow: hidden
+      text-overflow: ellipsis
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
   .banner
     display: flex
     padding: var(--g-container)
     flex-shrink: 0
     flex-grow: 0
+    height: auto
+    overflow: hidden
+    position: relative
+    place-content: end start
+    place-items: end start
 
 
 .block_banner.block_banner-group:not(.block_banner-hero)
   .block--wrapper
     overflow: hidden
-  .slider_controls
-    margin-top: 0
 .block_banner:not(.block_banner-hero)
   .banner
     margin: auto
     padding: 84px var(--g-container)
     place-content: center
     place-items: center
+    border-radius: var(--border-corner)
     @media(min-width: 560px)
-      height: calc(100vh - var(--headerHeight, 137px))
+      height: calc(100vh - var(--headerHeight, 95px))
+    &:before
+      content: ""
+      position: absolute
+      inset: 0
+      display: block
+      background: rgba(20, 26, 37, 0.3)
+      pointer-events: none
+      z-index: 1
   .block--head
     text-align: center
     align-items: center
-
-.block_banner:not(.block_banner-hero)
-  .block--head
     position: relative
     padding: var(--g-container) var(--g-container) 0
     display: flex
     align-items: center
+    z-index: 2
     & > div
       text-align: center
-    &:before
-      content: ""
-      position: absolute
-      top: -30%
-      left: -10%
-      width: 120%
-      height: 200%
-      display: block
-      background: rgba(20, 26, 37, 0.55)
-      filter: blur(100px)
-      background-blend-mode: multiply
-      pointer-events: none
 
-.block_banner
-  .banner
-    height: auto
-    overflow: hidden
-    position: relative
-    place-content: end start
-    place-items: end start
+
+
 
 .block_banner.block_banner-hero.block_banner-group
   .block--head
@@ -103,7 +100,9 @@
   margin: 0
   position: relative
   background-color: var(--c-surface-dark)
-  height: 100vh
+  height: calc(95vh - var(--headerHeight, 77px))
+  @media(min-width: 769px)
+    height: calc(100vh - var(--headerHeight, 95px))
   .block--wrapper
     padding: 0
     max-width: 100%
@@ -111,7 +110,9 @@
     position: relative
     height: 100%
     min-width: 100%
-    padding: var(--headerHeight, 137px)  var(--g-32) var(--g-container)
+    padding: var(--headerHeight, 95px)  var(--g-32) 24px
+    @media(min-width: 769px)
+      padding: var(--headerHeight, 95px)  var(--g-32) var(--g-32)
     &:before
       content: ""
       background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.196516106442577) 33%, rgba(220,220,220,0) 47%, rgba(0,0,0,0.65) 100%)
@@ -132,9 +133,17 @@
     &_caption p
       font-size: var(--fs-36)
     &_subtitle
-      transform: translateY(-150%)
+      position: relative
+      width: 100%
+      p
+        position: absolute
+        top: -50px
+        @media(max-width: 998px)
+          top: -30px
+
   .block--actions
     width: 100%
+    justify-content: flex-start
     .button
       @media(max-width: 768px)
         margin-top: 0
@@ -163,8 +172,9 @@
   .banner
     padding: var(--g-content) 0
     height: auto
+    min-height: 80vh
     aspect-ratio: unset
   .block--head
-    //color: var(--c-text-default)
+
 
 

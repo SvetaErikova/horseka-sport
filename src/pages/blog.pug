@@ -6,77 +6,104 @@ block variables
   - var activePage = 'index'
 
 block content
-  section.block.block_banner.banner-hero
+  // Карточки Новости грид
+  section.block.block_list.content_news
     .block--wrapper
-      .banner
-        .block--content
-          img(src="/assets/img/accomodation_bg.jpg")
-        +block--head("","Блог")
-  section.block.block_list.content_blog
-    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Новости грид
+        .block--head_caption
+          p content_news
+      .block--sections
+        .block--sections_container
+          button.is_active
+            span Все
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
       .block--elements
-        a.card(href="/")
+        a.card(href='')
           .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
+            img(src="/assets/img/bg.jpg")
           .card--content
-            .card--title Вино
             .card--label
-              span от 5 000 р
-        a.card(href="/")
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
+            img(src="/assets/img/bg.jpg")
           .card--content
-            .card--title Парки
             .card--label
-        a.card(href="/")
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
+            img(src="/assets/img/bg.jpg")
           .card--content
-            .card--title Красота
             .card--label
-        a.card(href="/")
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
+            img(src="/assets/img/bg.jpg")
           .card--content
-            .card--title Экскурсии и активный отдых
             .card--label
-        a.card(href="/")
-          .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
-          .card--content
-            .card--title Гостям
-            .card--label
-        a.card(href="/")
-          .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
-          .card--content
-            .card--title Аренда транспорта
-            .card--label
-        a.card(href="/")
-          .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
-          .card--content
-            .card--title Пляж и море
-            .card--label
-        a.card(href="/")
-          .card--image
-            img(src="/assets/img/offer.jpg" alt="")
-            .card--action
-              span.icon
-          .card--content
-            .card--title Спорт и активный отдых
-            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+
+
+
+        .block--pagination
+          a.button.button-filled.button-secondary(href='/')
+            span.icon-chevron-L
+            span Пред.
+          a.button.button-filled.button-secondary.is_current(href='/')
+            span 1
+          .block--pagination_gap
+            span ...
+          a.button.button-filled.button-secondary(href='/')
+            span 6
+          a.button.button-filled.button-secondary(href='/')
+            span След.
+            span.icon-shevron-R
+
+

@@ -8,6 +8,8 @@ block variables
 block content
 
   // Формы
+
+  // форма дефолт
   section.block.block_list.content_form
     .block--wrapper
       .block--content
@@ -27,7 +29,7 @@ block content
             .contact--title E-MAIL
             .contact--value
               a(href="/") info@kskivanovskoe.ru
-          .contact--item
+          .contact--item.adress
             .contact--title АДРЕС
             .contact--value
               p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
@@ -53,13 +55,17 @@ block content
               span Комментарий
               .form--input_error Ошибка заполнения
             .form--button
-              button.button.button-filled.button-accent(type="submit" disabled)
+              button.button.button-filled.button-primary(type="submit" disabled)
                 span Отправить
+              .confirmation
+                span.access  Ваша заявка <br> успешно отправлена!
+                span.error Ваша заявка не была отправлена,<br> попробуйте еще раз
             p.form--policy Нажимая кнопку, вы соглашаетесь с
               a(href="") политикой конфиденциальности
 
 
 
+  // форма с доп классом (ac-background-1 или ac-background-2)
   section.block.block_list.content_form.ac-background-2
     .block--wrapper
       .block--content
@@ -79,7 +85,7 @@ block content
             .contact--title E-MAIL
             .contact--value
               a(href="/") info@kskivanovskoe.ru
-          .contact--item
+          .contact--item.adress
             .contact--title АДРЕС
             .contact--value
               p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
@@ -105,20 +111,19 @@ block content
               span Комментарий
               .form--input_error Ошибка заполнения
             .form--button
-              button.button.button-filled.button-accent(type="submit" disabled)
+              button.button.button-filled.button-primary(type="submit" disabled)
                 span Отправить
+              .confirmation
+                span.access  Ваша заявка <br> успешно отправлена!
+                span.error Ваша заявка не была отправлена,<br> попробуйте еще раз
             p.form--policy Нажимая кнопку, вы соглашаетесь с
               a(href="") политикой конфиденциальности
 
 
 
-
-
-
-
-
-
   //  FAQ
+
+  //  FAQ дефолт
   section.block.block_list.content_faq
     .block--wrapper
       .block--head
@@ -140,6 +145,7 @@ block content
           +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
           +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
 
+  //  FAQ с доп классом
   section.block.block_list.content_faq.ac-background-2
     .block--wrapper
       .block--head
@@ -163,15 +169,18 @@ block content
 
 
 
+
+
+
   // Вариации блока
   //  С кнопкой дозагрузки
   section.block.block_list
     .block--wrapper
       .block--head
         .block--head_subtitle
-          p каталог лошадей
+          p С кнопкой дозагрузки
         .block--head_title
-          h2.f-h2 Карточки базовые слайдер
+          h2.f-h2 Карточки
         .block--head_caption
           p Все остальные карточки и карточки которым не прописан тип контента
 
@@ -235,16 +244,18 @@ block content
         .block--pagination
           a.button.button-filled.button-secondary(href='/')
             span Показать больше
-            span.icon-HeroSliderRight
+            span.icon-chevron-down2
+
+
 
   // с перелистыванием страниц
   section.block.block_list
     .block--wrapper
       .block--head
         .block--head_subtitle
-          p каталог лошадей
+          p с перелистыванием страниц
         .block--head_title
-          h2.f-h2 Карточки базовые слайдер
+          h2.f-h2 Карточки
         .block--head_caption
           p Все остальные карточки и карточки которым не прописан тип контента
 
@@ -307,21 +318,18 @@ block content
                 span Подробнее
         .block--pagination
           a.button.button-filled.button-secondary(href='/')
-            span.icon-ic-arrow-left
+            span.icon-chevron-L
             span Пред.
           a.button.button-filled.button-secondary.is_current(href='/')
             span 1
-          a.button.button-filled.button-secondary(href='/')
-            span 2
           .block--pagination_gap
             span ...
-          a.button.button-filled.button-secondary(href='/')
-            span 5
           a.button.button-filled.button-secondary(href='/')
             span 6
           a.button.button-filled.button-secondary(href='/')
             span След.
-            span.icon-ic-arrow-right
+            span.icon-shevron-R
+
 
 
   // с табами
@@ -329,21 +337,28 @@ block content
     .block--wrapper
       .block--head
         .block--head_subtitle
-          p каталог лошадей
+          p с табами
         .block--head_title
-          h2.f-h2 Карточки базовые слайдер
+          h2.f-h2 Карточки
         .block--head_caption
           p Все остальные карточки и карточки которым не прописан тип контента
 
       .block--sections
         .block--sections_container
-          button.is_active Все
-          button Обучение верховой езде
-          button Конные прогулки
-          button Содержание
-          button Обучение верховой езде
-          button Конные прогулки
-          button Содержание
+          button.is_active
+            span Все
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
 
       .block--elements
         a.card(href="")
@@ -405,7 +420,219 @@ block content
 
 
 
+  // С фильтрами
+  section.block.block_list
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p С фильтрами
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--filter
+        form.filter
+          fieldset
+            label.form--input
+              .form--input_select
+                .form--input_select_title
+                  span.f-h4 Выберите опцию
+                select(name='fields[select]')
+                  // option(value="" selected disabled) Выберите опцию
+                  option(value='Выбранная опция 1') &Vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ncy;&acy;&yacy; &ocy;&pcy;&tscy;&icy;&yacy;
+                  option(value='Выбранная опция 2') &Vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ncy;&acy;&yacy; &ocy;&pcy;&tscy;&icy;&yacy;
+                  option(value='Выбранная опция 3') &Vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ncy;&acy;&yacy; &ocy;&pcy;&tscy;&icy;&yacy;
+            .filter--buttons
+              button.button.button-filled.button-primary(data-closepopup)
+                span Применить
+              button.button.button-outlined.button-primary(type="reset")
+                span Сбросить
+                span.icon-close
+        button.button.button-outlined.button-secondary(data-openpopup="popup_for_filters")
+          span Фильтры
+          span.icon-filter
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+
+
+  // С фильтрами и табами
+  section.block.block_list
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p С фильтрами и табами
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--sections
+        .block--sections_container
+          button.is_active
+            span Все
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
+          button
+            span Обучение верховой езде
+          button
+            span Конные прогулки
+          button
+            span Содержание
+      .block--filter
+        form.filter
+          fieldset
+            label.form--input
+              .form--input_select
+                .form--input_select_title
+                  span.f-h4 Выберите опцию
+                select(name='fields[select]')
+                  // option(value="" selected disabled) Выберите опцию
+                  option(value='Выбранная опция 1') &Vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ncy;&acy;&yacy; &ocy;&pcy;&tscy;&icy;&yacy;
+                  option(value='Выбранная опция 2') &Vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ncy;&acy;&yacy; &ocy;&pcy;&tscy;&icy;&yacy;
+                  option(value='Выбранная опция 3') &Vcy;&ycy;&bcy;&rcy;&acy;&ncy;&ncy;&acy;&yacy; &ocy;&pcy;&tscy;&icy;&yacy;
+          .filter--buttons
+            button.button.button-filled.button-primary(data-closepopup)
+              span Применить
+            button.button.button-outlined.button-primary(type="reset")
+              span Сбросить
+              span.icon-close
+        button.button.button-outlined.button-secondary(data-openpopup="popup_for_filters")
+          span Фильтры
+          span.icon-filter
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+
+
+
+
+
+
+
+
   // Вариации карточек
+
+
 
   // Карточки лошадей слайдер
   section.block.block_list.block_list-slider.content_hourse
@@ -679,212 +906,6 @@ block content
 
 
 
-  // Карточки базовые слайдер
-  section.block.block_list.block_list-slider
-    .block--wrapper
-      .block--head
-        .block--head_subtitle
-          p каталог лошадей
-        .block--head_title
-          h2.f-h2 Карточки базовые слайдер
-        .block--head_caption
-          p Все остальные карточки и карточки которым не прописан тип контента
-
-      .block--elements
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-
-  // Карточки базовые слайдер V2
-  section.block.block_list.block_list-slider.block_list-slider-v2
-    .block--wrapper
-      .block--head
-        .block--head_subtitle
-          p каталог лошадей
-        .block--head_title
-          h2.f-h2 Карточки базовые слайдер V2
-        .block--head_caption
-          p Все остальные карточки и карточки которым не прописан тип контента
-
-      .block--elements
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            //.card--label
-            //  span.c-accent Horseka Рекомендует
-            //  span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-
-  // Карточки базовые грид
-  section.block.block_list
-    .block--wrapper
-      .block--head
-        .block--head_subtitle
-          p каталог лошадей
-        .block--head_title
-          h2.f-h2 Карточки базовые грид
-        .block--head_caption
-          p Все остальные карточки и карточки которым не прописан тип контента
-
-      .block--elements
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
-        a.card(href="")
-          .card--image
-            img(src="/assets/img/bg.jpg")
-          .card--content
-            .card--label
-              span.c-accent Horseka Рекомендует
-              span.c-accent-2 Novice
-            .card--title
-              h3 Замечательный заголовок
-            .card--text
-              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
-            .card--actions
-              .button.button-outlined.button-primary
-                span Подробнее
 
 
   // Карточки Акции слайдер
@@ -899,7 +920,7 @@ block content
           p content_offers
 
       .block--elements
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -913,7 +934,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -927,7 +948,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -941,7 +962,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -967,7 +988,7 @@ block content
           p content_offers
 
       .block--elements
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -981,7 +1002,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -995,7 +1016,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1009,7 +1030,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1023,6 +1044,7 @@ block content
             .card--actions
               .button.button-outlined.button-accent
                 span Побробнее
+
 
 
   // Карточки события
@@ -1054,7 +1076,7 @@ block content
               span.label-horse Вольтажировка
             .card--actions
               .button.button-outlined.button-accent
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
         a.card(href="")
           .card--image
             img(src="/assets/img/bg.jpg")
@@ -1072,7 +1094,7 @@ block content
               span.label-horse Вольтажировка
             .card--actions
               .button.button-outlined.button-accent
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
         a.card(href="")
           .card--image
             img(src="/assets/img/bg.jpg")
@@ -1090,7 +1112,7 @@ block content
               span.label-horse Вольтажировка
             .card--actions
               .button.button-outlined.button-accent
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
         a.card(href="")
           .card--image
             img(src="/assets/img/bg.jpg")
@@ -1108,7 +1130,8 @@ block content
               span.label-horse Вольтажировка
             .card--actions
               .button.button-outlined.button-accent
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
+
 
 
 
@@ -1125,12 +1148,12 @@ block content
         .block--head_subtitle
           p каталог лошадей
         .block--head_title
-          h2.f-h2 Карточки Новости грид
+          h2.f-h2 Карточки Новости слайдер
         .block--head_caption
-          p content_offers
+          p content_news
 
       .block--elements
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1143,8 +1166,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
-        .card
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1157,8 +1180,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
-        .card
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1171,8 +1194,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
-        .card
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1185,7 +1208,9 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
+
+
 
   // Карточки Новости грид
   section.block.block_list.content_news
@@ -1196,10 +1221,10 @@ block content
         .block--head_title
           h2.f-h2 Карточки Новости грид
         .block--head_caption
-          p content_offers
+          p content_news
 
       .block--elements
-        .card
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1212,8 +1237,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
-        .card
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1226,8 +1251,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
-        .card
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1240,8 +1265,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
-        .card
+                span.icon-arrow-r
+        a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
           .card--content
@@ -1254,39 +1279,8 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
 
-
-  // Карточки Партнеры грид
-  section.block.block_list.content_partners
-    .block--wrapper
-      .block--head
-        .block--head_subtitle
-          p каталог лошадей
-        .block--head_title
-          h2.f-h2 Карточки Партнеры грид
-        .block--head_caption
-          p content_offers
-
-      .block--elements
-        .card
-          .card--image
-            img(src="/assets/img/pathners/fksr.svg")
-        .card
-          .card--image
-            img(src="/assets/img/pathners/idig.svg")
-        .card
-          .card--image
-            img(src="/assets/img/pathners/new-letovo.svg")
-        .card
-          .card--image
-            img(src="/assets/img/pathners/ozon.svg")
-        .card
-          .card--image
-            img(src="/assets/img/pathners/fksr.svg")
-        .card
-          .card--image
-            img(src="/assets/img/pathners/idig.svg")
 
 
   // Карточки картинки грид
@@ -1311,7 +1305,7 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
         a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
@@ -1322,7 +1316,7 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
         a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
@@ -1333,7 +1327,7 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
         a.card(href='')
           .card--image
             img(src="/assets/img/bg.jpg")
@@ -1344,7 +1338,74 @@ block content
               p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
             .card--actions
               .button.button-outlined.button-secondary.button-dark
-                span.icon-HeroSliderRight
+                span.icon-arrow-r
+
+
+
+
+  // Карточки картинки слайдер
+  section.block.block_list.block_list-slider.content_card-image
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки картинкк грид
+        .block--head_caption
+          p content_card-image
+
+      .block--elements
+        // карточка ССЫЛКА
+        a.card(href='')
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Заголовок
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        // карточка НЕ ССЫЛКА
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        // карточка ПОПАП
+        .card(data-openpopup="popup_cascade")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-eye
+        // карточка КАРТИНКА
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+
+
+
 
 
 
@@ -1357,7 +1418,7 @@ block content
         .block--head_title
           h2.f-h2 Карточки Преимущества слайдер
         .block--head_caption
-          p content_offers
+          p content_advantages
 
       .block--elements
         .card
@@ -1396,7 +1457,7 @@ block content
         .block--head_title
           h2.f-h2 Карточки Преимущества грид
         .block--head_caption
-          p content_offers
+          p content_advantages
 
       .block--elements
         .card
@@ -1430,6 +1491,258 @@ block content
               h3 Квалифицирован-ный персонал
             .card--text
               p Современные технологии достигли такого уровня, что укрепление и развитие внутренней структуры прекрасно подходит для реализации глубокомысленных рассуждений.
+
+
+  // Базовые карточки - Все остальные карточки и карточки которым не прописан тип контента (отзывы, карточки людей, туры и тд)
+
+  // Карточки базовые слайдер
+  section.block.block_list.block_list-slider
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+
+      .block--elements
+        // карточка НЕ ссылка
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+        // Карточка ССЫЛКА
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        // Карточка с ПОПАПОМ
+        .card(data-openpopup="popup_cascade")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+                span.icon-eye
+
+        // Карточка не ссылка без лейблов
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              //span.c-accent Horseka Рекомендует
+              //span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+  // Карточки базовые слайдер V2( два варианта отображения слацдера)
+  section.block.block_list.block_list-slider.block_list-slider-v2
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые слайдер V2
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+      .block--elements
+        // карточка НЕ ссылка
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+        // Карточка ССЫЛКА
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        // Карточка с ПОПАПОМ
+        .card(data-openpopup="popup_cascade")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+                span.icon-eye
+
+        // Карточка не ссылка без лейблов
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              //span.c-accent Horseka Рекомендует
+              //span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+  // Карточки базовые грид
+  section.block.block_list
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки базовые грид
+        .block--head_caption
+          p Все остальные карточки и карточки которым не прописан тип контента
+      .block--elements
+        // Карточка с видео
+        .card
+          .card--video
+            video(src="/assets/video/@lepragram.mp4" poster='/assets/img/bg.jpg' muted)
+          //.card--image
+          //  img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+        // карточка НЕ ссылка
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+        // Карточка ССЫЛКА
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+        // Карточка с ПОПАПОМ
+        .card(data-openpopup="popup_cascade")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span.c-accent Horseka Рекомендует
+              span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+                span.icon-eye
+
+        // Карточка не ссылка без лейблов
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              //span.c-accent Horseka Рекомендует
+              //span.c-accent-2 Novice
+            .card--title
+              h3 Замечательный заголовок
+            .card--text
+              p Долгое и подробное описание, которое может занимать до трех строк текста апвапвап лпрвадшолпрвашп раволдп рваввало рпваолрпваолпр апвапв
+            .card--actions
+              .button.button-outlined.button-primary
+                span Подробнее
+
+
+
 
 
 

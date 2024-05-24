@@ -1,0 +1,286 @@
+extends ../layouts/breadcrumbs
+
+block variables
+  - var title = "Страница лошади детальная"
+  - var pageClass = 'page-hourse'
+  - var activePage = 'index'
+block content
+  // карточка лошади
+  section.block.block_image_text.content_hourse-detail.content_hourse
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/1.jpg" alt="")
+      .block--content.is_cascade
+        .card--content
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+          .card--title
+            h3 Вельвет
+          .card--subtitle
+            p Horseka Sport
+          .card--text
+            p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+          .card--info
+            .hourse--father
+              p Отец
+              p Chacco-Blue
+            .hourse--mother
+              p Мать
+              p Icara Z
+            .hourse--mothersfather
+              p Отец матери
+              p Icarus
+            .hourse--gender
+              p Пол
+              p Жеребец
+            .hourse--year
+              p Год рождения
+              p 2017
+            .hourse--age
+              p Возраст
+              p Возраст
+            .hourse--suit
+              p Масть
+              p Гнедая
+            .hourse--suit
+              p Дисциплины
+              p Конекур, выездка
+            .hourse--suit
+              p Владелец
+              p Конный завод
+          .card--actions
+            button.button.button-filled.button-accent
+              span Приобрести лошадь
+            button.button.button-filled.button-primary
+              span Заявка на разведение
+  // Картинка текст
+  section.block.block_image_text
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/1.jpg" alt="")
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h2 Восходящая звезда
+        .block--head_caption
+          p К продаже предлагается молодой жеребец, с которым вы всегда будете оказываться в центре внимания и притягивать взгляды зрителей и спортсменов.
+        .block--actions
+      .block--content.is_cascade
+        p Молодой жеребец с правильным экстерьером и компактным корпусом. Рожден в Германии в племенном хозяйстве Stallion Station Gerd Sosath. Привезён в Россию в 2020 году. В 2023 году Вельвет успешно начал свою спортивную карьеру. Выступая в своей возрастной категории, он одержал множество побед, зарекомендовав себя отличным спортивным бойцом с устойчивой психикой, добрым нравом и желанием побеждать. Прыжок у него техничный и эффектный, галоп – богатый и продуктивный. На данный момент Вельвет выступает под седло МСМК на высотах до 110 см.
+        p Отцом является Vagabond, ставший первым сыном Vagabond de la Pomme, который сочетает в себе крови лучших европейских производителей – Nabab de Reve, Quidam de Revel, For Pleasure, Darco и других. Он обладает эффектной внешностью, отличными рабочими качествами, сбалансированными аллюрами и безупречной техникой прыжка. В 2018 году он прошел 14-дневный тест в Адельхайдсдорфе, а в 2019 году на тесте по спортивным качествам получил высочайшие оценки: 8,69 - общий балл, 9.0 - за послушание, 8.6 - за технику.
+        p По материнской линии Вельвет имеет не менее звездное происхождение. Landor S, прадедушка по материнской линии, был признан лучшей 6-летней лошадью в 1997 году. Landor S много лет выигрывал в конкуре высотой до 150 см, его потомки успешно использовались в конкуре, выездке и племенной работе.
+
+
+  // галерея слайдер с ОДНОЙ активной картинкой
+  section.block.block_element.content_gallery
+    .block--wrapper
+      +block--head("subtitle","Галерея слайдер v3","head caption")
+      .block--content
+        .gallery.js-gallerySwiper.gallerySwiper-v3
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/1.jpg", "подпись к картинке")
+  // Карточки лошадей слайдер
+  section.block.block_list.block_list-slider.content_hourse
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h2 смотрите также
+        .block--head_caption
+          p
+
+      .block--elements
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+        a.card(href="")
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--title
+              h3 Замечательный заголовок длиной в две строки
+            .card--subtitle
+              p Horseka Sport
+            .card--text
+              p Лошадь для соревнований класса А,порода Бельгийская теплокровная
+            .card--info
+              .hourse--father
+                p отец
+                p Chacco-Blue
+              .hourse--mother
+                p мать
+                p Icara Z
+              .hourse--mothersfather
+                p Icarus
+                p Icarus
+              .hourse--gender
+                p пол
+                p Жеребец
+              .hourse--year
+                p год
+                p год
+              .hourse--age
+                p Возраст
+                p Возраст
+              .hourse--suit
+                p масть
+                p масть
+            .card--actions
+              button.button.button-outlined.button-primary
+                span Подробнее
+
+          .card--label
+            span.c-accent Horseka Рекомендует
+            span.c-accent-2 Novice
+            span Покладистая
+
+  // форма дефолт
+  section.block.block_list.content_form
+    .block--wrapper
+      .block--content
+        .block--head
+          .block--head_subtitle
+            p
+          .block--head_title
+            h2.f-h2 Заявка  На услугу
+          .block--head_caption
+            p Примите участие в незабываемом соревновании и продемонстрируйте свои навыки наездника
+        .contact
+          .contact--item
+            .contact--title Телефон
+            .contact--value
+              a(href="/") 8 (495) 419-96-90
+          .contact--item
+            .contact--title E-MAIL
+            .contact--value
+              a(href="/") info@kskivanovskoe.ru
+          .contact--item.adress
+            .contact--title АДРЕС
+            .contact--value
+              p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+      .block--form
+        form.form
+          input(type="hidden" value="" name="fields[form]")
+          input(type="hidden" value="")
+          fieldset
+            label.form--input
+              input(type="text" placeholder="Иванов Иван Иванович" name="fields[name]" pattern="[А-Яа-яЁё]+" required autocomplete)
+              span Ваше имя
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="tel" placeholder="+7 999 999-99-99" name="fields[phone]" inputmode="numeric" autocomplete="tel" required)
+              span Телефон
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="email" placeholder="example@imperial.ru" name="fields[email]"  autocomplete="email" required)
+              span Email
+              .form--input_error Ошибка заполнения
+            label.form--input
+              span УСЛУГА
+              select(name="" )
+                //option(value="" selected disabled) Выберите опцию
+                option(value="") Продажа
+                option(value="") Продажа2
+                option(value="") Продажа3
+            .form--button
+              button.button.button-filled.button-primary(type="submit" disabled)
+                span Оставить заявку
+              .confirmation
+                span.access  Ваша заявка <br> успешно отправлена!
+                span.error Ваша заявка не была отправлена,<br> попробуйте еще раз
+            p.form--policy Нажимая кнопку, вы соглашаетесь с
+              a(href="") политикой конфиденциальности
+
+
+
+
+
+
+
+

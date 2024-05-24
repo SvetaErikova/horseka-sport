@@ -2,10 +2,9 @@
 .popup
   padding: var(--g-40, 40px) 0
   overscroll-behavior: contain
-  background-color: var(--others-fog, rgba(20, 26, 37, 0.35))
-  backdrop-filter: blur(6px)
+  background-color: var(--others-fog, rgba(20, 26, 37, 0.45))
   @media(max-width: 768px)
-    padding: 0
+    padding: 25px 8px
     place-items: start
     height: -webkit-fill-available
     height: calc(100 * var(--vh, 1vh))
@@ -14,13 +13,28 @@
     background-color: var(--c-surface-default)
     padding: var(--g-container)
     width: 100%
+    border-radius: var(--border-corner)
+    @media(max-width: 768px)
+      padding: 28px 16px
+    &-title
+      margin-bottom: var(--g-24)
+    &-buttons
+      margin-top: 24px
+      display: flex
+      flex-direction: column
+      gap: 16px
+      .button
+        width: 100%
   &--close
+    background-color: #F2F5FA
+    border-radius: var(--border-corner-button)
     display: flex
     align-items: center
     justify-content: center
     position: absolute
-    top: var(--g-24)
-    right: var(--g-24)
+    top: 16px
+    padding: 5px
+    right: 16px
     z-index: 42
     cursor: pointer
     transition: 0.3s ease-out
@@ -31,11 +45,38 @@
       left: unset
       right: 16px
       top: 16px
-
+    .button.button-filled
+      padding: 2px
+  fieldset
+    border: none
+    padding: 0
+  .select
+    &--button
+      display: none
+    &--option_wrapper
+      position: static
+      opacity: 1
+      padding: 0
+      border: none
+    &--option_list
+      transform: translateY(0)
+      border: none
+      padding: 0
+  .form--input_select
+    &_title
+      display: block
+  .filter--buttons
+    margin-top: 16px
+    display: flex
+    flex-direction: column
+    gap: 16px
+    button
+      width: 100%
 .popup.popup-menu
   place-items: start
   padding: 0
-  background-color: var(--c-surface-default)
+  background-color: var(--accent)
+  color: var(--c-text-primary)
   top: 0
   height: calc(100 * var(--vh, 1vh))
   z-index: 49
@@ -44,168 +85,229 @@
   .popup--content
     width: 100%
     height: 100%
-    padding: 0 var(--g-container)
+    padding: 0 16px
     transition: 0.24s ease-out
     transition-delay: 0.05s
-    border-top: 1px solid var(--c-border-subdued)
     display: grid
     gap: 24px
+    background-color: transparent
     @media(min-width: 1024px)
       grid-template-columns: repeat(12, 1fr)
-  .menu
-    .menu--wrapper
-      pointer-events: none
-  &.is_active
-    .menu.is_open
-      .menu--wrapper
-        pointer-events: all
-  .header--lang
-    margin-bottom: 40px
-    display: flex
-    @media(min-width: 992px)
-      display: none
+  .nav
+    flex-direction: column
+    align-items: flex-start
+    &--item
+      align-items: flex-start
+      flex-direction: column
+      font-size: 40px
 
+      & > .button
+        font-size: 40px
+        span
+          padding: 0
+          white-space: initial
+          line-height: 1
+          text-align: left
+        .icon-calendar
+          justify-content: flex-start
+          font-size: inherit
+  .is_dropdown.is_open
+    .is_dropdown--wrapper
+      position: static
+      padding: 0
+  .is_dropdown-events
+    .events--item .item--image-link
+      aspect-ratio: initial
+
+    .events--item .item--text-link,
+    .events--item .item--image-link
+      background-color: #144FC3
+      .title [class^=icon-],
+      .title [class*=' icon-']
+        color: currentColor
+  .is_dropdown--content
+    display: flex
+    padding: 0
+    flex-direction: column
+    border: none
+    background-color: var(--accent)
+    gap: 16px
+    .is_dropdown--content-col
+      display: flex
+      flex-direction: column
+      gap: 16px
+    .is_dropdown--content-title,
+    .is_dropdown--content-title .button
+      color: var(--c-text-primary)
+      font-size: 24px
+      text-transform: uppercase
+    .button,
+    .events--title,
+    .item--text-link .title
+      color: var(--c-text-primary)
 
 
 .popup.popup-cascade
-  overflow-y: hidden
-  place-items: start center
-  place-content: start center
-  .popup--title
-    padding-left: var(--g-container)
-    font-size: 18px
   .popup--content
-    max-width: 100%
-    width: 880px
-    padding-top: 0
-    overflow-y: auto
+    max-width: 880px
+    width:  100%
+    padding-top: var(--g-20)
+    //overflow-y: scroll
     max-height: 100%
     overscroll-behavior: contain
-    @media(max-width: 768px)
-      max-width: 100vw
-      overflow-x: hidden
-      min-height: 100vh
+
+
+
+.popup-cookies
+  background-color: transparent
+  pointer-events: none
+  padding: var(--g-24)
+  place-items: end end
+  place-content: end end
+  gap: var(--g-elements)
+  @media(max-width: 768px)
+    padding: var(--g-8)
   .popup--close
     top: 8px
     right: 8px
-  .popup--content_nav
-    position: sticky
-    top: 0
-    background-color: var(--c-surface-default)
-    z-index: 3
-    padding: 8px var(--g-container) 8px 0
-    display: flex
-    margin: 0 calc(var(--g-container) * -1)
-    gap: 20px
-    border-bottom: 1px solid var(--c-border-others, #E0E1E3)
-
-
-.popup.popup-notification
-  background-color: transparent
-  pointer-events: none
-  padding: var(--g-32)
-  place-items: end start
-  place-content: end start
-  gap: var(--g-elements)
-  backdrop-filter: none
-  .popup--close
-    right: 0
-    top: 0
-    font-size: var(--fs-24)
-    z-index: 2
-    padding: 12px
-  &.is_active
-    .popup--content
-      pointer-events: all
   .popup--content
-    max-width: 426px
+    max-width: 540px
     width: 100%
     min-width: 275px
     background-color: var(--c-surface-default)
-    border: 1px solid var(--c-border-subdued, #ECEDEE)
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15)
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05), 0px 4px 24px 0px rgba(23, 29, 40, 0.10)
     padding: var(--fs-24) 48px var(--fs-24) var(--fs-24)
     @media(max-width: 768px)
       max-width: 100vw
       min-width: 225px
-    &[data-notification="error"]
-      border-top: 4px solid var(--c-critical)
-    &[data-notification="success"]
-      border-top: 4px solid var(--c-success)
-    &[data-notification="alert"]
-      border-top: 4px solid var(--c-warning)
-    &[data-notification="cookies"]
-    &[data-notification="advert"]
-      display: flex
-      padding: 0
-      .popup_advert_image
-        width: 176px
-        padding: 8px
-        flex-shrink: 0
-      .popup_advert_text
-        padding: var(--g-24) 0 16px var(--fs-24)
-        display: flex
-        flex-direction: column
-      .button_wrapper
-        margin-top: auto
-        padding-right: 20px
-      .popup--title
-        padding-right: 48px
-        font-size: var(--fs-18)
-        font-weight: 500
-      .popup--text
-        padding-right: 48px
-        font-size: var(--fs-16)
-    &.hidden
-      display: none
-  .popup--title
-    font-size: 20px
-    font-weight: 400
-    margin-bottom: 8px
-  .popup--text
-    font-size: 18px
-    font-weight: 300
-    color: var(--c-text-subdued)
-  .button_wrapper
-    justify-content: flex-end
+    a
+      text-decoration: underline
+      color: var(--accent)
     .button
-      margin-top: 16px
-      font-size: 16px
-      padding: 12px 20px
+      margin-top: 0
+      font-size: var(--fs-24)
+      padding: 0
 
 .popup-form
-  place-items: flex-end
-  padding: 0
+  padding: var(--g-56) 8px
+  @media(max-width: 768px)
+    padding: var(--g-8)
   .popup--content
-    transform: translateX(100%)
     transition: transform 0.18s 0.03s ease-in-out
-    width: 420px
+    max-width: 860px
     height: 100%
+    padding: var(--g-section-inner) var(--g-48)
     @media(max-width: 768px)
       max-width: 100vw
+
+.popup-tour_map
+  position: absolute
+  width: auto
+  height: auto
+  padding: var(--g-content) calc((100vw - var(--container)) / 2 + 32px)
+  background: transparent
+  place-items: end
+  pointer-events: none
+  padding: var(--g-56)
+
   &.is_active
+    pointer-events: none
     .popup--content
-      transform: translateX(0)
+      pointer-events: auto
+  .popup--close
+    position: absolute
+    left: auto
+    right: 16px
+    top: 16px
+  .popup--content
+    pointer-events: none
+    width: 100%
+    max-width: 760px
+    padding: var(--g-32) var(--g-24)
+    border: 1px solid var(--border-color, #f5f4f4)
+    border-radius: var(--border-corner)
+    background: var(--surface-default, #fff)
+    background-color: var(--c-surface-default)
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12)
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12)
+
+  .popup--content-title
+    font-size: var(--fs-32)
+    font-weight: 500
+    font-family: 'Gilroy'
+    margin-bottom: 12px
+
+.popup-infrastructure
+  position: absolute
+  height: auto
+  width: auto
+  z-index: 20
+  padding: 0
+  @media(min-width: 769px)
+    position: static
+    width: auto
+    height: 100%
+    z-index: 1
+    border-radius: var(--border-corner)
+    overflow: hidden
+  @media(max-width: 768px)
+    margin: 25px 8px
+  .popup--number
+    display: none
+    @media(min-width: 769px)
+      background-color: #FFFFFF
+      border-radius: 50%
+      width: 52px
+      position: absolute
+      left: 16px
+      top: 16px
+      aspect-ratio: 1/1
+      display: flex
+      align-items: center
+      justify-content: center
+      &:after
+        content: attr(data-number)
+        font-weight: 500
+        font-size: var(--fs-24)
+        text-align: center
+        display: inline-block
+  .popup--content
+    border-radius: var(--border-corner)
+    overflow: hidden
+    height: 100%
+    color: var(--c-text-default)
+    padding: 0
+    display: flex
+    flex-direction: column
+    @media(max-width: 768px)
+      height: auto
+  .popup--close
+    @media(min-width: 769px)
+      display: none
+  .popup--content-title,
+  .popup--content-text,
+  .button_wrapper
+    padding: 0 var(--g-container) 0
+  .popup--content-image
+    aspect-ratio: 560/360
+    border-radius: var(--border-corner)
+    overflow: hidden
+    margin-bottom: var(--g-24)
+  .popup--content-title
+    font-size: var(--fs-32)
+    font-weight: 500
+    font-family: 'Gilroy'
+    line-height: 1
+
+  .button_wrapper
+    padding-bottom: var(--g-container)
+    margin-top: 16px
+    .button
+      margin-top: 0
+      padding: 9px 20px
 
 
-.popup-mobile_contacts
-  background: rgba(20, 26, 37, 0.35)
-  place-items: end center
-  backdrop-filter: none
-  .contact
-    &:not(:last-child)
-      margin-bottom: 16px
-    &--title
-      text-transform: uppercase
-      color: var(--c-text-disabled)
-      font-size: 12px
-      margin-bottom: 4px
-    &--value
-      font-size: 16px
-      padding: 4px 0
-      a:hover
-        color: var(--c-text-accent-default)
-      a + a
-        margin-left: 8px
-      [class^="icon-"], [class*=" icon-"]
-        font-size: 24px
+.popup.is_active
+  .select--option_wrapper
+    pointer-events: auto
+

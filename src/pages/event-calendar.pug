@@ -1,0 +1,197 @@
+extends ../layouts/breadcrumbs-hero
+
+block variables
+  - var title = "Календарь событий"
+  - var pageClass = 'page-calendar'
+  - var activePage = 'index'
+
+block content
+  section.block.block_html_code.content_events-calendar
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h1 календарь событий 2024
+        .block--head_caption
+          p
+      .block--elements
+        a.card(href="https://lk.horsekasport.ru/")
+          .card--image
+            img(src="/assets/img/event2.jpg")
+          .card--content
+            .card--subtitle
+              span с 06.06.2024 по 09.06.2024
+              span
+            .card--title
+              h3 Открытые соревнования по конкуру, Этап кубка "Мaxima masters Евразия
+            .card--text
+              p
+                //a.button.button-link.button-secondary(href='https://drive.google.com/file/d/1DO-eeH_CeBAhi-spMvLeABhFnasCsEx5/view') Положение и регламент
+            .card--label
+              span.label-tourney Региональная серия
+              span.label-money 1 500 000 ₽
+              span.label-horse Конкур
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="https://lk.horsekasport.ru/")
+          .card--image
+            img(src="/assets/img/events/2.webp")
+          .card--content
+            .card--subtitle
+              span с 07.06.2024 по 09.06.2024
+              span
+            .card--title
+              h3 Кубок «HORSEKA», 2 этап
+            .card--text
+              p
+                //a.button.button-link.button-secondary(href='https://drive.google.com/file/d/1DO-eeH_CeBAhi-spMvLeABhFnasCsEx5/view') Положение и регламент
+            .card--label
+              span.label-tourney Региональная серия
+              span.label-money 300 000 ₽
+              span.label-horse Конкур
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+        a.card(href="https://lk.horsekasport.ru/")
+          .card--image
+            img(src="/assets/img/events/1.webp")
+          .card--content
+            .card--subtitle
+              span 27.06.24 - 30.06.24
+              span
+            .card--title
+              h3 Соревнование по конкуру "HORSEKA DERBY"
+            //.card--text
+            //  p
+            .card--label
+              //span.label-tourney Международная серия турниров
+              //span.label-money 200 000 ₽
+              span.label-horse Конкур
+            .card--actions
+              .button.button-outlined.button-accent
+                span.icon-arrow-r
+  // Карточки картинки грид
+  section.block.block_list.content_card-image
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h2 НАШИ<br>ПАРТНЕРЫ
+        .block--head_caption
+          p
+
+      .block--elements
+        .card
+          .card--image
+            img(src="./assets/img/pathners/1.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        .card
+          .card--image
+            img(src="./assets/img/pathners/2.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        .card
+          .card--image
+            img(src="./assets/img/pathners/3.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        .card
+          .card--image
+            img(src="./assets/img/pathners/4.jpg")
+          .card--content
+            .card--title
+              h3
+            .card--text
+              p
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+
+  section.block.block_image_text.block_image_text-bg.ac-background-1.block_image_text-mask
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/wvwnt.png" alt="")
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h3.f-h2 личный<br>кабинет для спортсменов
+        .block--head_caption
+          p Зарегистрируйтесь и получайте информацию о предстоящих турнирах и результатах прошедших событий
+        .block--actions
+          a(href='https://lk.horsekasport.ru/').button.button-filled.button-accent
+            span Личный кабинет
+            span.icon-external
+        //  a(href="/").button.button-filled.button-primary
+        //    span Переход
+      .block--content.is_cascade
+        p
+  section.block.block_element.content_gallery
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h1 галерея
+        .block--head_caption
+          p
+      .block--content
+        .gallery.js-gallerySwiper.gallerySwiper-v2
+          +gallery--item("/assets/img/g4.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/g1.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/g2.jpg", "подпись к картинке")
+          +gallery--item("/assets/img/g3.jpg", "подпись к картинке")
+
+
+
+
+
+  section.block.block_html_code.content_contacts
+    .block--wrapper
+      .block--content
+        h2.f-h2 Контакты
+        .contact
+          .contact--item
+            .contact--title Телефон
+            .contact--value
+              a.button.button-link.button-secondary(href="tel:+74951538039") +7 495 153 80 39
+          .contact--item
+            .contact--title E-MAIL
+            .contact--value
+              a.button.button-link.button-secondary(href="mailto:info@kskivanovskoe.ru") info@kskivanovskoe.ru
+          //a.button.button-link.button-accent
+          //  span Заказать звонок
+          //  span.icon-arrow-r
+          .contact--item.adress
+            .contact--title АДРЕС
+            .contact--value
+              p 45 км. Московская область, Ногинский район, село Ивановское. Луговая д. 23
+          //a.button.button-link.button-accent(href="/")
+          //  span Как доехать
+          //  span.icon-arrow-r
+      .block--map
+        .block--map-container
+          <script src="https://api-maps.yandex.ru/2.1/?apikey=48d87ef4-a099-4095-af51-20f442e126c6&lang=ru_RU" type="text/javascript"></script>
+          #map

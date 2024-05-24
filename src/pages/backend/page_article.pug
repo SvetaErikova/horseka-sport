@@ -1,93 +1,109 @@
 extends ../../layouts/breadcrumbs
 
 block variables
-  - var title = "Статья, новость детальные"
+  - var title = "Статья"
   - var pageClass = 'page-article'
   - var activePage = 'index'
 
 block content
-  article.block.block_element.content_article.js-page_navigation
+  article.block.block_element
     .block--wrapper
-      aside.content_article--sidebar
-        .content_article--sidebar_sticky
-          strong содержание
-          ul.sidebar_nav
-            li
-              a.sidebar_nav--item.js-anchor_link.is_active(href="#1") Расширение списка услуг для детей
-            li
-              a.sidebar_nav--item.js-anchor_link(href="#2") Индивидуальные планы лечения
-            li
-              a.sidebar_nav--item.js-anchor_link(href="#3") Мероприятия на свежем воздухе
-            li
-              a.sidebar_nav--item.js-anchor_link(href="#4") Комплексное медицинское обслуживание
-            li
-              a.sidebar_nav--item.js-anchor_link(href="#5") Заключение
-        .content_news
-          //+card--media('26.07.2023','акция','Пакет "Спа-день"','Побалуйте себя пакетом "Спа-день", включающим массаж, сауну и посещение нашего оздоровительного центра.','/assets/img/1.jpg')
-      .block--content.is_cascade
-        a(name="1") #1
-        h2 Заголовок h2
-        h3 Заголовок h3
-        h4 Заголовок h4
-        h5 Заголовок h5
-        h6 Заголовок h6
-        p Спа-процедуры являются популярным способом расслабиться и восстановить силы на протяжении веков, но знаете ли вы, что регулярное посещение спа-салона может также оказать значительное влияние на ваше общее здоровье и самочувствие?
-        a(name="2") #2
-        h3 Польза для психики
-        p Одним <a href="" target="_blank">ССЫль</a> из наиболее известных преимуществ спа-процедур является их способность снимать стресс и способствовать расслаблению. Стресс может оказывать пагубное воздействие на организм, приводя к различным проблемам со здоровьем, включая высокое кровяное давление, сердечные заболевания и депрессию. Спа-процедуры, такие как массаж, гидротерапия и ароматерапия, помогают снять напряжение, снизить уровень кортизола и способствуют ощущению спокойствия и расслабления.
-        p Помимо снятия стресса, регулярное посещение спа-салона может укрепить вашу иммунную систему, помогая защитить вас от болезней и недугов. Многие спа-процедуры, такие как сауны, парные и гидромассажные ванны, усиливают кровообращение, что, в свою очередь, способствует вымыванию токсинов и увеличению выработки белых кровяных телец - первой линии защиты организма от инфекций.
-        a(name="3") #3
-        ul
-          li Lorem ipsum dolor.
-          li Lorem ipsum dolor.
-          li Lorem ipsum dolor.
-          li Lorem ipsum dolor.
-        a(name="4") #4
-        ol
-          li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, doloribus?
-          li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, doloribus?
-          li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, doloribus?
-          li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, doloribus?
-        blockquote
-          p "Регулярные спа-процедуры - это инвестиции в ваше здоровье, это не просто роскошь - это необходимость".
-          span - Ирина Александрова, спа-менеджер курорта
-        table
-          thead
-            tr
-              td Услуга
-              td Цена
-              td Место
-              td Для детей
-          tbody
-            tr
-              td Программа 1
-              td 1200
-              td Медицинский центр
-              td Да
-            tr
-              td Программа 2
-              td 1300
-              td SPA
-              td Нет
-        strong Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam atque, consectetur delectus odio voluptate.
-        .accordion
-          +accordion-list("о бронировании и графике работы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-          +accordion-list("КАК добраться до отеля","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-          +accordion-list("можно ли с домашними животными","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-        .button_wrapper
-          a.button.button-filled.button-accent(href="")
-            span Схема отеля
-          a.button.button-outlined.button-accent(href="")
-            span Как добраться
-        figure
-          img(src="/assets/img/1.jpg")
-        figure
-          img(src="/assets/img/1.jpg")
-          figcaption Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, dolore ipsa itaque molestiae officiis voluptatem.
-        figure
-          video(src="/assets/video/@lepragram.mp4" controls)
-        <iframe src="https://www.youtube.com/embed/m7mvpe1fVa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        .is_cascade--slider
-          .gallery.js-gallerySwiper
-            //include ../../components/gallery/gallery
+      .block--content
+        .block--article_label
+          div
+            span Турниры
+          div
+            div
+              span.icon-calendar
+              span 15 марта 2024
+            div
+              span.icon-document
+              span 10 минут
+        .is_cascade
+          a(name="1")
+          figure
+            img(src="/assets/img/bg.jpg")
+          h2 Заголовок второго уровня
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum inventore placeat ratione voluptatum. Explicabo, nulla.
+          p <strong>Lorem ipsum:</strong> dolor sit amet, consectetur adipisicing elit. Consequatur iste iure, molestiae nihil perferendis possimus praesentium quasi reprehenderit sed sunt tempore vero!
+          h3 Заголовок
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur iste iure, molestiae nihil perferendis possimus praesentium quasi reprehenderit sed sunt tempore vero!
+            a(href="" target="_blank") ссылка
+          ul
+            li Lorem ipsum dolor sit amet, consectetur.
+            li Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque explicabo optio placeat quisquam velit. Ad dignissimos est fugit, in maiores minima modi numquam quasi qui!
+            li Lorem ipsum dolor sit amet, consectetur.
+              ul
+                li Lorem ipsum dolor sit amet, consectetur.
+                li Lorem ipsum dolor sit amet, consectetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque explicabo optio placeat quisquam velit. Ad dignissimos est fugit, in maiores minima modi numquam quasi qui!
+                li Lorem ipsum dolor sit amet, consectetur.
+          ol
+            li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, perferendis?
+            li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, sequi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facere nam possimus quam rem sequi.
+            li Lorem ipsum dolor sit amet, consectetur.
+              ol
+                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, perferendis?
+                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, sequi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus facere nam possimus quam rem sequi.
+                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, provident!
+          a(name="2")
+          figure
+            img(src="/assets/img/2.jpg")
+            figcaption Вертикальная картинка
+          figure
+            img(src="/assets/img/1.jpg")
+            figcaption Квадратная картинка
+          figure
+            video(src="/assets/video/@lepragram.mp4" controls)
+          figure
+            video(poster="/assets/img/bg.jpg" src="/assets/video/@lepragram.mp4" controls)
+          a(name="3")
+          blockquote
+            .blockquote--text
+              p И таких моментов в Paranormasight: The Seven Mysteries of Honjo множество. Благодаря правильной подаче, работе со звуком, точечным скримерам в этой визуальной новелле страшнее, чем во многих других хоррорах. И это очень аутентичный, истинно японский ужастик.
+            .blockquote--author
+              .blockquote--author--image
+                img(src="/assets/img/bg.jpg")
+              .blockquote--author--text
+                p Константинопольский Константин
+                span Глава медицинского центра
+          strong
+          .is_cascade--accordion
+            +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+            +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+            +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
+            +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
 
+          .button_wrapper
+            a.button.button-filled.button-accent(href="")
+              span Схема отеля
+            a.button.button-outlined.button-accent(href="")
+              span Как добраться
+          .is_cascade--table
+            table
+              thead
+                tr
+                  td Услуга
+                  td Цена
+                  td Место
+                  td Для детей
+              tbody
+                tr
+                  td Программа 1
+                  td 1200
+                  td Медицинский центр
+                  td Да
+                tr
+                  td Программа 2
+                  td 1300
+                  td SPA
+                  td Нет
+        aside.sidebar
+          .sidebar--sticky
+            strong содержание
+            div.sidebar--nav
+              div
+                a.sidebar--nav_item.js-anchor_link(href="#1") Что такое зубной кариес
+              div
+                a.sidebar--nav_item.js-anchor_link(href="#2") Каковы причины возникновения кариеса зубов
+              div
+                a.sidebar--nav_item.js-anchor_link(href="#3") Виды кариеса

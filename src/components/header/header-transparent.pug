@@ -1,7 +1,7 @@
 header.header.header-transparent
   .header--main
     a.header--logo(href="/")
-      <svg fill='#fff' width="184" height="76" viewBox="0 0 184 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg fill='#fff'viewBox="0 0 184 76" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M75.1904 57.1062C73.7752 57.1062 72.6656 56.8337 71.8695 56.2966V54.6533C72.7943 55.2866 73.8798 55.6073 75.11 55.6073C75.6568 55.6073 76.091 55.5271 76.3966 55.3588C76.7021 55.1904 76.8629 54.966 76.8629 54.6694C76.8629 54.4129 76.7021 54.2044 76.3725 54.0361C76.2358 53.972 75.9784 53.8918 75.6086 53.7956L74.6195 53.5551C73.6787 53.3147 72.9953 53.0101 72.5771 52.6413C72.159 52.2726 71.9419 51.7515 71.9419 51.0782C71.9419 50.3568 72.2394 49.7876 72.8345 49.3708C73.4295 48.9539 74.2577 48.7455 75.3111 48.7455C76.5333 48.7455 77.5062 48.986 78.246 49.459V51.0541C77.2811 50.5171 76.3322 50.2445 75.3754 50.2445C74.8447 50.2445 74.4426 50.3247 74.1612 50.477C73.8798 50.6293 73.735 50.8457 73.735 51.1183C73.735 51.3668 73.9039 51.5752 74.2336 51.7515C74.2738 51.7756 74.5311 51.8558 74.9975 51.992L75.9222 52.1844C77.7394 52.5852 78.648 53.4189 78.648 54.6854C78.648 55.4069 78.3264 55.992 77.6912 56.4329C77.0559 56.8738 76.2197 57.0982 75.1824 57.0982"/>
       <path d="M85.2336 48.7535C86.3593 48.7535 87.284 49.1544 88.0077 49.964C88.7314 50.7576 89.0932 51.7515 89.0932 52.9379C89.0932 54.1243 88.7314 55.0942 88.0077 55.8958C87.284 56.7055 86.3593 57.1063 85.2336 57.1063C84.0113 57.1063 83.0706 56.6734 82.3951 55.8157V60.1283H80.6422V48.97H82.3951V50.0521C83.0625 49.1944 84.0113 48.7616 85.2336 48.7616M84.7672 50.3006C84.2606 50.3006 83.7942 50.4289 83.3761 50.6934C82.958 50.958 82.6283 51.3026 82.4032 51.7195V54.1724C82.6283 54.5812 82.958 54.9179 83.3841 55.1824C83.8103 55.4469 84.2686 55.5752 84.7672 55.5752C85.4989 55.5752 86.11 55.3187 86.6005 54.8137C87.083 54.2926 87.3322 53.6754 87.3322 52.9379C87.3322 52.2004 87.091 51.5672 86.6005 51.0622C86.11 50.5491 85.5069 50.2846 84.7672 50.2846V50.3006Z"/>
       <path d="M94.8264 57.1063C93.556 57.1063 92.5026 56.7055 91.6824 55.8958C90.8623 55.0862 90.4522 54.1002 90.4522 52.9219C90.4522 51.7435 90.8623 50.7736 91.6824 49.964C92.5026 49.1544 93.5479 48.7535 94.8264 48.7535C96.1049 48.7535 97.1261 49.1544 97.9543 49.964C98.7745 50.7736 99.1846 51.7596 99.1846 52.9219C99.1846 54.0842 98.7745 55.0782 97.9543 55.8958C97.1261 56.7055 96.0808 57.1063 94.8264 57.1063ZM94.8264 55.5672C95.5582 55.5672 96.1853 55.3187 96.6919 54.8057C97.1905 54.3087 97.4397 53.6834 97.4397 52.9139C97.4397 52.1443 97.1905 51.5351 96.6919 51.0381C96.1853 50.5331 95.5662 50.2766 94.8264 50.2766C94.0867 50.2766 93.4514 50.5331 92.9449 51.0381C92.4463 51.5351 92.1971 52.1604 92.1971 52.9139C92.1971 53.6674 92.4463 54.3087 92.9449 54.8057C93.4514 55.3107 94.0786 55.5672 94.8264 55.5672Z"/>
@@ -28,300 +28,176 @@ header.header.header-transparent
 
     .header--nav
       nav.nav
-        //button.nav--item.menu_button
-        //  span.icon-ic-lg-menu
-        //  span.icon-ic-lg-close
-        //  span.button_text Курорт
-        .nav--item.button.is_dropdown.is_dropdown-events
-          a.button(href="" title="")
-            span.icon-HeaderCalendar
-            span События
-            span.icon-SelectDown
-          .is_dropdown--wrapper
-            .is_dropdown--content.events
-              .events--item
-                .events--title СПОРТСМЕНАМ
-                .item--text-link
-                  .button
-                    span.icon-HeaderCalendar
-                    span Серии турниров
-                  .button.button-outlined.button-secondary
-                    span.icon-ic-lg-phone
-                .item--text-link
-                  .button
-                    span.icon-HeaderCalendar
-                    span Календарь событий
-                  .button.button-outlined.button-secondary
-                    span.icon-ic-lg-phone
-              .events--item
-                .events--title ЗРИТЕЛЯМ
-                .item--image-link
-                  img(src="/assets/img/accomodation_bg.jpg")
-                  .button
-                    span Приобрести билеты
-                  .button.button-outlined.button-secondary.button-dark
-                    span.icon-ic-lg-phone
+        //.nav--item.button.is_dropdown.is_dropdown-events
+        //  .button
+        //    span.icon-calendar
+        //    span События
+        //    span.icon-chevron-down
+        //  .is_dropdown--wrapper
+        //    .is_dropdown--content.events
+        //      .events--item
+        //        .events--title СПОРТСМЕНАМ
+        //        a.item--text-link(href='/')
+        //          .title
+        //            span.icon-trophy
+        //            span Серии турниров
+        //          .button.button-outlined.button-secondary
+        //            span.icon-arrow-r
+        //        a.item--text-link(href='/')
+        //          .title
+        //            span.icon-calendar-star
+        //            span Календарь событий
+        //          .button.button-outlined.button-secondary
+        //            span.icon-arrow-r
+        //      .events--item
+        //        .events--title ЗРИТЕЛЯМ
+        //        .item--image-link
+        //          img(src="/assets/img/is_dropdown-events-img.jpg")
+        //          .title
+        //            span Приобрести билеты
+        //          .button.button-outlined.button-secondary.button-dark
+        //            span.icon-arrow-r
 
-        .nav--item.is_dropdown(href="" title="")
-          a.button(href="" title="")
-            span Услуги
-            span.icon-SelectDown
-          .is_dropdown--wrapper
-            .is_dropdown--content
-              .is_dropdown--content-col
-                .is_dropdown--content-title
-                  p ЛЮБИТЕЛЯМ
-                a(href="" ).button.button-link.button-secondary
-                  span Школа верховой езды
-                a(href="" ).button.button-link.button-secondary
-                  span Фотосессии
-                a(href="" ).button.button-link.button-secondary
-                  span Конные прогулки
-              .is_dropdown--content-col
-                .is_dropdown--content-title
-                  p ВЛАДЕЛЬЦАМ ЛОШАДЕЙ
-                a(href="" ).button.button-link.button-secondary
-                  span Содержание лошадейы
-                a(href="" ).button.button-link.button-secondary
-                  span Ветеринария
-                a(href="" ).button.button-link.button-secondary
-                  span Продажа и разведение
-        a.nav--item.button(href="" title="")
-          span Инфраструктура
-        .nav--item.is_dropdown
-          a.button(href="" title="")
-            span О нас
-            span.icon-SelectDown
-          .is_dropdown--wrapper
-            .is_dropdown--content
-              .is_dropdown--content-col
-                a(href="" ).button.button-link.button-secondary
-                  span Акции
-                a(href="" ).button.button-link.button-secondary
-                  span Галерея
-                a(href="" ).button.button-link.button-secondary
-                  span Новости
-                a(href="" ).button.button-link.button-secondary
-                  span Отзывы
-                a(href="" ).button.button-link.button-secondary
-                  span Контакты
-        a.nav--item.button(href="" title="")
-          span Контакты
-        .nav--item.is_dropdown.hidden
+        //.nav--item.is_dropdown(href="" title="")
+        //  a.button(href="" title="")
+        //    span Услуги
+        //    span.icon-chevron-down
+        //  .is_dropdown--wrapper
+        //    .is_dropdown--content
+        //      .is_dropdown--content-col.is_dropdown--content-col-mob
+        //        .is_dropdown--content-title
+        //          a(href="" ).button.button-link.button-secondary
+        //            span подробнее
+        //            span.icon-arrow-r
+        //      .is_dropdown--content-col
+        //        .is_dropdown--content-title
+        //          p ЛЮБИТЕЛЯМ
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Школа верховой езды
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Фотосессии
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Конные прогулки
+        //      .is_dropdown--content-col
+        //        .is_dropdown--content-title
+        //          p ВЛАДЕЛЬЦАМ ЛОШАДЕЙ
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Содержание лошадейы
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Ветеринария
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Продажа и разведение
+        //.nav--item
+        //  a.button(href="" title="")
+        //    span Инфраструктура
+        //.nav--item.is_dropdown
+        //  a.button(href="" title="")
+        //    span О нас
+        //    span.icon-chevron-down
+        //  .is_dropdown--wrapper
+        //    .is_dropdown--content
+        //      .is_dropdown--content-col
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Акции
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Галерея
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Новости
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Отзывы
+        //        a(href="" ).button.button-link.button-secondary
+        //          span Контакты
+        //.nav--item.is_dropdown
+        //  a.button(href="" title="")
+        //    span нав
+        //    span.icon-chevron-down
+        //  .is_dropdown--wrapper
+        //    .is_dropdown--content
+        //      .is_dropdown--content-col
+        //        a(href="/event-calendar.html" ).button.button-link.button-secondary
+        //          span календарь
+        //        a(href="/backend/animations.html" ).button.button-link.button-secondary
+        //          span анимации
+        //        a(href="/backend/block_list.html" ).button.button-link.button-secondary
+        //          span LIST
+        //        a(href="" ).button.button-link.button-secondary
+        //          span IMAGE_TEXT
+        //        a(href="" ).button.button-link.button-secondary
+        //          span HTML
+        //.nav--item
+        //  a.button(href="" title="")
+        //    span Контакты
+        .nav--item
+          a.button(href="/event-calendar.html" title="")
+            span.icon-calendar
+            span Календарь соревнований
+
+        .nav--item.is_dropdown.hidden.showMore
           span ...
           .is_dropdown--wrapper(aria-hidden="true")
             .is_dropdown--content
     .header--actions
-      .header--actions_mobile
-        .button(data-openpopup='popup_mobile_contacts')
-          span.icon-ic-lg-phone
       .header--contacts.is_dropdown
-        span.header--contacts-adress МО, с. Ивановское. Луговая д.23
-        a.button(href="")
-          span 8 499 490-01-87
-          span.icon-SelectDown
+        span.header--contacts-adress
+          span.icon-location
+          | МО, с. Ивановское. Луговая д.23
+        a.button(href="tel:+74951538039")
+          span +7 495 153 80 39
+          span.icon-chevron-down
         .is_dropdown--wrapper(aria-hidden="true")
           .is_dropdown--content
             .contact
               .contact--item
                 .contact--title Телефон
                 .contact--value
-                  a(href="/") 8 (495) 419-96-90
+                  a.button.button-link.button-secondary(href="tel:+74951538039") +7 495 153 80 39
               .contact--item
                 .contact--title E-MAIL
                 .contact--value
-                  a(href="/") info@kskivanovskoe.ru
-              .contact--link(href="/")
-                span Заказать звонок
-                span.icon-SelectDown
-              .contact--item
+                  a.button.button-link.button-secondary(href="mailto:info@kskivanovskoe.ru") info@kskivanovskoe.ru
+              //a.button.button-link.button-accent(href="/")
+              //  span Заказать звонок
+              //  span.icon-arrow-r
+              .contact--item.adress
                 .contact--title АДРЕС
                 .contact--value
-                  p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
-              .contact--link(href="/")
-                span Как доехать
-                span.icon-SelectDown
-      .header--booking.is_dropdown
-        button.button.button-filled.button-accent
-          span.icon-HeaderCalendar
+                  p 45 км. Московская область, Ногинский район, село Ивановское. Луговая д. 23
+              //a.button.button-link.button-accent(href="/")
+              //  span Как доехать
+              //  span.icon-arrow-r
+      .header--lk.is_dropdown
+        a(href='https://lk.horsekasport.ru/').button.button-filled.button-accent
           span Личный кабинет
+          span.icon-external
+      .header--actions_mobile
+        .button.menu_button
+          span.icon-burger
+          span.icon-close
 
-.header_mobile
-  button.header_mobile--item.menu_button
-    span.icon-ic-lg-menu
-    span.icon-ic-lg-close
-    span.button_text Меню
-  a.header_mobile--item(href="")
-    span.icon-HeaderCalendar
-    span Найти номер
-  .header_mobile--item.header_mobile--item-contacts
-    button(data-openpopup='popup_mobile_contacts')
-      span.icon-ic-lg-phone
-      span Связаться
-
-
-.popup.popup-mobile_contacts(data-popup="popup_mobile_contacts")
-  .popup--content
-    .popup--close(data-closepopup)
-      button.button.button-link.button-primary
-        span.icon-ic-lg-close
-    .contact
-      .contact--title Бронирование
-      .contact--value
-        a(href="/") 8 888 888 88 88
-      .contact--value
-        a(href="/") info@mriyaresort.com
-    .contact
-      .contact--title Карьера
-      .contact--value
-        a(href="/") job@mriyaresort.com
-    .contact
-      .contact--title Сотрудничество
-      .contact--value
-        a(href="/") 8 499 490-02-85
-    .contact
-      .contact--title Социальные сети
-      .contact--value
-        a(href="/")
-          span.icon-ic-socials-vk
-        a(href="/")
-          span.icon-ic-socials-viber
-        a(href="/")
-          span.icon-ic-socials-youtube
-        a(href="/")
-          span.icon-ic-socials-telegram
 
 .popup.popup-menu(data-popup="popup_menu" data-lenis-prevent)
   .popup--content
-    .menu--block
-      .header--lang
-        a.button.button-outlined.button-primary(href='/')
-          span En
-      .menu
-        a.menu--item(href="" title="")
-          span Чем заняться
-        .menu--wrapper(aria-hidden="true")
-          .menu--content
-            .button.button-link.button-secondary.js_mobile_backwards
-              span.icon-ic-lg-chevron-left
-              span Назад
-            .is_cascade
-              h2 Чем заняться
-              p Mriya Resort & SPA — ведущий мировой курорт премиум-класса, расположенный на южном берегу Крыма между живописным горным массивом и морским простором
-              .menu--list
-                .menu--list_title
-                  a.button.button-primary.button-link(href="")
-                    span Рестораны и бары
-                    span.icon-ic-lg-chevron-right
-                a.button.button-primary.button-link(href="")
-                  <!-- Если ссылка на внешний ресурс -->
-                  span.icon-ic-lg-link
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-              .menu--list
-                .menu--list_title
-                  a.button.button-primary.button-link(href="")
-                    span Парки
-                    span.icon-ic-lg-chevron-right
-                a.button.button-primary.button-link(href="")
-                  span Японский сад
-                a.button.button-primary.button-link(href="")
-                  span Winepark
-                a.button.button-primary.button-link(href="")
-                  span Dreamwood
-              .menu--list
-                .menu--list_title
-                  a.button.button-primary.button-link(href="")
-                    span Оздоровление
-                    span.icon-ic-lg-chevron-right
-                a.button.button-primary.button-link(href="")
-                  span Институт активного долголетия
-                a.button.button-primary.button-link(href="")
-                  span Медицинский центр
-
-      .menu
-        a.menu--item(href="" title="")
-          span Услуги и сервис
-        .menu--wrapper(aria-hidden="true")
-          .menu--content
-            .button.button-link.button-secondary.js_mobile_backwards
-              span.icon-ic-lg-chevron-left
-              span Назад
-            .is_cascade
-              h2 Услуги и сервис
-              p Mriya Resort & SPA — ведущий мировой курорт премиум-класса, расположенный на южном берегу Крыма между живописным горным массивом и морским простором
-              .menu--list
-                .menu--list_title
-                  a.button.button-primary.button-link(href="")
-                    span Рестораны и бары
-                    span.icon-ic-lg-chevron-right
-                a.button.button-primary.button-link(href="")
-                  <!-- Если ссылка на внешний ресурс -->
-                  span.icon-ic-lg-link
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-              .menu--list
-                a.button.button-primary.button-link(href="")
-                  span Парки
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-              .menu--list
-                a.button.button-primary.button-link(href="")
-                  span Парки
-                a.button.button-primary.button-link(href="")
-                  span Winekitchen
-      .menu
-        a.menu--item(href="" title="")
-          span Размещение
-        .menu--wrapper(aria-hidden="true")
-          .menu--content
-            .button.button-link.button-secondary.js_mobile_backwards
-              span.icon-ic-lg-chevron-left
-              span Назад
-            .is_cascade
-              h2 Размещение
-              p Mriya Resort & SPA — ведущий мировой курорт премиум-класса, расположенный на южном берегу Крыма между живописным горным массивом и морским простором
-              .menu--list
-                a.button.button-primary.button-link(href="")
-                  span Номера
-                a.button.button-primary.button-link(href="")
-                  span Виллы
-      .menu
-        a.menu--item(href="" title="")
-          span Курорт
-        .menu--wrapper(aria-hidden="true")
-          .menu--content
-            .button.button-link.button-secondary.js_mobile_backwards
-              span.icon-ic-lg-chevron-left
-              span Назад
-            .is_cascade
-              h2 Курорт
-              p Mriya Resort & SPA — ведущий мировой курорт премиум-класса, расположенный на южном берегу Крыма между живописным горным массивом и морским простором
-              .menu--list
-                a.button.button-primary.button-link(href="")
-                  span Номера
-                a.button.button-primary.button-link(href="")
-                  span Виллы
-      .menu
-        a.menu--item(href="" title="")
-          span Спецпредложения
-      .menu
-        a.menu--item(href="" title="")
-          span Афиша
-      .menu
-        a.menu--item(href="" title="")
-          span Контакты
+    nav.nav
+      .nav--item
+        a.button(href="/event-calendar.html" title="")
+          span.icon-calendar
+          span Календарь соревнований
+    .contact
+      .contact--item
+        .contact--title Телефон
+        .contact--value
+          a.button.button-link.button-accent.button-dark(href="tel:+74951538039") +7 495 153 80 39
+      .contact--item
+        .contact--title E-MAIL
+        .contact--value
+          a.button.button-link.button-accent.button-dark(href="mailto:info@kskivanovskoe.ru") info@kskivanovskoe.ru
+      //a.button.button-link.button-accent(href="/")
+      //  span Заказать звонок
+      //  span.icon-arrow-r
+      .contact--item.adress
+        .contact--title АДРЕС
+        .contact--value
+          p 45 км. Московская область, Ногинский район, село Ивановское. Луговая д. 23
+      //a.button.button-link.button-accent(href="/")
+      //  span Как доехать
+      //  span.icon-arrow-r

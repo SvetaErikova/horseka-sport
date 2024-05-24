@@ -1,18 +1,20 @@
 .is_cascade
+  overflow: hidden
   line-height: 1.5
-  font-size: var(--fs-20)
+  font-size: var(--fs-24)
   h1
-    line-height: 1.28
+    line-height: 1
     text-transform: uppercase
     font-weight: 300
     letter-spacing: -0.02em
-    font-size: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+    font-size: clamp(40px, calc(40px + (148 - 40) * ((100vw - 1024px) / (1920 - 1024))), 148px)
     margin: var(--g-section-inner) 0 0
   h2
     font-size: var(--fs-96)
     margin: var(--g-section-inner) 0 0
   h3
     font-size: var(--fs-72)
+    margin: var(--g-section-inner) 0 0
   h4
     font-size: var(--fs-52)
     margin: var(--g-section-inner) 0 0
@@ -22,11 +24,12 @@
   & > p
     margin-top: var(--g-24)
   & p > a:not(.button)
-    color: var(--c-text-accent-default)
+    color: #144FC3
+    text-decoration: underline
     margin: 0 0.5em
     &:hover,
     &:active
-      color: var(--c-text-accent-hovered)
+      color: var(--accent)
     &:visited
       opacity: 0.8
   strong, b
@@ -41,9 +44,13 @@
 
   figure
     margin: var(--g-content) 0
+    border-radius: var(--border-corner)
+    overflow: hidden
     img, iframe, video
       margin-top: 0
       margin-bottom: 0
+      border-radius: var(--border-corner)
+      overflow: hidden
     img
       aspect-ratio: initial
       object-fit: contain
@@ -74,17 +81,6 @@
     border-radius: 0
     overflow: hidden
     margin: var(--g-content) 0
-  .is_cascade--slider
-    overflow: hidden
-    margin: var(--g-content) 0
-    @media(max-width: 992px)
-      margin: var(--g-content) calc(var(--g-container) * -1)
-      width: 100vw
-    .js-gallerySwiper
-      .gallery--item
-        aspect-ratio: 870 / 472
-        @media(max-width: 560px)
-          aspect-ratio: 360 / 298
     figure
       margin: 0
   blockquote
@@ -92,9 +88,7 @@
     background-color: var(--c-surface-subdued)
     border-radius: var(--border-corner)
     position: relative
-    margin: var(--g-content)
-    @media(min-width: 768px)
-      margin: var(--g-content) 0
+    margin: var(--g-content) 0
     .blockquote--text
       position: relative
       padding-left: var(--g-32)
@@ -104,7 +98,7 @@
       &:before
         content: "“"
         position: absolute
-        left: -16px
+        left: -6px
         top: 0
     .blockquote--author
       display: flex
@@ -131,6 +125,8 @@
     margin: var(--g-32) 0
   .is_cascade--accordion
     margin: var(--g-content) 0
+    .accordion
+      max-width: 100%
   & p + .button,
   & ul + .button
     margin-top: var(--g-32)
@@ -146,58 +142,33 @@
     border-collapse: collapse
     width: 100%
     border-radius: var(--border-corner)
+    border-collapse: separate
+    border-spacing: 0
     thead, th
+      color: #404B57
       font-weight: 600
-      background-color: var(--c-surface-subdued)
+      background-color: #E0E7F3
       text-align: left
     td, th
-      border: 1px solid rgba(35, 35, 35, 0.08)
+      border: 1px solid #11182029
       padding: 8px 16px
+      &> a:not(.button)
+        color: #144FC3
+        &:hover,
+        &:active
+          color: var(--accent)
+        &:visited
+          opacity: 0.8
+    tbody td:first-of-type
+      background-color: #F2F5FA
+  thead
+    tr:first-of-type td:first-of-type
+      border-top-left-radius: var(--border-corner)
+    tr:first-of-type td:last-of-type
+      border-top-right-radius: var(--border-corner)
 
-  .block_list
-    margin: var(--g-container-vertical) 0
-    .block--sections
-      justify-content: flex-start
-      margin-top: 24px
-    .block--wrapper
-      padding: 0
-    .block--elements
-      grid-template-columns: 1fr 1fr
-      @media(max-width: 992px)
-        grid-template-columns: 1fr
-      @media(min-width: 992px)
-        .card:only-child
-          grid-column: span 2
-          .card--image
-            aspect-ratio: unset
-      .card--image
-        aspect-ratio: 1 / 1
-        img
-          width: 100%
-          height: 100%
-          margin-top: 0
-          margin-bottom: 0
-      .block--pagination
-        @media(min-width: 992px)
-          grid-column: span 2
-
-    .block--head
-      text-align: left
-      align-items: flex-start
-      .block--head_title
-        h1, h2, h3, h4
-          text-transform: none
-          font-size: var(--fs-32)
-          font-weight: 400
-          margin-top: 0
-          letter-spacing: -0.02em
-    &.block_list-slider
-      @media(max-width: 992px)
-        overflow: visible
-      .swiper-button-prev
-        transform: translateX(50%)
-      .swiper-button-next
-        transform: translateX(-50%)
-
-    .block--content, .block--elements
-      margin-top: var(--g-24)
+  tbody
+    tr:last-of-type td:first-of-type
+      border-bottom-left-radius: var(--border-corner)
+    tr:last-of-type td:last-of-type
+      border-bottom-right-radius: var(--border-corner)

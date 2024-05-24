@@ -5,18 +5,21 @@
   .block--wrapper
     display: flex
     align-items: center
-    gap: var(--g-content)
+    gap: var(--g-20)
     max-width: 1080px
     flex-direction: column
   &:last-child
-    margin: var(--g-content) 0
+    margin: 0
   .block--head
+    border-bottom: none
     display: flex
     flex-direction: column
     align-items: center
     text-align: center
     &_subtitle
       color: var(--accent-2)
+    &_title
+      text-align: center
 
 
   fieldset
@@ -33,20 +36,42 @@
 
 .form--subscription
   width: 100%
-  .form__policy,
-  .form__input span
-    display: none
   fieldset
     display: flex
     gap: var(--g-24)
     align-items: center
-    .form--title,
-    .form--input
-      margin: 0
-    .form--title
-      white-space: nowrap
+    @media(max-width: 1240px)
+      flex-direction: column
+
     .form--input
       width: 100%
+      border: none
+      align-items: center
+      @media(max-width: 768px)
+        flex-direction: column
       input
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7)
         color: var(--c-text-primary)
+        @media(max-width: 768px)
+          width: 100%
 
+    .form--input > span
+      color: #FFFFFF
+  .form__button
+    position: relative
+    @media(max-width: 768px)
+      display: flex
+      flex-direction: column
+      gap: 8px
+  .confirmation
+    max-width: 100%
+    margin: auto
+    @media(min-width: 769px)
+      width: 100%
+      position: absolute
+      left: 110%
+      top: 0
+      bottom: 0
+      right: -20%
+    .access
+      color: #FFFFFF

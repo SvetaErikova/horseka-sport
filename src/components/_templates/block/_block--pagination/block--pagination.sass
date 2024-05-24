@@ -15,6 +15,20 @@
     background-color: var(--c-border-subdued)
   .button
     background-color: #fff
+    //padding: 15px
+    //width: clamp(36px, calc(36px + (54 - 36) * ((100vw - 1024px) / (1920 - 1024))), 54px)
+    //height: clamp(36px, calc(36px + (54 - 36) * ((100vw - 1024px) / (1920 - 1024))), 54px)
+    &:before
+      transition: .15s linear
+    @media(max-width: 768px)
+      &:last-of-type span:not([class^="icon-shevron-R"])
+        display: none
+      &:first-of-type span:not([class^="icon-chevron-L"])
+        display: none
+    & span:not([class]) ~ span[class^="icon-shevron-R"]
+      padding-right: 0
+      padding-left: 0
+
   .block--pagination_gap
     display: flex
     align-items: flex-end

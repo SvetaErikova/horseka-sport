@@ -3,28 +3,32 @@
     display: flex
     flex-direction: column
     border-bottom: none
+    border-radius: var(--border-corner) var(--border-corner) 0 0
+    grid-column: 1
     &_title
       font-size: var(--fs-72)
       padding-bottom: var(--g-24)
       border-bottom: none
-      //.f-h2
-      //  font-size: 48px
+      word-wrap: break-word
+      padding-bottom: 0
+    .block--actions
+      @media(max-width: 475px)
+        width: 100%
+        .button
+          width: 100%
   .block--wrapper
     display: grid
     grid-template-columns: 1fr 1fr
     place-content: start
-    gap: 0 24px
+    gap: 0 8px
     grid-template-rows: repeat(auto-fit, auto)
     align-items: center
     @media(max-width: 768px)
       grid-template-columns: 1fr
       grid-template-rows: auto
-      padding: var(--g-container) 0
-  .block--head
-    border-radius: var(--border-corner) var(--border-corner) 0 0
-    grid-column: 1
-    .block--head_title
-      word-wrap: break-word
+      padding: var(--g-container) 8px
+
+
   .block--content
     height: 100%
     border-radius: 0 0 var(--border-corner) var(--border-corner)
@@ -32,14 +36,18 @@
     grid-column: 2
     @media(max-width: 768px)
       grid-column: 1
+      min-height: 15px
   .block--image ~ .block--head,
   .block--image ~ .block--content
     height: 100%
     grid-column: 1
     width: 100%
-    padding-left: var(--g-80)
-    padding-right: var(--g-80)
+    //padding-left:  8px
+    //padding-right: 8px
     background-color: var(--c-surface-default)
+    @media(min-width: 769px)
+      padding-left: var(--g-80)
+      padding-right: var(--g-80)
   .block--image ~ .block--head
     justify-content: flex-end
   .block--image
@@ -60,7 +68,7 @@
       aspect-ratio: 1/1
       @media(min-width: 769px)
         position: sticky
-        top: calc(var(--headerHeight) + 2rem)
+        top: calc(var(--headerHeight) )
 
   .block--head
     align-items: flex-start
@@ -76,6 +84,7 @@
         grid-column: 2
         @media(max-width: 768px)
           grid-column: 1
+
   &.block_image_text-bg
     .block--head,
     .block--content
@@ -110,19 +119,34 @@
       img
         border-radius: 1000px 1000px  1000px 0
         height: auto
-        clip-path: url(#mask)
   &.block_image_text-reversed.block_image_text-mask
     .block--image
       img
         border-radius:  1000px 1000px 0 1000px
 
-  &.block_image_text
-    .block--image.block--image-slider
-      overflow: hidden
-      height: max-content
-      overflow: hidden
-      img
-        height: auto
-        flex-shrink: 0
-        flex-grow: 0
+  .block--image.block--image-slider
+    overflow: hidden
+    height: max-content
+    overflow: hidden
+    min-height: auto
+    margin-bottom: auto
+    img
+      height: auto
+      flex-shrink: 0
+      flex-grow: 0
+    .slider_controls
+      .swiper-pagination
+        @media(min-width: 769px)
+          margin-left: 0
+          margin-right: auto
+      .button
+        padding: 13px
+.block_image_text[class*="background"]
+  .block--image ~ .block--head,
+  .block--image ~ .block--content
+    @media(max-width: 768px)
+      padding-left:  16px
+      padding-right: 16px
+      padding-bottom: 16px
+
 

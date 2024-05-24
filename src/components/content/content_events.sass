@@ -1,15 +1,17 @@
-.content_events
+body:not(.page-calendar) .content_events
+  overflow: hidden
   &:not(.block_list-slider)
     .block--elements
-      gap: var(--g-20)
+      gap: 0 var(--g-20)
       grid-template-columns: repeat(2, 1fr)
-      @media(max-width: 640px)
-        overflow: hidden
-        grid-template-columns: 1fr
+      grid-template-rows: auto
+      @media(max-width: 1140px)
+        display: flex
+        flex-direction: column
       .card:first-of-type
         @media(min-width: 1024px)
           grid-column: 1
-          grid-row: span 3
+          grid-row: 1/4
       .card:not(:first-of-type)
         @media(min-width: 1024px)
           grid-column: 2
@@ -27,3 +29,43 @@
       @media(max-width: 640px)
         grid-column: span 1
 
+.content_events-detail
+  .block--head
+    padding-bottom: 0
+  .date
+    color: var(--accent-2)
+    font-size: var(--fs-32)
+    display: flex
+    gap: 6px
+    span:last-child
+      opacity: 0.7
+  .info
+    padding: 12px 0
+    display: flex
+    flex-direction: column
+    gap: 12px
+    & > *
+      display: flex
+      align-items: baseline
+      //justify-content: space-between
+      &:before
+        content: ''
+        border-bottom: 1px dotted  #cccccc
+        flex-grow: 1
+        order: 1
+        margin: 0 5px
+        min-width: 30px
+      p:first-child
+        color: var( --c-text-subdued)
+      p + p
+        order: 2
+
+.page-calendar .content_events
+  .block--elements
+    grid-template-columns: 1fr
+    @media(min-width: 575px)
+      grid-template-columns: repeat(2, 1fr)
+      @media(min-width: 768px)
+        grid-template-columns: repeat(3, 1fr)
+        @media(min-width: 1024px)
+          grid-template-columns: repeat(4, 1fr)

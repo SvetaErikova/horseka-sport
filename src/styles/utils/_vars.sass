@@ -24,7 +24,10 @@ html
   --c-border-hovered: #141A25
   --c-border-others: #E0E1E3
   --c-border-secondary: rgba(17, 24, 32, 0.16)
+
   --border-corner: 16px
+  @media(max-width: 1024px)
+    --border-corner: 8px
   --border-corner-button: 50px
   --border-corner-input: 4px
 
@@ -37,19 +40,20 @@ html
 
 
   --g-8: 8px
-  --g-container-vertical: clamp(32px, calc(32px + (80 - 32) * ((100vw - 375px) / (1920 - 375))), 80px)
+  --g-container-vertical: clamp(32px, calc(32px + (60 - 32) * ((100vw - 375px) / (1920 - 375))), 60px)
   --g-container: clamp(8px, calc(8px + (20 - 8) * ((100vw - 375px) / (1920 - 375))), 20px)
   --g-section-inner: clamp(16px, calc(16px + (56 - 16) * ((100vw - 1024px) / (1920 - 1024))), 56px)
   --g-24: clamp(16px, calc(16px + (24 - 16) * ((100vw - 1024px) / (1920 - 1024))), 24px)
   --g-20: 20px
   --g-32: clamp(16px, calc(16px + (32 - 16) * ((100vw - 1024px) / (1920 - 1024))), 32px)
+  --g-48: clamp(16px, calc(16px + (48 - 16) * ((100vw - 1024px) / (1920 - 1024))), 48px)
   --g-elements: clamp(8px, calc(8px + (24 - 8) * ((100vw - 1024px) / (1920 - 1024))), 24px)
   --g-content: clamp(24px, calc(24px + (40 - 24) * ((100vw - 1024px) / (1920 - 1024))), 40px)
   --g-section: clamp(56px, calc(56px + (120 - 56) * ((100vw - 1024px) / (1920 - 1024))), 120px)
-  --g-80: clamp(24px, calc(24px + (80 - 24) * ((100vw - 1024px) / (1920 - 1024))), 80px)
-  --g-96: clamp(48px, calc(48px + (96 - 48) * ((100vw - 768px) / (1920 - 768))), 96px)
-
-  --g-footer: clamp(0px, calc(0px + (130 - 0) * ((100vw - 768px) / (1920 - 768))), 130px)
+  --g-52: clamp(20px, calc(20px + (52 - 20) * ((100vw - 1024px) / (1920 - 1024))), 52px)
+  --g-56: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
+  --g-80: clamp(16px, calc(16px + (80 - 16) * ((100vw - 1024px) / (1920 - 1024))), 80px)
+  --g-footer: clamp(8px, calc(8px + (130 - 8) * ((100vw - 768px) / (1920 - 768))), 130px)
 
   --fs-14: clamp(12px, calc(12px + (14 - 12) * ((100vw - 1024px) / (1920 - 1024))), 14px)
   --fs-16: 16px
@@ -60,11 +64,14 @@ html
   --fs-32: clamp(20px, calc(20px + (32 - 20) * ((100vw - 1024px) / (1920 - 1024))), 32px)
   --fs-36: clamp(20px, calc(20px + (36 - 20) * ((100vw - 1024px) / (1920 - 1024))), 36px)
   --fs-40: clamp(23px, calc(23px + (40 - 23) * ((100vw - 1024px) / (1920 - 1024))), 40px)
-  --fs-52: clamp(24px, calc(24px + (52 - 24) * ((100vw - 1024px) / (1920 - 1024))), 52px)
+
+  --fs-52: clamp(28px, calc(28px + (52 - 28) * ((100vw - 1024px) / (1920 - 1024))), 52px)
   --fs-56: clamp(24px, calc(24px + (56 - 24) * ((100vw - 1024px) / (1920 - 1024))), 56px)
   --fs-60: clamp(20px, calc(20px + (60 - 20) * ((100vw - 1024px) / (1920 - 1024))), 60px)
-  --fs-72: clamp(46px, calc(46px + (72 - 46) * ((100vw - 1024px) / (1920 - 1024))), 72px)
-  --fs-96: clamp(56px, calc(56px + (96 - 56) * ((100vw - 1024px) / (1920 - 1024))), 96px)
+  --fs-72: clamp(32px, calc(32px + (72 - 32) * ((100vw - 1024px) / (1920 - 1024))), 72px)
+  --fs-96: clamp(40px, calc(40px + (96 - 40) * ((100vw - 1024px) / (1920 - 1024))), 96px)
+
+
   --transition: 0.18s ease-out
 
 
@@ -73,8 +80,22 @@ html
   --bg-color: var(--accent)
   --text-color: var(--c-surface-subdued)
   --subtitle-color: var(--accent-2)
+
 // серый
 .ac-background-2
   --bg-c-content: var(--c-surface-default)
   --bg-color: var(--c-surface-subdued)
   --subtitle-color: var(--accent)
+
+// green
+.ac-background-3
+  --bg-color: #055152
+  .block--sections .slider_controls:after
+    background: linear-gradient(90deg, rgba(255, 254, 254, 0) 0%, #055152 15%)
+  .button.button-accent
+    --filled-bgc-base: #FBB10D
+    --filled-bc-base: #FBB10D
+    --filled-c-base: #fff
+    --filled-bgc-hover: #FC9F00
+    --filled-bc-hover: #FC9F00
+    --filled-c-hover: #fff

@@ -1,13 +1,4 @@
-// PopupManager.register('popup_for_vacancy_form', {
-//     close_controls: true,
-//     is_block_scroll: false,
-//   },
-//   {
-//     on_close: (popup_element, params) => {
-//       popup_element.querySelector('form').reset();
-//     }
-//   }
-// );
+
 
 PopupManager.register('popup_for_form', {
     is_block_scroll: true,
@@ -19,7 +10,37 @@ PopupManager.register('popup_for_form', {
     }
   }
 );
+PopupManager.register('popup_for_cookies', {
+    is_block_scroll: true,
+    close_controls: true,
+  },
+  {
+    on_close: (popup_element, params) => {
 
+    }
+  }
+);
+PopupManager.register('popup_for_filters', {
+    additional_close_controls: false,
+    is_block_scroll: true,
+  },
+  {
+    on_open: (popup_element, params) => {
+      let block_to_clone = params.block;
+      let block_content = block_to_clone.cloneNode(true);
+      popup_element.querySelector('.popup--form').appendChild(block_content);
+      checkSelect()
+      resetSelect(popup_element)
+
+      // resetSelect(popup_element)
+    },
+    on_close: (popup_element, params) => {
+      setTimeout(() =>
+        popup_element.querySelector('.popup--form').innerHTML = ""
+      , 180)
+    }
+  }
+);
 // PopupManager.register('popup_for_balloon',{
 //     is_block_scroll: true,
 //     close_controls: false,
@@ -57,6 +78,7 @@ PopupManager.register('popup_for_form', {
 // );
 
 
+
 PopupManager.register('popup_menu',{
     is_block_scroll: true,
     close_controls: false,
@@ -84,81 +106,6 @@ PopupManager.register('popup_menu',{
   }
 );
 
-const is_hidden = (element) => element.classList.contains('hidden');
-
-PopupManager.register('popup_notification',
-  {
-    is_block_scroll: false,
-    close_controls: false,
-  },
-  {
-    on_open: (popup_element, params) => {
-      for(const [param, state] of Object.entries(params)) {
-
-        if (state !== false && param !== null) {
-          popup_element.querySelector('[data-notification="'+param+'"]').classList.remove('hidden')
-
-          if (typeof state === 'object') {
-            popup_element.querySelector('[data-notification="'+param+'"] .popup--title').textContent = state.title
-            popup_element.querySelector('[data-notification="'+param+'"] .popup--text').textContent = state.text
-          }
-        }
-        else if ( state === false ) {
-          popup_element.querySelector('[data-notification="'+param+'"]').classList.add('hidden')
-        }
-      }
-
-      let close_notification_button = popup_element.querySelectorAll('[data-closenotification]')
-
-      close_notification_button.forEach(b => {
-        b.addEventListener('click', ()=>{
-          b.closest('.popup--content').classList.add('hidden')
-
-          if ( [...popup_element.querySelectorAll('.popup--content')].every(is_hidden) ) {
-            PopupManager.close('popup_notification')
-          }
-        })
-      })
-    },
-  }
-);
-
-// PopupManager.open('popup_notification', {
-//   error: false,
-//   //     {
-//   //   title: "Сообщение об ошибке",
-//   //   text: "Текст, содержащий причину ошибки и способ её решения"
-//   // },
-//   success: false,
-//     //   {
-//     //   title: "Успешное действие",
-//     //   text: "Сопутствующий текст, зависящий от контекста"
-//     // },
-//   cookies: false,
-//   advert: true,
-//   alert: true
-// })
-// window.addEventListener('load', ()=>{
-//   if ( sessionStorage.getItem('popState') !== 'shown' ) {
-//     PopupManager.open('popup_notification', {
-//       error: false,
-//       //     {
-//       //   title: "Сообщение об ошибке",
-//       //   text: "Текст, содержащий причину ошибки и способ её решения"
-//       // },
-//       success: false,
-//       //   {
-//       //   title: "Успешное действие",
-//       //   text: "Сопутствующий текст, зависящий от контекста"
-//       // },
-//       cookies: false,
-//       advert: true,
-//       alert: true
-//     })
-//     sessionStorage.setItem('popState','shown')
-//   }
-// })
-
 
 PopupManager.register('popup_cascade',
   {
@@ -171,26 +118,47 @@ PopupManager.register('popup_cascade',
     },
     on_close: (popup_element, params) =>{
       setTimeout(()=>{
-        // popup_element.querySelector('.is_cascade').innerHTML = ""
+        popup_element.querySelector('.is_cascade').innerHTML = ""
       }, 180)
 
     }
   }
 );
-
-PopupManager.register('popup_mobile_contacts',
-  {
-    is_block_scroll: true,
+PopupManager.register('popup_for_infrastructure',{
+    is_block_scroll: false,
     close_controls: false,
   },
   {
     on_open: (popup_element, params) => {
-    },
-    on_close: (popup_element, params) =>{
+
+      let title = popup_element.querySelector('.popup--content-title'),
+        description = popup_element.querySelector('.popup--content-text'),
+        image = popup_element.querySelector('img'),
+        link = popup_element.querySelector('.js-popup--infrastructure_link'),
+        tour = popup_element.querySelector('.js-popup--infrastructure_other')
+
+      let infrastructure_object = INFRASTRUCTURE_PLACEMARKS[params.id] ? INFRASTRUCTURE_PLACEMARKS[params.id] : INFRASTRUCTURE_PLACEMARKS[0]
+
+      title.textContent = infrastructure_object.title;
+      description.textContent = infrastructure_object.description;
+      image.src = infrastructure_object.image;
+      link.href = infrastructure_object.link;
+      tour.href = infrastructure_object.other;
     }
   }
 );
 
+// Tour Map
+PopupManager.register('popup_for_tour',{
+    is_block_scroll: false,
+    close_controls: false,
+  },{
+    on_open: (popup_element, params) => {
+      popup_element.querySelector('.popup--content-title').textContent = params.placemark.balloonHeader;
+      popup_element.querySelector('.popup--content-text').textContent = params.placemark.balloonContent;
+    },
+  }
+);
 
 // Add event Listeners to open Popups
 // Элемент (data-openpopup=""), где data-openpopup = popup.name
@@ -203,8 +171,19 @@ function activatePopupButtons(buttons){
     b.addEventListener('click', (e)=>{
       e.preventDefault();
 
-      PopupManager.open(b.dataset.openpopup);
-
+      if ( b.dataset.openpopup === "popup_for_filters") {
+        let block_to_clone = b.parentElement.querySelector('.filter');
+        if (block_to_clone) {
+          PopupManager.open(b.dataset.openpopup, {block: block_to_clone})
+        }
+      }
+      else if ( b.dataset.openpopup === "popup_for_infrastructure" ) {
+          PopupManager.open(b.dataset.openpopup, {
+            id: b.dataset.id ? b.dataset.id : '0'
+          })
+        } else{
+        PopupManager.open(b.dataset.openpopup);
+      }
     })
 
   });
@@ -215,16 +194,16 @@ activatePopupButtons(open_popup_buttons)
 
 /* Open popup after page loaded*/
 window.addEventListener('load', ()=>{
-  // PopupManager.open('popup_for_cookie')
+  // PopupManager.open('popup_for_cookies')
   // PopupManager.open('popup_for_form')
 })
 
 /* Open popup after page loaded 1 time per session */
 window.addEventListener('load', ()=>{
-  // if ( localStorage.getItem('popState') !== 'shown' ) {
-  //   active_manager.openPopup('popup_for_welcoming')
+  if ( localStorage.getItem('popState') !== 'shown' ) {
+
   //   localStorage.setItem('popState','shown')
-  // }
+  }
 })
 
 

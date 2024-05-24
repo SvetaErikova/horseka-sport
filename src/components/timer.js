@@ -53,6 +53,6 @@ let initTimers = (block) => {
     });
   })
 }
-initTimers(document)
+// initTimers(document)
 
 

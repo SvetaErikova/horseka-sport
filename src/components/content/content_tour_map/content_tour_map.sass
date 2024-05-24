@@ -1,0 +1,62 @@
+/* Туры карта и день
+
+.content_tour_map
+  position: relative
+  .block--sections_container
+    @media(max-width: 768px)
+      display: flex
+      overflow: auto
+      max-width: 100%
+      button,a
+        display: inline-block
+        overflow: hidden
+        width: auto
+        max-width: calc(-35% + 100vw)
+        white-space: nowrap
+        text-overflow: ellipsis
+  .map
+    position: relative
+    overflow: hidden
+    height: 100%
+    max-height: 920px
+    min-height: 70vh
+    border-radius: var(--border-corner)
+
+  .map--placemark_content
+    font-size: 24px
+    font-weight: 400
+    line-height: 28px
+    text-align: center
+    color: #FC563B
+    fill: #FC563B
+
+  .map--placemark_content-svg
+    fill: var(--c-text-accent)
+
+  .placemark
+    transition: 0.24s ease-in-out
+    circle
+      r: 42
+    text
+      font-size: 42px
+    &[data-active="active"]
+      circle
+        fill: #FC563B
+      .map--placemark_content
+        color: #fff
+        fill: #fff
+    &[data-active="not_active"]
+      circle
+      fill: #fff
+      .map--placemark_content
+        color: #FC563B
+        fill: #FC563B
+
+  .block--content
+    position: relative
+  .block--sections
+    justify-content: flex-start
+    margin-bottom: var(--g-32)
+
+  .ymaps-2-1-79-graphics-SVG svg path
+    stroke: #FC563B

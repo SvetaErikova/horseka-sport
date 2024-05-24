@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 1fr
     gap: var(--g-content) 24px
     align-items: flex-start
+    width: 100%
     @media(min-width: 768px)
       grid-template-columns: repeat(4, 1fr)
   .nav--item
@@ -22,26 +23,18 @@
   gap: 16px
 
 .nav--list_title
-  color: var(--c-text-disabled, #AAADB1)
-  font-size: 14px
+  color: var(--c-surface-default, #fff)
+  font-size: var(--fs-28)
+  font-family: 'Gilroy'
   font-weight: 300
-  line-height: 1.42
-  letter-spacing: 0.28px
+  line-height: 1
   text-transform: uppercase
   margin-bottom: 4px
 
 .nav--item
-  letter-spacing: -0.36px
-  font-size: var(--fs-18)
+  font-size: var(--fs-24)
   display: flex
   align-items: center
   gap: 8px
   font-weight: 400
   transition: var(--transition)
-
-//a,
-//button
-//  &.nav--item
-//    &:hover
-//      span
-//        color: var(--hover-color)

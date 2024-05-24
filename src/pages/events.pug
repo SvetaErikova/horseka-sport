@@ -1,57 +1,327 @@
-extends ../layouts/breadcrumbs-hero
+extends ../layouts/breadcrumbs
 
 block variables
-  - var title = "Разводящая - афиша, события"
-  - var pageClass = 'page-parent'
+  - var title = "События для спортсменов"
+  - var pageClass = 'page-event'
   - var activePage = 'index'
 
 block content
-  section.block.block_banner.banner-hero
+  // карточка событие для детальных страниц
+  section.block.block.block_image_text.content_events-detail
     .block--wrapper
-      .banner
-        .block--content
-          img(src="/assets/img/accomodation_bg.jpg")
-        +block--head("","События")
-  section.block.block_list.content_events
-    .block--wrapper
-      .block--elements
-        a.card(href="")
-          .card--date
-            strong 21
-            span июн
-          .card--image
-            <!-- Класс проставляется автоматически -->
-            img(src="/assets/img/offer.jpg" alt="")
-            img(src="/assets/img/event.jpg" alt="")
-            img(src="/assets/img/offer.jpg" alt="")
-          .card--content
-            .card--title
-              h3 День рождения парка “Дримвуд”
-              .card--action
-                span.icon
-            .card--text
-              .card--text_item
-                span Время
-                span 11 июня 18:00
-        +card--events
-        a.card(href="")
-          .card--date
-            strong 21
-            span июн
-          .card--image
-            <!-- Класс проставляется автоматически -->
-            img(src="/assets/img/offer.jpg" alt="")
-            img(src="/assets/img/event.jpg" alt="")
-            img(src="/assets/img/offer.jpg" alt="")
-          .card--content
-            .card--title
-              h3 День рождения парка “Дримвуд” - сказочные 5 лет!
-              .card--action
-                span.icon
-            .card--text
-              .card--text_item
-                span Время
-                span 11 июня 18:00
-        .block--pagination
-          a.button.button-outlined.button-secondary(href="/") Показать еще
+      .block--image
+        img(src="/assets/img/1.jpg" alt="")
+        img(src="/assets/img/bg.jpg")
+      .block--head
+        .block--head_subtitle
+          p финал
+        .block--head_title
+          h3.f-h4 Всероссийские соревнования по конкуру Horseka Start  и Любительский Кубок  Вице-президента ФКСР
+        .block--head_caption
+          p
+        .block--actions
+      .block--content.is_cascade
+        .date
+          span 12-14 августа
+          span и еще 7 этапов
+        .info
+          div
+            p Дисциплины
+            p Выездка-Большой круг; Выездка - Малый круг; Выездка на лошади до 6 лет, Выездка на лошади 6 лет, Выездка на лошади 7 лет, Выездка - высота в холке до 150 см
+          div
+            p Статус
+            p Международная серия турниров
+          div
+            p Призовой фонд
+            p 200 000 000 ₽
+        .button_wrapper
+          a.button.button-filled.button-accent(href="")
+            span Заявка на участие
+          a.button.button-filled.button-secondary(href="")
+            span Результаты
 
+
+  // блок stripe
+  section.block.block_html_code.block--stripe
+    .block--wrapper
+      .item
+        // Если нет картинки - item--image не выводится
+        .item--content
+          .item--title
+            h4 НЕОБХОДИМЫЕ ДОКУМЕНТЫ
+          .item--text
+            p Нужна помощь с выбором? Обратитесь к вашему персональному менеджеру и получите консультацию по выбору лошади
+        a.item--actions
+          .item--actions-title
+            span Регламент соревнований
+          // Текста может не быть
+          .item--text
+            p Результаты соревнований будут доступны по завершении всех этапов
+          .button.button-outlined.button-accent
+            span.icon-document
+          // Может быть не ссылкой
+        a.item--actions(href='')
+          .item--actions-title
+            span Результаты соревнований
+          .item--text
+            p Результаты соревнований будут доступны по завершении всех этапов
+          .button.button-outlined.button-accent
+            span.icon-document
+
+
+
+
+  // Блок лист с таблицами
+  section.block.block_list.content_table.js-tabs
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h2 технические  результаты
+        .block--head_caption
+          p
+
+      .block--sections
+        .block--sections_container
+          button(data-target='12August').is_active
+            span 12 августа
+          button(data-target='13August')
+            span  13 августа
+          button(data-target='14August')
+            span  14 августа
+      .block--elements
+        .item(data-content='12August')
+          .is_cascade
+            .is_cascade--table
+              table
+                thead
+                  tr
+                    td 12 августа
+                    td Высота
+                    td Категория
+                    td Результаты
+                tbody
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+
+        .item(data-content='13August')
+          .is_cascade
+            .is_cascade--table
+              table
+                thead
+                  tr
+                    td 13 августа
+                    td Высота
+                    td Категория
+                    td Результаты
+                tbody
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+        .item(data-content='14August')
+          .is_cascade
+            .is_cascade--table
+              table
+                thead
+                  tr
+                    td 14 августа
+                    td Высота
+                    td Категория
+                    td Результаты
+                tbody
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+                  tr
+                    td Маршрут #1
+                    td 65 см
+                    td Категория #1
+                    td
+                      a(href='' download) Скачать результаты
+  // gallery action
+  .block.block_html_code.content_gallery-action
+    .block--wrapper
+      .block--content
+        .item
+          .item--title Как это было
+          .item--text Море эмоций, профессионалы высочайшего уровня, посмотрите как проходил этот турнир.
+        .item
+          .item--text Фотоотчеты
+          .button.button-outlined.button-accent.button-dark
+            span.icon-external
+        .item
+          .item--text Видео
+          .button.button-outlined.button-accent.button-dark
+            span.icon-external
+
+      .block--image
+        img(src="/assets/img/bg.jpg")
+        img(src="/assets/img/bg.jpg")
+        img(src="/assets/img/bg.jpg")
+  // Карточки Партнеры слайдер
+  section.block.block_list.block_list-slider.content_partners
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Партнеры грид
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--image
+            img(src="/assets/img/pathners/fksr.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/idig.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/new-letovo.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/ozon.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/fksr.svg")
+        .card
+          .card--image
+            img(src="/assets/img/pathners/idig.svg")
+
+
+  // Карточки Новости слайдер
+  section.block.block_list.block_list-slider.content_news
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 Карточки Новости грид
+        .block--head_caption
+          p content_offers
+
+      .block--elements
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+        .card
+          .card--image
+            img(src="/assets/img/bg.jpg")
+          .card--content
+            .card--label
+              span Турниры
+              span.label-date 24.03.2024
+            .card--title
+              h3 Итоги IV этапа любительского кубка Horseka Sport
+            .card--text
+              p Позади три насыщенных турнирных дня, полных ярких впечатлений и неожиданных событий.
+            .card--actions
+              .button.button-outlined.button-secondary.button-dark
+                span.icon-arrow-r
+
+  // Картинка текст с фоном у контента
+  section.block.block_image_text.block_image_text-bg.ac-background-1.block_image_text-mask
+    .block--wrapper
+      .block--image
+        img(src="/assets/img/1.jpg" alt="")
+      +block--head("", "личный кабинет для спортсменов", "Зарегистрируйтесь и получайте информацию о предстоящих турнирах и результатах прошедших событий")
+      .block--content.is_cascade

@@ -1,129 +1,132 @@
-extends ../layouts/breadcrumbs-hero
+extends ../layouts/breadcrumbs
 
 block variables
-  - var title = "Разводящая - номера"
-  - var pageClass = 'page-parent page-contacts'
+  - var title = "Контакты"
+  - var pageClass = 'page-contacts'
   - var activePage = 'index'
 
 block content
-  section.block.block_banner.block_banner-hero.ac-banner-short
+  // форма дефолт
+  section.block.block_list.content_form
     .block--wrapper
-      .banner
+      .block--content
+        .block--head
+          .block--head_subtitle
+            p каталог лошадей
+          .block--head_title
+            h2.f-h2 Свяжитесь  с нами
+          .block--head_caption
+            p Примите участие в незабываемом соревновании и продемонстрируйте свои навыки наездника
+        .contact
+          .contact--item
+            .contact--title Телефон
+            .contact--value
+              a(href="/") 8 (495) 419-96-90
+          .contact--item
+            .contact--title E-MAIL
+            .contact--value
+              a(href="/") info@kskivanovskoe.ru
+          .contact--item.adress
+            .contact--title АДРЕС
+            .contact--value
+              p 142432, 45км. Московская обл, Ногинский район, село Ивановское, ул. Луговая, д. 23
+      .block--form
+        form.form
+          input(type="hidden" value="" name="fields[form]")
+          input(type="hidden" value="")
+          fieldset
+            label.form--input
+              input(type="text" placeholder="Иванов Иван Иванович" name="fields[name]" pattern="[А-Яа-яЁё]+" required autocomplete)
+              span Ваше имя
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="tel" placeholder="+7 999 999-99-99" name="fields[phone]" inputmode="numeric" autocomplete="tel" required)
+              span Телефон
+              .form--input_error Ошибка заполнения
+            label.form--input
+              input(type="email" placeholder="example@imperial.ru" name="fields[email]"  autocomplete="email" required)
+              span Email
+              .form--input_error Ошибка заполнения
+            label.form--input
+              textarea(placeholder="Введите комментарий" name="fields[email]" rows="2" maxlength="1000")
+              span Комментарий
+              .form--input_error Ошибка заполнения
+            .form--button
+              button.button.button-filled.button-primary(type="submit" disabled)
+                span Отправить
+              .confirmation
+                span.access  Ваша заявка <br> успешно отправлена!
+                span.error Ваша заявка не была отправлена,<br> попробуйте еще раз
+            p.form--policy Нажимая кнопку, вы соглашаетесь с
+              a(href="") политикой конфиденциальности
+
+
+  // блок как проехать
+  section.block.block_html_code.content.content_road_map.js-tabs
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p
+        .block--head_title
+          h2.f-h2 как проехать
+        .block--head_caption
+          p
+      .block--sections
+        .block--sections_container
+          button(data-target='1').is_active
+            span По Щелковскому шоссе
+          button(data-target='2')
+            span По Ярославскому шоссе
+          button(data-target='3')
+            span По горьковскому шоссе
+      .block--elements
         .block--content
-          img(src="/assets/img/accomodation_bg.jpg")
-        +block--head("","Контакты")
-  .block_html_code.block_page.block_page-sidebar
-    .sidebar
-      .sidebar--sticky
-        .sidebar_navigation
-          a(href="#resort") Курорт
-          a(href="#departments") Отделы
-          a(href="#for_guests") Гостям
-          a(href="#route") Как добраться
-          a(href="#contact_us") Обратная связь
-          a(href="#map") Карта
-    .is_cascade
-      h2
-        a(name="resort")
-        | Курорт
-      .contact
-        .contact--title Адрес
-        .contact--value Республика Крым, Ялта, село Оползневое, улица Генерала Острякова 9
-      .contact
-        .contact--title Почтовый индекс
-        .contact--value 298688, Россия
-      .contact
-        .contact--title Телефоны для связи
-        .contact--value
-          a(href="") 8 499 110-79-64
-        .contact--value
-          a(href="") 8 499 490-01-87
-      .contact
-        .contact--title Вопросы и предложения
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Руководство комплекса
-        .contact--value
-          a(href="") ceo@mriyaresort.com
-      h2
-        a(name="departments")
-        | Отделы
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      h2
-        a(name="for_guests")
-        |Гостям
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      .contact
-        .contact--title Отдел продаж
-        .contact--value
-          a(href="") 8 999 999-99-99
-        .contact--value
-          a(href="") info@mriyaresort.com
-      h2
-        a(name="route")
-        |Как добраться
-      .is_cascade--accordion
-        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-        +accordion-list("Общие советы","Вы можете получить консультацию по указанным на сайте телефонам. Отдел бронирования работает с 09:00-17:00, кроме выходных и праздничных дней. В сезон круглосуточно работает дежурный администратор.")
-      h2
-        a(name="contact_us")
-        |Обратная связь
-      include ../components/form/form
+          .item(data-content='1')
+            .item--title По Щелковскому шоссе
+            .item--text.is_cascade
+              p По Щелковскому шоссе до Малого Московского кольца — «бетонки» А-107. На светофоре около заправки “Лукойл” повернуть налево в сторону “Софрино”. Через два километра после поворота — развилка, нужно держаться правой стороны - поворот на "Макарово".
+              p Едем по главной дороге до указателя - "Ивановское". Едем до конца деревни, до шлагбаума, после поворачиваем направо, проезжаем второй шлагбаум, через 100 метров въезд на парковку.
+              a.button.button-filled.button-primary(href='' target=_blank)
+                span Проложить маршрут
+                span.icon-external
+          .item(data-content='2')
+            .item--title По Ярославскому шоссе
+            .item--text.is_cascade
+              p По Щелковскому шоссе до Малого Московского кольца — «бетонки» А-107. На светофоре около заправки “Лукойл” повернуть налево в сторону “Софрино”. Через два километра после поворота — развилка, нужно держаться правой стороны - поворот на "Макарово".
+              a.button.button-filled.button-primary(href='' target=_blank)
+                span Проложить маршрут
+                span.icon-external
+          .item(data-content='3')
+            .item--title По горьковскому шоссе
+            .item--text.is_cascade
+              p По Щелковскому шоссе до Малого Московского кольца — «бетонки» А-107. На светофоре около заправки “Лукойл” повернуть налево в сторону “Софрино”. Через два километра после поворота — развилка, нужно держаться правой стороны - поворот на "Макарово".
+              p Едем по главной дороге до указателя - "Ивановское". Едем до конца деревни, до шлагбаума, после поворачиваем направо, проезжаем второй шлагбаум, через 100 метров въезд на парковку.
+              p Едем по главной дороге до указателя - "Ивановское". Едем до конца деревни, до шлагбаума, после поворачиваем направо, проезжаем второй шлагбаум,
+              a.button.button-filled.button-primary(href='' target=_blank)
+                span Проложить маршрут
+                span.icon-external
+        .block--map
+          <script src="https://api-maps.yandex.ru/2.1/?apikey=22b5f2f9-12ee-4b1b-81ee-75a0df083d31&lang=ru_RU" type="text/javascript"></script>
+          .map#map_road
+  section.block.block_list.content_faq
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+          p каталог лошадей
+        .block--head_title
+          h2.f-h2 ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+        .block--head_caption
+          p В своём стремлении улучшить пользовательский опыт мы упускаем, что независимые государства являются только методом политического участия и своевременно верифицированы.
+        .block--actions
+          a(href="/").button.button-filled.button-primary
+            span Свяжитесь с нами
 
+      .block--elements
+        .is_cascade
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Коневозам','loremloremloremloremloremloremloremlorem')
+          +accordion-list('Спортсменам','loremloremloremloremloremloremloremlorem')
 
-  section.block.block_html_code.content_map
-    a(name="map")
-    //<script src="https://mapgl.2gis.com/api/js/v1"></script>
-    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    <script type="text/javascript" src="https://maps.api.2gis.ru/2.0/js/?pkg=full&amp;version=v3.7.3"></script>
-    #map
 

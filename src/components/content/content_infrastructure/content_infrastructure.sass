@@ -1,0 +1,76 @@
+.content_infrastructure
+  background-color: var(--accent)
+  color: var(--c-surface-default)
+  .slider_controls
+    .button
+      --outlined-bc-base: #e0e7f3
+      --outlined-c-base: #e0e7f3
+      --outlined-bc-hover: #e0e7f3
+      --outlined-bgc-hover: #e0e7f3
+      --outlined-c-hover: #111820
+    &:after
+      background: -webkit-gradient(linear, left top, right top, from(rgba(255, 254, 254, 0)), color-stop(15%, var(--accent)))
+      background: linear-gradient(90deg, rgba(255, 254, 254, 0) 0%, var(--accent) 15%)
+  .block--sections button
+    color: var(--c-text-primary)
+    &:hover
+      color: var(--c-text-disabled)
+  .infrastructure
+    position: relative
+    gap: var(--g-8)
+    @media(min-width: 769px)
+      display: grid
+      grid-template-columns: 3.5fr 8.5fr
+
+
+    &--image
+      border-radius: var(--border-corner)
+      overflow: hidden
+      display: flex
+      flex-direction: column
+      aspect-ratio: 1300/612
+      background-position: center
+      background-size: cover
+      @media(max-width: 768px)
+        overflow-x: auto
+        width: auto
+        max-width: 100%
+        height: 600px
+        display: inherit
+        svg
+          height: 600px
+
+    .placemark
+      opacity: 0.7
+      circle
+        transition: var(--transition)
+      &:hover
+        opacity: 0.9
+        circle:not(.pulse)
+          r: 30
+      &.is_active
+        opacity: 1
+        .pulse
+          animation: pulse 2s infinite
+          transform-origin: center
+        circle:not(.pulse)
+          r: 30
+      @keyframes pulse
+       0%
+          opacity: 0.7
+       50%
+          opacity: 0
+          stroke-width: 28px
+       100%
+         opacity: 0
+         stroke-width: 28px
+      text
+        fill: #FC563B
+        font-size: 32px
+        translate: 0 12px
+        text-anchor: middle
+    svg
+      border-radius: var(--border-corner)
+
+
+

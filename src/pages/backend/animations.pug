@@ -1,0 +1,174 @@
+extends ../../layouts/hero
+
+block variables
+  - var title = "Анимации"
+  - var pageClass = ''
+  - var activePage = 'index'
+block content
+  // главный баннер
+  section.block.block_banner.block_banner-hero
+    .block--wrapper
+      .banner
+        .block--content
+          //img(src="/assets/img/bg.jpg")
+          video(src="/assets/video/1.mp4" playsinline muted autoplay loop)
+        .block--head
+          .block--head_subtitle
+            p Территория конного спорта
+          .block--head_title
+            h1.f-h1 Календарь событий 2024
+          .block--head_caption
+            p Приглашаем принять участие в соревнованиях в Horseka Sport. Изучите календарье мероприятий
+          .block--actions
+            a(href='https://lk.horsekasport.ru/').button.button-filled.button-accent
+              span Личный кабинет
+              span.icon-external
+          //  a(href="/").button.button-filled.button-primary
+          //    span Переход
+
+  section.block.block_html_code.content_animation
+    .block--wrapper
+      .animation--row.animation--row-1
+        .animation--content
+          .animation--title Новая
+        .animation--image
+          img(src="/assets/img/animation/1-1.jpg")
+      .animation--row.animation--row-2
+        .animation--content
+          .animation--title территория
+      .animation--row.animation--row-3
+        .animation--image
+          img(src="/assets/img/animation/2-2.jpg")
+        .animation--content.animation--row-3
+          .animation--title спорта
+          .animation--subtitle
+            p Конно-спортивный клуб европейского уровня, где созданы самые комфортные условия для активного отдыха и занятий спортом.
+      .animation--row.animation--row-4
+        .animation--image
+          img(src="/assets/img/animation/3-3.jpg")
+
+  section.block.block_html_code.content_animation-2
+    .block--wrapper
+      .head
+        .title-1 лошадь
+        .title-2 вашей мечты
+      .image
+        img.img-front(src="/assets/img/animation/hourse-front2.png" alt="")
+        img.img-back(src="/assets/img/animation/hourse-back2.png" alt="")
+      .subtitle Лошадь вашей мечты ждет вас в нашем каталоге, где вы сможете найти идеального партнера для вашей страсти к конному спорту
+
+  section.block.block_html_code.content_animation-3
+    .block--wrapper
+      .animation--row.animation--row-1
+        .animation--content
+          .animation--title Не только спорт
+      .animation--row.animation--row-2
+        .animation--content
+          .animation--title но и комфорт
+
+  section.block.block_html_code.content_animation-4
+    .block--wrapper
+      .animation--subscription Если вы любите<br>лошадей
+      .animation--row.animation--row-1
+        .animation--title Новая
+      .animation--row.animation--row-2
+        .animation--image
+          .img.img-1
+            img(src="/assets/img/animation/1-1.jpg")
+          .img.img-2
+            img(src="/assets/img/animation/3-3.jpg")
+          .img.img-3
+            img(src="/assets/img/animation/2-2.jpg")
+      .animation--row.animation--row-3
+        .animation--title территория <br>спорта
+  // продумано для гостей
+  section.block.block_html_code.content_services.ac-background-3.js-tabs
+    .block--wrapper
+      .block--head
+        .block--head_subtitle
+
+        .block--head_title
+          h2.f-h2 продумано для гостей
+        .block--head_caption
+          a(href='https://horseka.ru/')
+            img(src="/assets/img/logo/logo-white.svg")
+
+      .block--sections
+        .block--sections_container
+          button.is_active(data-target='rooms')
+            span Номера и апартаменты
+          button(data-target='restaurant')
+            span Рестораны и бары
+          button(data-target='spa')
+            span Бани и SPA
+          button(data-target='kids')
+            span для детей
+
+      .block--elements
+        .item(data-content='rooms')
+          .item--image
+            img(src="https://horseka.ru/wp-content/uploads/2022/07/Horseka-rooms-014-1.jpg")
+          .item--content
+            .item--title
+              h3 Номера <br>и апартаменты
+            .item--text
+              p На большой территории отеля в Московской области расположилась полноценная инфраструктура для загородной жизни, отдыха, развлечений и спорта.
+            .is_cascade
+              p Гармония природы и загородного комфорта в часе езды от Москвы по Щелковскому шоссе. Вековые сосны в лесу в сочетании с продуманной инфраструктурой отеля, где есть все для семейного отдыха. Высокий уровень сервиса в любое время года!
+            .item--actions
+              .item--actions
+                a(href='https://horseka.ru/accommodation/').button.button-filled.button-accent
+                  span.icon-external
+                  span Подробнее
+        .item(data-content='restaurant')
+          .item--image
+            img(src="https://horseka.ru/wp-content/uploads/2024/01/sergeykondratev-1.jpg")
+          .item--content
+            .item--title
+              h3 Рестораны <br>и бары
+            .item--text
+              p Коллекция лучших рецептов европейской и русской кухни от шефа в Horseka Resort
+            .is_cascade
+              p К услугам гостей светлые и просторные залы ресторана, открытая летняя веранда, где приятно выпить чашечку фирменного кофе, съесть легкий перекус или посидеть на свежем воздухе с бокалом вина перед ужином. Любой формат, любое количество гостей, любой выбор блюд — неизменно только высокое качество кухни, сервиса и обслуживания.
+            .item--actions
+              .item--actions
+                a(href='https://horseka.ru/restaurants/').button.button-filled.button-accent
+                  span.icon-external
+                  span Подробнее
+        .item(data-content='spa')
+          .item--image
+            img(src="https://horseka.ru/wp-content/uploads/2024/04/bani-1.jpg")
+          .item--content
+            .item--title
+              h3 Бани <br>и SPA
+            .item--text
+              p  Пространство для отдыха и релакса
+            .is_cascade
+              p Уединенная Spa-зона позволит проникнуться спокойствием природы и тишиной, прерываемой лишь пением птиц, чистейшим звуком воды и шелестом деревьев.
+              p Погрузитесь в мир русского банного искусства. Вдохните аромат свежесрубленных дров, почувствуйте теплую обволакивающую волну пара, отпустите напряжение и заботы.
+            .item--actions
+              .item--actions
+                a(href='https://horseka.ru/').button.button-filled.button-accent
+                  span.icon-external
+                  span Подробнее
+        .item(data-content='kids')
+          .item--image
+            img(src="https://horseka.ru/wp-content/uploads/2024/03/city.jpg")
+          .item--content
+            .item--title
+              h3 ДЛЯ ДЕТЕЙ
+            .item--text
+              p На большой территории отеля в Московской области расположилась полноценная инфраструктура для загородной жизни, отдыха, развлечений и спорта.
+            .is_cascade
+              p Horseka Kids — это не просто детская площадка: это целый город детства и веселья!  Тут дети могут не только отлично и задорно провести время, но и научиться новому. Территория Horseka kids включает в себя:
+              ul
+                li любимую всеми зооферму с милыми животными
+                li тематический интерактивный клуб
+                li залы мастер-классов
+                li современный зал для проведения детских мероприятий и праздников.
+            .item--actions
+              .item--actions
+                a(href='https://horseka.ru/what2do/kids/').button.button-filled.button-accent
+                  span.icon-external
+                  span Подробнее
+
